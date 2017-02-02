@@ -1,0 +1,6 @@
+framework module Pods_Botree911_Client {
+  umbrella header "Pods-Botree911_Client-umbrella.h"
+
+  export *
+  module * { export * }
+}
