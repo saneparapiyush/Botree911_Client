@@ -1,0 +1,73 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "KeychainSwiftConstants"
+provides-nominal:
+- "V16Botree911_Client22KeychainSwiftConstants"
+provides-member:
+- ["V16Botree911_Client22KeychainSwiftConstants", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- !private "kSecAttrAccessible"
+- !private "kSecAttrAccessGroup"
+- !private "kSecReturnData"
+- !private "kSecAttrAccount"
+- !private "kSecAttrSynchronizable"
+- !private "kSecValueData"
+- "CFStringRef"
+- "KeychainSwiftConstants"
+- !private "kSecClass"
+- !private "kSecMatchLimit"
+- "String"
+depends-member:
+- ["V16Botree911_Client22KeychainSwiftConstants", "CFStringRef"]
+- ["V16Botree911_Client22KeychainSwiftConstants", "String"]
+- ["V16Botree911_Client22KeychainSwiftConstants", "accessGroup"]
+- ["V16Botree911_Client22KeychainSwiftConstants", "accessible"]
+- ["V16Botree911_Client22KeychainSwiftConstants", "attrAccount"]
+- ["V16Botree911_Client22KeychainSwiftConstants", "attrSynchronizable"]
+- ["V16Botree911_Client22KeychainSwiftConstants", "init"]
+- !private ["V16Botree911_Client22KeychainSwiftConstants", "kSecAttrAccessGroup"]
+- !private ["V16Botree911_Client22KeychainSwiftConstants", "kSecAttrAccessible"]
+- !private ["V16Botree911_Client22KeychainSwiftConstants", "kSecAttrAccount"]
+- !private ["V16Botree911_Client22KeychainSwiftConstants", "kSecAttrSynchronizable"]
+- !private ["V16Botree911_Client22KeychainSwiftConstants", "kSecClass"]
+- !private ["V16Botree911_Client22KeychainSwiftConstants", "kSecMatchLimit"]
+- !private ["V16Botree911_Client22KeychainSwiftConstants", "kSecReturnData"]
+- !private ["V16Botree911_Client22KeychainSwiftConstants", "kSecValueData"]
+- ["V16Botree911_Client22KeychainSwiftConstants", "klass"]
+- ["V16Botree911_Client22KeychainSwiftConstants", "matchLimit"]
+- ["V16Botree911_Client22KeychainSwiftConstants", "returnData"]
+- !private ["V16Botree911_Client22KeychainSwiftConstants", "toString"]
+- ["V16Botree911_Client22KeychainSwiftConstants", "valueData"]
+depends-nominal:
+- "V16Botree911_Client22KeychainSwiftConstants"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode8.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Volumes/User Project/Project/Botree911_Client/Botree911_Client/Botree911_Client-Bridging-Header.h"
+- "/Volumes/User Project/Project/Botree911_Client/Botree911_Client/Validation/TextFieldValidator.h"
+- "/Applications/Xcode8.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode8.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode8.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode8.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode8.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode8.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode8.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
+- "/Applications/Xcode8.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode8.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Volumes/User Project/Project/Botree911_Client/DerivedData/Botree911_Client/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework/Modules/Alamofire.swiftmodule/x86_64.swiftmodule"
+- "/Volumes/User Project/Project/Botree911_Client/DerivedData/Botree911_Client/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework/Headers/Alamofire-Swift.h"
+- "/Volumes/User Project/Project/Botree911_Client/DerivedData/Botree911_Client/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework/Headers/Alamofire-umbrella.h"
+- "/Volumes/User Project/Project/Botree911_Client/DerivedData/Botree911_Client/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework/Modules/module.modulemap"
+- "/Volumes/User Project/Project/Botree911_Client/DerivedData/Botree911_Client/Build/Products/Debug-iphonesimulator/FTProgressIndicator/FTProgressIndicator.framework/Headers/FTProgressIndicator.h"
+- "/Volumes/User Project/Project/Botree911_Client/DerivedData/Botree911_Client/Build/Products/Debug-iphonesimulator/FTProgressIndicator/FTProgressIndicator.framework/Headers/FTProgressIndicator-umbrella.h"
+- "/Volumes/User Project/Project/Botree911_Client/DerivedData/Botree911_Client/Build/Products/Debug-iphonesimulator/FTProgressIndicator/FTProgressIndicator.framework/Modules/module.modulemap"
+- "/Volumes/User Project/Project/Botree911_Client/DerivedData/Botree911_Client/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework/Modules/SwiftyJSON.swiftmodule/x86_64.swiftmodule"
+- "/Volumes/User Project/Project/Botree911_Client/DerivedData/Botree911_Client/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework/Headers/SwiftyJSON-Swift.h"
+- "/Volumes/User Project/Project/Botree911_Client/DerivedData/Botree911_Client/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework/Headers/SwiftyJSON-umbrella.h"
+- "/Volumes/User Project/Project/Botree911_Client/DerivedData/Botree911_Client/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework/Modules/module.modulemap"
+- "/Volumes/User Project/Project/Botree911_Client/DerivedData/Botree911_Client/Build/Products/Debug-iphonesimulator/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework/Modules/IQKeyboardManagerSwift.swiftmodule/x86_64.swiftmodule"
+- "/Volumes/User Project/Project/Botree911_Client/DerivedData/Botree911_Client/Build/Products/Debug-iphonesimulator/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework/Headers/IQKeyboardManagerSwift-Swift.h"
+- "/Volumes/User Project/Project/Botree911_Client/DerivedData/Botree911_Client/Build/Products/Debug-iphonesimulator/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework/Headers/IQKeyboardManagerSwift-umbrella.h"
+- "/Volumes/User Project/Project/Botree911_Client/DerivedData/Botree911_Client/Build/Products/Debug-iphonesimulator/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework/Modules/module.modulemap"
+interface-hash: "6185ffdf94bb4b3f3b98bdf19314d3a2"

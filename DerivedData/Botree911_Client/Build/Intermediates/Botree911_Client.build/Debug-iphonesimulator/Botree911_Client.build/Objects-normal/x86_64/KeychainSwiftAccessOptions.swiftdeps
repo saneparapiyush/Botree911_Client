@@ -1,0 +1,191 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "KeychainSwiftAccessOptions"
+- "=="
+provides-nominal:
+- "O16Botree911_Client26KeychainSwiftAccessOptions"
+provides-member:
+- ["O16Botree911_Client26KeychainSwiftAccessOptions", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- !private "kSecAttrAccessibleAlwaysThisDeviceOnly"
+- !private "kSecAttrAccessibleWhenUnlocked"
+- "String"
+- "KeychainSwiftAccessOptions"
+- "CFString"
+- !private "kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly"
+- !private "kSecAttrAccessibleWhenUnlockedThisDeviceOnly"
+- !private "kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly"
+- !private "KeychainSwiftConstants"
+- !private "kSecAttrAccessibleAlways"
+- !private "kSecAttrAccessibleAfterFirstUnlock"
+- "=="
+depends-member:
+- !private ["Ps17BitwiseOperations", "hashValue"]
+- ["CSo8CFString", "deinit"]
+- !private ["Ps7CVarArg", "hashValue"]
+- !private ["Ps10Comparable", "hashValue"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "hashValue"]
+- !private ["Ps17CustomReflectable", "hashValue"]
+- !private ["Ps23CustomStringConvertible", "hashValue"]
+- ["Ps9Equatable", "AccessibleAfterFirstUnlock"]
+- ["Ps9Equatable", "AccessibleAfterFirstUnlockThisDeviceOnly"]
+- ["Ps9Equatable", "AccessibleAlways"]
+- ["Ps9Equatable", "AccessibleAlwaysThisDeviceOnly"]
+- ["Ps9Equatable", "AccessibleWhenPasscodeSetThisDeviceOnly"]
+- ["Ps9Equatable", "AccessibleWhenUnlocked"]
+- ["Ps9Equatable", "AccessibleWhenUnlockedThisDeviceOnly"]
+- !private ["Ps9Equatable", "KeychainSwiftConstants"]
+- ["Ps9Equatable", "_toAnyHashable"]
+- ["Ps9Equatable", "hashValue"]
+- !private ["Ps9Equatable", "kSecAttrAccessibleAfterFirstUnlock"]
+- !private ["Ps9Equatable", "kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly"]
+- !private ["Ps9Equatable", "kSecAttrAccessibleAlways"]
+- !private ["Ps9Equatable", "kSecAttrAccessibleAlwaysThisDeviceOnly"]
+- !private ["Ps9Equatable", "kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly"]
+- !private ["Ps9Equatable", "kSecAttrAccessibleWhenUnlocked"]
+- !private ["Ps9Equatable", "kSecAttrAccessibleWhenUnlockedThisDeviceOnly"]
+- !private ["Ps9Equatable", "toString"]
+- ["Ps9Equatable", ""]
+- !private ["Ps27ExpressibleByIntegerLiteral", "hashValue"]
+- ["Ps8Hashable", "AccessibleAfterFirstUnlock"]
+- ["Ps8Hashable", "AccessibleAfterFirstUnlockThisDeviceOnly"]
+- ["Ps8Hashable", "AccessibleAlways"]
+- ["Ps8Hashable", "AccessibleAlwaysThisDeviceOnly"]
+- ["Ps8Hashable", "AccessibleWhenPasscodeSetThisDeviceOnly"]
+- ["Ps8Hashable", "AccessibleWhenUnlocked"]
+- ["Ps8Hashable", "AccessibleWhenUnlockedThisDeviceOnly"]
+- !private ["Ps8Hashable", "KeychainSwiftConstants"]
+- ["Ps8Hashable", "_toAnyHashable"]
+- ["Ps8Hashable", "hashValue"]
+- !private ["Ps8Hashable", "kSecAttrAccessibleAfterFirstUnlock"]
+- !private ["Ps8Hashable", "kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly"]
+- !private ["Ps8Hashable", "kSecAttrAccessibleAlways"]
+- !private ["Ps8Hashable", "kSecAttrAccessibleAlwaysThisDeviceOnly"]
+- !private ["Ps8Hashable", "kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly"]
+- !private ["Ps8Hashable", "kSecAttrAccessibleWhenUnlocked"]
+- !private ["Ps8Hashable", "kSecAttrAccessibleWhenUnlockedThisDeviceOnly"]
+- !private ["Ps8Hashable", "toString"]
+- ["Ps8Hashable", ""]
+- ["Si", "deinit"]
+- !private ["Si", "hashValue"]
+- !private ["Ps7Integer", "hashValue"]
+- !private ["Ps17IntegerArithmetic", "hashValue"]
+- !private ["P10SwiftyJSON17JSONSubscriptType", "hashValue"]
+- ["O16Botree911_Client26KeychainSwiftAccessOptions", "=="]
+- ["O16Botree911_Client26KeychainSwiftAccessOptions", "AccessibleAfterFirstUnlock"]
+- ["O16Botree911_Client26KeychainSwiftAccessOptions", "AccessibleAfterFirstUnlockThisDeviceOnly"]
+- ["O16Botree911_Client26KeychainSwiftAccessOptions", "AccessibleAlways"]
+- ["O16Botree911_Client26KeychainSwiftAccessOptions", "AccessibleAlwaysThisDeviceOnly"]
+- ["O16Botree911_Client26KeychainSwiftAccessOptions", "AccessibleWhenPasscodeSetThisDeviceOnly"]
+- ["O16Botree911_Client26KeychainSwiftAccessOptions", "AccessibleWhenUnlocked"]
+- ["O16Botree911_Client26KeychainSwiftAccessOptions", "AccessibleWhenUnlockedThisDeviceOnly"]
+- ["O16Botree911_Client26KeychainSwiftAccessOptions", "CFString"]
+- ["O16Botree911_Client26KeychainSwiftAccessOptions", "KeychainSwiftAccessOptions"]
+- !private ["O16Botree911_Client26KeychainSwiftAccessOptions", "KeychainSwiftConstants"]
+- ["O16Botree911_Client26KeychainSwiftAccessOptions", "String"]
+- ["O16Botree911_Client26KeychainSwiftAccessOptions", "_toAnyHashable"]
+- ["O16Botree911_Client26KeychainSwiftAccessOptions", "defaultOption"]
+- ["O16Botree911_Client26KeychainSwiftAccessOptions", "deinit"]
+- ["O16Botree911_Client26KeychainSwiftAccessOptions", "hashValue"]
+- !private ["O16Botree911_Client26KeychainSwiftAccessOptions", "kSecAttrAccessibleAfterFirstUnlock"]
+- !private ["O16Botree911_Client26KeychainSwiftAccessOptions", "kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly"]
+- !private ["O16Botree911_Client26KeychainSwiftAccessOptions", "kSecAttrAccessibleAlways"]
+- !private ["O16Botree911_Client26KeychainSwiftAccessOptions", "kSecAttrAccessibleAlwaysThisDeviceOnly"]
+- !private ["O16Botree911_Client26KeychainSwiftAccessOptions", "kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly"]
+- !private ["O16Botree911_Client26KeychainSwiftAccessOptions", "kSecAttrAccessibleWhenUnlocked"]
+- !private ["O16Botree911_Client26KeychainSwiftAccessOptions", "kSecAttrAccessibleWhenUnlockedThisDeviceOnly"]
+- ["O16Botree911_Client26KeychainSwiftAccessOptions", "toString"]
+- ["O16Botree911_Client26KeychainSwiftAccessOptions", "value"]
+- !private ["V16Botree911_Client22KeychainSwiftConstants", "toString"]
+- !private ["Ps10MirrorPath", "hashValue"]
+- !private ["Ps13SignedInteger", "hashValue"]
+- !private ["Ps12SignedNumber", "hashValue"]
+- !private ["Ps10Strideable", "hashValue"]
+- ["SS", "deinit"]
+- !private ["Ps35_ExpressibleByBuiltinIntegerLiteral", "hashValue"]
+- ["Ps9_Hashable", "AccessibleAfterFirstUnlock"]
+- ["Ps9_Hashable", "AccessibleAfterFirstUnlockThisDeviceOnly"]
+- ["Ps9_Hashable", "AccessibleAlways"]
+- ["Ps9_Hashable", "AccessibleAlwaysThisDeviceOnly"]
+- ["Ps9_Hashable", "AccessibleWhenPasscodeSetThisDeviceOnly"]
+- ["Ps9_Hashable", "AccessibleWhenUnlocked"]
+- ["Ps9_Hashable", "AccessibleWhenUnlockedThisDeviceOnly"]
+- !private ["Ps9_Hashable", "KeychainSwiftConstants"]
+- ["Ps9_Hashable", "_toAnyHashable"]
+- ["Ps9_Hashable", "hashValue"]
+- !private ["Ps9_Hashable", "kSecAttrAccessibleAfterFirstUnlock"]
+- !private ["Ps9_Hashable", "kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly"]
+- !private ["Ps9_Hashable", "kSecAttrAccessibleAlways"]
+- !private ["Ps9_Hashable", "kSecAttrAccessibleAlwaysThisDeviceOnly"]
+- !private ["Ps9_Hashable", "kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly"]
+- !private ["Ps9_Hashable", "kSecAttrAccessibleWhenUnlocked"]
+- !private ["Ps9_Hashable", "kSecAttrAccessibleWhenUnlockedThisDeviceOnly"]
+- !private ["Ps9_Hashable", "toString"]
+- ["Ps9_Hashable", ""]
+- !private ["Ps14_Incrementable", "hashValue"]
+- !private ["Ps8_Integer", "hashValue"]
+- !private ["Ps18_IntegerArithmetic", "hashValue"]
+- !private ["Ps21_ObjectiveCBridgeable", "hashValue"]
+- !private ["Ps14_SignedInteger", "hashValue"]
+- !private ["Ps11_Strideable", "hashValue"]
+depends-nominal:
+- !private "Ps17BitwiseOperations"
+- "CSo8CFString"
+- !private "Ps7CVarArg"
+- !private "Ps10Comparable"
+- !private "Ps29CustomPlaygroundQuickLookable"
+- !private "Ps17CustomReflectable"
+- !private "Ps23CustomStringConvertible"
+- "Ps9Equatable"
+- !private "Ps27ExpressibleByIntegerLiteral"
+- "Ps8Hashable"
+- "Si"
+- !private "Ps7Integer"
+- !private "Ps17IntegerArithmetic"
+- !private "P10SwiftyJSON17JSONSubscriptType"
+- "O16Botree911_Client26KeychainSwiftAccessOptions"
+- !private "V16Botree911_Client22KeychainSwiftConstants"
+- !private "Ps10MirrorPath"
+- !private "Ps13SignedInteger"
+- !private "Ps12SignedNumber"
+- !private "Ps10Strideable"
+- "SS"
+- !private "Ps35_ExpressibleByBuiltinIntegerLiteral"
+- "Ps9_Hashable"
+- !private "Ps14_Incrementable"
+- !private "Ps8_Integer"
+- !private "Ps18_IntegerArithmetic"
+- !private "Ps21_ObjectiveCBridgeable"
+- !private "Ps14_SignedInteger"
+- !private "Ps11_Strideable"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode8.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Volumes/User Project/Project/Botree911_Client/Botree911_Client/Botree911_Client-Bridging-Header.h"
+- "/Volumes/User Project/Project/Botree911_Client/Botree911_Client/Validation/TextFieldValidator.h"
+- "/Applications/Xcode8.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode8.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode8.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode8.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode8.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode8.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode8.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
+- "/Applications/Xcode8.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode8.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Volumes/User Project/Project/Botree911_Client/DerivedData/Botree911_Client/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework/Modules/Alamofire.swiftmodule/x86_64.swiftmodule"
+- "/Volumes/User Project/Project/Botree911_Client/DerivedData/Botree911_Client/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework/Headers/Alamofire-Swift.h"
+- "/Volumes/User Project/Project/Botree911_Client/DerivedData/Botree911_Client/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework/Headers/Alamofire-umbrella.h"
+- "/Volumes/User Project/Project/Botree911_Client/DerivedData/Botree911_Client/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework/Modules/module.modulemap"
+- "/Volumes/User Project/Project/Botree911_Client/DerivedData/Botree911_Client/Build/Products/Debug-iphonesimulator/FTProgressIndicator/FTProgressIndicator.framework/Headers/FTProgressIndicator.h"
+- "/Volumes/User Project/Project/Botree911_Client/DerivedData/Botree911_Client/Build/Products/Debug-iphonesimulator/FTProgressIndicator/FTProgressIndicator.framework/Headers/FTProgressIndicator-umbrella.h"
+- "/Volumes/User Project/Project/Botree911_Client/DerivedData/Botree911_Client/Build/Products/Debug-iphonesimulator/FTProgressIndicator/FTProgressIndicator.framework/Modules/module.modulemap"
+- "/Volumes/User Project/Project/Botree911_Client/DerivedData/Botree911_Client/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework/Modules/SwiftyJSON.swiftmodule/x86_64.swiftmodule"
+- "/Volumes/User Project/Project/Botree911_Client/DerivedData/Botree911_Client/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework/Headers/SwiftyJSON-Swift.h"
+- "/Volumes/User Project/Project/Botree911_Client/DerivedData/Botree911_Client/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework/Headers/SwiftyJSON-umbrella.h"
+- "/Volumes/User Project/Project/Botree911_Client/DerivedData/Botree911_Client/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework/Modules/module.modulemap"
+- "/Volumes/User Project/Project/Botree911_Client/DerivedData/Botree911_Client/Build/Products/Debug-iphonesimulator/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework/Modules/IQKeyboardManagerSwift.swiftmodule/x86_64.swiftmodule"
+- "/Volumes/User Project/Project/Botree911_Client/DerivedData/Botree911_Client/Build/Products/Debug-iphonesimulator/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework/Headers/IQKeyboardManagerSwift-Swift.h"
+- "/Volumes/User Project/Project/Botree911_Client/DerivedData/Botree911_Client/Build/Products/Debug-iphonesimulator/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework/Headers/IQKeyboardManagerSwift-umbrella.h"
+- "/Volumes/User Project/Project/Botree911_Client/DerivedData/Botree911_Client/Build/Products/Debug-iphonesimulator/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework/Modules/module.modulemap"
+interface-hash: "adbb02e891b638dacbfdf3e84f6f7bde"
