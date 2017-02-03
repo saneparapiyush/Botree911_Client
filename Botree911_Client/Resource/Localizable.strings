@@ -6,4 +6,14 @@
   Copyright © 2017 piyushMac. All rights reserved.
 */
 
-"Invalid_Email" = "Enter valid email";
+"invalid_email" = "Enter valid email";//Email Validation message
+
+// Title of Pages
+"title_project_list" = "Project List";
+"title_ticket_list" = "Ticket List";
+
+
+// Progress Indicator
+"login_indicator" = "Please wait...";
+"project_list_indicator" = "Please wait...";
+"ticket_list_indicator" = "Please wait...";

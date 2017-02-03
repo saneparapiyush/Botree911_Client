@@ -9,14 +9,28 @@
 import UIKit
 import IQKeyboardManagerSwift
 
+let keychain = KeychainSwift()
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        UIApplication.shared.statusBarStyle = .lightContent
+        
+        let appRouter: AppRouter = AppRouter.sharedRouter()
+        appRouter.appWindow = window
+        
+        if UserDefaults.standard.value(forKey: "isLogin") != nil {
+            appRouter.showProjectScreen()
+        }
+        
+//        if keychain.get("password") != nil {
+//            print("Get password")
+//        }
         
         IQKeyboardManager.sharedManager().enable = true
         return true

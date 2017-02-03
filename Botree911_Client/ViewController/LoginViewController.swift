@@ -9,9 +9,22 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import FTProgressIndicator
 
 class LoginViewController: AbstractViewController {
-
+    
+    let testResponse = [
+        "first_name": "as",
+        "last_name": 1,
+        "data": [
+            "user": [
+                "first_name": "",
+                "last_name": "",
+                "email": "sp@gmail.com",
+                "access_token": "f4cb2196eab3fcae80dc"
+            ]
+        ]
+    ] as [String: Any]
     
     @IBOutlet var txtUserEmail: TextFieldValidator!
     @IBOutlet var txtPassword: TextFieldValidator!
@@ -22,7 +35,12 @@ class LoginViewController: AbstractViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         
+//        if let user = UserDefaults.standard.value(forKey: "user") {
+//            print(user)
+//            print((user as AnyObject)["email"] as! String)
+//        }
         
+        hideNavigationController()
         configValidation()
         textFeildReturnUIConfig()
     }// End viewDidLoad()
@@ -30,9 +48,7 @@ class LoginViewController: AbstractViewController {
     
     //    MARK: Action
     @IBAction func btnLoginOnclick(_ sender: Any) {
-        print("Login Button pressed:")
         userAuthorized()
-
     }// End btnLoginOnclick()
     
        
@@ -40,7 +56,7 @@ class LoginViewController: AbstractViewController {
     
     func configValidation()
     {
-        txtUserEmail.addRegx(REGEX_EMAIL, withMsg: getLocalizedString("Invalid_Email"))
+        txtUserEmail.addRegx(REGEX_EMAIL, withMsg: getLocalizedString("invalid_email"))
     }// End isValidEmail
 }
 
@@ -62,12 +78,7 @@ extension LoginViewController : UITextFieldDelegate {
         case txtUserEmail:
             txtPassword.becomeFirstResponder()
         case txtPassword:
-            
-            if txtPassword.validate() && txtUserEmail.validate() {
-                //              LoginFunctionCall:
-                userAuthorized()
-            }
-            
+            userAuthorized()
             break
         default:
             break
@@ -82,23 +93,25 @@ extension LoginViewController : UITextFieldDelegate {
 
 extension LoginViewController:AuthorizedProtocol {
     
-    func login() -> Bool {
+    func login(){
         
         let parameters: Parameters = [
             "user": [
-                "email": "spasa@gmail.com",
-                "password": "12345678",
-                "device_type":1
+                "email": "\(txtUserEmail.text!)",
+                "password": "\(txtPassword.text!)",
+                "device_type":DEVICE_TOKEN
             ],
-            "fcm_token": "dsd"
+            "fcm_token": "dsd"//uuid for iPhone
         ]
-
+        
+        FTProgressIndicator.showProgressWithmessage(getLocalizedString("login_indicator"), userInteractionEnable: false)
+        
         do {
-            try Alamofire.request(ComunicateService.Router.SignIn(parameters).asURLRequest()).debugLog().responseJSON(options: [JSONSerialization.ReadingOptions.allowFragments, JSONSerialization.ReadingOptions.mutableContainers])
+          try Alamofire.request(ComunicateService.Router.SignIn(parameters).asURLRequest()).debugLog().responseJSON(options: [JSONSerialization.ReadingOptions.allowFragments, JSONSerialization.ReadingOptions.mutableContainers])
             {
                 (response) -> Void in
                 
-                //   print(NSString(data: (response.request?.httpBody!)!, encoding:String.Encoding.utf8.rawValue)!)
+                print(NSString(data: (response.request?.httpBody!)!, encoding:String.Encoding.utf8.rawValue)!)
                 
                 switch response.result
                 {
@@ -108,31 +121,85 @@ extension LoginViewController:AuthorizedProtocol {
                         let json = JSON(value)
                         print("Login Response: \(json)")
                         
+//                        isLoginAuthorized = (json.dictionaryObject!["status"] as? Bool)!
+                    
                         if (json.dictionaryObject!["status"] as? Bool)! {
-                            print((json.dictionaryObject!["message"])!)
+
+                            if self.storeLoginData(json: json["data"]) {
+                                 self.performSegue(withIdentifier: "showProjectList", sender: self)
+                            }
+                            
+                            //                            UserDefaults.standard.set((json.dictionaryObject!["data"] as! [String: Any])["user"]!, forKey: "user")
+                            
                         } else {
                             print((json.dictionaryObject!["message"])!)
                         }
-                        
                     }
                     
+                    self.dismissIndicator()
                 case .failure(let error):
-                    print(error)
+                    print(error.localizedDescription)
+                    self.dismissIndicator()
                 }
             }
-        } catch  {
-            
+        } catch let err{
+            print(err.localizedDescription)
+            self.dismissIndicator()
+        }
+//       return isLoginAuthorized
+    }// End login()
+    
+    func loginDataSource(json: JSON) {
+        
+            let data = json["user"]
+      
+            let dic = NSMutableDictionary()
+            dic.setValue(data["first_name"].rawString()!, forKey: "first_name")
+            dic.setValue(data["last_name"].rawString()!, forKey: "last_name")
+            dic.setValue(data["email"].rawString()!, forKey: "email")
+            dic.setValue(data["access_token"].rawString()!, forKey: "access_token")
+        
+            UserDefaults.standard.set(dic, forKey: "user")
+    }// loginDataSource()
+    
+    func storeLoginData(json: JSON) -> Bool {
+        let data = json["user"]
+        
+        let dic = NSMutableDictionary()
+        dic.setValue(data["first_name"].rawString()!, forKey: "first_name")
+        dic.setValue(data["last_name"].rawString()!, forKey: "last_name")
+        dic.setValue(data["email"].rawString()!, forKey: "email")
+        dic.setValue(data["access_token"].rawString()!, forKey: "access_token")
+        
+        UserDefaults.standard.set(dic, forKey: "user")
+        UserDefaults.standard.set(txtPassword.text!, forKey: "isLogin")
+        UserDefaults.standard.set(true, forKey: "isLogin")
+        
+        if UserDefaults.standard.value(forKey: "isLogin") != nil {
+            return true
         }
         
+//        if keychain.set(txtPassword.text!, forKey: "password") {
+//            return true
+//        }
+        
         return false
-    }// End login()
+    }//storeLoginData()
     
     //    MARK: Store User Information
     func userAuthorized() {
-        if login() {
-            print("Move Forword")
-        } else {
-            print("Don't Move because you are unathorized")
+        if txtPassword.validate() && txtUserEmail.validate() {
+            
+            login()
+//            if login() {
+//                print("Move Forword")
+//                
+//                if keychain.set(txtPassword.text!, forKey: "password") {
+//                    performSegue(withIdentifier: "showProjectList", sender: self)
+//                }
+//            } else {
+//                print("Something went wrong in login")
+//            }
         }
     } //End userAuthorized()
 }

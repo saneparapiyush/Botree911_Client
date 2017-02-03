@@ -15,23 +15,32 @@ struct ComunicateService {
 //    static let KeyName2 = "KeyName2"
     
     enum Router: URLRequestConvertible {
-        static let baseURLString = "http://192.168.0.105:3000/"
+        static let baseURLString = "http://192.168.0.150:3000/"
         static var OAuthToken: String?
         
         case SignIn(Parameters)
-        
+        case ProjectList()
+        case TicketList(Parameters)
         
         var method: Alamofire.HTTPMethod {
             switch self {
-            case .SignIn( _):
-                return .post
+                case .SignIn( _):
+                    return .post
+                case .ProjectList(_):
+                    return .get
+                case .TicketList(_):
+                    return .get
             }
         }
         
         var path: String {
             switch self {
-            case .SignIn( _):
-                return "users/sign_in" /// Add / slash any one String or do not any String
+                case .SignIn( _):
+                    return "users/sign_in"
+                case .ProjectList( _):
+                    return "projects/list"
+                case .TicketList(_):
+                    return "tickets/list"
             }
         }
 
@@ -44,6 +53,11 @@ struct ComunicateService {
             urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
             urlRequest.addValue("application/json", forHTTPHeaderField: "Accept")
             
+            if let user = UserDefaults.standard.value(forKey: "user") {
+                print((user as AnyObject)["access_token"] as! String)
+                urlRequest.addValue((user as AnyObject)["access_token"] as! String, forHTTPHeaderField: "access_token")
+            }
+            
             if let token = Router.OAuthToken {
                 urlRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
             }
@@ -52,6 +66,12 @@ struct ComunicateService {
             case .SignIn(let params):
                 return try Alamofire.JSONEncoding.default.encode(urlRequest, with: params)///JSONEncoding if request Parameter in JSON Format
                 ///URLEncoding For GET
+            case .ProjectList():
+                return try Alamofire.URLEncoding.default.encode(urlRequest, with: nil)
+            
+            case .TicketList(let param):
+                return try Alamofire.URLEncoding.default.encode(urlRequest, with: param)
+                
             default:
                 return urlRequest
             }

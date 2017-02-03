@@ -14,6 +14,9 @@
 		4A344C521E42F59F00FFA1FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A344C501E42F59F00FFA1FC /* LaunchScreen.storyboard */; };
 		4A344C5D1E42F59F00FFA1FC /* Botree911_ClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A344C5C1E42F59F00FFA1FC /* Botree911_ClientTests.swift */; };
 		4A344C681E42F59F00FFA1FC /* Botree911_ClientUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A344C671E42F59F00FFA1FC /* Botree911_ClientUITests.swift */; };
+		4A82A7AA1E43402300D8A92E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A82A7A91E43402300D8A92E /* User.swift */; };
+		4A82A7AC1E434BC400D8A92E /* ProjectListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A82A7AB1E434BC400D8A92E /* ProjectListViewController.swift */; };
+		4A82A7AE1E435BDF00D8A92E /* UserDefaultStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A82A7AD1E435BDF00D8A92E /* UserDefaultStorage.swift */; };
 		4ABDEEAD1E42FBB40041AEBA /* AbstractViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABDEEA91E42FBB40041AEBA /* AbstractViewController.swift */; };
 		4ABDEEAE1E42FBB40041AEBA /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABDEEAA1E42FBB40041AEBA /* AppConstant.swift */; };
 		4ABDEEAF1E42FBB40041AEBA /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABDEEAB1E42FBB40041AEBA /* AppRouter.swift */; };
@@ -24,6 +27,10 @@
 		4ABDEEC01E42FBE50041AEBA /* ThemeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABDEEB91E42FBE50041AEBA /* ThemeButton.swift */; };
 		4ABDEEC11E42FBE50041AEBA /* ThemeTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABDEEBA1E42FBE50041AEBA /* ThemeTextfield.swift */; };
 		4ABDEEC21E42FBE50041AEBA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABDEEBC1E42FBE50041AEBA /* LoginViewController.swift */; };
+		4AC9D6631E445AAA0025E23E /* KeychainSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC9D6601E445AAA0025E23E /* KeychainSwift.swift */; };
+		4AC9D66D1E44793A0025E23E /* TicketListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC9D66C1E44793A0025E23E /* TicketListViewController.swift */; };
+		4AC9D66F1E44808B0025E23E /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC9D66E1E44808B0025E23E /* Project.swift */; };
+		4AC9D6711E44952A0025E23E /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC9D6701E44952A0025E23E /* Ticket.swift */; };
 		685BEDD41434036C3445605E /* Pods_Botree911_Client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53334EBDBA680E4A12570B6F /* Pods_Botree911_Client.framework */; };
 		F8CF331BA31A41C5D99BC6C8 /* Pods_Botree911_ClientTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D877638D2447A6893A5FF0B5 /* Pods_Botree911_ClientTests.framework */; };
 /* End PBXBuildFile section */
@@ -60,6 +67,9 @@
 		4A344C631E42F59F00FFA1FC /* Botree911_ClientUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Botree911_ClientUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A344C671E42F59F00FFA1FC /* Botree911_ClientUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Botree911_ClientUITests.swift; sourceTree = "<group>"; };
 		4A344C691E42F59F00FFA1FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A82A7A91E43402300D8A92E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		4A82A7AB1E434BC400D8A92E /* ProjectListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectListViewController.swift; sourceTree = "<group>"; };
+		4A82A7AD1E435BDF00D8A92E /* UserDefaultStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultStorage.swift; sourceTree = "<group>"; };
 		4ABDEEA91E42FBB40041AEBA /* AbstractViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractViewController.swift; sourceTree = "<group>"; };
 		4ABDEEAA1E42FBB40041AEBA /* AppConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
 		4ABDEEAB1E42FBB40041AEBA /* AppRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
@@ -72,6 +82,10 @@
 		4ABDEEBA1E42FBE50041AEBA /* ThemeTextfield.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeTextfield.swift; sourceTree = "<group>"; };
 		4ABDEEBC1E42FBE50041AEBA /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4ABDEEC31E42FD640041AEBA /* Botree911_Client-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Botree911_Client-Bridging-Header.h"; sourceTree = "<group>"; };
+		4AC9D6601E445AAA0025E23E /* KeychainSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainSwift.swift; sourceTree = "<group>"; };
+		4AC9D66C1E44793A0025E23E /* TicketListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketListViewController.swift; sourceTree = "<group>"; };
+		4AC9D66E1E44808B0025E23E /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		4AC9D6701E44952A0025E23E /* Ticket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
 		53334EBDBA680E4A12570B6F /* Pods_Botree911_Client.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Botree911_Client.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B37E09C4BFF3F1CC0BFA938F /* Pods-Botree911_ClientUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Botree911_ClientUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Botree911_ClientUITests/Pods-Botree911_ClientUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C835EE597D0FCE7C79EF3887 /* Pods-Botree911_ClientUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Botree911_ClientUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Botree911_ClientUITests/Pods-Botree911_ClientUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -135,10 +149,12 @@
 			isa = PBXGroup;
 			children = (
 				4A344C471E42F59E00FFA1FC /* AppDelegate.swift */,
-				4ABDEEA91E42FBB40041AEBA /* AbstractViewController.swift */,
 				4ABDEEAA1E42FBB40041AEBA /* AppConstant.swift */,
 				4ABDEEAB1E42FBB40041AEBA /* AppRouter.swift */,
 				4ABDEEAC1E42FBB40041AEBA /* Utility.swift */,
+				4ABDEEA91E42FBB40041AEBA /* AbstractViewController.swift */,
+				4A82A7A81E433FB100D8A92E /* Model */,
+				4A82A7A51E432CA400D8A92E /* Third Party */,
 				4ABDEEB11E42FBE50041AEBA /* Resource */,
 				4ABDEEB31E42FBE50041AEBA /* Service */,
 				4ABDEEB51E42FBE50041AEBA /* Validation */,
@@ -169,6 +185,25 @@
 				4A344C691E42F59F00FFA1FC /* Info.plist */,
 			);
 			path = Botree911_ClientUITests;
+			sourceTree = "<group>";
+		};
+		4A82A7A51E432CA400D8A92E /* Third Party */ = {
+			isa = PBXGroup;
+			children = (
+				4AC9D6601E445AAA0025E23E /* KeychainSwift.swift */,
+				4A82A7AD1E435BDF00D8A92E /* UserDefaultStorage.swift */,
+			);
+			path = "Third Party";
+			sourceTree = "<group>";
+		};
+		4A82A7A81E433FB100D8A92E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4A82A7A91E43402300D8A92E /* User.swift */,
+				4AC9D66E1E44808B0025E23E /* Project.swift */,
+				4AC9D6701E44952A0025E23E /* Ticket.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		4ABDEEB11E42FBE50041AEBA /* Resource */ = {
@@ -209,6 +244,8 @@
 			isa = PBXGroup;
 			children = (
 				4ABDEEBC1E42FBE50041AEBA /* LoginViewController.swift */,
+				4A82A7AB1E434BC400D8A92E /* ProjectListViewController.swift */,
+				4AC9D66C1E44793A0025E23E /* TicketListViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -519,15 +556,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				4ABDEEB01E42FBB40041AEBA /* Utility.swift in Sources */,
+				4A82A7AC1E434BC400D8A92E /* ProjectListViewController.swift in Sources */,
 				4ABDEEBE1E42FBE50041AEBA /* ComunicateService.swift in Sources */,
 				4ABDEEBF1E42FBE50041AEBA /* TextFieldValidator.m in Sources */,
+				4AC9D66D1E44793A0025E23E /* TicketListViewController.swift in Sources */,
 				4ABDEEC01E42FBE50041AEBA /* ThemeButton.swift in Sources */,
 				4ABDEEAF1E42FBB40041AEBA /* AppRouter.swift in Sources */,
 				4ABDEEAE1E42FBB40041AEBA /* AppConstant.swift in Sources */,
 				4ABDEEC11E42FBE50041AEBA /* ThemeTextfield.swift in Sources */,
 				4ABDEEAD1E42FBB40041AEBA /* AbstractViewController.swift in Sources */,
+				4A82A7AA1E43402300D8A92E /* User.swift in Sources */,
 				4ABDEEC21E42FBE50041AEBA /* LoginViewController.swift in Sources */,
+				4AC9D6631E445AAA0025E23E /* KeychainSwift.swift in Sources */,
+				4AC9D6711E44952A0025E23E /* Ticket.swift in Sources */,
+				4A82A7AE1E435BDF00D8A92E /* UserDefaultStorage.swift in Sources */,
 				4A344C481E42F59E00FFA1FC /* AppDelegate.swift in Sources */,
+				4AC9D66F1E44808B0025E23E /* Project.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

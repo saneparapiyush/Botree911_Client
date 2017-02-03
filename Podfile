@@ -15,6 +15,12 @@ target 'Botree911_Client' do
 	# SwiftyJSON makes it easy to deal with JSON data in Swift
 	pod 'SwiftyJSON'
 
+	# A lightwight progress HUD, with blur effect, elegant API and themes Support.
+	pod 'FTProgressIndicator', '~> 1.1'
+
+	# A UIView category that adds Android-style toast notifications to iOS.
+	pod 'Toast', '~> 3.0'
+
   target 'Botree911_ClientTests' do
     inherit! :search_paths
     # Pods for testing

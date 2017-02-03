@@ -32,8 +32,27 @@ class AppRouter: NSObject, Controller {
         return viewController
     }
     
+    func getNavigationController() -> UINavigationController {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let navigationController = storyBoard.instantiateViewController(withIdentifier: "NavigationController") as! UINavigationController
+        return navigationController
+    }
+    
     // MARK: - Screen Navigation Methods -
     
-    
+    func showProjectScreen() {
+        let projectListVC = getViewController("ProjectListViewController") as? ProjectListViewController
+        
+        projectListVC!.controller = self
+        projectListVC!.screenType = .PROJECT_LIST_SCREEN_TYPE
+        view = projectListVC
+        
+        let navigationController: UINavigationController = getNavigationController()
+        navigationController.viewControllers = [projectListVC!]
+        container = navigationController
+        
+        let appDelegate: AppDelegate = (UIApplication.shared.delegate as? AppDelegate)!
+        appDelegate.window?.rootViewController = navigationController
+    }
 }
 

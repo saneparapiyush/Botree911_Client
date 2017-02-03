@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FTProgressIndicator
+
 
 protocol Controller {
     var view: View? { get set }
@@ -26,4 +28,20 @@ class AbstractViewController: UIViewController, View  {
 
     }
     
+    func dismissIndicator() {
+        DispatchQueue.main.async {
+            FTProgressIndicator.dismiss()
+        }
+    }
+    
+    func hideNavigationController() {
+        if let navController = self.navigationController {
+            navController.setNavigationBarHidden(true, animated: true)
+        }
+    }
+    func showNavigationController() {
+        if let navController = self.navigationController {
+            navController.setNavigationBarHidden(false, animated: true)
+        }
+    }
 }
