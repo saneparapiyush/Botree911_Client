@@ -15,6 +15,8 @@ class Ticket {
     var description: String?
     var status: String?
     var updated_at: String?
+    var raised_by: String?
+    var assingee: String?
     
     init(json: JSON) {
         id = json.dictionaryObject!["id"] as? Int
@@ -23,5 +25,13 @@ class Ticket {
         description = json.dictionaryObject!["description"] as? String
         status = json.dictionaryObject!["status"] as? String
         updated_at = json.dictionaryObject!["updated_at"] as? String
+        raised_by = json.dictionaryObject!["raised_by"] as? String
+        
+        if ((json.dictionaryObject!["assingee"] as? String) != nil) {
+            assingee = json.dictionaryObject!["assingee"] as? String
+        } else {
+            assingee = "Pending..."
+        }
+        
     }
 }

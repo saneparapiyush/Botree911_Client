@@ -97,7 +97,7 @@ extension ProjectListViewController: UITableViewDataSource,UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == projectListSource.count {
+        if indexPath.row == projectListSource.count - 1 {
             return 108.0
         }
         return 100.0

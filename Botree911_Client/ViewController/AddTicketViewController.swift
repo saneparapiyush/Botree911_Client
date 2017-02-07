@@ -18,6 +18,7 @@ class AddTicketViewController: AbstractViewController {
     
     @IBOutlet var txtSelectProject: UITextField!
     @IBOutlet var txtSelectStatus: UITextField!
+    @IBOutlet var btnCreateTicket: ThemeButton!
     
     var picker = UIPickerView()
     var pickerTag: Int = Int()
@@ -27,12 +28,24 @@ class AddTicketViewController: AbstractViewController {
     var ddProjectId: Int?
     
     var project: Project?
+    var ticket: Ticket?
+    var isEdit: Bool?
+    
+    //Edit Ticket
+    let fromScreenType: AppScreenType? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        title = getLocalizedString("title_add_ticket")
+        
+        if (ticket != nil) {
+            title = getLocalizedString("title_edit_ticket")
+            isEdit = true
+        } else {
+            title = getLocalizedString("title_add_ticket")
+            isEdit = false
+        }
         
         configUI()
         getDropDownData()
@@ -52,7 +65,7 @@ class AddTicketViewController: AbstractViewController {
         
 //        FTProgressIndicator.showProgressWithmessage(getLocalizedString("status_list_indicator"), userInteractionEnable: false)
         do {
-            try Alamofire.request(ComunicateService.Router.StatusList().asURLRequest()).debugLog().responseJSON(options: [JSONSerialization.ReadingOptions.allowFragments, JSONSerialization.ReadingOptions.mutableContainers])
+            try Alamofire.request(ComunicateService.Router.StatusList().asURLRequest()).responseJSON(options: [JSONSerialization.ReadingOptions.allowFragments, JSONSerialization.ReadingOptions.mutableContainers])
             {
                 (response) -> Void in
                 
@@ -89,7 +102,7 @@ class AddTicketViewController: AbstractViewController {
         for (key, value) in projects as! JSON {
             arrStatus[key] = (value.intValue)
         }
-        txtSelectStatus.text = (arrStatus.allKeys(for: 1)[0] as! String)
+        txtSelectStatus.text = (isEdit)! ? (ticket?.status) : (arrStatus.allKeys(for: 1)[0] as! String)
     } // End procssGetResponceProjectList
     
     func getProjectList() {
@@ -111,14 +124,19 @@ class AddTicketViewController: AbstractViewController {
         picker = UIPickerView(frame: CGRect(x: 0.0, y: 0.0, width: UIScreen.main.bounds.size.width, height: 216.0))
         picker.backgroundColor = UIColor.white
         
-        txtSelectProject.text = "\(project!.name!)"
-        
         txtSelectProject.addRightSubView()
         txtSelectStatus.addRightSubView()
         
         txtSelectProject.inputView = picker
         txtSelectStatus.inputView = picker
         
+        txtSelectProject.text = "\(project!.name!)"
+        if isEdit! {
+            txtTitleName.text = ticket!.name
+            txtViewDescription.text = ticket!.description
+            txtSelectStatus.text = ticket!.status
+            btnCreateTicket.setTitle("Edit Ticket", for: .normal)
+        }
     }// End configUI()
     
     func createTicket() {
@@ -171,13 +189,65 @@ class AddTicketViewController: AbstractViewController {
             self.dismissIndicator()
         }
     }
+    
+    func editTicket() {
+        
+        let status: Int = arrStatus["\(txtSelectStatus.text!)"]! as! Int
+        
+        let parameters = [
+            "ticket": [
+                "project_id": project!.id!,
+                "name": "\(txtTitleName.text!)",
+                "status": status,
+                "description": "\(txtViewDescription.text!)"
+            ]
+        ]
+        
+        FTProgressIndicator.showProgressWithmessage(getLocalizedString("update_project_indicator"), userInteractionEnable: false)
+        
+        do {
+            try Alamofire.request(ComunicateService.Router.EditTicket(parameters, (ticket?.id)!).asURLRequest()).debugLog().responseJSON(options: [JSONSerialization.ReadingOptions.allowFragments, JSONSerialization.ReadingOptions.mutableContainers])
+            {
+                (response) -> Void in
+                
+                switch response.result
+                {
+                case .success:
+                    if let value = response.result.value
+                    {
+                        let json = JSON(value)
+                        print("Create Project Response: \(json)")
+                        
+                        if (json.dictionaryObject!["status"] as? Bool)! {
+                            
+                            print((json.dictionaryObject!["message"])!)
+                        } else {
+                            print((json.dictionaryObject!["message"])!)
+                        }
+                    }
+                    
+                    self.dismissIndicator()
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    self.dismissIndicator()
+                }
+            }
+        } catch let err{
+            print(err.localizedDescription)
+            self.dismissIndicator()
+        }
+    }
 
     //MARK:- Actions
     
     @IBAction func btnCreateTicketOnClick(_ sender: Any) {
         if txtTitleName.validate() && txtViewDescription.hasText && txtSelectProject.hasText && txtSelectStatus.hasText {
             
-            createTicket()
+            if (ticket != nil) {
+                editTicket()
+            } else {
+                createTicket()
+            }
         } else {
             if !txtViewDescription.hasText {
                 print("Enter Description")

@@ -15,6 +15,7 @@ class TicketListViewController: AbstractViewController {
     
     var project : Project?
     var ticketListSource = [Ticket]()
+    var selectedTicket : Ticket?
     
     @IBOutlet var tblTicketList: UITableView!
     
@@ -69,7 +70,7 @@ class TicketListViewController: AbstractViewController {
     } // End getTicketList()
     
     func processGetResponceTicketList(json: JSON) {
-        let projects = json["tickets"]
+        let projects = json["ticket"]
         
         for i in 0 ..< projects.count {
             let jsonValue = projects.arrayValue[i]
@@ -89,6 +90,7 @@ class TicketListViewController: AbstractViewController {
         if segue.identifier == "showAddTicket" {
             let addTicketVC = segue.destination as! AddTicketViewController
             addTicketVC.project = project!
+            addTicketVC.ticket = selectedTicket
         }
     }
 }
@@ -108,15 +110,16 @@ extension TicketListViewController: UITableViewDataSource,UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        selectedTicket = ticketListSource[indexPath.row]
+        self.performSegue(withIdentifier: "showAddTicket", sender: self)
         
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == ticketListSource.count {
-            return 108.0
+        if indexPath.row == ticketListSource.count - 1 {
+            return 132.0
         }
-        return 100.0
+        return 124.0
     }
 }
 
@@ -126,11 +129,15 @@ class TicketListCell: UITableViewCell {
     @IBOutlet var lblTicketTitle: UILabel!
     @IBOutlet var lblTicketDescription: UILabel!
     @IBOutlet var lblTicketStatus: UILabel!
+    @IBOutlet var lblRaisedBy: UILabel!
+    @IBOutlet var lblAssingee: UILabel!
     
     func setProjectListData() {
         
         lblTicketTitle.text = ticket?.name
         lblTicketDescription.text = ticket?.description
         lblTicketStatus.text = ticket?.status
+        lblRaisedBy.text = ticket?.raised_by
+        lblAssingee.text = ticket?.assingee
     }
 }

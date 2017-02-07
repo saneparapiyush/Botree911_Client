@@ -23,7 +23,7 @@ struct ComunicateService {
         case StatusList()
         case TicketList(Parameters)
         case CreateTicket(Parameters)
-        
+        case EditTicket(Parameters,Int)
         
         var method: Alamofire.HTTPMethod {
             switch self {
@@ -37,6 +37,8 @@ struct ComunicateService {
                     return .get
                 case .CreateTicket(_):
                     return .post
+                case .EditTicket(_):
+                    return .patch
             }
         }
         
@@ -52,6 +54,8 @@ struct ComunicateService {
                     return "tickets/list"
                 case .CreateTicket(_):
                     return "tickets"
+                case .EditTicket(_, let ticketID):
+                    return "tickets/\(ticketID)"
             }
         }
 
@@ -87,6 +91,9 @@ struct ComunicateService {
                 return try Alamofire.URLEncoding.default.encode(urlRequest, with: param)
                 
             case .CreateTicket(let params):
+                return try Alamofire.JSONEncoding.default.encode(urlRequest, with: params)
+            
+            case .EditTicket(let params,_):
                 return try Alamofire.JSONEncoding.default.encode(urlRequest, with: params)
                 
             default:
