@@ -10,6 +10,7 @@ import UIKit
 import SwiftyJSON
 import Alamofire
 import FTProgressIndicator
+import Toast
 
 class TicketListViewController: AbstractViewController {
     
@@ -54,18 +55,21 @@ class TicketListViewController: AbstractViewController {
                         if (json.dictionaryObject!["status"] as? Bool)! && json["data"]["ticket"].count > 0 {
                             self.processGetResponceTicketList(json: json["data"])
                         } else {
-                            print((json.dictionaryObject!["message"])!)
+//                            print((json.dictionaryObject!["message"])!)
+                            self.view.makeToast("\((json.dictionaryObject!["message"])!)")
                         }
                         self.dismissIndicator()
                     }
                 case .failure(let error):
-                    print(error)
+                    print(error.localizedDescription)
                     self.dismissIndicator()
+                    self.view.makeToast(error.localizedDescription)
                 }
             }
-        } catch let err{
-            print(err)
+        } catch let error{
+            print(error)
             self.dismissIndicator()
+            self.view.makeToast(error.localizedDescription)
         }
     } // End getTicketList()
     

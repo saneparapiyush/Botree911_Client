@@ -12,7 +12,7 @@ import SwiftyJSON
 
 class ServiceManager {
     
-    func getProjectList(completion: @escaping (_ success: Bool, _ errorMessages: String, _ jsonData: [Project]?) -> Void) {
+    func getProjectList(completion: @escaping (_ success: Bool, _ errorMessages: String?, _ jsonData: [Project]?) -> Void) {
         
        do {
             try Alamofire.request(ComunicateService.Router.ProjectList().asURLRequest()).debugLog().responseJSON(options: [JSONSerialization.ReadingOptions.allowFragments, JSONSerialization.ReadingOptions.mutableContainers])
@@ -29,10 +29,10 @@ class ServiceManager {
                         
                         if (json.dictionaryObject!["status"] as? Bool)!  && json["data"].count > 0 {
                             let projectList = self.processGetResponceProjectList(json: json["data"])
-                            completion(true, "", projectList)
+                            completion(true, nil, projectList)
                         } else {
                             print((json.dictionaryObject!["message"])!)
-                            completion(false, (json.dictionaryObject!["message"])! as! String, nil)
+                            completion(false, (json.dictionaryObject!["message"])! as? String, nil)
                         }
                     }
                 case .failure(let error):

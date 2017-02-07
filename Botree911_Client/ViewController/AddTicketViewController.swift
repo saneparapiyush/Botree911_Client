@@ -10,6 +10,7 @@ import UIKit
 import FTProgressIndicator
 import SwiftyJSON
 import Alamofire
+import Toast
 
 class AddTicketViewController: AbstractViewController {
     
@@ -81,17 +82,20 @@ class AddTicketViewController: AbstractViewController {
                             self.processGetResponceStutusList(json: json["data"])
                         } else {
                             print((json.dictionaryObject!["message"])!)
+                            self.view.makeToast("\((json.dictionaryObject!["message"])!)")
                         }
                     }
                     
 //                    self.dismissIndicator()
                 case .failure(let error):
                     print(error)
+                    self.view.makeToast(error.localizedDescription)
 //                    self.dismissIndicator()
                 }
             }
-        } catch let err{
-            print(err)
+        } catch let error{
+            print(error)
+            self.view.makeToast(error.localizedDescription)
 //            self.dismissIndicator()
         }
     } // End getProjectList()
@@ -114,7 +118,8 @@ class AddTicketViewController: AbstractViewController {
                 self.projectListSource = json!
 
             } else {
-                print(error)
+                print(error!)
+                self.view.makeToast(error!)
             }
         }
     } // End getProjectList()
@@ -170,25 +175,28 @@ class AddTicketViewController: AbstractViewController {
                         let json = JSON(value)
                         print("Create Project Response: \(json)")
                         
-                        if (json.dictionaryObject!["status"] as? Bool)! {
-                            
-                            print((json.dictionaryObject!["message"])!)
-                        } else {
-                            print((json.dictionaryObject!["message"])!)
-                        }
+//                        if (json.dictionaryObject!["status"] as? Bool)! {
+//                            
+//                            print((json.dictionaryObject!["message"])!)
+//                        } else {
+//                            print((json.dictionaryObject!["message"])!)
+//                        }
+                        self.view.makeToast("\((json.dictionaryObject!["message"])!)")
                     }
                     
                     self.dismissIndicator()
                 case .failure(let error):
                     print(error.localizedDescription)
                     self.dismissIndicator()
+                    self.view.makeToast(error.localizedDescription)
                 }
             }
-        } catch let err{
-            print(err.localizedDescription)
+        } catch let error{
+            print(error.localizedDescription)
             self.dismissIndicator()
+            self.view.makeToast(error.localizedDescription)
         }
-    }
+    }//End CreateTicket()
     
     func editTicket() {
         
@@ -216,27 +224,30 @@ class AddTicketViewController: AbstractViewController {
                     if let value = response.result.value
                     {
                         let json = JSON(value)
-                        print("Create Project Response: \(json)")
+                        print("Edit Project Response: \(json)")
                         
-                        if (json.dictionaryObject!["status"] as? Bool)! {
-                            
-                            print((json.dictionaryObject!["message"])!)
-                        } else {
-                            print((json.dictionaryObject!["message"])!)
-                        }
+//                        if (json.dictionaryObject!["status"] as? Bool)! {
+//                            
+//                            print((json.dictionaryObject!["message"])!)
+//                        } else {
+//                            print((json.dictionaryObject!["message"])!)
+//                        }
+                        self.view.makeToast("\((json.dictionaryObject!["message"])!)")
                     }
                     
                     self.dismissIndicator()
                 case .failure(let error):
                     print(error.localizedDescription)
                     self.dismissIndicator()
+                    self.view.makeToast(error.localizedDescription)
                 }
             }
-        } catch let err{
-            print(err.localizedDescription)
+        } catch let error{
+            print(error.localizedDescription)
             self.dismissIndicator()
+            self.view.makeToast(error.localizedDescription)
         }
-    }
+    }//End editTicket()
 
     //MARK:- Actions
     

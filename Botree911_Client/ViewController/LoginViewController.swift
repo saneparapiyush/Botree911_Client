@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import FTProgressIndicator
+import Toast
 
 class LoginViewController: AbstractViewController {
     
@@ -132,7 +133,8 @@ extension LoginViewController:AuthorizedProtocol {
                             //                            UserDefaults.standard.set((json.dictionaryObject!["data"] as! [String: Any])["user"]!, forKey: "user")
                             
                         } else {
-                            print((json.dictionaryObject!["message"])!)
+//                            print((json.dictionaryObject!["message"])!)
+                            self.view.makeToast("\((json.dictionaryObject!["message"])!)")
                         }
                     }
                     
@@ -140,11 +142,13 @@ extension LoginViewController:AuthorizedProtocol {
                 case .failure(let error):
                     print(error.localizedDescription)
                     self.dismissIndicator()
+                    self.view.makeToast(error.localizedDescription)
                 }
             }
-        } catch let err{
-            print(err.localizedDescription)
+        } catch let error{
+            print(error.localizedDescription)
             self.dismissIndicator()
+            self.view.makeToast(error.localizedDescription)
         }
 //       return isLoginAuthorized
     }// End login()

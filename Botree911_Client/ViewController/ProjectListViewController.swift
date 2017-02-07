@@ -43,7 +43,8 @@ class ProjectListViewController: AbstractViewController {
                 self.projectListSource = json!
                 self.tblProjectList.reloadData()
             } else {
-                print(error)
+                print(error!)
+                self.view.makeToast(error!)
             }
             self.dismissIndicator()
         }
