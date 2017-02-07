@@ -69,7 +69,7 @@ class ProjectListViewController: AbstractViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showTicketList" {
             let ticketListVC = segue.destination as! TicketListViewController
-            ticketListVC.projectId = projectListSource[selectProjectIndexPath.row].id!
+            ticketListVC.project = projectListSource[selectProjectIndexPath.row]
         }
     }
 }

@@ -23,10 +23,10 @@ class AddTicketViewController: AbstractViewController {
     var pickerTag: Int = Int()
     
     var arrStatus = NSMutableDictionary()
-    
     var projectListSource = [Project]()
+    var ddProjectId: Int?
     
-    var projectId : Int?
+    var project: Project?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,10 +84,12 @@ class AddTicketViewController: AbstractViewController {
     } // End getProjectList()
     
     func processGetResponceStutusList(json: JSON) {
-        let projects = json["ticket_status"]
-        for (key, value) in projects {
-            arrStatus[key] = value
+        let projects: Any = json["ticket_status"]
+        
+        for (key, value) in projects as! JSON {
+            arrStatus[key] = (value.intValue)
         }
+        txtSelectStatus.text = (arrStatus.allKeys(for: 1)[0] as! String)
     } // End procssGetResponceProjectList
     
     func getProjectList() {
@@ -108,7 +110,9 @@ class AddTicketViewController: AbstractViewController {
     func configUI() {
         picker = UIPickerView(frame: CGRect(x: 0.0, y: 0.0, width: UIScreen.main.bounds.size.width, height: 216.0))
         picker.backgroundColor = UIColor.white
-
+        
+        txtSelectProject.text = "\(project!.name!)"
+        
         txtSelectProject.addRightSubView()
         txtSelectStatus.addRightSubView()
         
@@ -118,14 +122,20 @@ class AddTicketViewController: AbstractViewController {
     }// End configUI()
     
     func createTicket() {
+
+        let status: Int = arrStatus["\(txtSelectStatus.text!)"]! as! Int
+        
+        
+        
         let parameters = [
             "ticket": [
-            "project_id": 1,
-            "name": txtTitleName.text!,
-            "status": arrStatus["\(txtSelectStatus.text!)"]!, //Ticket Status
-            "description": txtViewDescription.text!
+            "project_id": project!.id!,
+            "name": "\(txtTitleName.text!)",
+            "status": status,
+            "description": "\(txtViewDescription.text!)"
             ]
         ]
+        
         
         FTProgressIndicator.showProgressWithmessage(getLocalizedString("add_project_indicator"), userInteractionEnable: false)
         
@@ -208,11 +218,9 @@ extension AddTicketViewController: UIPickerViewDelegate, UIPickerViewDataSource,
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch pickerTag {
         case 101:
-            //            selectIndexAmount = row
+            project = projectListSource[row]
             txtSelectProject.text = projectListSource[row].name
         case 102:
-            //            selectIndexCreditCard = row
-            //            selectedCreditCard = creditCards[row]
             txtSelectStatus.text = (arrStatus.allKeys[row] as! String)
             
         default:
@@ -242,15 +250,18 @@ extension AddTicketViewController: UIPickerViewDelegate, UIPickerViewDataSource,
     func textFieldDidBeginEditing(_ textField: UITextField)
     {
         picker.selectRow(0, inComponent: 0, animated: true)
+        
         switch textField {
         case txtSelectProject:
             if projectListSource.count > 0 {
                 pickerTag = 101
+                
                 //     titlePicker.title = " Select XXXX "
             }
         case txtSelectStatus:
             if arrStatus.count > 0 {
                 pickerTag = 102
+
                 //   titlePicker.title = " Select XXXX "
             }
         default:

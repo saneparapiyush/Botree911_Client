@@ -13,7 +13,7 @@ import FTProgressIndicator
 
 class TicketListViewController: AbstractViewController {
     
-    var projectId : Int?
+    var project : Project?
     var ticketListSource = [Ticket]()
     
     @IBOutlet var tblTicketList: UITableView!
@@ -33,7 +33,7 @@ class TicketListViewController: AbstractViewController {
     func getTicketList() {
         
         let params: Parameters = [
-            "project_id": projectId!
+            "project_id": project!.id!
         ]
         
         FTProgressIndicator.showProgressWithmessage(getLocalizedString("ticket_list_indicator"), userInteractionEnable: false)
@@ -50,14 +50,13 @@ class TicketListViewController: AbstractViewController {
                         let json = JSON(value)
                         print("Ticket List Response: \(json)")
                         
-                        if (json.dictionaryObject!["status"] as? Bool)! {
+                        if (json.dictionaryObject!["status"] as? Bool)! && json["data"]["ticket"].count > 0 {
                             self.processGetResponceTicketList(json: json["data"])
                         } else {
                             print((json.dictionaryObject!["message"])!)
                         }
+                        self.dismissIndicator()
                     }
-                    
-                    self.dismissIndicator()
                 case .failure(let error):
                     print(error)
                     self.dismissIndicator()
@@ -89,7 +88,7 @@ class TicketListViewController: AbstractViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showAddTicket" {
             let addTicketVC = segue.destination as! AddTicketViewController
-            addTicketVC.projectId = projectId!
+            addTicketVC.project = project!
         }
     }
 }

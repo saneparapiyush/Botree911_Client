@@ -65,7 +65,7 @@ struct ComunicateService {
             urlRequest.addValue("application/json", forHTTPHeaderField: "Accept")
             
             if let user = UserDefaults.standard.value(forKey: "user") {
-                print((user as AnyObject)["access_token"] as! String)
+                print("Access Token : \((user as AnyObject)["access_token"] as! String)")
                 urlRequest.addValue((user as AnyObject)["access_token"] as! String, forHTTPHeaderField: "access_token")
             }
             

@@ -27,7 +27,7 @@ class ServiceManager {
                         let json = JSON(value)
                         print("Project List Response: \(json)")
                         
-                        if (json.dictionaryObject!["status"] as? Bool)! {
+                        if (json.dictionaryObject!["status"] as? Bool)!  && json["data"].count > 0 {
                             let projectList = self.processGetResponceProjectList(json: json["data"])
                             completion(true, "", projectList)
                         } else {

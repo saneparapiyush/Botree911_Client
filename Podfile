@@ -13,7 +13,7 @@ target 'Botree911_Client' do
 	pod 'Alamofire', '~> 4.3'
 
 	# SwiftyJSON makes it easy to deal with JSON data in Swift
-	pod 'SwiftyJSON'
+	pod 'SwiftyJSON', '3.0.0'
 
 	# A lightwight progress HUD, with blur effect, elegant API and themes Support.
 	pod 'FTProgressIndicator', '~> 1.1'
