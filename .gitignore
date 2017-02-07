@@ -40,8 +40,8 @@ Pods/**
 *.apk
 *.exe
 xcschememanagement.plist
-Botree911_Client/Botree911_Client.xcodeproj/xcuserdata/piyushmac.xcuserdatad/xcschemes/Botree911_Client.xcscheme
-Botree911_Client/Botree911_Client.xcworkspace/xcuserdata/piyushmac.xcuserdatad/UserInterfaceState.xcuserstate
+Botree911_Client.xcodeproj/xcuserdata/piyushmac.xcuserdatad/xcschemes/Botree911_Client.xcscheme
+Botree911_Client.xcworkspace/xcuserdata/piyushmac.xcuserdatad/UserInterfaceState.xcuserstate
 Breakpoints_v2.xcbkptlist
 Expressions.xcexplist
 xcuserdata/
