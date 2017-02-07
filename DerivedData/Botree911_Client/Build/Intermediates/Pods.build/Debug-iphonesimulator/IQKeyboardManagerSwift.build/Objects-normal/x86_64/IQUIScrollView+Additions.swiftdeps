@@ -7,15 +7,15 @@ provides-member:
 provides-dynamic-lookup:
 - "shouldRestoreScrollViewContentOffset"
 depends-top-level:
-- !private "objc_getAssociatedObject"
-- !private "kIQShouldRestoreScrollViewContentOffset"
+- !private "objc_AssociationPolicy"
+- "Bool"
 - "CastingPrecedence"
-- !private "objc_setAssociatedObject"
 - "UIScrollView"
+- !private "kIQShouldRestoreScrollViewContentOffset"
+- !private "objc_getAssociatedObject"
 - "StringLiteralType"
 - !private "BooleanLiteralType"
-- "Bool"
-- !private "objc_AssociationPolicy"
+- !private "objc_setAssociatedObject"
 depends-member:
 - ["Ps9AnyObject", "init"]
 - !private ["Ps9AnyObject", "kIQShouldRestoreScrollViewContentOffset"]

@@ -40,7 +40,7 @@ class LoginViewController: AbstractViewController {
 //            print((user as AnyObject)["email"] as! String)
 //        }
         
-        hideNavigationController()
+        hideNavigationBar()
         configValidation()
         textFeildReturnUIConfig()
     }// End viewDidLoad()

@@ -19,17 +19,17 @@ provides-member:
 - ["C16Botree911_Client10TeamMember", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- !private "StringLiteralType"
-- "ProjectManager"
+- "Client"
 - "Int"
 - "JSON"
-- "Project"
-- "String"
-- "TeamLeader"
-- "Client"
-- "AssignmentPrecedence"
-- "CastingPrecedence"
 - "TeamMember"
+- "CastingPrecedence"
+- "AssignmentPrecedence"
+- "ProjectManager"
+- !private "StringLiteralType"
+- "String"
+- "Project"
+- "TeamLeader"
 depends-member:
 - !private ["Ps9AnyObject", "client"]
 - !private ["Ps9AnyObject", "client_name"]

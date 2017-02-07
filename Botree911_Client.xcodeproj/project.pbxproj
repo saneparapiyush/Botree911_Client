@@ -17,6 +17,8 @@
 		4A82A7AA1E43402300D8A92E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A82A7A91E43402300D8A92E /* User.swift */; };
 		4A82A7AC1E434BC400D8A92E /* ProjectListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A82A7AB1E434BC400D8A92E /* ProjectListViewController.swift */; };
 		4A82A7AE1E435BDF00D8A92E /* UserDefaultStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A82A7AD1E435BDF00D8A92E /* UserDefaultStorage.swift */; };
+		4A9DF97D1E48485D00FC654C /* AddTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9DF97C1E48485D00FC654C /* AddTicketViewController.swift */; };
+		4A9DF97F1E4870CC00FC654C /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9DF97E1E4870CC00FC654C /* ServiceManager.swift */; };
 		4ABDEEAD1E42FBB40041AEBA /* AbstractViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABDEEA91E42FBB40041AEBA /* AbstractViewController.swift */; };
 		4ABDEEAE1E42FBB40041AEBA /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABDEEAA1E42FBB40041AEBA /* AppConstant.swift */; };
 		4ABDEEAF1E42FBB40041AEBA /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABDEEAB1E42FBB40041AEBA /* AppRouter.swift */; };
@@ -70,6 +72,8 @@
 		4A82A7A91E43402300D8A92E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4A82A7AB1E434BC400D8A92E /* ProjectListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectListViewController.swift; sourceTree = "<group>"; };
 		4A82A7AD1E435BDF00D8A92E /* UserDefaultStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultStorage.swift; sourceTree = "<group>"; };
+		4A9DF97C1E48485D00FC654C /* AddTicketViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTicketViewController.swift; sourceTree = "<group>"; };
+		4A9DF97E1E4870CC00FC654C /* ServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 		4ABDEEA91E42FBB40041AEBA /* AbstractViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractViewController.swift; sourceTree = "<group>"; };
 		4ABDEEAA1E42FBB40041AEBA /* AppConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
 		4ABDEEAB1E42FBB40041AEBA /* AppRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
@@ -218,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				4ABDEEB41E42FBE50041AEBA /* ComunicateService.swift */,
+				4A9DF97E1E4870CC00FC654C /* ServiceManager.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -246,6 +251,7 @@
 				4ABDEEBC1E42FBE50041AEBA /* LoginViewController.swift */,
 				4A82A7AB1E434BC400D8A92E /* ProjectListViewController.swift */,
 				4AC9D66C1E44793A0025E23E /* TicketListViewController.swift */,
+				4A9DF97C1E48485D00FC654C /* AddTicketViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -563,6 +569,7 @@
 				4ABDEEC01E42FBE50041AEBA /* ThemeButton.swift in Sources */,
 				4ABDEEAF1E42FBB40041AEBA /* AppRouter.swift in Sources */,
 				4ABDEEAE1E42FBB40041AEBA /* AppConstant.swift in Sources */,
+				4A9DF97D1E48485D00FC654C /* AddTicketViewController.swift in Sources */,
 				4ABDEEC11E42FBE50041AEBA /* ThemeTextfield.swift in Sources */,
 				4ABDEEAD1E42FBB40041AEBA /* AbstractViewController.swift in Sources */,
 				4A82A7AA1E43402300D8A92E /* User.swift in Sources */,
@@ -572,6 +579,7 @@
 				4A82A7AE1E435BDF00D8A92E /* UserDefaultStorage.swift in Sources */,
 				4A344C481E42F59E00FFA1FC /* AppDelegate.swift in Sources */,
 				4AC9D66F1E44808B0025E23E /* Project.swift in Sources */,
+				4A9DF97F1E4870CC00FC654C /* ServiceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

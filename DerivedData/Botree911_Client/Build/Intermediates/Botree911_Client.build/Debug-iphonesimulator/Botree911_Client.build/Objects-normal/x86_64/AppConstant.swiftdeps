@@ -10,16 +10,16 @@ provides-member:
 - ["O16Botree911_Client13AppScreenType", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "Int"
+- "themeColor"
 - "AppScreenType"
-- "UIColor"
-- "DEVICE_TOKEN"
+- "Int"
 - "=="
 - !private "~="
-- "StringLiteralType"
-- "themeColor"
 - "/"
+- "StringLiteralType"
 - "REGEX_EMAIL"
+- "UIColor"
+- "DEVICE_TOKEN"
 depends-member:
 - ["Ps9AnyObject", "init"]
 - ["O16Botree911_Client13AppScreenType", "PROJECT_LIST_SCREEN_TYPE"]

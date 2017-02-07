@@ -11,21 +11,21 @@ provides-member:
 - ["C9Alamofire7Request", "debugLog"]
 provides-dynamic-lookup:
 depends-top-level:
-- "Request"
-- "ComunicateService"
-- "URLRequestConvertible"
-- "StringLiteralType"
-- !private "print"
 - "Parameters"
-- "String"
-- "URLRequest"
-- "Alamofire"
 - !private "debugPrint"
-- "CastingPrecedence"
-- "AssignmentPrecedence"
 - !private "UserDefaults"
+- "Alamofire"
+- "Request"
 - !private "AnyObject"
+- "URLRequestConvertible"
+- "CastingPrecedence"
+- "URLRequest"
+- !private "print"
+- "AssignmentPrecedence"
+- "StringLiteralType"
+- "ComunicateService"
 - !private "URL"
+- "String"
 depends-member:
 - !private ["Ps9AnyObject", "debugPrint"]
 - ["Ps9AnyObject", "deinit"]
@@ -146,11 +146,13 @@ depends-member:
 - !private ["C9Alamofire7Request", "print"]
 - ["OV16Botree911_Client17ComunicateService6Router", "Alamofire"]
 - !private ["OV16Botree911_Client17ComunicateService6Router", "AnyObject"]
+- ["OV16Botree911_Client17ComunicateService6Router", "CreateTicket"]
 - ["OV16Botree911_Client17ComunicateService6Router", "OAuthToken"]
 - ["OV16Botree911_Client17ComunicateService6Router", "Parameters"]
 - ["OV16Botree911_Client17ComunicateService6Router", "ProjectList"]
 - !private ["OV16Botree911_Client17ComunicateService6Router", "Router"]
 - ["OV16Botree911_Client17ComunicateService6Router", "SignIn"]
+- ["OV16Botree911_Client17ComunicateService6Router", "StatusList"]
 - ["OV16Botree911_Client17ComunicateService6Router", "String"]
 - ["OV16Botree911_Client17ComunicateService6Router", "TicketList"]
 - !private ["OV16Botree911_Client17ComunicateService6Router", "URL"]
@@ -185,10 +187,12 @@ depends-member:
 - !private ["V10Foundation10URLRequest", "init"]
 - !private ["V10Foundation10URLRequest", "setValue"]
 - !private ["P9Alamofire21URLRequestConvertible", "Alamofire"]
+- ["P9Alamofire21URLRequestConvertible", "CreateTicket"]
 - !private ["P9Alamofire21URLRequestConvertible", "OAuthToken"]
 - ["P9Alamofire21URLRequestConvertible", "ProjectList"]
 - !private ["P9Alamofire21URLRequestConvertible", "Router"]
 - ["P9Alamofire21URLRequestConvertible", "SignIn"]
+- ["P9Alamofire21URLRequestConvertible", "StatusList"]
 - ["P9Alamofire21URLRequestConvertible", "TicketList"]
 - !private ["P9Alamofire21URLRequestConvertible", "URL"]
 - !private ["P9Alamofire21URLRequestConvertible", "URLRequest"]
@@ -326,4 +330,4 @@ depends-external:
 - "/Volumes/User Project/Project/Botree911_Client/DerivedData/Botree911_Client/Build/Products/Debug-iphonesimulator/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework/Headers/IQKeyboardManagerSwift-Swift.h"
 - "/Volumes/User Project/Project/Botree911_Client/DerivedData/Botree911_Client/Build/Products/Debug-iphonesimulator/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework/Headers/IQKeyboardManagerSwift-umbrella.h"
 - "/Volumes/User Project/Project/Botree911_Client/DerivedData/Botree911_Client/Build/Products/Debug-iphonesimulator/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework/Modules/module.modulemap"
-interface-hash: "bd184fc6370da2c33030142316405b4d"
+interface-hash: "ca6eb31013b6f663836a8d7b2a47e574"

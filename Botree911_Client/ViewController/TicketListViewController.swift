@@ -21,7 +21,12 @@ class TicketListViewController: AbstractViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        //For Add navigation bar button
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(btnAddOnClick))
+        
         title = getLocalizedString("title_ticket_list")
+        
         getTicketList()
     }// End viewDidLoad()
     
@@ -74,6 +79,19 @@ class TicketListViewController: AbstractViewController {
         }
         tblTicketList.reloadData()
     }// End procssGetResponceProjectList
+    
+//    MARK:- Actions
+    func btnAddOnClick() {
+        self.performSegue(withIdentifier: "showAddTicket", sender: self)
+    }// end btnAddOnClick()
+    
+    //    MARK: Prepare for segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showAddTicket" {
+            let addTicketVC = segue.destination as! AddTicketViewController
+            addTicketVC.projectId = projectId!
+        }
+    }
 }
 
 extension TicketListViewController: UITableViewDataSource,UITableViewDelegate {

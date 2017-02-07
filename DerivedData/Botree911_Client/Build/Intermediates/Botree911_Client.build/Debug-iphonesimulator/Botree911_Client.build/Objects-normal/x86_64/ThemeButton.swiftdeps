@@ -7,15 +7,15 @@ provides-member:
 - ["C16Botree911_Client11ThemeButton", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "UIButton"
-- !private "UIColor"
-- "NSCoder"
-- "AssignmentPrecedence"
-- !private "themeColor"
-- "ThemeButton"
-- !private "StringLiteralType"
-- !private "UIFont"
 - !private "UIControlState"
+- !private "UIColor"
+- "UIButton"
+- "ThemeButton"
+- "AssignmentPrecedence"
+- !private "StringLiteralType"
+- !private "themeColor"
+- "NSCoder"
+- !private "UIFont"
 depends-member:
 - !private ["Ps9AnyObject", "UIColor"]
 - !private ["Ps9AnyObject", "UIControlState"]

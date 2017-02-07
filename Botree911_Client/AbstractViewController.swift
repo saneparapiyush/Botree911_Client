@@ -34,12 +34,12 @@ class AbstractViewController: UIViewController, View  {
         }
     }
     
-    func hideNavigationController() {
+    func hideNavigationBar() {
         if let navController = self.navigationController {
             navController.setNavigationBarHidden(true, animated: true)
         }
     }
-    func showNavigationController() {
+    func showNavigationBar() {
         if let navController = self.navigationController {
             navController.setNavigationBarHidden(false, animated: true)
         }

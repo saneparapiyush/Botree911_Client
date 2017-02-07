@@ -7,12 +7,12 @@ provides-member:
 provides-dynamic-lookup:
 - "IQLayoutGuideConstraint"
 depends-top-level:
-- !private "kIQLayoutGuideConstraint"
-- "NSLayoutConstraint"
 - !private "objc_AssociationPolicy"
-- "CastingPrecedence"
-- !private "objc_getAssociatedObject"
+- !private "kIQLayoutGuideConstraint"
 - "UIViewController"
+- !private "objc_getAssociatedObject"
+- "CastingPrecedence"
+- "NSLayoutConstraint"
 - "StringLiteralType"
 - !private "objc_setAssociatedObject"
 depends-member:

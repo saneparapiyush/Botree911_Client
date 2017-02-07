@@ -11,9 +11,12 @@
 // Title of Pages
 "title_project_list" = "Project List";
 "title_ticket_list" = "Ticket List";
+"title_add_ticket" = "Add Ticket";
 
 
 // Progress Indicator
 "login_indicator" = "Please wait...";
 "project_list_indicator" = "Please wait...";
 "ticket_list_indicator" = "Please wait...";
+"status_list_indicator" = "Please wait...";
+"add_project_indicator" = "Please wait...";

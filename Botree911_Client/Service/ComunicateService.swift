@@ -20,7 +20,10 @@ struct ComunicateService {
         
         case SignIn(Parameters)
         case ProjectList()
+        case StatusList()
         case TicketList(Parameters)
+        case CreateTicket(Parameters)
+        
         
         var method: Alamofire.HTTPMethod {
             switch self {
@@ -28,8 +31,12 @@ struct ComunicateService {
                     return .post
                 case .ProjectList(_):
                     return .get
+                case .StatusList():
+                    return .get
                 case .TicketList(_):
                     return .get
+                case .CreateTicket(_):
+                    return .post
             }
         }
         
@@ -39,8 +46,12 @@ struct ComunicateService {
                     return "users/sign_in"
                 case .ProjectList( _):
                     return "projects/list"
+                case .StatusList( _):
+                    return "tickets/status_list"
                 case .TicketList(_):
                     return "tickets/list"
+                case .CreateTicket(_):
+                    return "tickets"
             }
         }
 
@@ -69,8 +80,14 @@ struct ComunicateService {
             case .ProjectList():
                 return try Alamofire.URLEncoding.default.encode(urlRequest, with: nil)
             
+            case .StatusList():
+                return try Alamofire.URLEncoding.default.encode(urlRequest, with: nil)
+                
             case .TicketList(let param):
                 return try Alamofire.URLEncoding.default.encode(urlRequest, with: param)
+                
+            case .CreateTicket(let params):
+                return try Alamofire.JSONEncoding.default.encode(urlRequest, with: params)
                 
             default:
                 return urlRequest

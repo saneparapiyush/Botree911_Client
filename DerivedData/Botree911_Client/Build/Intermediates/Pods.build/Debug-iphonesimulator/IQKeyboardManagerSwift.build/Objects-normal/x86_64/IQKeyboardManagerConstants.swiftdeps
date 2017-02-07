@@ -10,11 +10,11 @@ provides-member:
 - ["O22IQKeyboardManagerSwift25IQPreviousNextDisplayMode", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "IQAutoToolbarManageBehaviour"
-- "Int"
 - "IQPreviousNextDisplayMode"
-- !private "~="
+- "IQAutoToolbarManageBehaviour"
 - "=="
+- !private "~="
+- "Int"
 depends-member:
 - !private ["Ps17BitwiseOperations", "Stride"]
 - !private ["Ps17BitwiseOperations", "hashValue"]

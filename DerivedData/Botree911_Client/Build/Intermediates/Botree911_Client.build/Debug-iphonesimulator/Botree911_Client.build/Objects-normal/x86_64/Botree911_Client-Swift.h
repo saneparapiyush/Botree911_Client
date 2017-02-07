@@ -130,10 +130,47 @@ SWIFT_CLASS("_TtC16Botree911_Client22AbstractViewController")
 @interface AbstractViewController : UIViewController
 - (void)viewDidLoad;
 - (void)dismissIndicator;
-- (void)hideNavigationController;
-- (void)showNavigationController;
+- (void)hideNavigationBar;
+- (void)showNavigationBar;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class TextFieldValidator;
+@class UITextView;
+@class UITextField;
+@class UIPickerView;
+@class NSMutableDictionary;
+
+SWIFT_CLASS("_TtC16Botree911_Client23AddTicketViewController")
+@interface AddTicketViewController : AbstractViewController
+@property (nonatomic, strong) IBOutlet TextFieldValidator * _Null_unspecified txtTitleName;
+@property (nonatomic, strong) IBOutlet UITextView * _Null_unspecified txtViewDescription;
+@property (nonatomic, strong) IBOutlet UITextField * _Null_unspecified txtSelectProject;
+@property (nonatomic, strong) IBOutlet UITextField * _Null_unspecified txtSelectStatus;
+@property (nonatomic, strong) UIPickerView * _Nonnull picker;
+@property (nonatomic) NSInteger pickerTag;
+@property (nonatomic, strong) NSMutableDictionary * _Nonnull arrStatus;
+- (void)viewDidLoad;
+- (void)getDropDownData;
+- (void)getStatusList;
+- (void)getProjectList;
+- (void)configUI;
+- (void)createTicket;
+- (IBAction)btnCreateTicketOnClick:(id _Nonnull)sender;
+- (IBAction)btnCancelOnClick:(id _Nonnull)sender;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UIView;
+
+@interface AddTicketViewController (SWIFT_EXTENSION(Botree911_Client)) <UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate>
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView * _Nonnull)pickerView;
+- (NSInteger)pickerView:(UIPickerView * _Nonnull)pickerView numberOfRowsInComponent:(NSInteger)component;
+- (void)pickerView:(UIPickerView * _Nonnull)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component;
+- (UIView * _Nonnull)pickerView:(UIPickerView * _Nonnull)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView * _Nullable)view;
+- (void)textFieldDidBeginEditing:(UITextField * _Nonnull)textField;
 @end
 
 @class UIWindow;
@@ -166,7 +203,6 @@ SWIFT_CLASS("_TtC16Botree911_Client9AppRouter")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class TextFieldValidator;
 @class UIButton;
 
 SWIFT_CLASS("_TtC16Botree911_Client19LoginViewController")
@@ -182,7 +218,6 @@ SWIFT_CLASS("_TtC16Botree911_Client19LoginViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class UITextField;
 @class UITouch;
 @class UIEvent;
 
@@ -205,6 +240,7 @@ SWIFT_CLASS("_TtC16Botree911_Client15ProjectListCell")
 @property (nonatomic, strong) IBOutlet UILabel * _Null_unspecified lblProjectTitle;
 @property (nonatomic, strong) IBOutlet UILabel * _Null_unspecified lblProjectDescription;
 @property (nonatomic, strong) IBOutlet UILabel * _Null_unspecified lblTeamMember;
+@property (nonatomic, strong) IBOutlet UIButton * _Null_unspecified btnProjectInfo;
 - (void)setProjectListData;
 - (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
@@ -219,6 +255,7 @@ SWIFT_CLASS("_TtC16Botree911_Client25ProjectListViewController")
 @property (nonatomic, strong) IBOutlet UITableView * _Null_unspecified tblProjectList;
 - (void)viewDidLoad;
 - (void)getProjectList;
+- (void)btnSignOutOnClick;
 - (void)prepareForSegue:(UIStoryboardSegue * _Nonnull)segue sender:(id _Nullable)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
@@ -280,6 +317,8 @@ SWIFT_CLASS("_TtC16Botree911_Client24TicketListViewController")
 @property (nonatomic, strong) IBOutlet UITableView * _Null_unspecified tblTicketList;
 - (void)viewDidLoad;
 - (void)getTicketList;
+- (void)btnAddOnClick;
+- (void)prepareForSegue:(UIStoryboardSegue * _Nonnull)segue sender:(id _Nullable)sender;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -290,6 +329,11 @@ SWIFT_CLASS("_TtC16Botree911_Client24TicketListViewController")
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 - (void)tableView:(UITableView * _Nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 - (CGFloat)tableView:(UITableView * _Nonnull)tableView heightForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+@end
+
+
+@interface UITextField (SWIFT_EXTENSION(Botree911_Client))
+- (void)addRightSubView;
 @end
 
 

@@ -25,45 +25,30 @@ class ProjectListViewController: AbstractViewController {
         
         // Do any additional setup after loading the view.
         title = getLocalizedString("title_project_list")
-        showNavigationController()
+        showNavigationBar()
+        // For Add SignOut Button
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sign Out", style: .plain, target: self, action: #selector(btnSignOutOnClick))
+        
         getProjectList()
     }
     
     func getProjectList() {
         
+        let serviceManager = ServiceManager()
+        
         FTProgressIndicator.showProgressWithmessage(getLocalizedString("project_list_indicator"), userInteractionEnable: false)
-        do {
-            try Alamofire.request(ComunicateService.Router.ProjectList().asURLRequest()).debugLog().responseJSON(options: [JSONSerialization.ReadingOptions.allowFragments, JSONSerialization.ReadingOptions.mutableContainers])
-            {
-                (response) -> Void in
-                
-                switch response.result
-                {
-                case .success:
-                    if let value = response.result.value
-                    {
-                        let json = JSON(value)
-                        print("Project List Response: \(json)")
-                        
-                        if (json.dictionaryObject!["status"] as? Bool)! {
-                            self.processGetResponceProjectList(json: json["data"])
-                        } else {
-                            print((json.dictionaryObject!["message"])!)
-                        }
-                    }
-                    
-                    self.dismissIndicator()
-                case .failure(let error):
-                    print(error)
-                    self.dismissIndicator()
-                }
+        
+        serviceManager.getProjectList { (success, error, json) in
+            if success {
+                self.projectListSource = json!
+                self.tblProjectList.reloadData()
+            } else {
+                print(error)
             }
-        } catch let err{
-            print(err)
             self.dismissIndicator()
         }
     } // End getProjectList()
-    
+    /*
     func processGetResponceProjectList(json: JSON) {
         let projects = json["projects"]
         
@@ -74,7 +59,12 @@ class ProjectListViewController: AbstractViewController {
         }
         
         tblProjectList.reloadData()
-    } // End procssGetResponceProjectList
+    } // End procssGetResponceProjectList*/
+    //Mark:- Actions
+    func btnSignOutOnClick() {
+        
+    }//End btnSignOutOnClick()
+    
 //    MARK: Prepare for segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showTicketList" {
@@ -121,7 +111,11 @@ class ProjectListCell: UITableViewCell {
     @IBOutlet var lblProjectDescription: UILabel!
     @IBOutlet var lblTeamMember: UILabel!
     
+    @IBOutlet var btnProjectInfo: UIButton!
+    
     func setProjectListData() {
+        
+        btnProjectInfo.imageView?.contentMode = .center
         
         lblProjectTitle.text = project?.name
         lblProjectDescription.text = project?.description

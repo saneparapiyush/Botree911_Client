@@ -7,30 +7,30 @@ provides-nominal:
 provides-member:
 - ["C16Botree911_Client11AppDelegate", ""]
 provides-dynamic-lookup:
+- "applicationWillEnterForeground"
 - "applicationDidEnterBackground"
+- "window"
+- "applicationWillTerminate"
 - "applicationWillResignActive"
 - "application"
-- "applicationWillTerminate"
 - "applicationDidBecomeActive"
-- "window"
-- "applicationWillEnterForeground"
 depends-top-level:
-- "UIApplication"
-- "UIApplicationLaunchOptionsKey"
-- !private "AppRouter"
-- "UIWindow"
-- "AppDelegate"
-- "AssignmentPrecedence"
-- !private "StringLiteralType"
 - "Bool"
-- "keychain"
+- "AssignmentPrecedence"
+- "UIApplicationLaunchOptionsKey"
+- "AppDelegate"
 - !private "UserDefaults"
-- !private "IQKeyboardManager"
-- "UIApplicationDelegate"
 - "UIResponder"
+- "keychain"
+- "UIApplicationDelegate"
+- !private "AppRouter"
 - !private "!="
+- "UIWindow"
+- "UIApplication"
+- !private "StringLiteralType"
 - !private "BooleanLiteralType"
 - "KeychainSwift"
+- !private "IQKeyboardManager"
 depends-member:
 - !private ["Ps9AnyObject", "AppRouter"]
 - !private ["Ps9AnyObject", "IQKeyboardManager"]

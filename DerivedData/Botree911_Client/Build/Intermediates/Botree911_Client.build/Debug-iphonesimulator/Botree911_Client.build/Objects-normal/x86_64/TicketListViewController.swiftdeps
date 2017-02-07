@@ -10,48 +10,54 @@ provides-member:
 - ["C16Botree911_Client14TicketListCell", ""]
 provides-dynamic-lookup:
 - "viewDidLoad"
+- "tableView"
+- "tableView"
+- "tableView"
+- "tableView"
+- "lblTicketStatus"
+- "btnAddOnClick"
+- "setProjectListData"
+- "getTicketList"
+- "lblTicketDescription"
 - "tblTicketList"
 - "lblTicketTitle"
-- "setProjectListData"
-- "tableView"
-- "tableView"
-- "tableView"
-- "tableView"
-- "getTicketList"
-- "lblTicketStatus"
-- "lblTicketDescription"
+- "prepare"
 depends-top-level:
-- "Int"
-- "CGFloat"
-- !private "Alamofire"
-- "JSON"
-- "TicketListCell"
-- !private "Array"
-- !private "Void"
-- !private "Parameters"
-- "AbstractViewController"
-- !private "ComunicateService"
-- "CastingPrecedence"
-- !private "getLocalizedString"
-- "AssignmentPrecedence"
-- "UITableViewCell"
-- !private "JSONSerialization"
-- !private "=="
-- !private "print"
-- "IndexPath"
 - !private "Bool"
-- "UITableViewDataSource"
-- !private "StringLiteralType"
-- !private "Dictionary"
-- "UITableViewDelegate"
+- !private "Array"
 - "Ticket"
-- "UILabel"
-- "UITableView"
-- "TicketListViewController"
+- !private "getLocalizedString"
+- !private "UIBarButtonItem"
+- !private "ComunicateService"
+- !private "Alamofire"
+- !private "JSONSerialization"
+- !private "StringLiteralType"
+- "Int"
 - !private "BooleanLiteralType"
+- "UITableView"
 - !private "..<"
+- "TicketListCell"
+- "TicketListViewController"
+- "CastingPrecedence"
+- "AssignmentPrecedence"
+- !private "Parameters"
+- !private "print"
+- !private "=="
+- "AbstractViewController"
+- "UILabel"
+- "UITableViewDelegate"
+- "UIStoryboardSegue"
 - !private "FTProgressIndicator"
+- "UITableViewCell"
+- "UITableViewDataSource"
+- "JSON"
+- "CGFloat"
+- "IndexPath"
+- !private "AddTicketViewController"
+- !private "Dictionary"
+- !private "Void"
 depends-member:
+- !private ["C16Botree911_Client22AbstractViewController", "AddTicketViewController"]
 - !private ["C16Botree911_Client22AbstractViewController", "Alamofire"]
 - !private ["C16Botree911_Client22AbstractViewController", "Bool"]
 - ["C16Botree911_Client22AbstractViewController", "CGFloat"]
@@ -64,9 +70,12 @@ depends-member:
 - !private ["C16Botree911_Client22AbstractViewController", "Parameters"]
 - ["C16Botree911_Client22AbstractViewController", "Ticket"]
 - !private ["C16Botree911_Client22AbstractViewController", "TicketListCell"]
+- !private ["C16Botree911_Client22AbstractViewController", "UIBarButtonItem"]
+- ["C16Botree911_Client22AbstractViewController", "UIStoryboardSegue"]
 - ["C16Botree911_Client22AbstractViewController", "UITableView"]
 - ["C16Botree911_Client22AbstractViewController", "UITableViewCell"]
 - !private ["C16Botree911_Client22AbstractViewController", "Void"]
+- ["C16Botree911_Client22AbstractViewController", "btnAddOnClick"]
 - ["C16Botree911_Client22AbstractViewController", "deinit"]
 - !private ["C16Botree911_Client22AbstractViewController", "dismissIndicator"]
 - !private ["C16Botree911_Client22AbstractViewController", "getLocalizedString"]
@@ -74,8 +83,11 @@ depends-member:
 - ["C16Botree911_Client22AbstractViewController", "indexPathForPreferredFocusedView"]
 - ["C16Botree911_Client22AbstractViewController", "indexPathForPreferredFocusedViewInTableView"]
 - ["C16Botree911_Client22AbstractViewController", "init"]
+- !private ["C16Botree911_Client22AbstractViewController", "navigationItem"]
 - ["C16Botree911_Client22AbstractViewController", "numberOfSections"]
 - ["C16Botree911_Client22AbstractViewController", "numberOfSectionsInTableView"]
+- !private ["C16Botree911_Client22AbstractViewController", "performSegue"]
+- ["C16Botree911_Client22AbstractViewController", "prepare"]
 - !private ["C16Botree911_Client22AbstractViewController", "print"]
 - ["C16Botree911_Client22AbstractViewController", "processGetResponceTicketList"]
 - ["C16Botree911_Client22AbstractViewController", "projectId"]
@@ -101,6 +113,8 @@ depends-member:
 - ["C16Botree911_Client22AbstractViewController", "viewForZooming"]
 - ["C16Botree911_Client22AbstractViewController", "viewForZoomingInScrollView"]
 - ["C16Botree911_Client22AbstractViewController", ""]
+- ["C16Botree911_Client23AddTicketViewController", "deinit"]
+- !private ["C16Botree911_Client23AddTicketViewController", "projectId"]
 - !private ["Ps9AnyObject", "Alamofire"]
 - !private ["Ps9AnyObject", "ComunicateService"]
 - !private ["Ps9AnyObject", "FTProgressIndicator"]
@@ -108,12 +122,16 @@ depends-member:
 - !private ["Ps9AnyObject", "JSONSerialization"]
 - !private ["Ps9AnyObject", "ReadingOptions"]
 - ["Ps9AnyObject", "Ticket"]
+- !private ["Ps9AnyObject", "UIBarButtonItem"]
+- ["Ps9AnyObject", "btnAddOnClick"]
 - !private ["Ps9AnyObject", "debugLog"]
 - !private ["Ps9AnyObject", "dequeueReusableCell"]
 - !private ["Ps9AnyObject", "description"]
+- !private ["Ps9AnyObject", "destination"]
 - !private ["Ps9AnyObject", "dismissIndicator"]
 - !private ["Ps9AnyObject", "getLocalizedString"]
 - ["Ps9AnyObject", "getTicketList"]
+- !private ["Ps9AnyObject", "identifier"]
 - ["Ps9AnyObject", "indexPathForPreferredFocusedView"]
 - ["Ps9AnyObject", "indexPathForPreferredFocusedViewInTableView"]
 - !private ["Ps9AnyObject", "init"]
@@ -121,13 +139,17 @@ depends-member:
 - ["Ps9AnyObject", "lblTicketStatus"]
 - ["Ps9AnyObject", "lblTicketTitle"]
 - !private ["Ps9AnyObject", "name"]
+- !private ["Ps9AnyObject", "navigationItem"]
 - ["Ps9AnyObject", "numberOfSections"]
 - ["Ps9AnyObject", "numberOfSectionsInTableView"]
+- !private ["Ps9AnyObject", "performSegue"]
+- ["Ps9AnyObject", "prepare"]
 - !private ["Ps9AnyObject", "print"]
 - ["Ps9AnyObject", "processGetResponceTicketList"]
 - ["Ps9AnyObject", "projectId"]
 - !private ["Ps9AnyObject", "reloadData"]
 - !private ["Ps9AnyObject", "responseJSON"]
+- !private ["Ps9AnyObject", "rightBarButtonItem"]
 - ["Ps9AnyObject", "scrollViewDidEndDecelerating"]
 - ["Ps9AnyObject", "scrollViewDidEndDragging"]
 - ["Ps9AnyObject", "scrollViewDidEndScrollingAnimation"]
@@ -223,27 +245,35 @@ depends-member:
 - !private ["Ps7CVarArg", "Stride"]
 - !private ["Ps7CVarArg", "SubSequence"]
 - ["Ps7CVarArg", "Ticket"]
+- !private ["Ps7CVarArg", "UIBarButtonItem"]
 - !private ["Ps7CVarArg", "Value"]
 - !private ["Ps7CVarArg", "_DisabledRangeIndex"]
 - !private ["Ps7CVarArg", "_Element"]
 - !private ["Ps7CVarArg", "append"]
+- ["Ps7CVarArg", "btnAddOnClick"]
 - !private ["Ps7CVarArg", "count"]
 - !private ["Ps7CVarArg", "dequeueReusableCell"]
+- !private ["Ps7CVarArg", "destination"]
 - !private ["Ps7CVarArg", "dismissIndicator"]
 - !private ["Ps7CVarArg", "getLocalizedString"]
 - ["Ps7CVarArg", "getTicketList"]
+- !private ["Ps7CVarArg", "identifier"]
 - ["Ps7CVarArg", "indexPathForPreferredFocusedView"]
 - ["Ps7CVarArg", "indexPathForPreferredFocusedViewInTableView"]
 - ["Ps7CVarArg", "init"]
 - ["Ps7CVarArg", "lblTicketDescription"]
 - ["Ps7CVarArg", "lblTicketStatus"]
 - ["Ps7CVarArg", "lblTicketTitle"]
+- !private ["Ps7CVarArg", "navigationItem"]
 - ["Ps7CVarArg", "numberOfSections"]
 - ["Ps7CVarArg", "numberOfSectionsInTableView"]
+- !private ["Ps7CVarArg", "performSegue"]
+- ["Ps7CVarArg", "prepare"]
 - !private ["Ps7CVarArg", "print"]
 - ["Ps7CVarArg", "processGetResponceTicketList"]
 - ["Ps7CVarArg", "projectId"]
 - !private ["Ps7CVarArg", "reloadData"]
+- !private ["Ps7CVarArg", "rightBarButtonItem"]
 - ["Ps7CVarArg", "scrollViewDidEndDecelerating"]
 - ["Ps7CVarArg", "scrollViewDidEndDragging"]
 - ["Ps7CVarArg", "scrollViewDidEndScrollingAnimation"]
@@ -317,32 +347,40 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "ReadingOptions"]
 - !private ["Ps28CustomDebugStringConvertible", "SubSequence"]
 - ["Ps28CustomDebugStringConvertible", "Ticket"]
+- !private ["Ps28CustomDebugStringConvertible", "UIBarButtonItem"]
 - !private ["Ps28CustomDebugStringConvertible", "Value"]
 - !private ["Ps28CustomDebugStringConvertible", "_Element"]
 - !private ["Ps28CustomDebugStringConvertible", "append"]
 - !private ["Ps28CustomDebugStringConvertible", "arrayValue"]
+- ["Ps28CustomDebugStringConvertible", "btnAddOnClick"]
 - !private ["Ps28CustomDebugStringConvertible", "count"]
 - !private ["Ps28CustomDebugStringConvertible", "debugLog"]
 - !private ["Ps28CustomDebugStringConvertible", "dequeueReusableCell"]
+- !private ["Ps28CustomDebugStringConvertible", "destination"]
 - !private ["Ps28CustomDebugStringConvertible", "dictionaryObject"]
 - !private ["Ps28CustomDebugStringConvertible", "dismissIndicator"]
 - !private ["Ps28CustomDebugStringConvertible", "failure"]
 - !private ["Ps28CustomDebugStringConvertible", "getLocalizedString"]
 - ["Ps28CustomDebugStringConvertible", "getTicketList"]
+- !private ["Ps28CustomDebugStringConvertible", "identifier"]
 - ["Ps28CustomDebugStringConvertible", "indexPathForPreferredFocusedView"]
 - ["Ps28CustomDebugStringConvertible", "indexPathForPreferredFocusedViewInTableView"]
 - ["Ps28CustomDebugStringConvertible", "init"]
 - ["Ps28CustomDebugStringConvertible", "lblTicketDescription"]
 - ["Ps28CustomDebugStringConvertible", "lblTicketStatus"]
 - ["Ps28CustomDebugStringConvertible", "lblTicketTitle"]
+- !private ["Ps28CustomDebugStringConvertible", "navigationItem"]
 - ["Ps28CustomDebugStringConvertible", "numberOfSections"]
 - ["Ps28CustomDebugStringConvertible", "numberOfSectionsInTableView"]
+- !private ["Ps28CustomDebugStringConvertible", "performSegue"]
+- ["Ps28CustomDebugStringConvertible", "prepare"]
 - !private ["Ps28CustomDebugStringConvertible", "print"]
 - ["Ps28CustomDebugStringConvertible", "processGetResponceTicketList"]
 - ["Ps28CustomDebugStringConvertible", "projectId"]
 - !private ["Ps28CustomDebugStringConvertible", "reloadData"]
 - !private ["Ps28CustomDebugStringConvertible", "responseJSON"]
 - !private ["Ps28CustomDebugStringConvertible", "result"]
+- !private ["Ps28CustomDebugStringConvertible", "rightBarButtonItem"]
 - !private ["Ps28CustomDebugStringConvertible", "row"]
 - ["Ps28CustomDebugStringConvertible", "scrollViewDidEndDecelerating"]
 - ["Ps28CustomDebugStringConvertible", "scrollViewDidEndDragging"]
@@ -408,34 +446,42 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "Stride"]
 - !private ["Ps23CustomStringConvertible", "SubSequence"]
 - ["Ps23CustomStringConvertible", "Ticket"]
+- !private ["Ps23CustomStringConvertible", "UIBarButtonItem"]
 - !private ["Ps23CustomStringConvertible", "Value"]
 - !private ["Ps23CustomStringConvertible", "_DisabledRangeIndex"]
 - !private ["Ps23CustomStringConvertible", "_Element"]
 - !private ["Ps23CustomStringConvertible", "_getBuiltinLogicValue"]
 - !private ["Ps23CustomStringConvertible", "append"]
 - !private ["Ps23CustomStringConvertible", "arrayValue"]
+- ["Ps23CustomStringConvertible", "btnAddOnClick"]
 - !private ["Ps23CustomStringConvertible", "count"]
 - !private ["Ps23CustomStringConvertible", "debugLog"]
 - !private ["Ps23CustomStringConvertible", "dequeueReusableCell"]
+- !private ["Ps23CustomStringConvertible", "destination"]
 - !private ["Ps23CustomStringConvertible", "dictionaryObject"]
 - !private ["Ps23CustomStringConvertible", "dismissIndicator"]
 - !private ["Ps23CustomStringConvertible", "failure"]
 - !private ["Ps23CustomStringConvertible", "getLocalizedString"]
 - ["Ps23CustomStringConvertible", "getTicketList"]
+- !private ["Ps23CustomStringConvertible", "identifier"]
 - ["Ps23CustomStringConvertible", "indexPathForPreferredFocusedView"]
 - ["Ps23CustomStringConvertible", "indexPathForPreferredFocusedViewInTableView"]
 - ["Ps23CustomStringConvertible", "init"]
 - ["Ps23CustomStringConvertible", "lblTicketDescription"]
 - ["Ps23CustomStringConvertible", "lblTicketStatus"]
 - ["Ps23CustomStringConvertible", "lblTicketTitle"]
+- !private ["Ps23CustomStringConvertible", "navigationItem"]
 - ["Ps23CustomStringConvertible", "numberOfSections"]
 - ["Ps23CustomStringConvertible", "numberOfSectionsInTableView"]
+- !private ["Ps23CustomStringConvertible", "performSegue"]
+- ["Ps23CustomStringConvertible", "prepare"]
 - !private ["Ps23CustomStringConvertible", "print"]
 - ["Ps23CustomStringConvertible", "processGetResponceTicketList"]
 - ["Ps23CustomStringConvertible", "projectId"]
 - !private ["Ps23CustomStringConvertible", "reloadData"]
 - !private ["Ps23CustomStringConvertible", "responseJSON"]
 - !private ["Ps23CustomStringConvertible", "result"]
+- !private ["Ps23CustomStringConvertible", "rightBarButtonItem"]
 - !private ["Ps23CustomStringConvertible", "row"]
 - ["Ps23CustomStringConvertible", "scrollViewDidEndDecelerating"]
 - ["Ps23CustomStringConvertible", "scrollViewDidEndDragging"]
@@ -502,17 +548,22 @@ depends-member:
 - !private ["Ps9Equatable", "Stride"]
 - !private ["Ps9Equatable", "SubSequence"]
 - ["Ps9Equatable", "Ticket"]
+- !private ["Ps9Equatable", "UIBarButtonItem"]
 - !private ["Ps9Equatable", "_DisabledRangeIndex"]
 - !private ["Ps9Equatable", "_Element"]
 - !private ["Ps9Equatable", "_getBuiltinLogicValue"]
+- !private ["Ps9Equatable", "add"]
 - !private ["Ps9Equatable", "allowFragments"]
 - !private ["Ps9Equatable", "arrayValue"]
+- ["Ps9Equatable", "btnAddOnClick"]
 - !private ["Ps9Equatable", "count"]
 - !private ["Ps9Equatable", "dequeueReusableCell"]
+- !private ["Ps9Equatable", "destination"]
 - !private ["Ps9Equatable", "dictionaryObject"]
 - !private ["Ps9Equatable", "dismissIndicator"]
 - !private ["Ps9Equatable", "getLocalizedString"]
 - ["Ps9Equatable", "getTicketList"]
+- !private ["Ps9Equatable", "identifier"]
 - ["Ps9Equatable", "indexPathForPreferredFocusedView"]
 - ["Ps9Equatable", "indexPathForPreferredFocusedViewInTableView"]
 - !private ["Ps9Equatable", "init"]
@@ -520,12 +571,16 @@ depends-member:
 - ["Ps9Equatable", "lblTicketStatus"]
 - ["Ps9Equatable", "lblTicketTitle"]
 - !private ["Ps9Equatable", "mutableContainers"]
+- !private ["Ps9Equatable", "navigationItem"]
 - ["Ps9Equatable", "numberOfSections"]
 - ["Ps9Equatable", "numberOfSectionsInTableView"]
+- !private ["Ps9Equatable", "performSegue"]
+- ["Ps9Equatable", "prepare"]
 - !private ["Ps9Equatable", "print"]
 - ["Ps9Equatable", "processGetResponceTicketList"]
 - ["Ps9Equatable", "projectId"]
 - !private ["Ps9Equatable", "reloadData"]
+- !private ["Ps9Equatable", "rightBarButtonItem"]
 - !private ["Ps9Equatable", "row"]
 - ["Ps9Equatable", "scrollViewDidEndDecelerating"]
 - ["Ps9Equatable", "scrollViewDidEndDragging"]
@@ -660,24 +715,33 @@ depends-member:
 - !private ["Ps8Hashable", "ReadingOptions"]
 - !private ["Ps8Hashable", "Stride"]
 - ["Ps8Hashable", "Ticket"]
+- !private ["Ps8Hashable", "UIBarButtonItem"]
 - !private ["Ps8Hashable", "_DisabledRangeIndex"]
 - !private ["Ps8Hashable", "_getBuiltinLogicValue"]
+- !private ["Ps8Hashable", "add"]
+- ["Ps8Hashable", "btnAddOnClick"]
 - !private ["Ps8Hashable", "dequeueReusableCell"]
+- !private ["Ps8Hashable", "destination"]
 - !private ["Ps8Hashable", "dismissIndicator"]
 - !private ["Ps8Hashable", "getLocalizedString"]
 - ["Ps8Hashable", "getTicketList"]
+- !private ["Ps8Hashable", "identifier"]
 - ["Ps8Hashable", "indexPathForPreferredFocusedView"]
 - ["Ps8Hashable", "indexPathForPreferredFocusedViewInTableView"]
 - !private ["Ps8Hashable", "init"]
 - ["Ps8Hashable", "lblTicketDescription"]
 - ["Ps8Hashable", "lblTicketStatus"]
 - ["Ps8Hashable", "lblTicketTitle"]
+- !private ["Ps8Hashable", "navigationItem"]
 - ["Ps8Hashable", "numberOfSections"]
 - ["Ps8Hashable", "numberOfSectionsInTableView"]
+- !private ["Ps8Hashable", "performSegue"]
+- ["Ps8Hashable", "prepare"]
 - !private ["Ps8Hashable", "print"]
 - ["Ps8Hashable", "processGetResponceTicketList"]
 - ["Ps8Hashable", "projectId"]
 - !private ["Ps8Hashable", "reloadData"]
+- !private ["Ps8Hashable", "rightBarButtonItem"]
 - !private ["Ps8Hashable", "row"]
 - ["Ps8Hashable", "scrollViewDidEndDecelerating"]
 - ["Ps8Hashable", "scrollViewDidEndDragging"]
@@ -804,6 +868,8 @@ depends-member:
 - !private ["PSo8NSCoding", "JSON"]
 - !private ["PSo8NSCoding", "JSONSerialization"]
 - ["PSo8NSCoding", "Ticket"]
+- !private ["PSo8NSCoding", "UIBarButtonItem"]
+- ["PSo8NSCoding", "btnAddOnClick"]
 - !private ["PSo8NSCoding", "dequeueReusableCell"]
 - !private ["PSo8NSCoding", "dismissIndicator"]
 - !private ["PSo8NSCoding", "getLocalizedString"]
@@ -814,12 +880,16 @@ depends-member:
 - ["PSo8NSCoding", "lblTicketDescription"]
 - ["PSo8NSCoding", "lblTicketStatus"]
 - ["PSo8NSCoding", "lblTicketTitle"]
+- !private ["PSo8NSCoding", "navigationItem"]
 - ["PSo8NSCoding", "numberOfSections"]
 - ["PSo8NSCoding", "numberOfSectionsInTableView"]
+- !private ["PSo8NSCoding", "performSegue"]
+- ["PSo8NSCoding", "prepare"]
 - !private ["PSo8NSCoding", "print"]
 - ["PSo8NSCoding", "processGetResponceTicketList"]
 - ["PSo8NSCoding", "projectId"]
 - !private ["PSo8NSCoding", "reloadData"]
+- !private ["PSo8NSCoding", "rightBarButtonItem"]
 - ["PSo8NSCoding", "scrollViewDidEndDecelerating"]
 - ["PSo8NSCoding", "scrollViewDidEndDragging"]
 - ["PSo8NSCoding", "scrollViewDidEndScrollingAnimation"]
@@ -852,14 +922,19 @@ depends-member:
 - !private ["PSo26NSExtensionRequestHandling", "JSON"]
 - !private ["PSo26NSExtensionRequestHandling", "JSONSerialization"]
 - ["PSo26NSExtensionRequestHandling", "Ticket"]
+- !private ["PSo26NSExtensionRequestHandling", "UIBarButtonItem"]
+- ["PSo26NSExtensionRequestHandling", "btnAddOnClick"]
 - !private ["PSo26NSExtensionRequestHandling", "dismissIndicator"]
 - !private ["PSo26NSExtensionRequestHandling", "getLocalizedString"]
 - ["PSo26NSExtensionRequestHandling", "getTicketList"]
 - ["PSo26NSExtensionRequestHandling", "indexPathForPreferredFocusedView"]
 - ["PSo26NSExtensionRequestHandling", "indexPathForPreferredFocusedViewInTableView"]
 - !private ["PSo26NSExtensionRequestHandling", "init"]
+- !private ["PSo26NSExtensionRequestHandling", "navigationItem"]
 - ["PSo26NSExtensionRequestHandling", "numberOfSections"]
 - ["PSo26NSExtensionRequestHandling", "numberOfSectionsInTableView"]
+- !private ["PSo26NSExtensionRequestHandling", "performSegue"]
+- ["PSo26NSExtensionRequestHandling", "prepare"]
 - !private ["PSo26NSExtensionRequestHandling", "print"]
 - ["PSo26NSExtensionRequestHandling", "processGetResponceTicketList"]
 - ["PSo26NSExtensionRequestHandling", "projectId"]
@@ -886,6 +961,7 @@ depends-member:
 - ["PSo26NSExtensionRequestHandling", "viewForZoomingInScrollView"]
 - ["PSo26NSExtensionRequestHandling", ""]
 - !private ["PSo16NSMutableCopying", "init"]
+- !private ["CSo8NSObject", "AddTicketViewController"]
 - !private ["CSo8NSObject", "Alamofire"]
 - !private ["CSo8NSObject", "Bool"]
 - ["CSo8NSObject", "CGFloat"]
@@ -899,26 +975,35 @@ depends-member:
 - !private ["CSo8NSObject", "ReadingOptions"]
 - ["CSo8NSObject", "Ticket"]
 - !private ["CSo8NSObject", "TicketListCell"]
+- !private ["CSo8NSObject", "UIBarButtonItem"]
 - ["CSo8NSObject", "UILabel"]
+- ["CSo8NSObject", "UIStoryboardSegue"]
 - ["CSo8NSObject", "UITableView"]
 - ["CSo8NSObject", "UITableViewCell"]
 - !private ["CSo8NSObject", "Void"]
+- ["CSo8NSObject", "btnAddOnClick"]
 - !private ["CSo8NSObject", "dequeueReusableCell"]
+- !private ["CSo8NSObject", "destination"]
 - !private ["CSo8NSObject", "dismissIndicator"]
 - !private ["CSo8NSObject", "getLocalizedString"]
 - ["CSo8NSObject", "getTicketList"]
+- !private ["CSo8NSObject", "identifier"]
 - ["CSo8NSObject", "indexPathForPreferredFocusedView"]
 - ["CSo8NSObject", "indexPathForPreferredFocusedViewInTableView"]
 - ["CSo8NSObject", "init"]
 - ["CSo8NSObject", "lblTicketDescription"]
 - ["CSo8NSObject", "lblTicketStatus"]
 - ["CSo8NSObject", "lblTicketTitle"]
+- !private ["CSo8NSObject", "navigationItem"]
 - ["CSo8NSObject", "numberOfSections"]
 - ["CSo8NSObject", "numberOfSectionsInTableView"]
+- !private ["CSo8NSObject", "performSegue"]
+- ["CSo8NSObject", "prepare"]
 - !private ["CSo8NSObject", "print"]
 - ["CSo8NSObject", "processGetResponceTicketList"]
 - ["CSo8NSObject", "projectId"]
 - !private ["CSo8NSObject", "reloadData"]
+- !private ["CSo8NSObject", "rightBarButtonItem"]
 - ["CSo8NSObject", "scrollViewDidEndDecelerating"]
 - ["CSo8NSObject", "scrollViewDidEndDragging"]
 - ["CSo8NSObject", "scrollViewDidEndScrollingAnimation"]
@@ -951,22 +1036,30 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "JSONSerialization"]
 - !private ["PSo16NSObjectProtocol", "ReadingOptions"]
 - ["PSo16NSObjectProtocol", "Ticket"]
+- !private ["PSo16NSObjectProtocol", "UIBarButtonItem"]
+- ["PSo16NSObjectProtocol", "btnAddOnClick"]
 - !private ["PSo16NSObjectProtocol", "dequeueReusableCell"]
+- !private ["PSo16NSObjectProtocol", "destination"]
 - !private ["PSo16NSObjectProtocol", "dismissIndicator"]
 - !private ["PSo16NSObjectProtocol", "getLocalizedString"]
 - ["PSo16NSObjectProtocol", "getTicketList"]
+- !private ["PSo16NSObjectProtocol", "identifier"]
 - ["PSo16NSObjectProtocol", "indexPathForPreferredFocusedView"]
 - ["PSo16NSObjectProtocol", "indexPathForPreferredFocusedViewInTableView"]
 - !private ["PSo16NSObjectProtocol", "init"]
 - ["PSo16NSObjectProtocol", "lblTicketDescription"]
 - ["PSo16NSObjectProtocol", "lblTicketStatus"]
 - ["PSo16NSObjectProtocol", "lblTicketTitle"]
+- !private ["PSo16NSObjectProtocol", "navigationItem"]
 - ["PSo16NSObjectProtocol", "numberOfSections"]
 - ["PSo16NSObjectProtocol", "numberOfSectionsInTableView"]
+- !private ["PSo16NSObjectProtocol", "performSegue"]
+- ["PSo16NSObjectProtocol", "prepare"]
 - !private ["PSo16NSObjectProtocol", "print"]
 - ["PSo16NSObjectProtocol", "processGetResponceTicketList"]
 - ["PSo16NSObjectProtocol", "projectId"]
 - !private ["PSo16NSObjectProtocol", "reloadData"]
+- !private ["PSo16NSObjectProtocol", "rightBarButtonItem"]
 - ["PSo16NSObjectProtocol", "scrollViewDidEndDecelerating"]
 - ["PSo16NSObjectProtocol", "scrollViewDidEndDragging"]
 - ["PSo16NSObjectProtocol", "scrollViewDidEndScrollingAnimation"]
@@ -1051,6 +1144,7 @@ depends-member:
 - !private ["Ps16RawRepresentable", "IndexDistance"]
 - !private ["Ps16RawRepresentable", "SubSequence"]
 - !private ["Ps16RawRepresentable", "_Element"]
+- !private ["Ps16RawRepresentable", "add"]
 - !private ["Ps16RawRepresentable", "allowFragments"]
 - !private ["Ps16RawRepresentable", "arrayValue"]
 - !private ["Ps16RawRepresentable", "count"]
@@ -1073,6 +1167,7 @@ depends-member:
 - !private ["OV16Botree911_Client17ComunicateService6Router", "TicketList"]
 - !private ["OV16Botree911_Client17ComunicateService6Router", "asURLRequest"]
 - ["OV16Botree911_Client17ComunicateService6Router", "deinit"]
+- ["V10ObjectiveC8Selector", "deinit"]
 - !private ["Ps8Sequence", "Element"]
 - !private ["Ps8Sequence", "Index"]
 - !private ["Ps8Sequence", "IndexDistance"]
@@ -1123,6 +1218,7 @@ depends-member:
 - ["C16Botree911_Client14TicketListCell", "lblTicketTitle"]
 - ["C16Botree911_Client14TicketListCell", "setProjectListData"]
 - ["C16Botree911_Client14TicketListCell", "ticket"]
+- !private ["C16Botree911_Client24TicketListViewController", "AddTicketViewController"]
 - !private ["C16Botree911_Client24TicketListViewController", "Alamofire"]
 - !private ["C16Botree911_Client24TicketListViewController", "Bool"]
 - ["C16Botree911_Client24TicketListViewController", "CGFloat"]
@@ -1135,9 +1231,12 @@ depends-member:
 - !private ["C16Botree911_Client24TicketListViewController", "Parameters"]
 - ["C16Botree911_Client24TicketListViewController", "Ticket"]
 - !private ["C16Botree911_Client24TicketListViewController", "TicketListCell"]
+- !private ["C16Botree911_Client24TicketListViewController", "UIBarButtonItem"]
+- ["C16Botree911_Client24TicketListViewController", "UIStoryboardSegue"]
 - ["C16Botree911_Client24TicketListViewController", "UITableView"]
 - ["C16Botree911_Client24TicketListViewController", "UITableViewCell"]
 - !private ["C16Botree911_Client24TicketListViewController", "Void"]
+- ["C16Botree911_Client24TicketListViewController", "btnAddOnClick"]
 - ["C16Botree911_Client24TicketListViewController", "deinit"]
 - !private ["C16Botree911_Client24TicketListViewController", "dismissIndicator"]
 - !private ["C16Botree911_Client24TicketListViewController", "getLocalizedString"]
@@ -1145,8 +1244,11 @@ depends-member:
 - ["C16Botree911_Client24TicketListViewController", "indexPathForPreferredFocusedView"]
 - ["C16Botree911_Client24TicketListViewController", "indexPathForPreferredFocusedViewInTableView"]
 - ["C16Botree911_Client24TicketListViewController", "init"]
+- !private ["C16Botree911_Client24TicketListViewController", "navigationItem"]
 - ["C16Botree911_Client24TicketListViewController", "numberOfSections"]
 - ["C16Botree911_Client24TicketListViewController", "numberOfSectionsInTableView"]
+- !private ["C16Botree911_Client24TicketListViewController", "performSegue"]
+- ["C16Botree911_Client24TicketListViewController", "prepare"]
 - !private ["C16Botree911_Client24TicketListViewController", "print"]
 - ["C16Botree911_Client24TicketListViewController", "processGetResponceTicketList"]
 - ["C16Botree911_Client24TicketListViewController", "projectId"]
@@ -1197,6 +1299,8 @@ depends-member:
 - !private ["PSo21UIAppearanceContainer", "JSON"]
 - !private ["PSo21UIAppearanceContainer", "JSONSerialization"]
 - ["PSo21UIAppearanceContainer", "Ticket"]
+- !private ["PSo21UIAppearanceContainer", "UIBarButtonItem"]
+- ["PSo21UIAppearanceContainer", "btnAddOnClick"]
 - !private ["PSo21UIAppearanceContainer", "dequeueReusableCell"]
 - !private ["PSo21UIAppearanceContainer", "dismissIndicator"]
 - !private ["PSo21UIAppearanceContainer", "getLocalizedString"]
@@ -1207,8 +1311,11 @@ depends-member:
 - ["PSo21UIAppearanceContainer", "lblTicketDescription"]
 - ["PSo21UIAppearanceContainer", "lblTicketStatus"]
 - ["PSo21UIAppearanceContainer", "lblTicketTitle"]
+- !private ["PSo21UIAppearanceContainer", "navigationItem"]
 - ["PSo21UIAppearanceContainer", "numberOfSections"]
 - ["PSo21UIAppearanceContainer", "numberOfSectionsInTableView"]
+- !private ["PSo21UIAppearanceContainer", "performSegue"]
+- ["PSo21UIAppearanceContainer", "prepare"]
 - !private ["PSo21UIAppearanceContainer", "print"]
 - ["PSo21UIAppearanceContainer", "processGetResponceTicketList"]
 - ["PSo21UIAppearanceContainer", "projectId"]
@@ -1238,20 +1345,30 @@ depends-member:
 - ["PSo21UIAppearanceContainer", "viewForZooming"]
 - ["PSo21UIAppearanceContainer", "viewForZoomingInScrollView"]
 - ["PSo21UIAppearanceContainer", ""]
+- ["CSo15UIBarButtonItem", "deinit"]
+- !private ["CSo15UIBarButtonItem", "init"]
+- !private ["OSC21UIBarButtonSystemItem", "add"]
+- ["OSC21UIBarButtonSystemItem", "deinit"]
+- !private ["CSo9UIBarItem", "init"]
 - !private ["PSo18UIContentContainer", "Alamofire"]
 - !private ["PSo18UIContentContainer", "ComunicateService"]
 - !private ["PSo18UIContentContainer", "FTProgressIndicator"]
 - !private ["PSo18UIContentContainer", "JSON"]
 - !private ["PSo18UIContentContainer", "JSONSerialization"]
 - ["PSo18UIContentContainer", "Ticket"]
+- !private ["PSo18UIContentContainer", "UIBarButtonItem"]
+- ["PSo18UIContentContainer", "btnAddOnClick"]
 - !private ["PSo18UIContentContainer", "dismissIndicator"]
 - !private ["PSo18UIContentContainer", "getLocalizedString"]
 - ["PSo18UIContentContainer", "getTicketList"]
 - ["PSo18UIContentContainer", "indexPathForPreferredFocusedView"]
 - ["PSo18UIContentContainer", "indexPathForPreferredFocusedViewInTableView"]
 - !private ["PSo18UIContentContainer", "init"]
+- !private ["PSo18UIContentContainer", "navigationItem"]
 - ["PSo18UIContentContainer", "numberOfSections"]
 - ["PSo18UIContentContainer", "numberOfSectionsInTableView"]
+- !private ["PSo18UIContentContainer", "performSegue"]
+- ["PSo18UIContentContainer", "prepare"]
 - !private ["PSo18UIContentContainer", "print"]
 - ["PSo18UIContentContainer", "processGetResponceTicketList"]
 - ["PSo18UIContentContainer", "projectId"]
@@ -1304,6 +1421,8 @@ depends-member:
 - !private ["PSo18UIFocusEnvironment", "JSON"]
 - !private ["PSo18UIFocusEnvironment", "JSONSerialization"]
 - ["PSo18UIFocusEnvironment", "Ticket"]
+- !private ["PSo18UIFocusEnvironment", "UIBarButtonItem"]
+- ["PSo18UIFocusEnvironment", "btnAddOnClick"]
 - !private ["PSo18UIFocusEnvironment", "dequeueReusableCell"]
 - !private ["PSo18UIFocusEnvironment", "dismissIndicator"]
 - !private ["PSo18UIFocusEnvironment", "getLocalizedString"]
@@ -1314,8 +1433,11 @@ depends-member:
 - ["PSo18UIFocusEnvironment", "lblTicketDescription"]
 - ["PSo18UIFocusEnvironment", "lblTicketStatus"]
 - ["PSo18UIFocusEnvironment", "lblTicketTitle"]
+- !private ["PSo18UIFocusEnvironment", "navigationItem"]
 - ["PSo18UIFocusEnvironment", "numberOfSections"]
 - ["PSo18UIFocusEnvironment", "numberOfSectionsInTableView"]
+- !private ["PSo18UIFocusEnvironment", "performSegue"]
+- ["PSo18UIFocusEnvironment", "prepare"]
 - !private ["PSo18UIFocusEnvironment", "print"]
 - ["PSo18UIFocusEnvironment", "processGetResponceTicketList"]
 - ["PSo18UIFocusEnvironment", "projectId"]
@@ -1363,6 +1485,11 @@ depends-member:
 - ["PSo27UIGestureRecognizerDelegate", "ticket"]
 - ["PSo27UIGestureRecognizerDelegate", ""]
 - !private ["CSo7UILabel", "text"]
+- ["CSo16UINavigationItem", "deinit"]
+- !private ["CSo16UINavigationItem", "rightBarButtonItem"]
+- !private ["PSo22UIPickerViewDataSource", "projectId"]
+- !private ["PSo20UIPickerViewDelegate", "projectId"]
+- !private ["CSo11UIResponder", "AddTicketViewController"]
 - !private ["CSo11UIResponder", "Alamofire"]
 - !private ["CSo11UIResponder", "Bool"]
 - ["CSo11UIResponder", "CGFloat"]
@@ -1375,10 +1502,13 @@ depends-member:
 - !private ["CSo11UIResponder", "Parameters"]
 - ["CSo11UIResponder", "Ticket"]
 - !private ["CSo11UIResponder", "TicketListCell"]
+- !private ["CSo11UIResponder", "UIBarButtonItem"]
 - ["CSo11UIResponder", "UILabel"]
+- ["CSo11UIResponder", "UIStoryboardSegue"]
 - ["CSo11UIResponder", "UITableView"]
 - ["CSo11UIResponder", "UITableViewCell"]
 - !private ["CSo11UIResponder", "Void"]
+- ["CSo11UIResponder", "btnAddOnClick"]
 - !private ["CSo11UIResponder", "dequeueReusableCell"]
 - !private ["CSo11UIResponder", "dismissIndicator"]
 - !private ["CSo11UIResponder", "getLocalizedString"]
@@ -1389,8 +1519,11 @@ depends-member:
 - ["CSo11UIResponder", "lblTicketDescription"]
 - ["CSo11UIResponder", "lblTicketStatus"]
 - ["CSo11UIResponder", "lblTicketTitle"]
+- !private ["CSo11UIResponder", "navigationItem"]
 - ["CSo11UIResponder", "numberOfSections"]
 - ["CSo11UIResponder", "numberOfSectionsInTableView"]
+- !private ["CSo11UIResponder", "performSegue"]
+- ["CSo11UIResponder", "prepare"]
 - !private ["CSo11UIResponder", "print"]
 - ["CSo11UIResponder", "processGetResponceTicketList"]
 - ["CSo11UIResponder", "projectId"]
@@ -1425,6 +1558,8 @@ depends-member:
 - !private ["PSo30UIResponderStandardEditActions", "JSON"]
 - !private ["PSo30UIResponderStandardEditActions", "JSONSerialization"]
 - ["PSo30UIResponderStandardEditActions", "Ticket"]
+- !private ["PSo30UIResponderStandardEditActions", "UIBarButtonItem"]
+- ["PSo30UIResponderStandardEditActions", "btnAddOnClick"]
 - !private ["PSo30UIResponderStandardEditActions", "dequeueReusableCell"]
 - !private ["PSo30UIResponderStandardEditActions", "dismissIndicator"]
 - !private ["PSo30UIResponderStandardEditActions", "getLocalizedString"]
@@ -1435,8 +1570,11 @@ depends-member:
 - ["PSo30UIResponderStandardEditActions", "lblTicketDescription"]
 - ["PSo30UIResponderStandardEditActions", "lblTicketStatus"]
 - ["PSo30UIResponderStandardEditActions", "lblTicketTitle"]
+- !private ["PSo30UIResponderStandardEditActions", "navigationItem"]
 - ["PSo30UIResponderStandardEditActions", "numberOfSections"]
 - ["PSo30UIResponderStandardEditActions", "numberOfSectionsInTableView"]
+- !private ["PSo30UIResponderStandardEditActions", "performSegue"]
+- ["PSo30UIResponderStandardEditActions", "prepare"]
 - !private ["PSo30UIResponderStandardEditActions", "print"]
 - ["PSo30UIResponderStandardEditActions", "processGetResponceTicketList"]
 - ["PSo30UIResponderStandardEditActions", "projectId"]
@@ -1474,13 +1612,17 @@ depends-member:
 - !private ["PSo20UIScrollViewDelegate", "JSON"]
 - !private ["PSo20UIScrollViewDelegate", "JSONSerialization"]
 - ["PSo20UIScrollViewDelegate", "Ticket"]
+- !private ["PSo20UIScrollViewDelegate", "UIBarButtonItem"]
+- !private ["PSo20UIScrollViewDelegate", "btnAddOnClick"]
 - !private ["PSo20UIScrollViewDelegate", "dismissIndicator"]
 - !private ["PSo20UIScrollViewDelegate", "getLocalizedString"]
 - !private ["PSo20UIScrollViewDelegate", "getTicketList"]
 - ["PSo20UIScrollViewDelegate", "indexPathForPreferredFocusedView"]
 - ["PSo20UIScrollViewDelegate", "indexPathForPreferredFocusedViewInTableView"]
+- !private ["PSo20UIScrollViewDelegate", "navigationItem"]
 - ["PSo20UIScrollViewDelegate", "numberOfSections"]
 - ["PSo20UIScrollViewDelegate", "numberOfSectionsInTableView"]
+- !private ["PSo20UIScrollViewDelegate", "performSegue"]
 - !private ["PSo20UIScrollViewDelegate", "print"]
 - !private ["PSo20UIScrollViewDelegate", "processGetResponceTicketList"]
 - !private ["PSo20UIScrollViewDelegate", "projectId"]
@@ -1511,14 +1653,19 @@ depends-member:
 - !private ["PSo16UIStateRestoring", "JSON"]
 - !private ["PSo16UIStateRestoring", "JSONSerialization"]
 - ["PSo16UIStateRestoring", "Ticket"]
+- !private ["PSo16UIStateRestoring", "UIBarButtonItem"]
+- ["PSo16UIStateRestoring", "btnAddOnClick"]
 - !private ["PSo16UIStateRestoring", "dismissIndicator"]
 - !private ["PSo16UIStateRestoring", "getLocalizedString"]
 - ["PSo16UIStateRestoring", "getTicketList"]
 - ["PSo16UIStateRestoring", "indexPathForPreferredFocusedView"]
 - ["PSo16UIStateRestoring", "indexPathForPreferredFocusedViewInTableView"]
 - !private ["PSo16UIStateRestoring", "init"]
+- !private ["PSo16UIStateRestoring", "navigationItem"]
 - ["PSo16UIStateRestoring", "numberOfSections"]
 - ["PSo16UIStateRestoring", "numberOfSectionsInTableView"]
+- !private ["PSo16UIStateRestoring", "performSegue"]
+- ["PSo16UIStateRestoring", "prepare"]
 - !private ["PSo16UIStateRestoring", "print"]
 - ["PSo16UIStateRestoring", "processGetResponceTicketList"]
 - ["PSo16UIStateRestoring", "projectId"]
@@ -1544,6 +1691,9 @@ depends-member:
 - ["PSo16UIStateRestoring", "viewForZooming"]
 - ["PSo16UIStateRestoring", "viewForZoomingInScrollView"]
 - ["PSo16UIStateRestoring", ""]
+- ["CSo17UIStoryboardSegue", "deinit"]
+- !private ["CSo17UIStoryboardSegue", "destination"]
+- !private ["CSo17UIStoryboardSegue", "identifier"]
 - !private ["CSo11UITableView", "dequeueReusableCell"]
 - !private ["CSo11UITableView", "reloadData"]
 - ["CSo15UITableViewCell", "Ticket"]
@@ -1563,13 +1713,17 @@ depends-member:
 - !private ["PSo21UITableViewDataSource", "JSON"]
 - !private ["PSo21UITableViewDataSource", "JSONSerialization"]
 - ["PSo21UITableViewDataSource", "Ticket"]
+- !private ["PSo21UITableViewDataSource", "UIBarButtonItem"]
+- !private ["PSo21UITableViewDataSource", "btnAddOnClick"]
 - !private ["PSo21UITableViewDataSource", "dismissIndicator"]
 - !private ["PSo21UITableViewDataSource", "getLocalizedString"]
 - !private ["PSo21UITableViewDataSource", "getTicketList"]
 - ["PSo21UITableViewDataSource", "indexPathForPreferredFocusedView"]
 - ["PSo21UITableViewDataSource", "indexPathForPreferredFocusedViewInTableView"]
+- !private ["PSo21UITableViewDataSource", "navigationItem"]
 - ["PSo21UITableViewDataSource", "numberOfSections"]
 - ["PSo21UITableViewDataSource", "numberOfSectionsInTableView"]
+- !private ["PSo21UITableViewDataSource", "performSegue"]
 - !private ["PSo21UITableViewDataSource", "print"]
 - !private ["PSo21UITableViewDataSource", "processGetResponceTicketList"]
 - !private ["PSo21UITableViewDataSource", "projectId"]
@@ -1600,13 +1754,17 @@ depends-member:
 - !private ["PSo19UITableViewDelegate", "JSON"]
 - !private ["PSo19UITableViewDelegate", "JSONSerialization"]
 - ["PSo19UITableViewDelegate", "Ticket"]
+- !private ["PSo19UITableViewDelegate", "UIBarButtonItem"]
+- !private ["PSo19UITableViewDelegate", "btnAddOnClick"]
 - !private ["PSo19UITableViewDelegate", "dismissIndicator"]
 - !private ["PSo19UITableViewDelegate", "getLocalizedString"]
 - !private ["PSo19UITableViewDelegate", "getTicketList"]
 - ["PSo19UITableViewDelegate", "indexPathForPreferredFocusedView"]
 - ["PSo19UITableViewDelegate", "indexPathForPreferredFocusedViewInTableView"]
+- !private ["PSo19UITableViewDelegate", "navigationItem"]
 - ["PSo19UITableViewDelegate", "numberOfSections"]
 - ["PSo19UITableViewDelegate", "numberOfSectionsInTableView"]
+- !private ["PSo19UITableViewDelegate", "performSegue"]
 - !private ["PSo19UITableViewDelegate", "print"]
 - !private ["PSo19UITableViewDelegate", "processGetResponceTicketList"]
 - !private ["PSo19UITableViewDelegate", "projectId"]
@@ -1631,12 +1789,15 @@ depends-member:
 - ["PSo19UITableViewDelegate", "viewForZooming"]
 - ["PSo19UITableViewDelegate", "viewForZoomingInScrollView"]
 - ["PSo19UITableViewDelegate", ""]
+- !private ["PSo19UITextFieldDelegate", "projectId"]
 - !private ["PSo18UITraitEnvironment", "Alamofire"]
 - !private ["PSo18UITraitEnvironment", "ComunicateService"]
 - !private ["PSo18UITraitEnvironment", "FTProgressIndicator"]
 - !private ["PSo18UITraitEnvironment", "JSON"]
 - !private ["PSo18UITraitEnvironment", "JSONSerialization"]
 - ["PSo18UITraitEnvironment", "Ticket"]
+- !private ["PSo18UITraitEnvironment", "UIBarButtonItem"]
+- ["PSo18UITraitEnvironment", "btnAddOnClick"]
 - !private ["PSo18UITraitEnvironment", "dequeueReusableCell"]
 - !private ["PSo18UITraitEnvironment", "dismissIndicator"]
 - !private ["PSo18UITraitEnvironment", "getLocalizedString"]
@@ -1647,8 +1808,11 @@ depends-member:
 - ["PSo18UITraitEnvironment", "lblTicketDescription"]
 - ["PSo18UITraitEnvironment", "lblTicketStatus"]
 - ["PSo18UITraitEnvironment", "lblTicketTitle"]
+- !private ["PSo18UITraitEnvironment", "navigationItem"]
 - ["PSo18UITraitEnvironment", "numberOfSections"]
 - ["PSo18UITraitEnvironment", "numberOfSectionsInTableView"]
+- !private ["PSo18UITraitEnvironment", "performSegue"]
+- ["PSo18UITraitEnvironment", "prepare"]
 - !private ["PSo18UITraitEnvironment", "print"]
 - ["PSo18UITraitEnvironment", "processGetResponceTicketList"]
 - ["PSo18UITraitEnvironment", "projectId"]
@@ -1689,6 +1853,7 @@ depends-member:
 - ["CSo6UIView", "setProjectListData"]
 - !private ["CSo6UIView", "text"]
 - ["CSo6UIView", "ticket"]
+- !private ["CSo16UIViewController", "AddTicketViewController"]
 - !private ["CSo16UIViewController", "Alamofire"]
 - !private ["CSo16UIViewController", "Bool"]
 - ["CSo16UIViewController", "CGFloat"]
@@ -1701,17 +1866,24 @@ depends-member:
 - !private ["CSo16UIViewController", "Parameters"]
 - ["CSo16UIViewController", "Ticket"]
 - !private ["CSo16UIViewController", "TicketListCell"]
+- !private ["CSo16UIViewController", "UIBarButtonItem"]
+- ["CSo16UIViewController", "UIStoryboardSegue"]
 - ["CSo16UIViewController", "UITableView"]
 - ["CSo16UIViewController", "UITableViewCell"]
 - !private ["CSo16UIViewController", "Void"]
+- ["CSo16UIViewController", "btnAddOnClick"]
+- ["CSo16UIViewController", "deinit"]
 - !private ["CSo16UIViewController", "dismissIndicator"]
 - !private ["CSo16UIViewController", "getLocalizedString"]
 - ["CSo16UIViewController", "getTicketList"]
 - ["CSo16UIViewController", "indexPathForPreferredFocusedView"]
 - ["CSo16UIViewController", "indexPathForPreferredFocusedViewInTableView"]
 - ["CSo16UIViewController", "init"]
+- !private ["CSo16UIViewController", "navigationItem"]
 - ["CSo16UIViewController", "numberOfSections"]
 - ["CSo16UIViewController", "numberOfSectionsInTableView"]
+- !private ["CSo16UIViewController", "performSegue"]
+- ["CSo16UIViewController", "prepare"]
 - !private ["CSo16UIViewController", "print"]
 - ["CSo16UIViewController", "processGetResponceTicketList"]
 - ["CSo16UIViewController", "projectId"]
@@ -1752,14 +1924,19 @@ depends-member:
 - !private ["P16Botree911_Client4View", "JSON"]
 - !private ["P16Botree911_Client4View", "JSONSerialization"]
 - ["P16Botree911_Client4View", "Ticket"]
+- !private ["P16Botree911_Client4View", "UIBarButtonItem"]
+- ["P16Botree911_Client4View", "btnAddOnClick"]
 - !private ["P16Botree911_Client4View", "dismissIndicator"]
 - !private ["P16Botree911_Client4View", "getLocalizedString"]
 - ["P16Botree911_Client4View", "getTicketList"]
 - ["P16Botree911_Client4View", "indexPathForPreferredFocusedView"]
 - ["P16Botree911_Client4View", "indexPathForPreferredFocusedViewInTableView"]
 - !private ["P16Botree911_Client4View", "init"]
+- !private ["P16Botree911_Client4View", "navigationItem"]
 - ["P16Botree911_Client4View", "numberOfSections"]
 - ["P16Botree911_Client4View", "numberOfSectionsInTableView"]
+- !private ["P16Botree911_Client4View", "performSegue"]
+- ["P16Botree911_Client4View", "prepare"]
 - !private ["P16Botree911_Client4View", "print"]
 - ["P16Botree911_Client4View", "processGetResponceTicketList"]
 - ["P16Botree911_Client4View", "projectId"]
@@ -1831,24 +2008,33 @@ depends-member:
 - !private ["Ps9_Hashable", "ReadingOptions"]
 - !private ["Ps9_Hashable", "Stride"]
 - ["Ps9_Hashable", "Ticket"]
+- !private ["Ps9_Hashable", "UIBarButtonItem"]
 - !private ["Ps9_Hashable", "_DisabledRangeIndex"]
 - !private ["Ps9_Hashable", "_getBuiltinLogicValue"]
+- !private ["Ps9_Hashable", "add"]
+- ["Ps9_Hashable", "btnAddOnClick"]
 - !private ["Ps9_Hashable", "dequeueReusableCell"]
+- !private ["Ps9_Hashable", "destination"]
 - !private ["Ps9_Hashable", "dismissIndicator"]
 - !private ["Ps9_Hashable", "getLocalizedString"]
 - ["Ps9_Hashable", "getTicketList"]
+- !private ["Ps9_Hashable", "identifier"]
 - ["Ps9_Hashable", "indexPathForPreferredFocusedView"]
 - ["Ps9_Hashable", "indexPathForPreferredFocusedViewInTableView"]
 - !private ["Ps9_Hashable", "init"]
 - ["Ps9_Hashable", "lblTicketDescription"]
 - ["Ps9_Hashable", "lblTicketStatus"]
 - ["Ps9_Hashable", "lblTicketTitle"]
+- !private ["Ps9_Hashable", "navigationItem"]
 - ["Ps9_Hashable", "numberOfSections"]
 - ["Ps9_Hashable", "numberOfSectionsInTableView"]
+- !private ["Ps9_Hashable", "performSegue"]
+- ["Ps9_Hashable", "prepare"]
 - !private ["Ps9_Hashable", "print"]
 - ["Ps9_Hashable", "processGetResponceTicketList"]
 - ["Ps9_Hashable", "projectId"]
 - !private ["Ps9_Hashable", "reloadData"]
+- !private ["Ps9_Hashable", "rightBarButtonItem"]
 - !private ["Ps9_Hashable", "row"]
 - ["Ps9_Hashable", "scrollViewDidEndDecelerating"]
 - ["Ps9_Hashable", "scrollViewDidEndDragging"]
@@ -1901,6 +2087,7 @@ depends-member:
 - ["Ps21_ObjectiveCBridgeable", "init"]
 - !private ["Ps21_ObjectiveCBridgeable", "row"]
 - !private ["Ps21_ObjectiveCBridgeable", "subscript"]
+- !private ["Vs26_OptionalNilComparisonType", "deinit"]
 - !private ["Ps14_SignedInteger", "IntegerLiteralType"]
 - !private ["Ps14_SignedInteger", "Stride"]
 - !private ["Ps14_SignedInteger", "_DisabledRangeIndex"]
@@ -1909,6 +2096,7 @@ depends-member:
 - !private ["Ps11_Strideable", "_DisabledRangeIndex"]
 depends-nominal:
 - "C16Botree911_Client22AbstractViewController"
+- "C16Botree911_Client23AddTicketViewController"
 - "Ps9AnyObject"
 - "Sa"
 - "Ps23BidirectionalCollection"
@@ -1995,6 +2183,7 @@ depends-nominal:
 - !private "P9Alamofire8Response"
 - !private "O9Alamofire6Result"
 - "OV16Botree911_Client17ComunicateService6Router"
+- "V10ObjectiveC8Selector"
 - "Ps8Sequence"
 - !private "Ps10SetAlgebra"
 - !private "Ps13SignedInteger"
@@ -2010,6 +2199,9 @@ depends-nominal:
 - "PSo29UIAccessibilityIdentification"
 - "PSo12UIAppearance"
 - "PSo21UIAppearanceContainer"
+- "CSo15UIBarButtonItem"
+- "OSC21UIBarButtonSystemItem"
+- !private "CSo9UIBarItem"
 - "PSo18UIContentContainer"
 - !private "PSo30UIContentSizeCategoryAdjusting"
 - "PSo17UICoordinateSpace"
@@ -2018,16 +2210,21 @@ depends-nominal:
 - "PSo11UIFocusItem"
 - "PSo27UIGestureRecognizerDelegate"
 - !private "CSo7UILabel"
+- "CSo16UINavigationItem"
+- !private "PSo22UIPickerViewDataSource"
+- !private "PSo20UIPickerViewDelegate"
 - "CSo11UIResponder"
 - "PSo30UIResponderStandardEditActions"
 - !private "CSo12UIScrollView"
 - "PSo20UIScrollViewDelegate"
 - "PSo16UIStateRestoring"
+- "CSo17UIStoryboardSegue"
 - !private "CSo11UITableView"
 - "CSo15UITableViewCell"
 - "OSC20UITableViewCellStyle"
 - "PSo21UITableViewDataSource"
 - "PSo19UITableViewDelegate"
+- !private "PSo19UITextFieldDelegate"
 - "PSo18UITraitEnvironment"
 - "CSo6UIView"
 - "CSo16UIViewController"
@@ -2056,6 +2253,7 @@ depends-nominal:
 - !private "Ps8_Integer"
 - !private "Ps18_IntegerArithmetic"
 - "Ps21_ObjectiveCBridgeable"
+- !private "Vs26_OptionalNilComparisonType"
 - !private "Ps14_SignedInteger"
 - !private "Ps11_Strideable"
 depends-dynamic-lookup:
@@ -2087,4 +2285,4 @@ depends-external:
 - "/Volumes/User Project/Project/Botree911_Client/DerivedData/Botree911_Client/Build/Products/Debug-iphonesimulator/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework/Headers/IQKeyboardManagerSwift-Swift.h"
 - "/Volumes/User Project/Project/Botree911_Client/DerivedData/Botree911_Client/Build/Products/Debug-iphonesimulator/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework/Headers/IQKeyboardManagerSwift-umbrella.h"
 - "/Volumes/User Project/Project/Botree911_Client/DerivedData/Botree911_Client/Build/Products/Debug-iphonesimulator/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework/Modules/module.modulemap"
-interface-hash: "6037e472f042c8dbd35a18b08280fbf7"
+interface-hash: "f83b7d57012c941caec4ab8307019965"

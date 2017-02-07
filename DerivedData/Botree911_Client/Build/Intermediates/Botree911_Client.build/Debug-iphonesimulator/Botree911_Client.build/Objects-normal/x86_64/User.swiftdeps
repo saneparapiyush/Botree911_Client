@@ -6,19 +6,19 @@ provides-nominal:
 provides-member:
 - ["C16Botree911_Client4User", ""]
 provides-dynamic-lookup:
-- "email"
 - "firstName"
 - "accessToken"
 - "lastName"
+- "email"
 - "encodeWithCoder"
 depends-top-level:
+- !private "StringLiteralType"
 - "JSON"
+- "NSCoder"
+- "String"
 - "User"
 - "AssignmentPrecedence"
 - "CastingPrecedence"
-- "String"
-- "NSCoder"
-- !private "StringLiteralType"
 depends-member:
 - ["Ps9AnyObject", "accessToken"]
 - !private ["Ps9AnyObject", "decodeObject"]

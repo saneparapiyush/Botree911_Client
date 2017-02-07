@@ -12,30 +12,30 @@ provides-member:
 - ["P16Botree911_Client15StorageProtocol", ""]
 - ["C16Botree911_Client18UserDefaultStorage", ""]
 provides-dynamic-lookup:
+- "savePair"
+- "sharedStorage"
 - "remove"
 - "clear"
-- "sharedStorage"
 - "load"
-- "savePair"
 depends-top-level:
-- "StorageProtocol"
-- "AnyObject"
+- "UserDefaultStorage"
 - "StorageType"
+- "String"
+- "AnyObject"
 - "Bool"
+- "NSObject"
+- !private "NSKeyedArchiver"
+- "StorageProtocol"
+- !private "Data"
+- !private "NSKeyedUnarchiver"
 - "CastingPrecedence"
+- !private "NSData"
 - "=="
 - !private "~="
 - !private "AssignmentPrecedence"
-- !private "NSKeyedUnarchiver"
-- !private "NSKeyedArchiver"
-- "String"
 - "StringLiteralType"
-- "UserDefaults"
-- "UserDefaultStorage"
-- !private "NSData"
 - !private "BooleanLiteralType"
-- !private "Data"
-- "NSObject"
+- "UserDefaults"
 depends-member:
 - !private ["Ps9AnyObject", "NSKeyedArchiver"]
 - !private ["Ps9AnyObject", "NSKeyedUnarchiver"]

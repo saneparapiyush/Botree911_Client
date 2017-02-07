@@ -9,54 +9,54 @@ provides-member:
 - ["C16Botree911_Client19LoginViewController", ""]
 - ["P16Botree911_Client18AuthorizedProtocol", ""]
 provides-dynamic-lookup:
-- "textFeildReturnUIConfig"
-- "txtUserEmail"
-- "login"
-- "btnLoginOnclick"
-- "configValidation"
-- "testResponse"
-- "textFieldShouldReturn"
-- "btnLogin"
-- "touchesBegan"
 - "txtPassword"
+- "btnLoginOnclick"
+- "textFieldShouldReturn"
+- "touchesBegan"
+- "txtUserEmail"
+- "configValidation"
+- "login"
+- "btnLogin"
 - "viewDidLoad"
+- "testResponse"
+- "textFeildReturnUIConfig"
 - "userAuthorized"
 depends-top-level:
-- "UITouch"
-- "StringLiteralType"
-- !private "REGEX_EMAIL"
 - !private "Parameters"
-- !private "UserDefaults"
-- "JSON"
-- "UITextFieldDelegate"
-- "UIEvent"
-- !private "DEVICE_TOKEN"
-- !private "ComunicateService"
-- "UITextField"
-- !private "Void"
-- !private "NSMutableDictionary"
-- "AuthorizedProtocol"
-- !private "Alamofire"
-- !private "BooleanLiteralType"
-- !private "JSONSerialization"
-- !private "print"
-- !private "!="
-- !private "FTProgressIndicator"
 - "String"
-- !private "getLocalizedString"
-- "Bool"
-- "Set"
+- "UIEvent"
+- !private "NSMutableDictionary"
 - "AbstractViewController"
-- "AssignmentPrecedence"
-- "CastingPrecedence"
-- !private "&&"
-- !private "~="
-- "TextFieldValidator"
 - !private "Array"
-- !private "NSString"
-- "LoginViewController"
+- !private "getLocalizedString"
+- "UITextField"
+- "Bool"
+- !private "!="
+- "TextFieldValidator"
+- !private "FTProgressIndicator"
+- "CastingPrecedence"
+- !private "ComunicateService"
+- !private "JSONSerialization"
+- "AssignmentPrecedence"
+- !private "REGEX_EMAIL"
+- !private "~="
+- !private "UserDefaults"
+- !private "DEVICE_TOKEN"
+- !private "&&"
+- "StringLiteralType"
+- !private "Void"
+- "JSON"
+- "AuthorizedProtocol"
 - "Dictionary"
+- !private "NSString"
+- "UITextFieldDelegate"
+- !private "BooleanLiteralType"
 - "UIButton"
+- !private "Alamofire"
+- "UITouch"
+- "LoginViewController"
+- "Set"
+- !private "print"
 depends-member:
 - !private ["C16Botree911_Client22AbstractViewController", "Alamofire"]
 - ["C16Botree911_Client22AbstractViewController", "Bool"]
@@ -84,7 +84,7 @@ depends-member:
 - ["C16Botree911_Client22AbstractViewController", "deinit"]
 - !private ["C16Botree911_Client22AbstractViewController", "dismissIndicator"]
 - !private ["C16Botree911_Client22AbstractViewController", "getLocalizedString"]
-- !private ["C16Botree911_Client22AbstractViewController", "hideNavigationController"]
+- !private ["C16Botree911_Client22AbstractViewController", "hideNavigationBar"]
 - ["C16Botree911_Client22AbstractViewController", "init"]
 - ["C16Botree911_Client22AbstractViewController", "login"]
 - ["C16Botree911_Client22AbstractViewController", "loginDataSource"]
@@ -130,7 +130,7 @@ depends-member:
 - !private ["Ps9AnyObject", "enablesReturnKeyAutomatically"]
 - !private ["Ps9AnyObject", "endEditing"]
 - !private ["Ps9AnyObject", "getLocalizedString"]
-- !private ["Ps9AnyObject", "hideNavigationController"]
+- !private ["Ps9AnyObject", "hideNavigationBar"]
 - ["Ps9AnyObject", "init"]
 - ["Ps9AnyObject", "login"]
 - ["Ps9AnyObject", "loginDataSource"]
@@ -178,7 +178,7 @@ depends-member:
 - !private ["P16Botree911_Client18AuthorizedProtocol", "configValidation"]
 - !private ["P16Botree911_Client18AuthorizedProtocol", "dismissIndicator"]
 - !private ["P16Botree911_Client18AuthorizedProtocol", "getLocalizedString"]
-- !private ["P16Botree911_Client18AuthorizedProtocol", "hideNavigationController"]
+- !private ["P16Botree911_Client18AuthorizedProtocol", "hideNavigationBar"]
 - !private ["P16Botree911_Client18AuthorizedProtocol", "login"]
 - !private ["P16Botree911_Client18AuthorizedProtocol", "performSegue"]
 - !private ["P16Botree911_Client18AuthorizedProtocol", "print"]
@@ -239,7 +239,7 @@ depends-member:
 - !private ["Ps7CVarArg", "enablesReturnKeyAutomatically"]
 - !private ["Ps7CVarArg", "endEditing"]
 - !private ["Ps7CVarArg", "getLocalizedString"]
-- !private ["Ps7CVarArg", "hideNavigationController"]
+- !private ["Ps7CVarArg", "hideNavigationBar"]
 - ["Ps7CVarArg", "init"]
 - ["Ps7CVarArg", "login"]
 - ["Ps7CVarArg", "loginDataSource"]
@@ -329,7 +329,7 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "endEditing"]
 - !private ["Ps28CustomDebugStringConvertible", "failure"]
 - !private ["Ps28CustomDebugStringConvertible", "getLocalizedString"]
-- !private ["Ps28CustomDebugStringConvertible", "hideNavigationController"]
+- !private ["Ps28CustomDebugStringConvertible", "hideNavigationBar"]
 - !private ["Ps28CustomDebugStringConvertible", "httpBody"]
 - ["Ps28CustomDebugStringConvertible", "init"]
 - ["Ps28CustomDebugStringConvertible", "login"]
@@ -422,7 +422,7 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "endEditing"]
 - !private ["Ps23CustomStringConvertible", "failure"]
 - !private ["Ps23CustomStringConvertible", "getLocalizedString"]
-- !private ["Ps23CustomStringConvertible", "hideNavigationController"]
+- !private ["Ps23CustomStringConvertible", "hideNavigationBar"]
 - !private ["Ps23CustomStringConvertible", "httpBody"]
 - ["Ps23CustomStringConvertible", "init"]
 - ["Ps23CustomStringConvertible", "login"]
@@ -514,7 +514,7 @@ depends-member:
 - !private ["Ps9Equatable", "endEditing"]
 - !private ["Ps9Equatable", "getLocalizedString"]
 - !private ["Ps9Equatable", "go"]
-- !private ["Ps9Equatable", "hideNavigationController"]
+- !private ["Ps9Equatable", "hideNavigationBar"]
 - !private ["Ps9Equatable", "httpBody"]
 - ["Ps9Equatable", "init"]
 - ["Ps9Equatable", "login"]
@@ -671,7 +671,7 @@ depends-member:
 - !private ["Ps8Hashable", "endEditing"]
 - !private ["Ps8Hashable", "getLocalizedString"]
 - !private ["Ps8Hashable", "go"]
-- !private ["Ps8Hashable", "hideNavigationController"]
+- !private ["Ps8Hashable", "hideNavigationBar"]
 - !private ["Ps8Hashable", "httpBody"]
 - ["Ps8Hashable", "init"]
 - ["Ps8Hashable", "login"]
@@ -792,7 +792,7 @@ depends-member:
 - ["C16Botree911_Client19LoginViewController", "deinit"]
 - !private ["C16Botree911_Client19LoginViewController", "dismissIndicator"]
 - !private ["C16Botree911_Client19LoginViewController", "getLocalizedString"]
-- !private ["C16Botree911_Client19LoginViewController", "hideNavigationController"]
+- !private ["C16Botree911_Client19LoginViewController", "hideNavigationBar"]
 - ["C16Botree911_Client19LoginViewController", "init"]
 - ["C16Botree911_Client19LoginViewController", "login"]
 - ["C16Botree911_Client19LoginViewController", "loginDataSource"]
@@ -844,7 +844,7 @@ depends-member:
 - !private ["PSo8NSCoding", "enablesReturnKeyAutomatically"]
 - !private ["PSo8NSCoding", "endEditing"]
 - !private ["PSo8NSCoding", "getLocalizedString"]
-- !private ["PSo8NSCoding", "hideNavigationController"]
+- !private ["PSo8NSCoding", "hideNavigationBar"]
 - ["PSo8NSCoding", "init"]
 - ["PSo8NSCoding", "login"]
 - ["PSo8NSCoding", "loginDataSource"]
@@ -893,7 +893,7 @@ depends-member:
 - ["PSo26NSExtensionRequestHandling", "configValidation"]
 - !private ["PSo26NSExtensionRequestHandling", "dismissIndicator"]
 - !private ["PSo26NSExtensionRequestHandling", "getLocalizedString"]
-- !private ["PSo26NSExtensionRequestHandling", "hideNavigationController"]
+- !private ["PSo26NSExtensionRequestHandling", "hideNavigationBar"]
 - !private ["PSo26NSExtensionRequestHandling", "init"]
 - ["PSo26NSExtensionRequestHandling", "login"]
 - ["PSo26NSExtensionRequestHandling", "loginDataSource"]
@@ -955,7 +955,7 @@ depends-member:
 - !private ["CSo8NSObject", "enablesReturnKeyAutomatically"]
 - !private ["CSo8NSObject", "endEditing"]
 - !private ["CSo8NSObject", "getLocalizedString"]
-- !private ["CSo8NSObject", "hideNavigationController"]
+- !private ["CSo8NSObject", "hideNavigationBar"]
 - ["CSo8NSObject", "init"]
 - ["CSo8NSObject", "login"]
 - ["CSo8NSObject", "loginDataSource"]
@@ -1008,7 +1008,7 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "enablesReturnKeyAutomatically"]
 - !private ["PSo16NSObjectProtocol", "endEditing"]
 - !private ["PSo16NSObjectProtocol", "getLocalizedString"]
-- !private ["PSo16NSObjectProtocol", "hideNavigationController"]
+- !private ["PSo16NSObjectProtocol", "hideNavigationBar"]
 - ["PSo16NSObjectProtocol", "init"]
 - ["PSo16NSObjectProtocol", "login"]
 - ["PSo16NSObjectProtocol", "loginDataSource"]
@@ -1164,7 +1164,7 @@ depends-member:
 - !private ["PSo21UIAppearanceContainer", "enablesReturnKeyAutomatically"]
 - !private ["PSo21UIAppearanceContainer", "endEditing"]
 - !private ["PSo21UIAppearanceContainer", "getLocalizedString"]
-- !private ["PSo21UIAppearanceContainer", "hideNavigationController"]
+- !private ["PSo21UIAppearanceContainer", "hideNavigationBar"]
 - !private ["PSo21UIAppearanceContainer", "init"]
 - ["PSo21UIAppearanceContainer", "login"]
 - ["PSo21UIAppearanceContainer", "loginDataSource"]
@@ -1207,7 +1207,7 @@ depends-member:
 - ["PSo18UIContentContainer", "configValidation"]
 - !private ["PSo18UIContentContainer", "dismissIndicator"]
 - !private ["PSo18UIContentContainer", "getLocalizedString"]
-- !private ["PSo18UIContentContainer", "hideNavigationController"]
+- !private ["PSo18UIContentContainer", "hideNavigationBar"]
 - !private ["PSo18UIContentContainer", "init"]
 - ["PSo18UIContentContainer", "login"]
 - ["PSo18UIContentContainer", "loginDataSource"]
@@ -1280,7 +1280,7 @@ depends-member:
 - !private ["PSo18UIFocusEnvironment", "enablesReturnKeyAutomatically"]
 - !private ["PSo18UIFocusEnvironment", "endEditing"]
 - !private ["PSo18UIFocusEnvironment", "getLocalizedString"]
-- !private ["PSo18UIFocusEnvironment", "hideNavigationController"]
+- !private ["PSo18UIFocusEnvironment", "hideNavigationBar"]
 - !private ["PSo18UIFocusEnvironment", "init"]
 - ["PSo18UIFocusEnvironment", "login"]
 - ["PSo18UIFocusEnvironment", "loginDataSource"]
@@ -1351,7 +1351,7 @@ depends-member:
 - !private ["CSo11UIResponder", "enablesReturnKeyAutomatically"]
 - !private ["CSo11UIResponder", "endEditing"]
 - !private ["CSo11UIResponder", "getLocalizedString"]
-- !private ["CSo11UIResponder", "hideNavigationController"]
+- !private ["CSo11UIResponder", "hideNavigationBar"]
 - ["CSo11UIResponder", "init"]
 - ["CSo11UIResponder", "login"]
 - ["CSo11UIResponder", "loginDataSource"]
@@ -1397,7 +1397,7 @@ depends-member:
 - !private ["PSo30UIResponderStandardEditActions", "enablesReturnKeyAutomatically"]
 - !private ["PSo30UIResponderStandardEditActions", "endEditing"]
 - !private ["PSo30UIResponderStandardEditActions", "getLocalizedString"]
-- !private ["PSo30UIResponderStandardEditActions", "hideNavigationController"]
+- !private ["PSo30UIResponderStandardEditActions", "hideNavigationBar"]
 - !private ["PSo30UIResponderStandardEditActions", "init"]
 - ["PSo30UIResponderStandardEditActions", "login"]
 - ["PSo30UIResponderStandardEditActions", "loginDataSource"]
@@ -1443,7 +1443,7 @@ depends-member:
 - ["PSo16UIStateRestoring", "configValidation"]
 - !private ["PSo16UIStateRestoring", "dismissIndicator"]
 - !private ["PSo16UIStateRestoring", "getLocalizedString"]
-- !private ["PSo16UIStateRestoring", "hideNavigationController"]
+- !private ["PSo16UIStateRestoring", "hideNavigationBar"]
 - !private ["PSo16UIStateRestoring", "init"]
 - ["PSo16UIStateRestoring", "login"]
 - ["PSo16UIStateRestoring", "loginDataSource"]
@@ -1491,7 +1491,7 @@ depends-member:
 - !private ["PSo19UITextFieldDelegate", "dismissIndicator"]
 - !private ["PSo19UITextFieldDelegate", "enablesReturnKeyAutomatically"]
 - !private ["PSo19UITextFieldDelegate", "getLocalizedString"]
-- !private ["PSo19UITextFieldDelegate", "hideNavigationController"]
+- !private ["PSo19UITextFieldDelegate", "hideNavigationBar"]
 - !private ["PSo19UITextFieldDelegate", "login"]
 - !private ["PSo19UITextFieldDelegate", "performSegue"]
 - !private ["PSo19UITextFieldDelegate", "print"]
@@ -1546,7 +1546,7 @@ depends-member:
 - !private ["PSo18UITraitEnvironment", "enablesReturnKeyAutomatically"]
 - !private ["PSo18UITraitEnvironment", "endEditing"]
 - !private ["PSo18UITraitEnvironment", "getLocalizedString"]
-- !private ["PSo18UITraitEnvironment", "hideNavigationController"]
+- !private ["PSo18UITraitEnvironment", "hideNavigationBar"]
 - !private ["PSo18UITraitEnvironment", "init"]
 - ["PSo18UITraitEnvironment", "login"]
 - ["PSo18UITraitEnvironment", "loginDataSource"]
@@ -1606,7 +1606,7 @@ depends-member:
 - ["CSo16UIViewController", "configValidation"]
 - !private ["CSo16UIViewController", "dismissIndicator"]
 - !private ["CSo16UIViewController", "getLocalizedString"]
-- !private ["CSo16UIViewController", "hideNavigationController"]
+- !private ["CSo16UIViewController", "hideNavigationBar"]
 - ["CSo16UIViewController", "init"]
 - ["CSo16UIViewController", "login"]
 - ["CSo16UIViewController", "loginDataSource"]
@@ -1662,7 +1662,7 @@ depends-member:
 - ["P16Botree911_Client4View", "configValidation"]
 - !private ["P16Botree911_Client4View", "dismissIndicator"]
 - !private ["P16Botree911_Client4View", "getLocalizedString"]
-- !private ["P16Botree911_Client4View", "hideNavigationController"]
+- !private ["P16Botree911_Client4View", "hideNavigationBar"]
 - !private ["P16Botree911_Client4View", "init"]
 - ["P16Botree911_Client4View", "login"]
 - ["P16Botree911_Client4View", "loginDataSource"]
@@ -1735,7 +1735,7 @@ depends-member:
 - !private ["Ps9_Hashable", "endEditing"]
 - !private ["Ps9_Hashable", "getLocalizedString"]
 - !private ["Ps9_Hashable", "go"]
-- !private ["Ps9_Hashable", "hideNavigationController"]
+- !private ["Ps9_Hashable", "hideNavigationBar"]
 - !private ["Ps9_Hashable", "httpBody"]
 - ["Ps9_Hashable", "init"]
 - ["Ps9_Hashable", "login"]

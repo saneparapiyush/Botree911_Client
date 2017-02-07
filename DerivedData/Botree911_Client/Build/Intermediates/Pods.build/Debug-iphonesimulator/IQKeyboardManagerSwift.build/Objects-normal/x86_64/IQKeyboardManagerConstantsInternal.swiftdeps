@@ -7,10 +7,10 @@ provides-member:
 - ["O22IQKeyboardManagerSwift21IQLayoutGuidePosition", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "IQLayoutGuidePosition"
 - "Int"
-- !private "~="
+- "IQLayoutGuidePosition"
 - "=="
+- !private "~="
 depends-member:
 - !private ["Ps17BitwiseOperations", "Stride"]
 - !private ["Ps17BitwiseOperations", "hashValue"]
