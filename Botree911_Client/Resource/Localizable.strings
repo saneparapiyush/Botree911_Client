@@ -21,3 +21,6 @@
 "status_list_indicator" = "Please wait...";
 "add_project_indicator" = "Please wait...";
 "update_project_indicator" = "Please wait...";
+"add_comment_indicator" = "Please wait...";
+"comment_list_indicator" = "Please wait...";
+"history_list_indicator" = "Please wait...";

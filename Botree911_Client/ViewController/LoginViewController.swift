@@ -46,7 +46,9 @@ class LoginViewController: AbstractViewController {
         textFeildReturnUIConfig()
     }// End viewDidLoad()
     
-    
+    override func viewWillDisappear(_ animated: Bool) {
+        showNavigationBar()
+    }
     //    MARK: Action
     @IBAction func btnLoginOnclick(_ sender: Any) {
         userAuthorized()
@@ -94,6 +96,7 @@ extension LoginViewController : UITextFieldDelegate {
 
 extension LoginViewController:AuthorizedProtocol {
     
+//    MARK:- Helper Method
     func login(){
         
         let parameters: Parameters = [

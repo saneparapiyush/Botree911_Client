@@ -28,10 +28,14 @@ class TicketListViewController: AbstractViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(btnAddOnClick))
         
         title = getLocalizedString("title_ticket_list")
-        
-        getTicketList()
     }// End viewDidLoad()
     
+    override func viewDidAppear(_ animated: Bool) {
+        getTicketList()
+    }// End viewDidAppear()
+
+//    MARK:- Helper Method
+
     func getTicketList() {
         
         let params: Parameters = [
@@ -74,28 +78,46 @@ class TicketListViewController: AbstractViewController {
     } // End getTicketList()
     
     func processGetResponceTicketList(json: JSON) {
+        ticketListSource = [Ticket]()
         let projects = json["ticket"]
         
         for i in 0 ..< projects.count {
             let jsonValue = projects.arrayValue[i]
-            let TicketDetail = Ticket(json: jsonValue)
-            ticketListSource.append(TicketDetail)
+            let ticketDetail = Ticket(json: jsonValue)
+            ticketListSource.append(ticketDetail)
         }
         tblTicketList.reloadData()
     }// End procssGetResponceProjectList
     
 //    MARK:- Actions
     func btnAddOnClick() {
+        selectedTicket = nil
         self.performSegue(withIdentifier: "showAddTicket", sender: self)
     }// end btnAddOnClick()
     
     //    MARK: Prepare for segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showAddTicket" {
+        if segue.identifier == "showTicketInfo" {
+            let tabCtrl = segue.destination as! UITabBarController
+            tabCtrl.title = getLocalizedString("title_edit_ticket")
+            
+            let destinationVC = tabCtrl.viewControllers![0] as! AddTicketViewController
+            destinationVC.project = project!
+            destinationVC.ticket = selectedTicket
+            
+            let historyVC = tabCtrl.viewControllers![1] as! HistoryViewController
+            historyVC.ticket = selectedTicket
+            
+            let commentVC = tabCtrl.viewControllers![2] as! CommentViewController
+            commentVC.ticket = selectedTicket
+            
+        } else if segue.identifier == "showAddTicket" {
             let addTicketVC = segue.destination as! AddTicketViewController
             addTicketVC.project = project!
             addTicketVC.ticket = selectedTicket
+            addTicketVC.title = getLocalizedString("title_add_ticket")
         }
+        
     }
 }
 
@@ -109,14 +131,13 @@ extension TicketListViewController: UITableViewDataSource,UITableViewDelegate {
         let cell = tblTicketList.dequeueReusableCell(withIdentifier: "TicketListCell") as! TicketListCell
         
         cell.ticket = ticketListSource[indexPath.row]
-        cell.setProjectListData()
+        cell.setTicketListData()
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedTicket = ticketListSource[indexPath.row]
-        self.performSegue(withIdentifier: "showAddTicket", sender: self)
-        
+        self.performSegue(withIdentifier: "showTicketInfo", sender: self)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -136,7 +157,7 @@ class TicketListCell: UITableViewCell {
     @IBOutlet var lblRaisedBy: UILabel!
     @IBOutlet var lblAssingee: UILabel!
     
-    func setProjectListData() {
+    func setTicketListData() {
         
         lblTicketTitle.text = ticket?.name
         lblTicketDescription.text = ticket?.description

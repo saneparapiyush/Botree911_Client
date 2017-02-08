@@ -12,6 +12,7 @@ import SwiftyJSON
 
 class ServiceManager {
     
+//    MARK:- Helper Method
     func getProjectList(completion: @escaping (_ success: Bool, _ errorMessages: String?, _ jsonData: [Project]?) -> Void) {
         
        do {

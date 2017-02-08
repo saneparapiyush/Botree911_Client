@@ -33,6 +33,10 @@
 		4AC9D66D1E44793A0025E23E /* TicketListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC9D66C1E44793A0025E23E /* TicketListViewController.swift */; };
 		4AC9D66F1E44808B0025E23E /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC9D66E1E44808B0025E23E /* Project.swift */; };
 		4AC9D6711E44952A0025E23E /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC9D6701E44952A0025E23E /* Ticket.swift */; };
+		4AF87F7A1E4B097D00534F6D /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF87F791E4B097D00534F6D /* CommentViewController.swift */; };
+		4AF87F7C1E4B2EBA00534F6D /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF87F7B1E4B2EBA00534F6D /* Comment.swift */; };
+		4AF87F7E1E4B3EC500534F6D /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF87F7D1E4B3EC500534F6D /* HistoryViewController.swift */; };
+		4AF87F801E4B453600534F6D /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF87F7F1E4B453600534F6D /* History.swift */; };
 		685BEDD41434036C3445605E /* Pods_Botree911_Client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53334EBDBA680E4A12570B6F /* Pods_Botree911_Client.framework */; };
 		F8CF331BA31A41C5D99BC6C8 /* Pods_Botree911_ClientTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D877638D2447A6893A5FF0B5 /* Pods_Botree911_ClientTests.framework */; };
 /* End PBXBuildFile section */
@@ -90,6 +94,10 @@
 		4AC9D66C1E44793A0025E23E /* TicketListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketListViewController.swift; sourceTree = "<group>"; };
 		4AC9D66E1E44808B0025E23E /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		4AC9D6701E44952A0025E23E /* Ticket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
+		4AF87F791E4B097D00534F6D /* CommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
+		4AF87F7B1E4B2EBA00534F6D /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		4AF87F7D1E4B3EC500534F6D /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		4AF87F7F1E4B453600534F6D /* History.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		53334EBDBA680E4A12570B6F /* Pods_Botree911_Client.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Botree911_Client.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B37E09C4BFF3F1CC0BFA938F /* Pods-Botree911_ClientUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Botree911_ClientUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Botree911_ClientUITests/Pods-Botree911_ClientUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C835EE597D0FCE7C79EF3887 /* Pods-Botree911_ClientUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Botree911_ClientUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Botree911_ClientUITests/Pods-Botree911_ClientUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -206,6 +214,8 @@
 				4A82A7A91E43402300D8A92E /* User.swift */,
 				4AC9D66E1E44808B0025E23E /* Project.swift */,
 				4AC9D6701E44952A0025E23E /* Ticket.swift */,
+				4AF87F7B1E4B2EBA00534F6D /* Comment.swift */,
+				4AF87F7F1E4B453600534F6D /* History.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -252,6 +262,8 @@
 				4A82A7AB1E434BC400D8A92E /* ProjectListViewController.swift */,
 				4AC9D66C1E44793A0025E23E /* TicketListViewController.swift */,
 				4A9DF97C1E48485D00FC654C /* AddTicketViewController.swift */,
+				4AF87F791E4B097D00534F6D /* CommentViewController.swift */,
+				4AF87F7D1E4B3EC500534F6D /* HistoryViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -561,16 +573,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AF87F7A1E4B097D00534F6D /* CommentViewController.swift in Sources */,
 				4ABDEEB01E42FBB40041AEBA /* Utility.swift in Sources */,
 				4A82A7AC1E434BC400D8A92E /* ProjectListViewController.swift in Sources */,
 				4ABDEEBE1E42FBE50041AEBA /* ComunicateService.swift in Sources */,
 				4ABDEEBF1E42FBE50041AEBA /* TextFieldValidator.m in Sources */,
+				4AF87F7E1E4B3EC500534F6D /* HistoryViewController.swift in Sources */,
 				4AC9D66D1E44793A0025E23E /* TicketListViewController.swift in Sources */,
 				4ABDEEC01E42FBE50041AEBA /* ThemeButton.swift in Sources */,
 				4ABDEEAF1E42FBB40041AEBA /* AppRouter.swift in Sources */,
 				4ABDEEAE1E42FBB40041AEBA /* AppConstant.swift in Sources */,
 				4A9DF97D1E48485D00FC654C /* AddTicketViewController.swift in Sources */,
+				4AF87F7C1E4B2EBA00534F6D /* Comment.swift in Sources */,
 				4ABDEEC11E42FBE50041AEBA /* ThemeTextfield.swift in Sources */,
+				4AF87F801E4B453600534F6D /* History.swift in Sources */,
 				4ABDEEAD1E42FBB40041AEBA /* AbstractViewController.swift in Sources */,
 				4A82A7AA1E43402300D8A92E /* User.swift in Sources */,
 				4ABDEEC21E42FBE50041AEBA /* LoginViewController.swift in Sources */,

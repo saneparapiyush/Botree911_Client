@@ -15,7 +15,7 @@ struct ComunicateService {
 //    static let KeyName2 = "KeyName2"
     
     enum Router: URLRequestConvertible {
-        static let baseURLString = "http://192.168.0.150:3000/"
+        static let baseURLString = "http://192.168.0.134:3000/"
         static var OAuthToken: String?
         
         case SignIn(Parameters)
@@ -24,6 +24,9 @@ struct ComunicateService {
         case TicketList(Parameters)
         case CreateTicket(Parameters)
         case EditTicket(Parameters,Int)
+        case AddComment(Parameters,Int)
+        case CommentList(Int)
+        case HistoryList(Int)
         
         var method: Alamofire.HTTPMethod {
             switch self {
@@ -39,6 +42,12 @@ struct ComunicateService {
                     return .post
                 case .EditTicket(_):
                     return .patch
+                case .AddComment(_):
+                    return .post
+                case .CommentList(_):
+                    return .get
+                case .HistoryList(_):
+                    return .get
             }
         }
         
@@ -56,6 +65,12 @@ struct ComunicateService {
                     return "tickets"
                 case .EditTicket(_, let ticketID):
                     return "tickets/\(ticketID)"
+                case .AddComment(_, let ticketID):
+                    return "tickets/\(ticketID)/add_comment"
+                case .CommentList(let ticketID):
+                    return "tickets/\(ticketID)/ticket_comments"
+                case .HistoryList(let ticketID):
+                    return "tickets/\(ticketID)/ticket_status_history"
             }
         }
 
@@ -95,6 +110,15 @@ struct ComunicateService {
             
             case .EditTicket(let params,_):
                 return try Alamofire.JSONEncoding.default.encode(urlRequest, with: params)
+                
+            case .AddComment(let params,_):
+                return try Alamofire.JSONEncoding.default.encode(urlRequest, with: params)
+                
+            case .CommentList(_):
+                return try Alamofire.URLEncoding.default.encode(urlRequest, with: nil)
+            
+            case .HistoryList(_):
+                return try Alamofire.URLEncoding.default.encode(urlRequest, with: nil)
                 
             default:
                 return urlRequest

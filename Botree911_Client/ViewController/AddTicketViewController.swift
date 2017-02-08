@@ -41,10 +41,8 @@ class AddTicketViewController: AbstractViewController {
         // Do any additional setup after loading the view.
         
         if (ticket != nil) {
-            title = getLocalizedString("title_edit_ticket")
             isEdit = true
         } else {
-            title = getLocalizedString("title_add_ticket")
             isEdit = false
         }
         
@@ -62,6 +60,7 @@ class AddTicketViewController: AbstractViewController {
         picker.delegate = self
     }
     
+//    MARK:- Helper Method
     func getStatusList() {
         
 //        FTProgressIndicator.showProgressWithmessage(getLocalizedString("status_list_indicator"), userInteractionEnable: false)
@@ -82,21 +81,21 @@ class AddTicketViewController: AbstractViewController {
                             self.processGetResponceStutusList(json: json["data"])
                         } else {
                             print((json.dictionaryObject!["message"])!)
-                            self.view.makeToast("\((json.dictionaryObject!["message"])!)")
+                            self.configToast(message: "\((json.dictionaryObject!["message"])!)")
                         }
                     }
                     
 //                    self.dismissIndicator()
                 case .failure(let error):
                     print(error)
-                    self.view.makeToast(error.localizedDescription)
+                    self.configToast(message: error.localizedDescription)
 //                    self.dismissIndicator()
                 }
             }
         } catch let error{
             print(error)
-            self.view.makeToast(error.localizedDescription)
-//            self.dismissIndicator()
+            self.configToast(message: error.localizedDescription)
+            //            self.dismissIndicator()
         }
     } // End getProjectList()
     
@@ -119,36 +118,15 @@ class AddTicketViewController: AbstractViewController {
 
             } else {
                 print(error!)
-                self.view.makeToast(error!)
+                self.configToast(message: error!)
             }
         }
     } // End getProjectList()
     
     
-    func configUI() {
-        picker = UIPickerView(frame: CGRect(x: 0.0, y: 0.0, width: UIScreen.main.bounds.size.width, height: 216.0))
-        picker.backgroundColor = UIColor.white
-        
-        txtSelectProject.addRightSubView()
-        txtSelectStatus.addRightSubView()
-        
-        txtSelectProject.inputView = picker
-        txtSelectStatus.inputView = picker
-        
-        txtSelectProject.text = "\(project!.name!)"
-        if isEdit! {
-            txtTitleName.text = ticket!.name
-            txtViewDescription.text = ticket!.description
-            txtSelectStatus.text = ticket!.status
-            btnCreateTicket.setTitle("Edit Ticket", for: .normal)
-        }
-    }// End configUI()
-    
     func createTicket() {
 
         let status: Int = arrStatus["\(txtSelectStatus.text!)"]! as! Int
-        
-        
         
         let parameters = [
             "ticket": [
@@ -181,20 +159,20 @@ class AddTicketViewController: AbstractViewController {
 //                        } else {
 //                            print((json.dictionaryObject!["message"])!)
 //                        }
-                        self.view.makeToast("\((json.dictionaryObject!["message"])!)")
+                        self.configToast(message: "\((json.dictionaryObject!["message"])!)")
                     }
                     
                     self.dismissIndicator()
                 case .failure(let error):
                     print(error.localizedDescription)
                     self.dismissIndicator()
-                    self.view.makeToast(error.localizedDescription)
+                    self.configToast(message: error.localizedDescription)
                 }
             }
         } catch let error{
             print(error.localizedDescription)
             self.dismissIndicator()
-            self.view.makeToast(error.localizedDescription)
+            self.configToast(message: error.localizedDescription)
         }
     }//End CreateTicket()
     
@@ -232,22 +210,46 @@ class AddTicketViewController: AbstractViewController {
 //                        } else {
 //                            print((json.dictionaryObject!["message"])!)
 //                        }
-                        self.view.makeToast("\((json.dictionaryObject!["message"])!)")
+                        self.configToast(message: "\((json.dictionaryObject!["message"])!)")
                     }
                     
                     self.dismissIndicator()
                 case .failure(let error):
                     print(error.localizedDescription)
                     self.dismissIndicator()
-                    self.view.makeToast(error.localizedDescription)
+                    self.configToast(message: error.localizedDescription)
                 }
             }
         } catch let error{
             print(error.localizedDescription)
             self.dismissIndicator()
-            self.view.makeToast(error.localizedDescription)
+            self.configToast(message: error.localizedDescription)
         }
     }//End editTicket()
+    
+    func configUI() {
+        picker = UIPickerView(frame: CGRect(x: 0.0, y: 0.0, width: UIScreen.main.bounds.size.width, height: 216.0))
+        picker.backgroundColor = UIColor.white
+        
+        txtSelectProject.addRightSubView()
+        txtSelectStatus.addRightSubView()
+        
+        txtSelectProject.inputView = picker
+        txtSelectStatus.inputView = picker
+        
+        txtSelectProject.text = "\(project!.name!)"
+        if isEdit! {
+            txtTitleName.text = ticket!.name
+            txtViewDescription.text = ticket!.description
+            txtSelectStatus.text = ticket!.status
+            btnCreateTicket.setTitle("Edit Ticket", for: .normal)
+        }
+    }// End configUI()
+    
+    func configToast(message: String) {
+        self.isEdit! ? self.tabBarController?.view.makeToast(message) : self.view.makeToast(message)
+    }//End configToast()
+
 
     //MARK:- Actions
     
@@ -268,14 +270,12 @@ class AddTicketViewController: AbstractViewController {
                 print("Select Status")
             } // Write toast related message
         }
-        
     }// End btnCreateProjectOnClick()
     
     @IBAction func btnCancelOnClick(_ sender: Any) {
-        self.navigationController?.popToRootViewController(animated: true)
-        
-    }// End btnCancelOnClick()
-    
+//        self.navigationController?.popViewController(animated: true);
+        self.performSegue(withIdentifier: "show", sender: self)
+    }// End btnCancelOnClick()    
 }
 
 extension AddTicketViewController: UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {

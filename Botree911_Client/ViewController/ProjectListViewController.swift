@@ -8,7 +8,6 @@
 
 import UIKit
 import SwiftyJSON
-import Alamofire
 import FTProgressIndicator
 
 
@@ -25,13 +24,18 @@ class ProjectListViewController: AbstractViewController {
         
         // Do any additional setup after loading the view.
         title = getLocalizedString("title_project_list")
-        showNavigationBar()
-        // For Add SignOut Button
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sign Out", style: .plain, target: self, action: #selector(btnSignOutOnClick))
         
         getProjectList()
     }
-    
+    func configNavigationBar() {
+//        showNavigationBar()
+        
+        // For Add SignOut Button
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sign Out", style: .plain, target: self, action: #selector(btnSignOutOnClick))
+        
+        self.navigationItem.setHidesBackButton(true, animated: true)
+        
+    }//End configNavigationBar()
     func getProjectList() {
         
         let serviceManager = ServiceManager()
@@ -49,18 +53,7 @@ class ProjectListViewController: AbstractViewController {
             self.dismissIndicator()
         }
     } // End getProjectList()
-    /*
-    func processGetResponceProjectList(json: JSON) {
-        let projects = json["projects"]
-        
-        for i in 0 ..< projects.count {
-                let jsonValue = projects.arrayValue[i]
-                let projectDetail = Project(json: jsonValue)
-                projectListSource.append(projectDetail)
-        }
-        
-        tblProjectList.reloadData()
-    } // End procssGetResponceProjectList*/
+
     //Mark:- Actions
     func btnSignOutOnClick() {
         
