@@ -33,6 +33,20 @@
 		4AC9D66D1E44793A0025E23E /* TicketListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC9D66C1E44793A0025E23E /* TicketListViewController.swift */; };
 		4AC9D66F1E44808B0025E23E /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC9D66E1E44808B0025E23E /* Project.swift */; };
 		4AC9D6711E44952A0025E23E /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC9D6701E44952A0025E23E /* Ticket.swift */; };
+		4ACB7BF01E4D7EFC00FA27A3 /* SlideNavigationContorllerAnimatorFade.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACB7BE41E4D7EFC00FA27A3 /* SlideNavigationContorllerAnimatorFade.m */; };
+		4ACB7BF11E4D7EFC00FA27A3 /* SlideNavigationContorllerAnimatorScale.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACB7BE61E4D7EFC00FA27A3 /* SlideNavigationContorllerAnimatorScale.m */; };
+		4ACB7BF21E4D7EFC00FA27A3 /* SlideNavigationContorllerAnimatorScaleAndFade.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACB7BE81E4D7EFC00FA27A3 /* SlideNavigationContorllerAnimatorScaleAndFade.m */; };
+		4ACB7BF31E4D7EFC00FA27A3 /* SlideNavigationContorllerAnimatorSlide.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACB7BEA1E4D7EFC00FA27A3 /* SlideNavigationContorllerAnimatorSlide.m */; };
+		4ACB7BF41E4D7EFC00FA27A3 /* SlideNavigationContorllerAnimatorSlideAndFade.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACB7BEC1E4D7EFC00FA27A3 /* SlideNavigationContorllerAnimatorSlideAndFade.m */; };
+		4ACB7BF51E4D7EFC00FA27A3 /* leftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACB7BED1E4D7EFC00FA27A3 /* leftMenuViewController.swift */; };
+		4ACB7BF61E4D7EFC00FA27A3 /* SlideNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACB7BEF1E4D7EFC00FA27A3 /* SlideNavigationController.m */; };
+		4ACB7C0F1E4D973500FA27A3 /* ProjectDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACB7C0E1E4D973500FA27A3 /* ProjectDetailViewController.swift */; };
+		4ACB7C111E4D9B4F00FA27A3 /* ThemeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACB7C101E4D9B4F00FA27A3 /* ThemeLabel.swift */; };
+		4AE763071E4C95BC006F33F1 /* CarbonSwipeRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE763001E4C95BC006F33F1 /* CarbonSwipeRefresh.m */; };
+		4AE763081E4C95BC006F33F1 /* CarbonTabSwipeNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE763021E4C95BC006F33F1 /* CarbonTabSwipeNavigation.m */; };
+		4AE763091E4C95BC006F33F1 /* CarbonTabSwipeScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE763041E4C95BC006F33F1 /* CarbonTabSwipeScrollView.m */; };
+		4AE7630A1E4C95BC006F33F1 /* CarbonTabSwipeSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE763061E4C95BC006F33F1 /* CarbonTabSwipeSegmentedControl.m */; };
+		4AE7630C1E4C9983006F33F1 /* FragmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE7630B1E4C9983006F33F1 /* FragmentViewController.swift */; };
 		4AF87F7A1E4B097D00534F6D /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF87F791E4B097D00534F6D /* CommentViewController.swift */; };
 		4AF87F7C1E4B2EBA00534F6D /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF87F7B1E4B2EBA00534F6D /* Comment.swift */; };
 		4AF87F7E1E4B3EC500534F6D /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF87F7D1E4B3EC500534F6D /* HistoryViewController.swift */; };
@@ -94,6 +108,32 @@
 		4AC9D66C1E44793A0025E23E /* TicketListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketListViewController.swift; sourceTree = "<group>"; };
 		4AC9D66E1E44808B0025E23E /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		4AC9D6701E44952A0025E23E /* Ticket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
+		4ACB7BE21E4D7EFC00FA27A3 /* SlideNavigationContorllerAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideNavigationContorllerAnimator.h; sourceTree = "<group>"; };
+		4ACB7BE31E4D7EFC00FA27A3 /* SlideNavigationContorllerAnimatorFade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideNavigationContorllerAnimatorFade.h; sourceTree = "<group>"; };
+		4ACB7BE41E4D7EFC00FA27A3 /* SlideNavigationContorllerAnimatorFade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideNavigationContorllerAnimatorFade.m; sourceTree = "<group>"; };
+		4ACB7BE51E4D7EFC00FA27A3 /* SlideNavigationContorllerAnimatorScale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideNavigationContorllerAnimatorScale.h; sourceTree = "<group>"; };
+		4ACB7BE61E4D7EFC00FA27A3 /* SlideNavigationContorllerAnimatorScale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideNavigationContorllerAnimatorScale.m; sourceTree = "<group>"; };
+		4ACB7BE71E4D7EFC00FA27A3 /* SlideNavigationContorllerAnimatorScaleAndFade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideNavigationContorllerAnimatorScaleAndFade.h; sourceTree = "<group>"; };
+		4ACB7BE81E4D7EFC00FA27A3 /* SlideNavigationContorllerAnimatorScaleAndFade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideNavigationContorllerAnimatorScaleAndFade.m; sourceTree = "<group>"; };
+		4ACB7BE91E4D7EFC00FA27A3 /* SlideNavigationContorllerAnimatorSlide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideNavigationContorllerAnimatorSlide.h; sourceTree = "<group>"; };
+		4ACB7BEA1E4D7EFC00FA27A3 /* SlideNavigationContorllerAnimatorSlide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideNavigationContorllerAnimatorSlide.m; sourceTree = "<group>"; };
+		4ACB7BEB1E4D7EFC00FA27A3 /* SlideNavigationContorllerAnimatorSlideAndFade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideNavigationContorllerAnimatorSlideAndFade.h; sourceTree = "<group>"; };
+		4ACB7BEC1E4D7EFC00FA27A3 /* SlideNavigationContorllerAnimatorSlideAndFade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideNavigationContorllerAnimatorSlideAndFade.m; sourceTree = "<group>"; };
+		4ACB7BED1E4D7EFC00FA27A3 /* leftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = leftMenuViewController.swift; sourceTree = "<group>"; };
+		4ACB7BEE1E4D7EFC00FA27A3 /* SlideNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideNavigationController.h; sourceTree = "<group>"; };
+		4ACB7BEF1E4D7EFC00FA27A3 /* SlideNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideNavigationController.m; sourceTree = "<group>"; };
+		4ACB7C0E1E4D973500FA27A3 /* ProjectDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectDetailViewController.swift; sourceTree = "<group>"; };
+		4ACB7C101E4D9B4F00FA27A3 /* ThemeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeLabel.swift; sourceTree = "<group>"; };
+		4AE762FE1E4C95BC006F33F1 /* CarbonKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CarbonKit.h; path = CarbonKit/CarbonKit.h; sourceTree = "<group>"; };
+		4AE762FF1E4C95BC006F33F1 /* CarbonSwipeRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CarbonSwipeRefresh.h; path = CarbonKit/CarbonSwipeRefresh.h; sourceTree = "<group>"; };
+		4AE763001E4C95BC006F33F1 /* CarbonSwipeRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CarbonSwipeRefresh.m; path = CarbonKit/CarbonSwipeRefresh.m; sourceTree = "<group>"; };
+		4AE763011E4C95BC006F33F1 /* CarbonTabSwipeNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CarbonTabSwipeNavigation.h; path = CarbonKit/CarbonTabSwipeNavigation.h; sourceTree = "<group>"; };
+		4AE763021E4C95BC006F33F1 /* CarbonTabSwipeNavigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CarbonTabSwipeNavigation.m; path = CarbonKit/CarbonTabSwipeNavigation.m; sourceTree = "<group>"; };
+		4AE763031E4C95BC006F33F1 /* CarbonTabSwipeScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CarbonTabSwipeScrollView.h; path = CarbonKit/CarbonTabSwipeScrollView.h; sourceTree = "<group>"; };
+		4AE763041E4C95BC006F33F1 /* CarbonTabSwipeScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CarbonTabSwipeScrollView.m; path = CarbonKit/CarbonTabSwipeScrollView.m; sourceTree = "<group>"; };
+		4AE763051E4C95BC006F33F1 /* CarbonTabSwipeSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CarbonTabSwipeSegmentedControl.h; path = CarbonKit/CarbonTabSwipeSegmentedControl.h; sourceTree = "<group>"; };
+		4AE763061E4C95BC006F33F1 /* CarbonTabSwipeSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CarbonTabSwipeSegmentedControl.m; path = CarbonKit/CarbonTabSwipeSegmentedControl.m; sourceTree = "<group>"; };
+		4AE7630B1E4C9983006F33F1 /* FragmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FragmentViewController.swift; sourceTree = "<group>"; };
 		4AF87F791E4B097D00534F6D /* CommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		4AF87F7B1E4B2EBA00534F6D /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		4AF87F7D1E4B3EC500534F6D /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
@@ -202,6 +242,8 @@
 		4A82A7A51E432CA400D8A92E /* Third Party */ = {
 			isa = PBXGroup;
 			children = (
+				4ACB7BE01E4D7EFC00FA27A3 /* SlideMenu */,
+				4AE762F01E4C956C006F33F1 /* CarbonKit */,
 				4AC9D6601E445AAA0025E23E /* KeychainSwift.swift */,
 				4A82A7AD1E435BDF00D8A92E /* UserDefaultStorage.swift */,
 			);
@@ -251,6 +293,8 @@
 			children = (
 				4ABDEEB91E42FBE50041AEBA /* ThemeButton.swift */,
 				4ABDEEBA1E42FBE50041AEBA /* ThemeTextfield.swift */,
+				4AE7630B1E4C9983006F33F1 /* FragmentViewController.swift */,
+				4ACB7C101E4D9B4F00FA27A3 /* ThemeLabel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -260,12 +304,58 @@
 			children = (
 				4ABDEEBC1E42FBE50041AEBA /* LoginViewController.swift */,
 				4A82A7AB1E434BC400D8A92E /* ProjectListViewController.swift */,
+				4ACB7C0E1E4D973500FA27A3 /* ProjectDetailViewController.swift */,
 				4AC9D66C1E44793A0025E23E /* TicketListViewController.swift */,
 				4A9DF97C1E48485D00FC654C /* AddTicketViewController.swift */,
 				4AF87F791E4B097D00534F6D /* CommentViewController.swift */,
 				4AF87F7D1E4B3EC500534F6D /* HistoryViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		4ACB7BE01E4D7EFC00FA27A3 /* SlideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				4ACB7BE11E4D7EFC00FA27A3 /* Animation */,
+				4ACB7BED1E4D7EFC00FA27A3 /* leftMenuViewController.swift */,
+				4ACB7BEE1E4D7EFC00FA27A3 /* SlideNavigationController.h */,
+				4ACB7BEF1E4D7EFC00FA27A3 /* SlideNavigationController.m */,
+			);
+			path = SlideMenu;
+			sourceTree = "<group>";
+		};
+		4ACB7BE11E4D7EFC00FA27A3 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				4ACB7BE21E4D7EFC00FA27A3 /* SlideNavigationContorllerAnimator.h */,
+				4ACB7BE31E4D7EFC00FA27A3 /* SlideNavigationContorllerAnimatorFade.h */,
+				4ACB7BE41E4D7EFC00FA27A3 /* SlideNavigationContorllerAnimatorFade.m */,
+				4ACB7BE51E4D7EFC00FA27A3 /* SlideNavigationContorllerAnimatorScale.h */,
+				4ACB7BE61E4D7EFC00FA27A3 /* SlideNavigationContorllerAnimatorScale.m */,
+				4ACB7BE71E4D7EFC00FA27A3 /* SlideNavigationContorllerAnimatorScaleAndFade.h */,
+				4ACB7BE81E4D7EFC00FA27A3 /* SlideNavigationContorllerAnimatorScaleAndFade.m */,
+				4ACB7BE91E4D7EFC00FA27A3 /* SlideNavigationContorllerAnimatorSlide.h */,
+				4ACB7BEA1E4D7EFC00FA27A3 /* SlideNavigationContorllerAnimatorSlide.m */,
+				4ACB7BEB1E4D7EFC00FA27A3 /* SlideNavigationContorllerAnimatorSlideAndFade.h */,
+				4ACB7BEC1E4D7EFC00FA27A3 /* SlideNavigationContorllerAnimatorSlideAndFade.m */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
+		4AE762F01E4C956C006F33F1 /* CarbonKit */ = {
+			isa = PBXGroup;
+			children = (
+				4AE762FE1E4C95BC006F33F1 /* CarbonKit.h */,
+				4AE762FF1E4C95BC006F33F1 /* CarbonSwipeRefresh.h */,
+				4AE763001E4C95BC006F33F1 /* CarbonSwipeRefresh.m */,
+				4AE763011E4C95BC006F33F1 /* CarbonTabSwipeNavigation.h */,
+				4AE763021E4C95BC006F33F1 /* CarbonTabSwipeNavigation.m */,
+				4AE763031E4C95BC006F33F1 /* CarbonTabSwipeScrollView.h */,
+				4AE763041E4C95BC006F33F1 /* CarbonTabSwipeScrollView.m */,
+				4AE763051E4C95BC006F33F1 /* CarbonTabSwipeSegmentedControl.h */,
+				4AE763061E4C95BC006F33F1 /* CarbonTabSwipeSegmentedControl.m */,
+			);
+			name = CarbonKit;
 			sourceTree = "<group>";
 		};
 		72FA8F0385EBC5EFB2B61EEF /* Pods */ = {
@@ -573,11 +663,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4ACB7BF01E4D7EFC00FA27A3 /* SlideNavigationContorllerAnimatorFade.m in Sources */,
 				4AF87F7A1E4B097D00534F6D /* CommentViewController.swift in Sources */,
 				4ABDEEB01E42FBB40041AEBA /* Utility.swift in Sources */,
 				4A82A7AC1E434BC400D8A92E /* ProjectListViewController.swift in Sources */,
+				4ACB7BF51E4D7EFC00FA27A3 /* leftMenuViewController.swift in Sources */,
 				4ABDEEBE1E42FBE50041AEBA /* ComunicateService.swift in Sources */,
+				4ACB7C111E4D9B4F00FA27A3 /* ThemeLabel.swift in Sources */,
 				4ABDEEBF1E42FBE50041AEBA /* TextFieldValidator.m in Sources */,
+				4ACB7C0F1E4D973500FA27A3 /* ProjectDetailViewController.swift in Sources */,
+				4AE7630A1E4C95BC006F33F1 /* CarbonTabSwipeSegmentedControl.m in Sources */,
+				4AE763081E4C95BC006F33F1 /* CarbonTabSwipeNavigation.m in Sources */,
 				4AF87F7E1E4B3EC500534F6D /* HistoryViewController.swift in Sources */,
 				4AC9D66D1E44793A0025E23E /* TicketListViewController.swift in Sources */,
 				4ABDEEC01E42FBE50041AEBA /* ThemeButton.swift in Sources */,
@@ -586,16 +682,24 @@
 				4A9DF97D1E48485D00FC654C /* AddTicketViewController.swift in Sources */,
 				4AF87F7C1E4B2EBA00534F6D /* Comment.swift in Sources */,
 				4ABDEEC11E42FBE50041AEBA /* ThemeTextfield.swift in Sources */,
+				4ACB7BF21E4D7EFC00FA27A3 /* SlideNavigationContorllerAnimatorScaleAndFade.m in Sources */,
 				4AF87F801E4B453600534F6D /* History.swift in Sources */,
 				4ABDEEAD1E42FBB40041AEBA /* AbstractViewController.swift in Sources */,
 				4A82A7AA1E43402300D8A92E /* User.swift in Sources */,
+				4ACB7BF31E4D7EFC00FA27A3 /* SlideNavigationContorllerAnimatorSlide.m in Sources */,
 				4ABDEEC21E42FBE50041AEBA /* LoginViewController.swift in Sources */,
 				4AC9D6631E445AAA0025E23E /* KeychainSwift.swift in Sources */,
 				4AC9D6711E44952A0025E23E /* Ticket.swift in Sources */,
+				4AE763071E4C95BC006F33F1 /* CarbonSwipeRefresh.m in Sources */,
+				4AE7630C1E4C9983006F33F1 /* FragmentViewController.swift in Sources */,
+				4ACB7BF41E4D7EFC00FA27A3 /* SlideNavigationContorllerAnimatorSlideAndFade.m in Sources */,
 				4A82A7AE1E435BDF00D8A92E /* UserDefaultStorage.swift in Sources */,
+				4ACB7BF11E4D7EFC00FA27A3 /* SlideNavigationContorllerAnimatorScale.m in Sources */,
 				4A344C481E42F59E00FFA1FC /* AppDelegate.swift in Sources */,
+				4AE763091E4C95BC006F33F1 /* CarbonTabSwipeScrollView.m in Sources */,
 				4AC9D66F1E44808B0025E23E /* Project.swift in Sources */,
 				4A9DF97F1E4870CC00FC654C /* ServiceManager.swift in Sources */,
+				4ACB7BF61E4D7EFC00FA27A3 /* SlideNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

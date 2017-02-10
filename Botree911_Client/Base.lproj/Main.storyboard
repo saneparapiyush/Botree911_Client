@@ -25,14 +25,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_image" translatesAutoresizingMaskIntoConstraints="NO" id="q0a-xO-iPS">
-                                <rect key="frame" x="87" y="91" width="240" height="62"/>
+                                <rect key="frame" x="87" y="150" width="240" height="62"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="q0a-xO-iPS" secondAttribute="height" multiplier="120:31" id="Jg7-QU-OnH"/>
                                     <constraint firstAttribute="width" constant="240" id="bK2-f1-Px8"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="client@gmail.com" placeholder="User Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v6Y-e4-S0N" customClass="TextFieldValidator">
-                                <rect key="frame" x="15" y="213" width="384" height="40"/>
+                                <rect key="frame" x="15" y="272" width="384" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="S2m-Od-XFm"/>
@@ -46,7 +46,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IsC-yo-DJG" customClass="ThemeButton" customModule="Botree911_Client" customModuleProvider="target">
-                                <rect key="frame" x="15" y="317" width="384" height="40"/>
+                                <rect key="frame" x="15" y="376" width="384" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="rfR-d7-PJu"/>
                                 </constraints>
@@ -56,7 +56,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="12345678" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EjY-rh-rk1" customClass="TextFieldValidator">
-                                <rect key="frame" x="15" y="261" width="384" height="40"/>
+                                <rect key="frame" x="15" y="320" width="384" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="2X4-Oi-zZT"/>
@@ -65,12 +65,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <connections>
-                                    <outlet property="delegate" destination="8bC-Xf-vdC" id="seF-if-A3B"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="S62-qw-Np0"/>
                                     <outlet property="presentInView" destination="8bC-Xf-vdC" id="Yx0-Dm-gQ4"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iuf-Ot-rag">
-                                <rect key="frame" x="15" y="365" width="384" height="30"/>
+                                <rect key="frame" x="15" y="424" width="384" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="0db-VS-5tY"/>
                                 </constraints>
@@ -78,9 +78,12 @@
                                 <state key="normal" title="Forgot Password?">
                                     <color key="titleColor" red="0.5725490196078431" green="0.78431372549019607" blue="0.24313725490196078" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnForgotPasswordOnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0kF-GT-oNI"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOGIN DETAILS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xrN-iW-eKM">
-                                <rect key="frame" x="15" y="183" width="384" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SIGN IN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xrN-iW-eKM">
+                                <rect key="frame" x="15" y="242" width="384" height="20"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <color key="textColor" red="0.55686274509803924" green="0.78431372549019607" blue="0.24313725490196078" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -103,7 +106,7 @@
                             <constraint firstItem="v6Y-e4-S0N" firstAttribute="trailing" secondItem="xrN-iW-eKM" secondAttribute="trailing" id="X5J-bu-22w"/>
                             <constraint firstItem="v6Y-e4-S0N" firstAttribute="top" secondItem="xrN-iW-eKM" secondAttribute="bottom" constant="9.5" id="aEP-xa-Jcb"/>
                             <constraint firstItem="IsC-yo-DJG" firstAttribute="trailing" secondItem="xrN-iW-eKM" secondAttribute="trailing" id="aEV-3T-6u9"/>
-                            <constraint firstItem="q0a-xO-iPS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="91" id="adZ-xX-lSq"/>
+                            <constraint firstItem="q0a-xO-iPS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="150" id="adZ-xX-lSq"/>
                             <constraint firstItem="EjY-rh-rk1" firstAttribute="top" secondItem="v6Y-e4-S0N" secondAttribute="bottom" constant="8" id="fjH-Zz-p85"/>
                         </constraints>
                     </view>
@@ -136,88 +139,132 @@
                                 <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexBackgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProjectListCell" rowHeight="100" id="lkB-HR-sEo" customClass="ProjectListCell" customModule="Botree911_Client" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="100"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProjectListCell" rowHeight="133" id="lkB-HR-sEo" customClass="ProjectListCell" customModule="Botree911_Client" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="133"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lkB-HR-sEo" id="ZGG-Ei-ZtR">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="133"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VRy-Lc-BWu">
-                                                    <rect key="frame" x="8" y="8" width="398" height="92"/>
+                                                    <rect key="frame" x="8" y="8" width="398" height="125"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Project Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Fk-qB-QwE">
-                                                            <rect key="frame" x="8" y="8" width="342" height="21"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Project Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Fk-qB-QwE" customClass="ThemeLabelTitle" customModule="Botree911_Client" customModuleProvider="target">
+                                                            <rect key="frame" x="8" y="8" width="94" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="Lze-4t-dgC"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="69V-sx-wlB">
-                                                            <rect key="frame" x="8" y="33" width="342" height="21"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Shardul Bhatt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Urt-pr-p32" customClass="ThemeLabelDetail" customModule="Botree911_Client" customModuleProvider="target">
+                                                            <rect key="frame" x="8" y="33" width="124" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Feb 01, 2017" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5RM-HC-epE" customClass="ThemeLabelDetail" customModule="Botree911_Client" customModuleProvider="target">
+                                                            <rect key="frame" x="293" y="8" width="97" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ticket Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yoA-eW-WKh" customClass="ThemeLabelDetail" customModule="Botree911_Client" customModuleProvider="target">
+                                                            <rect key="frame" x="8" y="58" width="94" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="33" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ril-0E-Fsl">
-                                                            <rect key="frame" x="375" y="62" width="15" height="21"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="15" id="vdV-1k-FPA"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No. of Team Members:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rYE-jj-mnv">
-                                                            <rect key="frame" x="8" y="62" width="363" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZT-Tg-Gki">
-                                                            <rect key="frame" x="350" y="11" width="40" height="40"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="40" id="Nvc-Bx-sW5"/>
-                                                                <constraint firstAttribute="width" constant="40" id="nTS-Yx-YkQ"/>
-                                                            </constraints>
-                                                            <state key="normal" image="ProjectInfo"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N7E-ri-r8H">
+                                                            <rect key="frame" x="320" y="87" width="70" height="30"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <state key="normal" title="Details">
+                                                                <color key="titleColor" red="0.0081677347652957342" green="0.039946114962969168" blue="0.89293749999999994" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </state>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l1s-ce-Cfu">
+                                                            <rect key="frame" x="212" y="87" width="100" height="30"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <state key="normal" title="All Tickets">
+                                                                <color key="titleColor" red="0.0081677347652957342" green="0.039946114962969168" blue="0.89293749999999994" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </state>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JHo-sV-6sk">
+                                                            <rect key="frame" x="360" y="53" width="30" height="30"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <color key="backgroundColor" red="0.57254901960000004" green="0.7843137255" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <state key="normal" title="10">
+                                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="4"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XgL-M1-k6I">
+                                                            <rect key="frame" x="322" y="53" width="30" height="30"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <color key="backgroundColor" red="0.0081677347650000003" green="0.039946114960000001" blue="0.89293750000000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <state key="normal" title="12">
+                                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="4"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="few-Xp-4fV">
+                                                            <rect key="frame" x="284" y="53" width="30" height="30"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <color key="backgroundColor" red="1" green="0.40145836367503374" blue="0.11190436371569068" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <state key="normal" title="8">
+                                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="4"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hfo-it-2jw">
+                                                            <rect key="frame" x="246" y="53" width="30" height="30"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <state key="normal" title="3">
+                                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="4"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                            </userDefinedRuntimeAttributes>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="91.5" id="1lR-pf-1tp"/>
-                                                        <constraint firstItem="Ril-0E-Fsl" firstAttribute="top" secondItem="rYE-jj-mnv" secondAttribute="top" id="56M-bU-K7c"/>
-                                                        <constraint firstItem="rYE-jj-mnv" firstAttribute="leading" secondItem="69V-sx-wlB" secondAttribute="leading" id="GYU-4h-HbQ"/>
+                                                        <constraint firstAttribute="height" constant="125" id="1lR-pf-1tp"/>
                                                         <constraint firstItem="1Fk-qB-QwE" firstAttribute="top" secondItem="VRy-Lc-BWu" secondAttribute="top" constant="8" id="LRl-VQ-WCG"/>
-                                                        <constraint firstItem="69V-sx-wlB" firstAttribute="height" secondItem="1Fk-qB-QwE" secondAttribute="height" id="MNZ-ys-79g"/>
-                                                        <constraint firstItem="NZT-Tg-Gki" firstAttribute="top" secondItem="VRy-Lc-BWu" secondAttribute="top" constant="11" id="My8-Gg-6MM"/>
-                                                        <constraint firstItem="NZT-Tg-Gki" firstAttribute="leading" secondItem="1Fk-qB-QwE" secondAttribute="trailing" id="N1b-qB-2wF"/>
-                                                        <constraint firstItem="69V-sx-wlB" firstAttribute="leading" secondItem="1Fk-qB-QwE" secondAttribute="leading" id="UBV-TO-SIe"/>
-                                                        <constraint firstItem="Ril-0E-Fsl" firstAttribute="trailing" secondItem="69V-sx-wlB" secondAttribute="trailing" id="UaD-uJ-2tp"/>
-                                                        <constraint firstItem="Ril-0E-Fsl" firstAttribute="leading" secondItem="rYE-jj-mnv" secondAttribute="trailing" constant="4" id="Xbo-wR-Du4"/>
-                                                        <constraint firstItem="Ril-0E-Fsl" firstAttribute="leading" secondItem="rYE-jj-mnv" secondAttribute="trailing" constant="4" id="Y4v-Hg-r6o"/>
-                                                        <constraint firstAttribute="trailing" secondItem="NZT-Tg-Gki" secondAttribute="trailing" constant="8" id="YQG-94-PEe"/>
-                                                        <constraint firstItem="rYE-jj-mnv" firstAttribute="height" secondItem="1Fk-qB-QwE" secondAttribute="height" id="abG-SQ-N1R"/>
-                                                        <constraint firstItem="Ril-0E-Fsl" firstAttribute="height" secondItem="1Fk-qB-QwE" secondAttribute="height" id="bXD-Gf-cZi"/>
-                                                        <constraint firstItem="NZT-Tg-Gki" firstAttribute="trailing" secondItem="Ril-0E-Fsl" secondAttribute="trailing" id="j0H-k1-2O3"/>
                                                         <constraint firstItem="1Fk-qB-QwE" firstAttribute="leading" secondItem="VRy-Lc-BWu" secondAttribute="leading" constant="8" id="ju0-4D-bVZ"/>
-                                                        <constraint firstItem="rYE-jj-mnv" firstAttribute="top" secondItem="69V-sx-wlB" secondAttribute="bottom" constant="8" id="qju-tg-eG3"/>
-                                                        <constraint firstItem="69V-sx-wlB" firstAttribute="top" secondItem="1Fk-qB-QwE" secondAttribute="bottom" constant="4" id="ygn-BD-vcV"/>
-                                                        <constraint firstItem="69V-sx-wlB" firstAttribute="trailing" secondItem="1Fk-qB-QwE" secondAttribute="trailing" id="zXX-5T-Lfy"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                             <integer key="value" value="5"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
-                                                    <variation key="default">
-                                                        <mask key="constraints">
-                                                            <exclude reference="UaD-uJ-2tp"/>
-                                                            <exclude reference="Xbo-wR-Du4"/>
-                                                        </mask>
-                                                    </variation>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -229,10 +276,14 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
-                                            <outlet property="btnProjectInfo" destination="NZT-Tg-Gki" id="4HR-fN-iRT"/>
-                                            <outlet property="lblProjectDescription" destination="69V-sx-wlB" id="c2p-0J-rcQ"/>
+                                            <outlet property="btnAllTicket" destination="l1s-ce-Cfu" id="hw7-hF-9qz"/>
+                                            <outlet property="btnDetail" destination="N7E-ri-r8H" id="aHe-vx-LbG"/>
+                                            <outlet property="btnStatus1" destination="JHo-sV-6sk" id="ZeO-fS-Hvl"/>
+                                            <outlet property="btnStatus2" destination="XgL-M1-k6I" id="zHV-aF-bPa"/>
+                                            <outlet property="btnStatus3" destination="few-Xp-4fV" id="uXj-3X-PMO"/>
+                                            <outlet property="btnStatus4" destination="hfo-it-2jw" id="sUY-I1-n5H"/>
                                             <outlet property="lblProjectTitle" destination="1Fk-qB-QwE" id="7qP-oT-Trp"/>
-                                            <outlet property="lblTeamMember" destination="Ril-0E-Fsl" id="XfH-lo-cO5"/>
+                                            <outlet property="lblSPOCPerson" destination="Urt-pr-p32" id="Wkv-c0-jhL"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -252,12 +303,330 @@
                     </view>
                     <connections>
                         <outlet property="tblProjectList" destination="Idk-Qs-q4w" id="3FF-Tx-oKc"/>
-                        <segue destination="Y65-4G-ijb" kind="show" identifier="showTicketList" id="Xoh-k5-axw"/>
+                        <segue destination="cWl-v1-1xB" kind="show" identifier="showTicketList" id="Oa7-R1-Zef"/>
+                        <segue destination="ifZ-pO-Cf1" kind="show" identifier="showProjectDetail" id="jBc-Og-JLA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yPW-lq-14z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1692" y="33.733133433283363"/>
+            <point key="canvasLocation" x="1691.304347826087" y="33.423913043478265"/>
+        </scene>
+        <!--Project Detail View Controller-->
+        <scene sceneID="DtM-fa-YHz">
+            <objects>
+                <viewController storyboardIdentifier="ProjectDetailViewController" id="ifZ-pO-Cf1" customClass="ProjectDetailViewController" customModule="Botree911_Client" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Lz5-Dc-Th5"/>
+                        <viewControllerLayoutGuide type="bottom" id="6Cj-ZJ-vDE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ajr-OR-Jjq">
+                        <rect key="frame" x="0.0" y="64" width="414" height="713"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZDV-TI-oCf">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="713"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Project Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pw0-pw-tpr" customClass="ThemeLabelTitle" customModule="Botree911_Client" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="16" width="398" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Order Management System" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ITE-vx-piC" customClass="ThemeLabelDetail" customModule="Botree911_Client" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="45" width="398" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="feR-cC-l7G">
+                                        <rect key="frame" x="8" y="74" width="398" height="1"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Project Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CSa-vD-fZ0" customClass="ThemeLabelTitle" customModule="Botree911_Client" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="83" width="398" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="77W-2K-ZhK" customClass="ThemeLabelDetail" customModule="Botree911_Client" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="112" width="398" height="56"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJ1-fe-sRA">
+                                        <rect key="frame" x="8" y="176" width="398" height="1"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Start Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R5W-Cz-cgf" customClass="ThemeLabelTitle" customModule="Botree911_Client" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="185" width="398" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Feb 10,2017" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NOM-71-U6T" customClass="ThemeLabelDetail" customModule="Botree911_Client" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="214" width="398" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e4Z-PC-WIq">
+                                        <rect key="frame" x="8" y="243" width="398" height="1"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Resources" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ueO-5a-fV7" customClass="ThemeLabelTitle" customModule="Botree911_Client" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="252" width="398" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lorem ipsum dolor sit er elit lamet, consectetaur." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WG4-rp-6hX" customClass="ThemeLabelDetail" customModule="Botree911_Client" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="281" width="398" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGk-vu-C4S">
+                                        <rect key="frame" x="8" y="310" width="398" height="1"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SPOC Person" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y4A-E8-CwS" customClass="ThemeLabelTitle" customModule="Botree911_Client" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="319" width="398" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Shardul Bhatt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8sh-yL-w1P" customClass="ThemeLabelDetail" customModule="Botree911_Client" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="348" width="398" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8KW-gw-k3G">
+                                        <rect key="frame" x="8" y="377" width="398" height="1"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Team Members" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozf-Jb-Hey" customClass="ThemeLabelTitle" customModule="Botree911_Client" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="386" width="398" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MRd-x6-bJR" customClass="ThemeLabelDetail" customModule="Botree911_Client" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="415" width="398" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uum-Td-elD">
+                                        <rect key="frame" x="8" y="444" width="398" height="1"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ticket Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVP-If-cME" customClass="ThemeLabelTitle" customModule="Botree911_Client" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="453" width="398" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvV-BN-jaL">
+                                        <rect key="frame" x="95" y="482" width="25" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.5568627451" green="0.7843137255" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M1P-rn-b4V">
+                                        <rect key="frame" x="66" y="482" width="25" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.0081677347650000003" green="0.039946114960000001" blue="0.89293750000000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8dt-hL-BWc">
+                                        <rect key="frame" x="37" y="482" width="25" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.64478449910000002" blue="0.21187577569999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRE-07-mzH">
+                                        <rect key="frame" x="8" y="482" width="25" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n1R-S5-IiA">
+                                        <rect key="frame" x="8" y="511" width="398" height="1"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Project Manager" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JXn-VC-DRV" customClass="ThemeLabelTitle" customModule="Botree911_Client" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="520" width="398" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nipun Brahmbhatt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gAv-ud-Fve" customClass="ThemeLabelDetail" customModule="Botree911_Client" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="549" width="398" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Wu-i1-aOq">
+                                        <rect key="frame" x="8" y="578" width="398" height="1"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Team Leader" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AfZ-hJ-uyE" customClass="ThemeLabelTitle" customModule="Botree911_Client" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="587" width="398" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bhavin Nattar, Piyush Sanepara" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHq-z4-wpo" customClass="ThemeLabelDetail" customModule="Botree911_Client" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="616" width="398" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5TB-er-7GS">
+                                        <rect key="frame" x="8" y="645" width="398" height="1"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Developer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I96-Oa-8P9" customClass="ThemeLabelTitle" customModule="Botree911_Client" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="654" width="398" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rahul Sadhu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cov-LG-tzL" customClass="ThemeLabelDetail" customModule="Botree911_Client" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="683" width="398" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <connections>
+                                    <outlet property="delegate" destination="ifZ-pO-Cf1" id="0FS-aA-dnF"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="414" height="777"/>
+                    <connections>
+                        <outlet property="scrlView" destination="ZDV-TI-oCf" id="eaN-KQ-hIp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J3Y-AE-vyy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1689.8550724637682" y="745.51630434782612"/>
+        </scene>
+        <!--Fragment View Controller-->
+        <scene sceneID="SMY-zT-zBv">
+            <objects>
+                <viewController storyboardIdentifier="FragmentViewController" id="cWl-v1-1xB" customClass="FragmentViewController" customModule="Botree911_Client" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8Kt-13-4v3"/>
+                        <viewControllerLayoutGuide type="bottom" id="w3l-Xu-Sxl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Dyq-ah-H42">
+                        <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="ahO-0L-lOA" kind="show" identifier="showAddTicket" id="vmW-8j-cGl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IjI-wu-adQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2429" y="-611"/>
         </scene>
         <!--Ticket List View Controller-->
         <scene sceneID="UMa-HD-dsx">
@@ -268,11 +637,11 @@
                         <viewControllerLayoutGuide type="bottom" id="zGK-Xc-8Z3"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ZX6-Uv-dl2">
-                        <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5hh-xD-Mg3">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
                                 <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="TicketListCell" rowHeight="124" id="8Vb-ZF-3dk" customClass="TicketListCell" customModule="Botree911_Client" customModuleProvider="target">
@@ -285,8 +654,8 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jeJ-E1-pJn">
                                                     <rect key="frame" x="8" y="8" width="398" height="116"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ticket Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9g-Kl-ksh">
-                                                            <rect key="frame" x="8" y="8" width="382" height="21"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ticket Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9g-Kl-ksh" customClass="ThemeLabelTitle" customModule="Botree911_Client" customModuleProvider="target">
+                                                            <rect key="frame" x="8" y="8" width="92" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="JGX-Nw-Oqz"/>
                                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="hei-qe-CZH"/>
@@ -295,28 +664,13 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J0c-vl-9UF">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J0c-vl-9UF" customClass="ThemeLabelDetail" customModule="Botree911_Client" customModuleProvider="target">
                                                             <rect key="frame" x="8" y="33" width="382" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="to_do" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qn5-Gk-njE">
-                                                            <rect key="frame" x="360" y="62" width="30" height="21"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="uwR-Zu-twJ"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Status:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5p-0X-7JK">
-                                                            <rect key="frame" x="320" y="62" width="36" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Raised By:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZYT-fS-1S1">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Raised By:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZYT-fS-1S1" customClass="ThemeLabelDetailBold" customModule="Botree911_Client" customModuleProvider="target">
                                                             <rect key="frame" x="8" y="62" width="52" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="F9h-WY-Uv6"/>
@@ -325,8 +679,8 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Assignee: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrV-ba-2gV">
-                                                            <rect key="frame" x="8" y="87" width="52" height="21"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Assigned to: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrV-ba-2gV" customClass="ThemeLabelDetailBold" customModule="Botree911_Client" customModuleProvider="target">
+                                                            <rect key="frame" x="8" y="87" width="65" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="hol-td-Evk"/>
                                                             </constraints>
@@ -334,14 +688,23 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="to_do" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xMt-KC-lRb">
-                                                            <rect key="frame" x="64" y="62" width="27" height="21"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="to_do" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xMt-KC-lRb" customClass="ThemeLabelDetail" customModule="Botree911_Client" customModuleProvider="target">
+                                                            <rect key="frame" x="81" y="62" width="27" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="to_do" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mhC-17-nNN">
-                                                            <rect key="frame" x="64" y="87" width="27" height="21"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="to_do" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mhC-17-nNN" customClass="ThemeLabelDetail" customModule="Botree911_Client" customModuleProvider="target">
+                                                            <rect key="frame" x="81" y="87" width="27" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="to_do" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qn5-Gk-njE" customClass="ThemeLabelDetail" customModule="Botree911_Client" customModuleProvider="target">
+                                                            <rect key="frame" x="360" y="8" width="30" height="21"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="uwR-Zu-twJ"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -349,27 +712,26 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
+                                                        <constraint firstItem="qn5-Gk-njE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="N9g-Kl-ksh" secondAttribute="trailing" constant="8" id="5Z5-6S-UD3"/>
                                                         <constraint firstItem="ZYT-fS-1S1" firstAttribute="leading" secondItem="N9g-Kl-ksh" secondAttribute="leading" id="AbI-Gm-tCg"/>
-                                                        <constraint firstItem="qn5-Gk-njE" firstAttribute="leading" secondItem="T5p-0X-7JK" secondAttribute="trailing" constant="4" id="EYz-nU-IWD"/>
                                                         <constraint firstItem="zrV-ba-2gV" firstAttribute="top" secondItem="ZYT-fS-1S1" secondAttribute="bottom" constant="4" id="Enb-9s-oFC"/>
-                                                        <constraint firstItem="T5p-0X-7JK" firstAttribute="height" secondItem="N9g-Kl-ksh" secondAttribute="height" id="ITP-1Q-a6i"/>
                                                         <constraint firstItem="zrV-ba-2gV" firstAttribute="leading" secondItem="N9g-Kl-ksh" secondAttribute="leading" id="IUB-KM-KMu"/>
                                                         <constraint firstItem="qn5-Gk-njE" firstAttribute="height" secondItem="N9g-Kl-ksh" secondAttribute="height" id="MRA-fA-n4C"/>
-                                                        <constraint firstItem="T5p-0X-7JK" firstAttribute="top" secondItem="J0c-vl-9UF" secondAttribute="bottom" constant="8" id="QAb-x1-arA"/>
                                                         <constraint firstItem="xMt-KC-lRb" firstAttribute="height" secondItem="N9g-Kl-ksh" secondAttribute="height" id="QJR-4F-PFo"/>
                                                         <constraint firstItem="mhC-17-nNN" firstAttribute="leading" secondItem="xMt-KC-lRb" secondAttribute="leading" id="SGd-41-Bng"/>
                                                         <constraint firstAttribute="height" constant="116" id="UWs-rK-GRB"/>
+                                                        <constraint firstItem="mhC-17-nNN" firstAttribute="leading" secondItem="zrV-ba-2gV" secondAttribute="trailing" constant="8" id="VNV-L4-JX1"/>
                                                         <constraint firstItem="xMt-KC-lRb" firstAttribute="leading" secondItem="ZYT-fS-1S1" secondAttribute="trailing" constant="4" id="Zue-8O-D9s"/>
                                                         <constraint firstItem="N9g-Kl-ksh" firstAttribute="leading" secondItem="jeJ-E1-pJn" secondAttribute="leading" constant="8" id="faC-t4-eKb"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="J0c-vl-9UF" secondAttribute="trailing" id="gZu-oG-GTs"/>
+                                                        <constraint firstItem="N9g-Kl-ksh" firstAttribute="top" secondItem="jeJ-E1-pJn" secondAttribute="top" constant="8" id="jNn-1T-5hP"/>
                                                         <constraint firstItem="N9g-Kl-ksh" firstAttribute="top" secondItem="jeJ-E1-pJn" secondAttribute="top" constant="8" id="k2W-Qz-nrO"/>
+                                                        <constraint firstItem="qn5-Gk-njE" firstAttribute="top" secondItem="jeJ-E1-pJn" secondAttribute="top" constant="8" id="nbm-lk-cpN"/>
                                                         <constraint firstItem="mhC-17-nNN" firstAttribute="top" secondItem="zrV-ba-2gV" secondAttribute="top" id="nqG-Kc-77t"/>
-                                                        <constraint firstAttribute="trailing" secondItem="N9g-Kl-ksh" secondAttribute="trailing" constant="8" id="oDk-9o-fbc"/>
-                                                        <constraint firstItem="qn5-Gk-njE" firstAttribute="top" secondItem="T5p-0X-7JK" secondAttribute="top" id="qZd-h7-MGc"/>
                                                         <constraint firstItem="J0c-vl-9UF" firstAttribute="leading" secondItem="N9g-Kl-ksh" secondAttribute="leading" id="qxR-Fj-qKq"/>
                                                         <constraint firstItem="J0c-vl-9UF" firstAttribute="height" secondItem="N9g-Kl-ksh" secondAttribute="height" id="s8N-bO-44n"/>
                                                         <constraint firstItem="xMt-KC-lRb" firstAttribute="top" secondItem="ZYT-fS-1S1" secondAttribute="top" id="tQP-VO-MFb"/>
                                                         <constraint firstItem="ZYT-fS-1S1" firstAttribute="top" secondItem="J0c-vl-9UF" secondAttribute="bottom" constant="8" id="u2T-1M-wbd"/>
-                                                        <constraint firstItem="J0c-vl-9UF" firstAttribute="trailing" secondItem="N9g-Kl-ksh" secondAttribute="trailing" id="uCo-I3-Hua"/>
                                                         <constraint firstItem="qn5-Gk-njE" firstAttribute="trailing" secondItem="J0c-vl-9UF" secondAttribute="trailing" id="uS0-zM-ghe"/>
                                                         <constraint firstItem="mhC-17-nNN" firstAttribute="height" secondItem="N9g-Kl-ksh" secondAttribute="height" id="v3g-lc-1yy"/>
                                                         <constraint firstItem="J0c-vl-9UF" firstAttribute="top" secondItem="N9g-Kl-ksh" secondAttribute="bottom" constant="4" id="yPR-2X-sLx"/>
@@ -379,6 +741,11 @@
                                                             <integer key="value" value="5"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="Zue-8O-D9s"/>
+                                                        </mask>
+                                                    </variation>
                                                 </view>
                                             </subviews>
                                             <constraints>
@@ -415,13 +782,12 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tblTicketList" destination="5hh-xD-Mg3" id="3ee-33-wOO"/>
-                        <segue destination="jto-0L-3Tk" kind="show" identifier="showTicketInfo" id="Rur-J6-BN0"/>
-                        <segue destination="ahO-0L-lOA" kind="show" id="4vW-Ty-GOK"/>
+                        <segue destination="jto-0L-3Tk" kind="show" identifier="showTicketInfo" id="3nA-CJ-tOA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TXV-h5-5oG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2429.5999999999999" y="33.733133433283363"/>
+            <point key="canvasLocation" x="2428.985507246377" y="32.608695652173914"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="7ez-9a-uO7">
@@ -473,7 +839,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ycT-np-WHp" customClass="ThemeButton" customModule="Botree911_Client" customModuleProvider="target">
-                                <rect key="frame" x="20" y="280" width="182.66666666666666" height="40"/>
+                                <rect key="frame" x="20" y="280" width="183" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="5lu-2F-dEf"/>
                                 </constraints>
@@ -483,7 +849,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xZs-V6-7sr" customClass="ThemeButton" customModule="Botree911_Client" customModuleProvider="target">
-                                <rect key="frame" x="211.66666666666663" y="280" width="182.33333333333337" height="40"/>
+                                <rect key="frame" x="212" y="280" width="182" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="kc6-R0-tmm"/>
                                 </constraints>
@@ -561,11 +927,11 @@
                         <viewControllerLayoutGuide type="bottom" id="f9N-g5-E4U"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5pm-mv-DZU">
-                        <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="115" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WUN-qe-zri">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="623"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="667"/>
                                 <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HistoryListCell" rowHeight="73" id="ekc-yb-L2E" customClass="HistoryListCell" customModule="Botree911_Client" customModuleProvider="target">
@@ -602,7 +968,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="→" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9e4-Gs-DQl">
-                                                            <rect key="frame" x="184" y="8" width="30" height="20.333333333333336"/>
+                                                            <rect key="frame" x="184" y="8" width="30" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="30" id="phu-F7-wKH"/>
                                                             </constraints>
@@ -611,7 +977,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5nm-7u-Bxs">
-                                                            <rect key="frame" x="143.33333333333337" y="8" width="32.666666666666657" height="21"/>
+                                                            <rect key="frame" x="143" y="8" width="33" height="21"/>
                                                             <color key="backgroundColor" red="1" green="0.91764705882352937" blue="0.66666666666666663" alpha="0.29673076923076924" colorSpace="calibratedRGB"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -738,7 +1104,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ozb-ab-EfM" customClass="ThemeButton" customModule="Botree911_Client" customModuleProvider="target">
-                                <rect key="frame" x="211.66666666666663" y="260" width="186.33333333333337" height="40"/>
+                                <rect key="frame" x="212" y="260" width="186" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Zga-Qu-MpI"/>
                                 </constraints>
@@ -748,7 +1114,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="08z-9w-fzD" customClass="ThemeButton" customModule="Botree911_Client" customModuleProvider="target">
-                                <rect key="frame" x="16" y="260" width="186.66666666666666" height="40"/>
+                                <rect key="frame" x="16" y="260" width="187" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="YfR-U3-gWm"/>
                                 </constraints>
@@ -819,10 +1185,10 @@
             </objects>
             <point key="canvasLocation" x="3182" y="1090"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Slide Navigation Controller-->
         <scene sceneID="ltd-p3-oy4">
             <objects>
-                <navigationController storyboardIdentifier="NavigationController" automaticallyAdjustsScrollViewInsets="NO" id="BwA-tx-3ol" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SlideNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="BwA-tx-3ol" customClass="SlideNavigationController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="43Y-4w-BfM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -851,17 +1217,17 @@
                         <viewControllerLayoutGuide type="bottom" id="JfS-LJ-ycM"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="7yu-2B-TmU">
-                        <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add Comment" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i5R-bB-muv">
-                                <rect key="frame" x="8" y="16" width="314" height="30"/>
+                                <rect key="frame" x="8" y="36" width="314" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zAl-pL-GsW" customClass="ThemeButton" customModule="Botree911_Client" customModuleProvider="target">
-                                <rect key="frame" x="326" y="16" width="80" height="30"/>
+                                <rect key="frame" x="326" y="36" width="80" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="2PN-5e-oNb"/>
                                     <constraint firstAttribute="height" constant="30" id="hrY-vZ-ct5"/>
@@ -873,7 +1239,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="135" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EAS-q1-A7n">
-                                <rect key="frame" x="0.0" y="62" width="414" height="561"/>
+                                <rect key="frame" x="0.0" y="82" width="414" height="605"/>
                                 <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CommentListCell" rowHeight="74" id="uJs-dn-Iek" customClass="CommentListCell" customModule="Botree911_Client" customModuleProvider="target">
@@ -985,12 +1351,154 @@
             </objects>
             <point key="canvasLocation" x="4869.5652173913049" y="1034.5108695652175"/>
         </scene>
+        <!--Left Menu View Controller-->
+        <scene sceneID="Ju9-yv-SHz">
+            <objects>
+                <viewController storyboardIdentifier="leftMenuViewController" id="VMp-Kc-Lyd" customClass="leftMenuViewController" customModule="Botree911_Client" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qJL-GK-o5C"/>
+                        <viewControllerLayoutGuide type="bottom" id="3yc-2K-P62"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XVg-U3-yg4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NMg-5h-S2A">
+                                <rect key="frame" x="0.0" y="128" width="414" height="608"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="Xvb-fO-75P"/>
+                                </constraints>
+                                <color key="sectionIndexBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="leftMenuCell" rowHeight="51" id="GYk-NS-8Os" customClass="leftMenuCell" customModule="Botree911_Client" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="51"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GYk-NS-8Os" id="Dyg-mN-uE1">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="51"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pjY-Kd-zZH">
+                                                    <rect key="frame" x="10" y="5.6666666666666679" width="40" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="GLr-WG-ye8"/>
+                                                        <constraint firstAttribute="width" constant="40" id="R8T-PL-NVI"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yw4-h3-i6D">
+                                                    <rect key="frame" x="60" y="16.666666666666664" width="344" height="17.999999999999993"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Yw4-h3-i6D" firstAttribute="top" secondItem="Dyg-mN-uE1" secondAttribute="top" constant="15" id="KB2-DO-qx1"/>
+                                                <constraint firstItem="Yw4-h3-i6D" firstAttribute="centerY" secondItem="pjY-Kd-zZH" secondAttribute="centerY" id="Mnj-w4-fw7"/>
+                                                <constraint firstItem="pjY-Kd-zZH" firstAttribute="leading" secondItem="Dyg-mN-uE1" secondAttribute="leading" constant="10" id="Nq8-ei-wNT"/>
+                                                <constraint firstItem="Yw4-h3-i6D" firstAttribute="leading" secondItem="pjY-Kd-zZH" secondAttribute="trailing" constant="10" id="Xnc-b6-UFf"/>
+                                                <constraint firstAttribute="trailing" secondItem="Yw4-h3-i6D" secondAttribute="trailing" constant="10" id="cf0-ss-gKd"/>
+                                                <constraint firstAttribute="bottom" secondItem="Yw4-h3-i6D" secondAttribute="bottom" constant="15" id="eYW-dn-D5M"/>
+                                                <constraint firstAttribute="bottom" secondItem="pjY-Kd-zZH" secondAttribute="bottom" constant="10" id="wOt-Xe-aK6"/>
+                                                <constraint firstItem="pjY-Kd-zZH" firstAttribute="centerY" secondItem="Dyg-mN-uE1" secondAttribute="centerY" id="ykx-6G-62m"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="wOt-Xe-aK6"/>
+                                                    <exclude reference="KB2-DO-qx1"/>
+                                                    <exclude reference="eYW-dn-D5M"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="imgMenuIcon" destination="pjY-Kd-zZH" id="drk-F7-qRt"/>
+                                            <outlet property="lblMenuTitle" destination="Yw4-h3-i6D" id="fYY-he-hAO"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Xvb-fO-75P"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="VMp-Kc-Lyd" id="k79-4j-2jm"/>
+                                    <outlet property="delegate" destination="VMp-Kc-Lyd" id="V4n-Qu-b8A"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KF7-jy-nzi">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="vXq-cK-9iN">
+                                        <rect key="frame" x="18" y="49" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="0lu-RA-eIi"/>
+                                            <constraint firstAttribute="width" constant="50" id="Rlp-tI-M6S"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Client" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ye8-y7-JxS">
+                                        <rect key="frame" x="86" y="39" width="310" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="client1949@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D8O-2w-pvR">
+                                        <rect key="frame" x="86" y="64" width="310" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BoTree Technologies Pvt. Ltd." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9sn-ex-4WZ">
+                                        <rect key="frame" x="86" y="89" width="310" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.5725490196078431" green="0.78431372549019607" blue="0.24313725490196078" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="vXq-cK-9iN" firstAttribute="centerY" secondItem="KF7-jy-nzi" secondAttribute="centerY" constant="10" id="Ip5-cF-K7c"/>
+                                    <constraint firstItem="vXq-cK-9iN" firstAttribute="leading" secondItem="KF7-jy-nzi" secondAttribute="leading" constant="18" id="MHQ-Kq-xYc"/>
+                                    <constraint firstAttribute="height" constant="128" id="aGz-1R-3KU"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="KF7-jy-nzi" secondAttribute="trailing" id="2W1-qE-QqV"/>
+                            <constraint firstItem="3yc-2K-P62" firstAttribute="top" secondItem="NMg-5h-S2A" secondAttribute="bottom" id="HP0-68-iSB"/>
+                            <constraint firstItem="KF7-jy-nzi" firstAttribute="leading" secondItem="XVg-U3-yg4" secondAttribute="leading" id="IpN-nC-Z40"/>
+                            <constraint firstItem="KF7-jy-nzi" firstAttribute="top" secondItem="XVg-U3-yg4" secondAttribute="top" id="QlS-Yf-zgg"/>
+                            <constraint firstItem="NMg-5h-S2A" firstAttribute="top" secondItem="KF7-jy-nzi" secondAttribute="bottom" id="bBa-pW-LSf"/>
+                            <constraint firstItem="NMg-5h-S2A" firstAttribute="leading" secondItem="XVg-U3-yg4" secondAttribute="leading" id="pLD-kK-WER"/>
+                            <constraint firstAttribute="trailing" secondItem="NMg-5h-S2A" secondAttribute="trailing" id="txb-VN-uCy"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tblView" destination="NMg-5h-S2A" id="kgV-2J-O3T"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lfx-Md-rxh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1689.8550724637682" y="-611.41304347826087"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="ProjectInfo" width="30" height="30"/>
+        <image name="profile" width="50" height="50"/>
         <image name="splash_image" width="300" height="77"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4vW-Ty-GOK"/>
+        <segue reference="vmW-8j-cGl"/>
     </inferredMetricsTieBreakers>
 </document>

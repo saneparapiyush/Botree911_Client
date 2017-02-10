@@ -53,8 +53,11 @@ class LoginViewController: AbstractViewController {
     @IBAction func btnLoginOnclick(_ sender: Any) {
         userAuthorized()
     }// End btnLoginOnclick()
+    @IBAction func btnForgotPasswordOnClick(_ sender: Any) {
+        self.view.makeToast("New Password sent to Registered Email")
+    }// End btnForgotPasswordOnClick()
     
-       
+    
     //    MARK: Email Validation
     
     func configValidation()
@@ -197,7 +200,11 @@ extension LoginViewController:AuthorizedProtocol {
     func userAuthorized() {
         if txtPassword.validate() && txtUserEmail.validate() {
             
-            login()
+//            MARK: OFLINE
+//            login()
+            self.performSegue(withIdentifier: "showProjectList", sender: self)
+//            MARK: END OFLINE
+            
 //            if login() {
 //                print("Move Forword")
 //                

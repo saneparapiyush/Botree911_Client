@@ -35,3 +35,14 @@ class Ticket {
         
     }
 }
+
+class TicketStatus {
+    var ticket_status_name: String?
+    var status_value : Int?
+    
+    init(json: JSON) {
+        ticket_status_name = json.dictionaryObject!["name"] as? String
+        status_value = json.dictionaryObject!["value"] as? Int
+        
+    }
+}

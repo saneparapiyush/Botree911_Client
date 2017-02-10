@@ -25,6 +25,7 @@ class AddTicketViewController: AbstractViewController {
     var pickerTag: Int = Int()
     
     var arrStatus = NSMutableDictionary()
+    var ticketStatus = [TicketStatus]()
     var projectListSource = [Project]()
     var ddProjectId: Int?
     
@@ -47,7 +48,14 @@ class AddTicketViewController: AbstractViewController {
         }
         
         configUI()
-        getDropDownData()
+        
+        //            MARK: OFLINE
+        //        getDropDownData()
+            setOflineDataSource()
+            picker.dataSource = self
+            picker.delegate = self
+        //            MARK: END OFLINE
+        
     }// End viewDidLoad()
     
     func getDropDownData() {
@@ -99,13 +107,61 @@ class AddTicketViewController: AbstractViewController {
         }
     } // End getProjectList()
     
+    let params2 = [
+        "status": true,
+        "message": "Ticket status list.",
+        "data": [
+            "ticket_status": [
+                [
+                    "name": "to_do",
+                    "value": 1
+                ],
+                [
+                    "name": "in_progress",
+                    "value": 2
+                ],
+                [
+                    "name": "resolved",
+                    "value": 3
+                ],
+                [
+                    "name": "close",
+                    "value": 4
+                ]
+            ]
+        ]
+        ] as Any
+    
+
+//    func processGetResponceTicketList(json: JSON) {
+//        ticketListSource = [Ticket]()
+//        let projects = json["ticket"]
+//        
+//        for i in 0 ..< projects.count {
+//            let jsonValue = projects.arrayValue[i]
+//            let ticketDetail = Ticket(json: jsonValue)
+//            ticketListSource.append(ticketDetail)
+//        }
+//        tblTicketList.reloadData()
+//    }
+    
     func processGetResponceStutusList(json: JSON) {
-        let projects: Any = json["ticket_status"]
         
-        for (key, value) in projects as! JSON {
-            arrStatus[key] = (value.intValue)
+        ticketStatus = [TicketStatus]()
+        
+        let ticketStat = json["ticket_status"]
+        for i in 0 ..< ticketStat.count {
+            let jsonValue = ticketStat.arrayValue[i]
+            let ticketStatusDetail = TicketStatus(json: jsonValue)
+            ticketStatus.append(ticketStatusDetail)
         }
-        txtSelectStatus.text = (isEdit)! ? (ticket?.status) : (arrStatus.allKeys(for: 1)[0] as! String)
+
+//        for (key, value) in projects as! JSON {
+//            arrStatus[key] = (value.intValue)
+//        }
+        
+//        txtSelectStatus.text = (isEdit)! ? (ticket?.status) : (arrStatus.allKeys(for: 1)[0] as! String)
+        txtSelectStatus.text = (isEdit)! ? (ticket?.status) : ticketStatus[0].ticket_status_name
     } // End procssGetResponceProjectList
     
     func getProjectList() {
@@ -237,7 +293,7 @@ class AddTicketViewController: AbstractViewController {
         txtSelectProject.inputView = picker
         txtSelectStatus.inputView = picker
         
-        txtSelectProject.text = "\(project!.name!)"
+        txtSelectProject.text = "\(project?.name!)"
         if isEdit! {
             txtTitleName.text = ticket!.name
             txtViewDescription.text = ticket!.description
@@ -351,5 +407,100 @@ extension AddTicketViewController: UIPickerViewDelegate, UIPickerViewDataSource,
         }
         
         picker.reloadAllComponents()
+    }
+}
+
+
+extension AddTicketViewController {
+    
+    func setOflineDataSource() {
+        
+        let params = [
+            "status": true,
+            "message": "Ticket status list.",
+            "data": [
+                "ticket_status": [
+                    [
+                        "name": "to_do",
+                        "value": 1
+                    ],
+                    [
+                        "name": "in_progress",
+                        "value": 2
+                    ],
+                    [
+                        "name": "resolved",
+                        "value": 3
+                    ],
+                    [
+                        "name": "close",
+                        "value": 4
+                    ]
+                ]
+            ]
+            ] as Any
+        
+        let jsonStatus = JSON(params)
+        self.processGetResponceStutusList(json: jsonStatus["data"])
+        
+        
+        let params2 = [
+            "status": true,
+            "data": [
+                "projects": [
+                    [
+                        "id": 1,
+                        "name": "Botree 911",
+                        "description": "BoTree 911 is a Mobile Application for clients opting for BoTree’s 24 X 7 support",
+                        "spoc_person": "Amit Patel",
+                        "client": ["Olivia Wilde", "Scarlett Johansson","Emma Stone"],
+                        "ticket_status_value":[
+                            [
+                                "name":"Pending",
+                                "value":5
+                            ],
+                            [
+                                "name":"InProgress",
+                                "value":4
+                            ],
+                            [
+                                "name":"Resolved",
+                                "value":3
+                            ],
+                            [
+                                "name":"Closed",
+                                "value":0
+                            ]
+                        ],
+                        "start_date":"Jan 10,2017",
+                        "project_manager": [
+                            "Nipun BrahmBhatt", "Arpan Christain"
+                        ],
+                        "team_leader": [
+                            "Nipun BrahmBhatt", "Bhavin Nattar"
+                        ],
+                        "team_member": [
+                            "Sailesh Prajapati", "Rahul Sadhu","Prina Patel"
+                        ],
+                        "total_member": 5
+                    ]
+                ]
+            ]
+            ] as Any
+        
+        let json = JSON(params2)
+        processGetResponceProjectList(json: json["data"])
+        
+    }
+    
+    func processGetResponceProjectList(json: JSON) {
+        
+        let projects = json["projects"]
+        
+        for i in 0 ..< projects.count {
+            let jsonValue = projects.arrayValue[i]
+            let projectDetail = Project(json: jsonValue)
+            projectListSource.append(projectDetail)
+        }
     }
 }

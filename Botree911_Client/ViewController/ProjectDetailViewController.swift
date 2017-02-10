@@ -8,28 +8,23 @@
 
 import UIKit
 
-class ProjectDetailViewController: UIViewController {
-
+class ProjectDetailViewController: AbstractViewController {
+    
+    var project : Project?
+    @IBOutlet var scrlView: UIScrollView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+        
+        print("Project id : \(project?.id)")
+        title = getLocalizedString("title_project_info")
+        
+        self.view.addSubview(scrlView)
+        
+    }// End viewDidLoad()
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func viewDidLayoutSubviews() {
+        self.scrlView.contentSize = CGSize(width:414, height: 777)
+//        self.scrlView.contentSize = CGSize(width: self.scrlView.frame.width, height: self.scrlView.frame.height)
     }
-    */
-
 }

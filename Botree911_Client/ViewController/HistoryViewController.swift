@@ -26,7 +26,11 @@ class HistoryViewController: AbstractViewController {
     } // End viewDidLoad()
     
     override func viewWillAppear(_ animated: Bool) {
-        getHistoryList()
+        //            MARK: OFLINE
+        //        getHistoryList()
+        setOflineDataSource()
+        //            MARK: END OFLINE
+
     }//End viewWillAppear()
     
     
@@ -118,5 +122,44 @@ class HistoryListCell: UITableViewCell {
         lblLastStatus.text = history?.last_status
         lblCurrentStatus.text = history?.current_status
         lblHistoryDateTime.text = history?.date_time
+    }
+}
+
+extension HistoryViewController {
+    
+    func setOflineDataSource() {
+        
+        let params = [
+            "status": true,
+            "message": "Ticket status history",
+            "data": [
+                "history": [
+                    [
+                        "id": 4,
+                        "user_name": "Tm1 ",
+                        "last_status": "To Do",
+                        "current_status": "In Progress",
+                        "date_time": "2017-02-07T09:51:54.781Z"
+                    ],
+                    [
+                        "id": 5,
+                        "user_name": "Tm2 ",
+                        "last_status": "In Progress",
+                        "current_status": "Resolved",
+                        "date_time": "2017-02-07T09:52:41.038Z"
+                    ],
+                    [
+                        "id": 6,
+                        "user_name": "Client ",
+                        "last_status": "Resolved",
+                        "current_status": "Close",
+                        "date_time": "2017-02-07T09:53:32.143Z"
+                    ]
+                ]
+            ]
+            ] as Any
+        
+        let json = JSON(params)
+        self.processGetResponceHistoryList(json: json["data"])
     }
 }

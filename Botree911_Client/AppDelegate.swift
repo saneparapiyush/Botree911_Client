@@ -33,6 +33,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        }
         
         IQKeyboardManager.sharedManager().enable = true
+        
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let leftMenu = mainStoryboard.instantiateViewController(withIdentifier: "leftMenuViewController") as! leftMenuViewController
+        
+        SlideNavigationController.sharedInstance().leftMenu = leftMenu
+        
         return true
     }
 

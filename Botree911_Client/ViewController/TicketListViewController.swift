@@ -23,15 +23,17 @@ class TicketListViewController: AbstractViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        //For Add navigation bar button
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(btnAddOnClick))
-        
+
         title = getLocalizedString("title_ticket_list")
     }// End viewDidLoad()
     
     override func viewDidAppear(_ animated: Bool) {
-        getTicketList()
+
+        //            MARK: OFLINE
+        //        getTicketList()
+        setOflineDataSource()
+        //            MARK: END OFLINE
+        
     }// End viewDidAppear()
 
 //    MARK:- Helper Method
@@ -90,10 +92,10 @@ class TicketListViewController: AbstractViewController {
     }// End procssGetResponceProjectList
     
 //    MARK:- Actions
-    func btnAddOnClick() {
-        selectedTicket = nil
-        self.performSegue(withIdentifier: "showAddTicket", sender: self)
-    }// end btnAddOnClick()
+//    func btnAddOnClick() {
+//        selectedTicket = nil
+//        self.performSegue(withIdentifier: "showAddTicket", sender: self)
+//    }// end btnAddOnClick()
     
     //    MARK: Prepare for segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -102,7 +104,7 @@ class TicketListViewController: AbstractViewController {
             tabCtrl.title = getLocalizedString("title_edit_ticket")
             
             let destinationVC = tabCtrl.viewControllers![0] as! AddTicketViewController
-            destinationVC.project = project!
+            destinationVC.project = project
             destinationVC.ticket = selectedTicket
             
             let historyVC = tabCtrl.viewControllers![1] as! HistoryViewController
@@ -137,6 +139,9 @@ extension TicketListViewController: UITableViewDataSource,UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedTicket = ticketListSource[indexPath.row]
+        
+        let VC = AppRouter.sharedRouter().getViewController("FragmentViewController") as! FragmentViewController
+        
         self.performSegue(withIdentifier: "showTicketInfo", sender: self)
     }
     
@@ -164,5 +169,43 @@ class TicketListCell: UITableViewCell {
         lblTicketStatus.text = ticket?.status
         lblRaisedBy.text = ticket?.raised_by
         lblAssingee.text = ticket?.assingee
+    }
+}
+
+extension TicketListViewController {
+    
+    func setOflineDataSource() {
+        
+        let params = [
+            "status": true,
+            "message": "Ticket list",
+            "data": [
+                "ticket": [
+                    [
+                    "id": 1,
+                    "project_id": 2,
+                    "name": "Change Login Screen",
+                    "description": "add Facebook Integration in Login",
+                    "status": "Pending",
+                    "created_at": "Jan 21, 2017",
+                    "raised_by": "Olivia Wilde",
+                    "assingee": "Bhavin Nattar"
+                    ],
+                    [
+                    "id": 2,
+                    "project_id": 3,
+                    "name": "UI Theme",
+                    "description": "change Mobile Theme",
+                    "status": "Pending",
+                    "created_at": "Jan 1, 2017",
+                    "raised_by": "Scarlett Johansson",
+                    "assingee": "Piyush Sanepara"
+                    ]
+                ]
+            ]
+        ] as Any
+        
+        let json = JSON(params)
+        self.processGetResponceTicketList(json: json["data"])
     }
 }

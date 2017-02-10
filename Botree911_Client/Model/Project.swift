@@ -17,6 +17,9 @@ class Project {
     var project_manager:[ProjectManager]?
     var team_leader:[TeamLeader]?
     var team_member:[TeamMember]?
+    var spoc_person: String?
+    var ticket_status_value : [TicketStatus]?
+    var start_date: String?
     
     init(json: JSON) {
         id = json.dictionaryObject!["id"] as? Int
@@ -27,6 +30,10 @@ class Project {
         project_manager = json.dictionaryObject!["project_manager"] as? [ProjectManager]
         team_leader = json.dictionaryObject!["team_leader"] as? [TeamLeader]
         team_member = json.dictionaryObject!["team_member"] as? [TeamMember]
+        spoc_person = json.dictionaryObject!["spoc_person"] as? String
+//        ticket_status_value = (json["ticket_status_value"] as Any as? [TicketStatus])!
+        ticket_status_value = json.dictionaryObject!["team_member"] as? [TicketStatus]
+        start_date = json.dictionaryObject!["start_date"] as? String
     }
 }
 
@@ -62,4 +69,3 @@ class TeamMember {
         team_member_name = name
     }
 }
-

@@ -7,50 +7,34 @@
 //
 
 import UIKit
-import HMSegmentedControl
 
 class leftMenuViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
 {
     @IBOutlet var tblView: UITableView!
     
-    let dsTitle = ["Dashboard","Contacts","Leads","Tasks","Todo","Reports"]
-    let dsMenuImage = [UIImage(named: "sm_dashboard_icon"),UIImage(named: "sm_contact_icon"),UIImage(named: "sm_lead_icon"),UIImage(named: "sm_task_icon"),UIImage(named: "sm_todo_icon"),UIImage(named: "sm_report_icon")]
+    let dsTitle = ["All Projects","Logout"]
+    let dsMenuImage = [UIImage(named: "project"),UIImage(named: "logout")]
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return dsTitle.count + 2
+        return dsTitle.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        if indexPath.row == dsTitle.count + 1{
-            let cell = tblView.dequeueReusableCell(withIdentifier: "SyncCell") as! SyncCell
+        let cell = tblView.dequeueReusableCell(withIdentifier: "leftMenuCell") as! leftMenuCell
             
-            cell.lblPreviousSync.text = "1 month ago"
+        cell.imgMenuIcon.image = dsMenuImage[indexPath.row]
+        cell.lblMenuTitle.text = dsTitle[indexPath.row]
             
-            return cell
-        } else if indexPath.row == 0{
-            let cell = tblView.dequeueReusableCell(withIdentifier: "MenuHeaderCell") as! MenuHeaderCell
-            
-            
-            return cell
-        } else {
-            let cell = tblView.dequeueReusableCell(withIdentifier: "leftMenuCell") as! leftMenuCell
-            
-            cell.imgMenuIcon.image = dsMenuImage[indexPath.row - 1]
-            cell.lblMenuTitle.text = dsTitle[indexPath.row - 1]
-            
-            return cell
-        }
+        return cell
 //        cell?.backgroundColor = UIColor.redColor()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == dsTitle.count + 1{
-            return 81
-        } else if indexPath.row == 0{
-            return 100
-        } else {
+        if indexPath.row == 0{
             return 61
+        } else {
+            return 51
         }
     }
     
@@ -67,40 +51,16 @@ class leftMenuViewController: UIViewController,UITableViewDataSource,UITableView
     {
 //        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         var vc : UIViewController?
-        if indexPath.row == 0 || indexPath.row == 7 {
-            return
-        }
+
         switch indexPath.row {
-        case 1:// Dashboard Click in side menu
-            vc = AppRouter.sharedRouter().getViewController("dashBoardViewController") as! dashBoardViewController
+        case 0:// All Project in side menu
+            vc = AppRouter.sharedRouter().getViewController("ProjectListViewController") as! ProjectListViewController
             
 
             break
             
-        case 2:// Contacts Click in side menu
-            vc = AppRouter.sharedRouter().getViewController("dashBoardViewController")
-            
-            
-            break
-            
-        case 3:// Leads Click in side menu
-            
-            vc = AppRouter.sharedRouter().getViewController("dashBoardViewController")
-            
-            break
-        case 4:// Tasks Click in side menu
-            
-            vc = AppRouter.sharedRouter().getViewController("dashBoardViewController")
-            break
-            
-        case 5:// Todo Click in side menu
-            
-            vc = AppRouter.sharedRouter().getViewController("dashBoardViewController") as! dashBoardViewController
-            
-            break
-        case 6:// Reports Click in side menu
-            
-            vc = AppRouter.sharedRouter().getViewController("dashBoardViewController") as! dashBoardViewController
+        case 1:// Project Info in side menu
+            vc = AppRouter.sharedRouter().getViewController("ProjectListViewController") as! ProjectListViewController
             
             break
             
@@ -123,24 +83,24 @@ class leftMenuCell: UITableViewCell {
     
     @IBOutlet weak var lblMenuTitle: UILabel!
 }
-
-class SyncCell: UITableViewCell {
-    
-    @IBOutlet weak var lblPreviousSync: UILabel!
-    
-    @IBAction func btnSyncPressed(_ sender: AnyObject) {
-        
-    }
-}
-class MenuHeaderCell: UITableViewCell {
-    @IBOutlet weak var btnUserProfilePic: UIButton!
-    
-    @IBOutlet weak var lblUserName: UILabel!
-    
-    @IBOutlet weak var lblUserEmail: UILabel!
-    
-    @IBAction func btnSettingOnClick(_ sender: Any) {
-        leftMenuViewController().navigateView(to: AppRouter.sharedRouter().getViewController("SettingViewController") as! SettingViewController)
-    }
-    
-}
+//
+//class SyncCell: UITableViewCell {
+//    
+//    @IBOutlet weak var lblPreviousSync: UILabel!
+//    
+//    @IBAction func btnSyncPressed(_ sender: AnyObject) {
+//        
+//    }
+//}
+//class MenuHeaderCell: UITableViewCell {
+//    @IBOutlet weak var btnUserProfilePic: UIButton!
+//    
+//    @IBOutlet weak var lblUserName: UILabel!
+//    
+//    @IBOutlet weak var lblUserEmail: UILabel!
+//    
+//    @IBAction func btnSettingOnClick(_ sender: Any) {
+//        leftMenuViewController().navigateView(to: AppRouter.sharedRouter().getViewController("SettingViewController") as! SettingViewController)
+//    }
+//    
+//}

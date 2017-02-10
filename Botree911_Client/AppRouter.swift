@@ -34,7 +34,7 @@ class AppRouter: NSObject, Controller {
     
     func getNavigationController() -> UINavigationController {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let navigationController = storyBoard.instantiateViewController(withIdentifier: "NavigationController") as! UINavigationController
+        let navigationController = storyBoard.instantiateViewController(withIdentifier: "SlideNavigationController") as! UINavigationController
         return navigationController
     }
     

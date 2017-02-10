@@ -7,3 +7,8 @@
 //
 
 #import "TextFieldValidator.h"
+
+#import "CarbonKit.h"//Fragment controll
+
+#import "SlideNavigationController.h"// Slide Menu
+#import "SlideNavigationContorllerAnimatorSlideAndFade.h"// Slide Menu

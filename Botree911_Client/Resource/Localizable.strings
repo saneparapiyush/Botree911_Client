@@ -10,9 +10,11 @@
 
 // Title of Pages
 "title_project_list" = "Project List";
+"title_project_info" = "Project Info";
 "title_ticket_list" = "Ticket List";
 "title_add_ticket" = "Add Ticket";
 "title_edit_ticket" = "Ticket Info";
+
 
 // Progress Indicator
 "login_indicator" = "Please wait...";

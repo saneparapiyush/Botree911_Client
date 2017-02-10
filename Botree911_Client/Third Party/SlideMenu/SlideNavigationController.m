@@ -23,7 +23,7 @@ NSString  *const SlideNavigationControllerDidReveal = @"SlideNavigationControlle
 #define MENU_SLIDE_ANIMATION_DURATION .3
 #define MENU_SLIDE_ANIMATION_OPTION UIViewAnimationOptionCurveEaseOut
 #define MENU_QUICK_SLIDE_ANIMATION_DURATION .18
-#define MENU_IMAGE @"ic_menu"
+#define MENU_IMAGE @"sidemenu_menu"
 #define MENU_SHADOW_RADIUS 1
 #define MENU_SHADOW_OPACITY 1
 #define MENU_DEFAULT_SLIDE_OFFSET 60

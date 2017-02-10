@@ -26,7 +26,12 @@ class CommentViewController: AbstractViewController {
     }// End viewDidLoad()
 
     override func viewWillAppear(_ animated: Bool) {
-        getCommentList()
+        
+        //            MARK: OFLINE
+        //        getCommentList()
+        setOflineDataSource()
+        //            MARK: END OFLINE
+        
     }//End viewWillAppear()
     
 //    MARK: - Action
@@ -167,5 +172,44 @@ class CommentListCell: UITableViewCell {
         lblCommenterName.text = comment?.user_name
         lblComment.text = comment?.comment
         lblCommentDateTime.text = comment?.date_time
+    }
+}
+
+extension CommentViewController {
+    
+    func setOflineDataSource() {
+        
+        let params = [
+            "status": true,
+            "message": "Ticket comments list.",
+            "data": [
+                "comments": [
+                    [
+                        "id": 1,
+                        "user_name": "Client ",
+                        "comment": "helloooo",
+                        "date_time": "2017-02-08T09:53:31.404Z"
+                    ],
+                    [
+                        "id": 2,
+                        "user_name": "Client ",
+                        "comment": "helloooo",
+                        "date_time": "2017-02-08T09:55:20.056Z"
+                    ],
+                    [
+                        "id": 3,
+                        "user_name": "Client ",
+                        "comment": "d",
+                        "date_time": "2017-02-08T09:58:01.802Z"
+                    ]
+                ]
+            ]
+        ] as Any
+        
+        let json = JSON(params)
+        
+        self.processGetResponceCommentList(json: json["data"], completionHandler: {
+        
+        })
     }
 }
