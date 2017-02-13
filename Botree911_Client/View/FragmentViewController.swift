@@ -27,7 +27,8 @@ class FragmentViewController: AbstractViewController,CarbonTabSwipeNavigationDel
 //        carbonTabSwipeNavigation.carbonSegmentedControl?.selectedSegmentIndex = 3
         carbonTabSwipeNavigation.currentTabIndex = UInt(selectedIndex)
         
-
+        title = getLocalizedString("title_ticket_list")
+        
         //For Add navigation bar button
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(btnAddOnClick))
     }

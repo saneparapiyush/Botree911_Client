@@ -27,8 +27,8 @@ class LoginViewController: AbstractViewController {
         ]
     ] as [String: Any]
     
-    @IBOutlet var txtUserEmail: TextFieldValidator!
-    @IBOutlet var txtPassword: TextFieldValidator!
+    @IBOutlet var txtUserEmail: ThemeTextField!
+    @IBOutlet var txtPassword: ThemeTextField!
     @IBOutlet var btnLogin: UIButton!
     
     override func viewDidLoad() {
@@ -41,7 +41,8 @@ class LoginViewController: AbstractViewController {
 //            print((user as AnyObject)["email"] as! String)
 //        }
         
-        hideNavigationBar()
+        title = "SIGN IN"
+        //hideNavigationBar()
         configValidation()
         textFeildReturnUIConfig()
     }// End viewDidLoad()
@@ -62,7 +63,7 @@ class LoginViewController: AbstractViewController {
     
     func configValidation()
     {
-        txtUserEmail.addRegx(REGEX_EMAIL, withMsg: getLocalizedString("invalid_email"))
+//        txtUserEmail.addRegx(REGEX_EMAIL, withMsg: getLocalizedString("invalid_email"))
     }// End isValidEmail
 }
 
@@ -198,11 +199,11 @@ extension LoginViewController:AuthorizedProtocol {
     
     //    MARK: Store User Information
     func userAuthorized() {
-        if txtPassword.validate() && txtUserEmail.validate() {
-            
+//        if txtPassword.validate() && txtUserEmail.validate() {
+        
 //            MARK: OFLINE
 //            login()
-            self.performSegue(withIdentifier: "showProjectList", sender: self)
+            self.performSegue(withIdentifier: "showCreateTicket", sender: self)
 //            MARK: END OFLINE
             
 //            if login() {
@@ -214,7 +215,7 @@ extension LoginViewController:AuthorizedProtocol {
 //            } else {
 //                print("Something went wrong in login")
 //            }
-        }
+//        }
     } //End userAuthorized()
 }
 

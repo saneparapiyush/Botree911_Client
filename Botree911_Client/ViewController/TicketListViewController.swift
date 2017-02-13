@@ -24,7 +24,6 @@ class TicketListViewController: AbstractViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 
-        title = getLocalizedString("title_ticket_list")
     }// End viewDidLoad()
     
     override func viewDidAppear(_ animated: Bool) {

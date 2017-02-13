@@ -14,7 +14,7 @@ import Toast
 
 class AddTicketViewController: AbstractViewController {
     
-    @IBOutlet var txtTitleName: TextFieldValidator!
+    @IBOutlet var txtTitleName: ThemeTextField!
     @IBOutlet var txtViewDescription: UITextView!
     
     @IBOutlet var txtSelectProject: UITextField!
@@ -38,9 +38,13 @@ class AddTicketViewController: AbstractViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         
+        title = getLocalizedString("title_add_ticket")
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Skip", style: .plain, target: self, action: #selector(btnSkipOnClick))
+        
+        // Do any additional setup after loading the view.
+        self.navigationItem.setHidesBackButton(true, animated: true)
         if (ticket != nil) {
             isEdit = true
         } else {
@@ -287,13 +291,12 @@ class AddTicketViewController: AbstractViewController {
         picker = UIPickerView(frame: CGRect(x: 0.0, y: 0.0, width: UIScreen.main.bounds.size.width, height: 216.0))
         picker.backgroundColor = UIColor.white
         
-        txtSelectProject.addRightSubView()
-        txtSelectStatus.addRightSubView()
+//        txtSelectProject.addRightSubView()
+//        txtSelectStatus.addRightSubView()
         
         txtSelectProject.inputView = picker
         txtSelectStatus.inputView = picker
         
-        txtSelectProject.text = "\(project?.name!)"
         if isEdit! {
             txtTitleName.text = ticket!.name
             txtViewDescription.text = ticket!.description
@@ -310,13 +313,14 @@ class AddTicketViewController: AbstractViewController {
     //MARK:- Actions
     
     @IBAction func btnCreateTicketOnClick(_ sender: Any) {
-        if txtTitleName.validate() && txtViewDescription.hasText && txtSelectProject.hasText && txtSelectStatus.hasText {
+        if txtTitleName.hasText && txtViewDescription.hasText && txtSelectProject.hasText && txtSelectStatus.hasText {
             
             if (ticket != nil) {
                 editTicket()
             } else {
                 createTicket()
             }
+            performSegue(withIdentifier: "showTicketScreenFromAddScreen", sender: self)
         } else {
             if !txtViewDescription.hasText {
                 print("Enter Description")
@@ -328,12 +332,18 @@ class AddTicketViewController: AbstractViewController {
         }
     }// End btnCreateProjectOnClick()
     
-    @IBAction func btnCancelOnClick(_ sender: Any) {
-//        self.navigationController?.popViewController(animated: true);
-        self.performSegue(withIdentifier: "show", sender: self)
-    }// End btnCancelOnClick()    
+//    @IBAction func btnCancelOnClick(_ sender: Any) {
+////        self.navigationController?.popViewController(animated: true);
+//        self.performSegue(withIdentifier: "show", sender: self)
+//    }// End btnCancelOnClick()    
+    
+    func btnSkipOnClick() {
+        performSegue(withIdentifier: "showTicketScreenFromAddScreen", sender: self)
+    }
+    
 }
 
+//MARK: - PICKER
 extension AddTicketViewController: UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -410,6 +420,16 @@ extension AddTicketViewController: UIPickerViewDelegate, UIPickerViewDataSource,
     }
 }
 
+extension AddTicketViewController {
+    func slideNavigationControllerShouldDisplayLeftMenu() -> Bool
+    {
+        return true
+    }
+    func slideNavigationControllerShouldDisplayRightMenu() -> Bool
+    {
+        return false
+    }
+}
 
 extension AddTicketViewController {
     
@@ -502,5 +522,6 @@ extension AddTicketViewController {
             let projectDetail = Project(json: jsonValue)
             projectListSource.append(projectDetail)
         }
+        txtSelectProject.text = projectListSource[0].name
     }
 }
