@@ -25,3 +25,23 @@ extension UITextField {
         rightViewMode = .always
     }
 }
+
+extension UILabel {
+    func colorChangeForLastCharacter() {
+        
+        let myMutableString = NSMutableAttributedString(string: self.text!)
+        
+        myMutableString.addAttribute(NSForegroundColorAttributeName, value: UIColor.red, range: NSRange(location: self.text!.characters.count - 1,length:1))
+        
+        self.attributedText = myMutableString
+    }
+}
+
+extension String {
+    func heightWithConstrainedWidth(width: CGFloat, font: UIFont) -> CGFloat {
+        let constraintRect = CGSize(width: width, height: .greatestFiniteMagnitude)
+        let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [NSFontAttributeName: font], context: nil)
+        
+        return boundingBox.height
+    }
+}

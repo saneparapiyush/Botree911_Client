@@ -20,6 +20,7 @@ class CommentViewController: AbstractViewController {
     var ticket: Ticket?
     var commentListSource = [Comment]()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -148,7 +149,11 @@ extension CommentViewController: UITableViewDataSource,UITableViewDelegate {
         let cell = tblCommentList.dequeueReusableCell(withIdentifier: "CommentListCell") as! CommentListCell
         
         cell.comment = commentListSource[indexPath.row]
+        
+        cell.setCellView()
+        cell.configHeightForCell()
         cell.setProjectListData()
+        
         return cell
     }
     
@@ -167,12 +172,28 @@ class CommentListCell: UITableViewCell {
     @IBOutlet var lblComment: UILabel!
     @IBOutlet var lblCommentDateTime: UILabel!
     
+    
+    @IBOutlet var constraintTrail: NSLayoutConstraint!// For move view
+    @IBOutlet var constraintLead: NSLayoutConstraint!// For move view
+    
     func setProjectListData() {
         
         lblCommenterName.text = comment?.user_name
         lblComment.text = comment?.comment
         lblCommentDateTime.text = comment?.date_time
     }
+    
+    func setCellView() {
+        if comment!.user_name! == "piyush" { // change condition based on user detail
+            constraintLead.constant = 100
+            constraintTrail.constant = 8
+        }
+    }
+    
+    func configHeightForCell() {
+        print(comment?.comment?.heightWithConstrainedWidth(width: UIScreen.main.bounds.width - 124 , font: UIFont.systemFont(ofSize: 12.0)))
+    }
+    
 }
 
 extension CommentViewController {
@@ -186,21 +207,21 @@ extension CommentViewController {
                 "comments": [
                     [
                         "id": 1,
-                        "user_name": "Client ",
-                        "comment": "helloooo",
-                        "date_time": "2017-02-08T09:53:31.404Z"
+                        "user_name": "piyush",
+                        "comment": "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                        "date_time": "Jan 5, 2016"
                     ],
                     [
                         "id": 2,
-                        "user_name": "Client ",
+                        "user_name": "Client",
                         "comment": "helloooo",
-                        "date_time": "2017-02-08T09:55:20.056Z"
+                        "date_time": "Jan 5, 2016"
                     ],
                     [
                         "id": 3,
-                        "user_name": "Client ",
+                        "user_name": "Client",
                         "comment": "d",
-                        "date_time": "2017-02-08T09:58:01.802Z"
+                        "date_time": "Jan , 2016"
                     ]
                 ]
             ]

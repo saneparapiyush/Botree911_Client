@@ -18,6 +18,10 @@ class AddTicketViewController: AbstractViewController {
     @IBOutlet var txtViewDescription: UITextView!
     
     @IBOutlet var txtSelectProject: UITextField!
+    
+    @IBOutlet var lblIssueType: ThemeLabelDetail!
+    @IBOutlet var lblSummery: ThemeLabelDetail!
+    @IBOutlet var lblDescription: ThemeLabelDetail!
     @IBOutlet var txtSelectStatus: UITextField!
     @IBOutlet var btnCreateTicket: ThemeButton!
     
@@ -26,12 +30,13 @@ class AddTicketViewController: AbstractViewController {
     var picker = UIPickerView()
     var pickerTag: Int = Int()
     
-    var arrStatus = NSMutableDictionary()
     var ticketStatus = [TicketStatus]()
     var projectListSource = [Project]()
     var ddProjectId: Int?
     
     var project: Project?
+    var selectedStatus: TicketStatus?
+    
     var ticket: Ticket?
     var isEdit: Bool?
     
@@ -41,8 +46,6 @@ class AddTicketViewController: AbstractViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        constraintTop.constant = 16
-
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Skip", style: .plain, target: self, action: #selector(btnSkipOnClick))
         
         
@@ -50,9 +53,16 @@ class AddTicketViewController: AbstractViewController {
         self.navigationItem.setHidesBackButton(true, animated: true)
         if (ticket != nil) {
             isEdit = true
+            lblIssueType.isHidden = false
+            txtSelectStatus.isHidden = false
+            constraintTop.constant = 101
         } else {
             isEdit = false
             title = getLocalizedString("title_add_ticket")
+            
+            lblIssueType.isHidden = true
+            txtSelectStatus.isHidden = true
+            constraintTop.constant = 16
         }
         
         configUI()
@@ -113,33 +123,30 @@ class AddTicketViewController: AbstractViewController {
             self.configToast(message: error.localizedDescription)
             //            self.dismissIndicator()
         }
-    } // End getProjectList()
+    } // End getStatusList()
     
-    let params2 = [
-        "status": true,
-        "message": "Ticket status list.",
-        "data": [
-            "ticket_status": [
-                [
-                    "name": "to_do",
-                    "value": 1
-                ],
-                [
-                    "name": "in_progress",
-                    "value": 2
-                ],
-                [
-                    "name": "resolved",
-                    "value": 3
-                ],
-                [
-                    "name": "close",
-                    "value": 4
-                ]
-            ]
-        ]
-        ] as Any
-    
+    func processGetResponceStutusList(json: JSON) {
+        
+        ticketStatus = [TicketStatus]()
+        
+        let ticketStat = json["ticket_status"]
+        for i in 0 ..< ticketStat.count {
+            let jsonValue = ticketStat.arrayValue[i]
+            let ticketStatusDetail = TicketStatus(json: jsonValue)
+            ticketStatus.append(ticketStatusDetail)
+        }
+        
+        //        for (key, value) in projects as! JSON {
+        //            arrStatus[key] = (value.intValue)
+        //        }
+        
+        //        txtSelectStatus.text = (isEdit)! ? (ticket?.status) : (arrStatus.allKeys(for: 1)[0] as! String)
+        if ticketStatus.count > 1 {
+            txtSelectStatus.isEnabled = true
+        }
+        
+        txtSelectStatus.text = (isEdit)! ? (ticket?.status) : ticketStatus[0].ticket_status_name
+    } // End procssGetResponceProjectList
 
 //    func processGetResponceTicketList(json: JSON) {
 //        ticketListSource = [Ticket]()
@@ -153,25 +160,6 @@ class AddTicketViewController: AbstractViewController {
 //        tblTicketList.reloadData()
 //    }
     
-    func processGetResponceStutusList(json: JSON) {
-        
-        ticketStatus = [TicketStatus]()
-        
-        let ticketStat = json["ticket_status"]
-        for i in 0 ..< ticketStat.count {
-            let jsonValue = ticketStat.arrayValue[i]
-            let ticketStatusDetail = TicketStatus(json: jsonValue)
-            ticketStatus.append(ticketStatusDetail)
-        }
-
-//        for (key, value) in projects as! JSON {
-//            arrStatus[key] = (value.intValue)
-//        }
-        
-//        txtSelectStatus.text = (isEdit)! ? (ticket?.status) : (arrStatus.allKeys(for: 1)[0] as! String)
-        txtSelectStatus.text = (isEdit)! ? (ticket?.status) : ticketStatus[0].ticket_status_name
-    } // End procssGetResponceProjectList
-    
     func getProjectList() {
         
         let serviceManager = ServiceManager()
@@ -179,7 +167,10 @@ class AddTicketViewController: AbstractViewController {
         serviceManager.getProjectList { (success, error, json) in
             if success {
                 self.projectListSource = json!
-
+                
+                if self.projectListSource.count > 1 {
+                    self.txtSelectProject.isEnabled = true
+                }
             } else {
                 print(error!)
                 self.configToast(message: error!)
@@ -190,13 +181,11 @@ class AddTicketViewController: AbstractViewController {
     
     func createTicket() {
 
-        let status: Int = arrStatus["\(txtSelectStatus.text!)"]! as! Int
-        
         let parameters = [
             "ticket": [
             "project_id": project!.id!,
             "name": "\(txtTitleName.text!)",
-            "status": status,
+            "status": selectedStatus!.status_value!,
             "description": "\(txtViewDescription.text!)"
             ]
         ]
@@ -242,13 +231,11 @@ class AddTicketViewController: AbstractViewController {
     
     func editTicket() {
         
-        let status: Int = arrStatus["\(txtSelectStatus.text!)"]! as! Int
-        
         let parameters = [
             "ticket": [
                 "project_id": project!.id!,
                 "name": "\(txtTitleName.text!)",
-                "status": status,
+                "status": selectedStatus!.status_value!,
                 "description": "\(txtViewDescription.text!)"
             ]
         ]
@@ -294,6 +281,8 @@ class AddTicketViewController: AbstractViewController {
     func configUI() {
         
         txtViewDescription.textContainerInset = UIEdgeInsetsMake(10, 10, 10, 10)
+        lblSummery.colorChangeForLastCharacter()
+        lblDescription.colorChangeForLastCharacter()
         
         picker = UIPickerView(frame: CGRect(x: 0.0, y: 0.0, width: UIScreen.main.bounds.size.width, height: 216.0))
         picker.backgroundColor = UIColor.white
@@ -308,7 +297,7 @@ class AddTicketViewController: AbstractViewController {
             txtTitleName.text = ticket!.name
             txtViewDescription.text = ticket!.description
             txtSelectStatus.text = ticket!.status
-            btnCreateTicket.setTitle("Edit Ticket", for: .normal)
+            btnCreateTicket.setTitle("Edit", for: .normal)
         }
     }// End configUI()
     
@@ -363,7 +352,7 @@ extension AddTicketViewController: UIPickerViewDelegate, UIPickerViewDataSource,
         case 101:
             return projectListSource.count
         case 102:
-            return arrStatus.count
+            return ticketStatus.count
         default:
             print(pickerTag)
             return 1
@@ -375,7 +364,8 @@ extension AddTicketViewController: UIPickerViewDelegate, UIPickerViewDataSource,
             project = projectListSource[row]
             txtSelectProject.text = projectListSource[row].name
         case 102:
-            txtSelectStatus.text = (arrStatus.allKeys[row] as! String)
+            selectedStatus = ticketStatus[row]
+            txtSelectStatus.text = ticketStatus[row].ticket_status_name
             
         default:
             print(pickerTag)
@@ -393,7 +383,8 @@ extension AddTicketViewController: UIPickerViewDelegate, UIPickerViewDataSource,
         case 101:
             label.text = projectListSource[row].name
         case 102:
-            label.text = (arrStatus.allKeys[row] as! String)
+            label.text = ticketStatus[row].ticket_status_name
+            
         default:
             print(pickerTag)
             break
@@ -413,7 +404,7 @@ extension AddTicketViewController: UIPickerViewDelegate, UIPickerViewDataSource,
                 //     titlePicker.title = " Select XXXX "
             }
         case txtSelectStatus:
-            if arrStatus.count > 0 {
+            if ticketStatus.count > 0 {
                 pickerTag = 102
 
                 //   titlePicker.title = " Select XXXX "
@@ -528,6 +519,10 @@ extension AddTicketViewController {
             let jsonValue = projects.arrayValue[i]
             let projectDetail = Project(json: jsonValue)
             projectListSource.append(projectDetail)
+        }
+        
+        if projectListSource.count > 1 {
+            txtSelectProject.isEnabled = true
         }
         txtSelectProject.text = projectListSource[0].name
     }

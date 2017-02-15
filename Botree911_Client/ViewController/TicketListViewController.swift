@@ -99,10 +99,12 @@ class TicketListViewController: AbstractViewController {
     //    MARK: Prepare for segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showTicketInfo" {
-            let tabCtrl = segue.destination as! UITabBarController
-            tabCtrl.title = getLocalizedString("title_edit_ticket")
+            let fragmentControll = segue.destination as! FragmentTicketDetailViewController
+            fragmentControll.title = getLocalizedString("title_edit_ticket")
+            fragmentControll.project = project
+            fragmentControll.ticket = selectedTicket
             
-            let destinationVC = tabCtrl.viewControllers![0] as! AddTicketViewController
+            /*let destinationVC = tabCtrl.viewControllers![0] as! AddTicketViewController
             destinationVC.project = project
             destinationVC.ticket = selectedTicket
             
@@ -110,7 +112,7 @@ class TicketListViewController: AbstractViewController {
             historyVC.ticket = selectedTicket
             
             let commentVC = tabCtrl.viewControllers![2] as! CommentViewController
-            commentVC.ticket = selectedTicket
+            commentVC.ticket = selectedTicket*/
             
         } else if segue.identifier == "showAddTicket" {
             let addTicketVC = segue.destination as! AddTicketViewController

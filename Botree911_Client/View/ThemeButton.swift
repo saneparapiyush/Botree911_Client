@@ -15,6 +15,6 @@ class ThemeButton: UIButton {
         self.layer.cornerRadius = 3.0
         self.backgroundColor = themeColor
         self.setTitleColor(UIColor.white, for: UIControlState())
-        self.titleLabel?.font = UIFont(name: "Helvetica", size: 16)
+        self.titleLabel?.font = UIFont.systemFont(ofSize: 16)
     }
 }

@@ -252,6 +252,9 @@ class ThemeTextField: UITextField {
         self.layer.borderColor = themeTextBorderColor.cgColor
         
         self.layer.borderWidth = 1.0
+        
+        self.font = UIFont.systemFont(ofSize: 14)
+        self.textColor = themeTextColor
     }
     
     override func textRect(forBounds bounds: CGRect) -> CGRect {
@@ -305,6 +308,9 @@ class ThemeTextView: UITextView {
         self.layer.borderColor = themeTextBorderColor.cgColor
         
         self.layer.borderWidth = 1.0
+        
+        self.font = UIFont.systemFont(ofSize: 14)
+        self.textColor = themeTextColor
     }
 }
 

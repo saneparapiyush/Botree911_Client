@@ -12,11 +12,13 @@ class FragmentTicketDetailViewController: AbstractViewController,CarbonTabSwipeN
     
     var items = NSArray()
     var carbonTabSwipeNavigation: CarbonTabSwipeNavigation = CarbonTabSwipeNavigation()
+    var project: Project?
+    var ticket: Ticket?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        items = ["DETAIL", "HISTORY","COMMENTS"]
+        items = ["Details", "History","Comment"]
         
         carbonTabSwipeNavigation = CarbonTabSwipeNavigation(items: items as [AnyObject], delegate: self)
         carbonTabSwipeNavigation.insert(intoRootViewController: self)
@@ -26,20 +28,32 @@ class FragmentTicketDetailViewController: AbstractViewController,CarbonTabSwipeN
         //        carbonTabSwipeNavigation.carbonSegmentedControl?.selectedSegmentIndex = 3
 //        carbonTabSwipeNavigation.currentTabIndex = UInt(selectedIndex)
         
-        title = getLocalizedString("title_ticket_list")
+//        title = getLocalizedString("title_ticket_list")
     }
     func carbonTabSwipeNavigation(_ carbonTabSwipeNavigation: CarbonTabSwipeNavigation, viewControllerAt index: UInt) -> UIViewController {
         
         switch index {
         case 0:
-            return AppRouter.sharedRouter().getViewController("AddTicketViewController") as! AddTicketViewController
+           let vc = AppRouter.sharedRouter().getViewController("AddTicketViewController") as! AddTicketViewController
+            vc.project = project
+            vc.ticket = ticket
+            
+            return vc
+            
         case 1:
-            return AppRouter.sharedRouter().getViewController("HistoryViewController") as! HistoryViewController
-        
+           let vc = AppRouter.sharedRouter().getViewController("HistoryViewController") as! HistoryViewController
+            vc.ticket = ticket
+            return vc
+            
         case 2:
-            return AppRouter.sharedRouter().getViewController("CommentViewController") as! CommentViewController
+           let vc = AppRouter.sharedRouter().getViewController("CommentViewController") as! CommentViewController
+            vc.ticket = ticket
+            
+            return vc
+            
         default:
-            return AppRouter.sharedRouter().getViewController("AddTicketViewController") as! AddTicketViewController
+            print(index)
+            return UIViewController()
         }
     }
     
@@ -56,17 +70,11 @@ class FragmentTicketDetailViewController: AbstractViewController,CarbonTabSwipeN
         
         carbonTabSwipeNavigation.setTabExtraWidth(30)
         
-        carbonTabSwipeNavigation.carbonSegmentedControl!.setWidth(self.view.frame.width / 3.5, forSegmentAt: 0)
-        carbonTabSwipeNavigation.carbonSegmentedControl!.setWidth(self.view.frame.width / 3.5, forSegmentAt: 1)
-        carbonTabSwipeNavigation.carbonSegmentedControl!.setWidth(self.view.frame.width / 3.5, forSegmentAt: 2)
+        carbonTabSwipeNavigation.carbonSegmentedControl!.setWidth(self.view.frame.width / 3, forSegmentAt: 0)
+        carbonTabSwipeNavigation.carbonSegmentedControl!.setWidth(self.view.frame.width / 3, forSegmentAt: 1)
+        carbonTabSwipeNavigation.carbonSegmentedControl!.setWidth(self.view.frame.width / 3, forSegmentAt: 2)
         
         
         carbonTabSwipeNavigation.setNormalColor(UIColor.black.withAlphaComponent(0.6))
     }
-    
-    //    MARK:- Actions
-    func btnAddOnClick() {
-        //        selectedTicket = nil
-        self.performSegue(withIdentifier: "showAddTicket", sender: self)
-    }// end btnAddOnClick()
 }
