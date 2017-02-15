@@ -21,6 +21,8 @@ class AddTicketViewController: AbstractViewController {
     @IBOutlet var txtSelectStatus: UITextField!
     @IBOutlet var btnCreateTicket: ThemeButton!
     
+    @IBOutlet var constraintTop: NSLayoutConstraint!
+    
     var picker = UIPickerView()
     var pickerTag: Int = Int()
     
@@ -39,9 +41,10 @@ class AddTicketViewController: AbstractViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = getLocalizedString("title_add_ticket")
-        
+        constraintTop.constant = 16
+
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Skip", style: .plain, target: self, action: #selector(btnSkipOnClick))
+        
         
         // Do any additional setup after loading the view.
         self.navigationItem.setHidesBackButton(true, animated: true)
@@ -49,6 +52,7 @@ class AddTicketViewController: AbstractViewController {
             isEdit = true
         } else {
             isEdit = false
+            title = getLocalizedString("title_add_ticket")
         }
         
         configUI()
@@ -288,6 +292,9 @@ class AddTicketViewController: AbstractViewController {
     }//End editTicket()
     
     func configUI() {
+        
+        txtViewDescription.textContainerInset = UIEdgeInsetsMake(10, 10, 10, 10)
+        
         picker = UIPickerView(frame: CGRect(x: 0.0, y: 0.0, width: UIScreen.main.bounds.size.width, height: 216.0))
         picker.backgroundColor = UIColor.white
         

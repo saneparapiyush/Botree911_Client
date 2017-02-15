@@ -31,6 +31,8 @@ class LoginViewController: AbstractViewController {
     @IBOutlet var txtPassword: ThemeTextField!
     @IBOutlet var btnLogin: UIButton!
     
+    let btnShowHide = UIButton()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -44,6 +46,7 @@ class LoginViewController: AbstractViewController {
         title = "SIGN IN"
         //hideNavigationBar()
         configValidation()
+        configPasswordHideShow()
         textFeildReturnUIConfig()
     }// End viewDidLoad()
     
@@ -96,6 +99,21 @@ extension LoginViewController : UITextFieldDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }// End touchesBegan()
+    
+    
+    func configPasswordHideShow() {
+        btnShowHide.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+        btnShowHide.setImage(UIImage(named: "show"), for: .normal)
+        btnShowHide.setTitleColor(UIColor.darkGray, for: .normal)
+        btnShowHide.addTarget(self, action: #selector(btnShowHideOnClick), for: .touchUpInside)
+        
+        txtPassword.rightViewMode = .always
+        txtPassword.rightView = btnShowHide
+    }
+    func btnShowHideOnClick(sender: UIButton) {
+        txtPassword.isSecureTextEntry = !txtPassword.isSecureTextEntry
+        txtPassword.isSecureTextEntry ? btnShowHide.setImage(UIImage(named: "show"), for: .normal) : btnShowHide.setImage(UIImage(named: "hide"), for: .normal)
+    }
 }
 
 extension LoginViewController:AuthorizedProtocol {

@@ -13,7 +13,7 @@ class ThemeLabelTitle: UILabel {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        self.font = UIFont.boldSystemFont(ofSize: 16.0)
+        self.font = UIFont.boldSystemFont(ofSize: 14.0)
     }
 }
 
@@ -22,7 +22,7 @@ class ThemeLabelDetail: UILabel {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        self.font = UIFont.systemFont(ofSize: 14)
+        self.font = UIFont.systemFont(ofSize: 12.0)
     }
 }
 

@@ -18,7 +18,7 @@
 
 import UIKit
 
-@IBDesignable class ThemeTextField: UITextField {
+/*@IBDesignable class ThemeTextField: UITextField {
     
     let animationDuration = 0.3
     var title = UILabel()
@@ -237,18 +237,19 @@ import UIKit
             self.title.frame = r
         }, completion:nil)
     }
-}
+}*/
 
-class ThemeTextFieldCreate: UITextField {
-    
-    let padding = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5);
+class ThemeTextField: UITextField {
+    let padding = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10);
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
+        self.backgroundColor = UIColor.white
+        
         self.layer.cornerRadius = 2.0
         
-        self.layer.borderColor = themeColorLight.cgColor
+        self.layer.borderColor = themeTextBorderColor.cgColor
         
         self.layer.borderWidth = 1.0
     }
@@ -265,15 +266,43 @@ class ThemeTextFieldCreate: UITextField {
         return UIEdgeInsetsInsetRect(bounds, padding)
     }
 }
-
-class ThemeTextView: UITextView {
+/*
+class ThemeTextFieldCreate: UITextField {
+    
+    let padding = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15);
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
         self.layer.cornerRadius = 2.0
         
-        self.layer.borderColor = themeColorLight.cgColor
+        self.layer.borderColor = themeTextBorderColor.cgColor
+        
+        self.layer.borderWidth = 1.0
+    }
+    
+    override func textRect(forBounds bounds: CGRect) -> CGRect {
+        return UIEdgeInsetsInsetRect(bounds, padding)
+    }
+    
+    override func placeholderRect(forBounds bounds: CGRect) -> CGRect {
+        return UIEdgeInsetsInsetRect(bounds, padding)
+    }
+    
+    override func editingRect(forBounds bounds: CGRect) -> CGRect {
+        return UIEdgeInsetsInsetRect(bounds, padding)
+    }
+}*/
+
+class ThemeTextView: UITextView {
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        self.backgroundColor = UIColor.white
+        self.layer.cornerRadius = 2.0
+        
+        self.layer.borderColor = themeTextBorderColor.cgColor
         
         self.layer.borderWidth = 1.0
     }

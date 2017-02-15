@@ -116,7 +116,7 @@ class TicketListViewController: AbstractViewController {
             let addTicketVC = segue.destination as! AddTicketViewController
             addTicketVC.project = project!
             addTicketVC.ticket = selectedTicket
-            addTicketVC.title = getLocalizedString("title_add_ticket")
+//          addTicketVC.title = getLocalizedString("title_add_ticket")
         }
         
     }
@@ -132,7 +132,10 @@ extension TicketListViewController: UITableViewDataSource,UITableViewDelegate {
         let cell = tblTicketList.dequeueReusableCell(withIdentifier: "TicketListCell") as! TicketListCell
         
         cell.ticket = ticketListSource[indexPath.row]
+        
+        cell.configView()
         cell.setTicketListData()
+        
         return cell
     }
     
@@ -146,28 +149,37 @@ extension TicketListViewController: UITableViewDataSource,UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == ticketListSource.count - 1 {
-            return 132.0
+            return 134.0
         }
-        return 124.0
+        return 126.0
     }
 }
 
 class TicketListCell: UITableViewCell {
     var ticket: Ticket?
     
+    @IBOutlet var viewMain: UIView!
+    
     @IBOutlet var lblTicketTitle: UILabel!
     @IBOutlet var lblTicketDescription: UILabel!
-    @IBOutlet var lblTicketStatus: UILabel!
-    @IBOutlet var lblRaisedBy: UILabel!
+    @IBOutlet var lblDate: ThemeLabelDetail!
+    
     @IBOutlet var lblAssingee: UILabel!
     
+    
+
+    
     func setTicketListData() {
-        
         lblTicketTitle.text = ticket?.name
         lblTicketDescription.text = ticket?.description
-        lblTicketStatus.text = ticket?.status
-        lblRaisedBy.text = ticket?.raised_by
+        lblDate.text = ticket?.updated_at
         lblAssingee.text = ticket?.assingee
+    }
+    
+    func configView() {
+        viewMain.layer.cornerRadius = 5.0
+        viewMain.layer.borderWidth = 1.0
+        viewMain.layer.borderColor = themeTextBorderColor.cgColor
     }
 }
 
@@ -186,7 +198,7 @@ extension TicketListViewController {
                     "name": "Change Login Screen",
                     "description": "add Facebook Integration in Login",
                     "status": "Pending",
-                    "created_at": "Jan 21, 2017",
+                    "updated_at": "Jan 21, 2017",
                     "raised_by": "Olivia Wilde",
                     "assingee": "Bhavin Nattar"
                     ],
@@ -196,7 +208,7 @@ extension TicketListViewController {
                     "name": "UI Theme",
                     "description": "change Mobile Theme",
                     "status": "Pending",
-                    "created_at": "Jan 1, 2017",
+                    "updated_at": "Jan 1, 2017",
                     "raised_by": "Scarlett Johansson",
                     "assingee": "Piyush Sanepara"
                     ]

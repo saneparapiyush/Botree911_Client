@@ -17,7 +17,7 @@ class FragmentViewController: AbstractViewController,CarbonTabSwipeNavigationDel
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        items = ["Pending(2)", "InProgress(1)","Resolved(5)","Closed(3)"]
+        items = ["Pending (2)", "InProgress (1)","Resolved (5)","Closed (3)","Unassigned (2)"]
         
         carbonTabSwipeNavigation = CarbonTabSwipeNavigation(items: items as [AnyObject], delegate: self)
         carbonTabSwipeNavigation.insert(intoRootViewController: self)
@@ -48,7 +48,7 @@ class FragmentViewController: AbstractViewController,CarbonTabSwipeNavigationDel
     {
         NSLog("Did move at index: %ld", index)
         
-        switch index {
+        /*switch index {
         case 0:
             carbonTabSwipeNavigation.setIndicatorColor(UIColor(red: 255/255, green: 16/255, blue: 8/255, alpha: 1))
             carbonTabSwipeNavigation.setSelectedColor(UIColor(red: 255/255, green: 16/255, blue: 8/255, alpha: 1), font: UIFont.boldSystemFont(ofSize: 14))
@@ -67,8 +67,7 @@ class FragmentViewController: AbstractViewController,CarbonTabSwipeNavigationDel
 
         default:
             print(index)
-        }
-        
+        }*/
     }
     
     func style()
@@ -78,8 +77,8 @@ class FragmentViewController: AbstractViewController,CarbonTabSwipeNavigationDel
         //        self.navigationController!.navigationBar.barTintColor = color
         //        self.navigationController!.navigationBar.barStyle = .BlackTranslucent
         carbonTabSwipeNavigation.toolbar.isTranslucent = false
-//        carbonTabSwipeNavigation.setIndicatorColor(themeColor)
-        
+        carbonTabSwipeNavigation.setIndicatorColor(themeColor)
+        carbonTabSwipeNavigation.setSelectedColor(themeColor, font: UIFont.boldSystemFont(ofSize: 14))
         //        carbonTabSwipeNavigation.toolbar.barTintColor = UIColor.yellowColor()
         
         carbonTabSwipeNavigation.setTabExtraWidth(30)
@@ -88,11 +87,13 @@ class FragmentViewController: AbstractViewController,CarbonTabSwipeNavigationDel
         carbonTabSwipeNavigation.carbonSegmentedControl!.setWidth(self.view.frame.width / 3.5, forSegmentAt: 1)
         carbonTabSwipeNavigation.carbonSegmentedControl!.setWidth(self.view.frame.width / 3.5, forSegmentAt: 2)
         carbonTabSwipeNavigation.carbonSegmentedControl!.setWidth(self.view.frame.width / 3.5, forSegmentAt: 3)
+        carbonTabSwipeNavigation.carbonSegmentedControl!.setWidth(self.view.frame.width / 3.5, forSegmentAt: 4)
         
         
         carbonTabSwipeNavigation.setNormalColor(UIColor.black.withAlphaComponent(0.6))
     }
     
+    //    MARK:- Actions
     func btnAddOnClick() {
 //        selectedTicket = nil
         self.performSegue(withIdentifier: "showAddTicket", sender: self)
