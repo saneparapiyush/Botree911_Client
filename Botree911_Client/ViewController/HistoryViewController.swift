@@ -99,13 +99,19 @@ extension HistoryViewController: UITableViewDataSource,UITableViewDelegate {
         cell.setHistoryListData()
         return cell
     }
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == historyListSource.count - 1 {
-            return 81.0
-        }
-        return 73.0
+        return UITableViewAutomaticDimension
     }
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 40
+    }
+//    
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        if indexPath.row == historyListSource.count - 1 {
+//            return 81.0
+//        }
+//        return 73.0
+//    }
 }
 
 class HistoryListCell: UITableViewCell {
@@ -113,14 +119,14 @@ class HistoryListCell: UITableViewCell {
     
     @IBOutlet var lblUserName: UILabel!
     @IBOutlet var lblLastStatus: UILabel!
-    @IBOutlet var lblCurrentStatus: UILabel!
+//    @IBOutlet var lblCurrentStatus: UILabel!
     @IBOutlet var lblHistoryDateTime: UILabel!
     
     func setHistoryListData() {
         
         lblUserName.text = history?.user_name
         lblLastStatus.text = history?.last_status
-        lblCurrentStatus.text = history?.current_status
+//        lblCurrentStatus.text = history?.current_status
         lblHistoryDateTime.text = history?.date_time
     }
 }
@@ -137,8 +143,8 @@ extension HistoryViewController {
                     [
                         "id": 4,
                         "user_name": "Tm1 ",
-                        "last_status": "To Do",
-                        "current_status": "In Progress",
+                        "last_status": "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                        "current_status": "to_do",
                         "date_time": "2017-02-07T09:51:54.781Z"
                     ],
                     [

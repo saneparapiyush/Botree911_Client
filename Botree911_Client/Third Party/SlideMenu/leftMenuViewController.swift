@@ -12,8 +12,8 @@ class leftMenuViewController: UIViewController,UITableViewDataSource,UITableView
 {
     @IBOutlet var tblView: UITableView!
     
-    let dsTitle = ["All Projects","Logout"]
-    let dsMenuImage = [UIImage(named: "project"),UIImage(named: "logout")]
+    let dsTitle = ["Tickets","Unassigned Tickets","Notifications","Logout"]
+    let dsMenuImage = [UIImage(named: "ticket"),UIImage(named: "unassign"),UIImage(named: "notification"),UIImage(named: "logout")]
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
@@ -50,24 +50,46 @@ class leftMenuViewController: UIViewController,UITableViewDataSource,UITableView
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
 //        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        var vc : UIViewController?
+//        var vc : UIViewController?
 
         switch indexPath.row {
-        case 0:// All Project in side menu
-            vc = AppRouter.sharedRouter().getViewController("ProjectListViewController") as! ProjectListViewController
-            
-
+        case 0:// Tickets
+            let vc = AppRouter.sharedRouter().getViewController("FragmentViewController") as! FragmentViewController
+           
+            vc.selectedIndex = 0
+            SlideNavigationController.sharedInstance().pushViewController(vc, animated: false)
+           
             break
             
-        case 1:// Project Info in side menu
-            vc = AppRouter.sharedRouter().getViewController("ProjectListViewController") as! ProjectListViewController
+        case 1:// Unassigned Tickets
+            let vc = AppRouter.sharedRouter().getViewController("FragmentViewController") as! FragmentViewController
+            vc.selectedIndex = 4
+
+            SlideNavigationController.sharedInstance().pushViewController(vc, animated: false)
+                       
+//                        navigateView(to: vc)
+            break
+        
+        case 2:// Notifications
+            let vc = AppRouter.sharedRouter().getViewController("FragmentViewController") as! FragmentViewController
+            
+            navigateView(to: vc)
+            break
+            
+        case 3:// Logout
+            
+            UserDefaults.standard.removeObject(forKey: "user")
+            UserDefaults.standard.removeObject(forKey: "isLogin")
+            
+            let vc = AppRouter.sharedRouter().getViewController("LoginViewController") as! LoginViewController
+            
+            navigateView(to: vc)
             
             break
             
         default:
             break
         }
-        navigateView(to: vc!)
 //        If Animation True Then Display first all page then pop
     }
     

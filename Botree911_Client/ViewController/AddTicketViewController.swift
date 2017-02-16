@@ -417,18 +417,6 @@ extension AddTicketViewController: UIPickerViewDelegate, UIPickerViewDataSource,
         picker.reloadAllComponents()
     }
 }
-
-extension AddTicketViewController {
-    func slideNavigationControllerShouldDisplayLeftMenu() -> Bool
-    {
-        return true
-    }
-    func slideNavigationControllerShouldDisplayRightMenu() -> Bool
-    {
-        return false
-    }
-}
-
 extension AddTicketViewController {
     
     func setOflineDataSource() {

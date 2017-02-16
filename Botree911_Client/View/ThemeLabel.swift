@@ -18,6 +18,16 @@ class ThemeLabelTitle: UILabel {
     }
 }
 
+class ThemeLabelTitleNormal: UILabel {
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        self.textColor = themeTextColor
+        self.font = UIFont.systemFont(ofSize: 14.0)
+    }
+}
+
 class ThemeLabelDetail: UILabel {
     
     required init?(coder aDecoder: NSCoder) {

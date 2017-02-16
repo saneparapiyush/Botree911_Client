@@ -20,18 +20,25 @@ class FragmentViewController: AbstractViewController,CarbonTabSwipeNavigationDel
         items = ["Pending (2)", "InProgress (1)","Resolved (5)","Closed (3)","Unassigned (2)"]
         
         carbonTabSwipeNavigation = CarbonTabSwipeNavigation(items: items as [AnyObject], delegate: self)
+        carbonTabSwipeNavigation.currentTabIndex = UInt(selectedIndex)
         carbonTabSwipeNavigation.insert(intoRootViewController: self)
         
         style()
         
 //        carbonTabSwipeNavigation.carbonSegmentedControl?.selectedSegmentIndex = 3
-        carbonTabSwipeNavigation.currentTabIndex = UInt(selectedIndex)
         
         title = getLocalizedString("title_ticket_list")
         
         //For Add navigation bar button
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(btnAddOnClick))
+    
+//        NotificationCenter.default.addObserver(self, selector: #selector(FragmentViewController.switchTabs), name: NSNotification.Name(rawValue: "switchTabsNotification"), object: nil)
+        
     }
+//    func switchTabs() {
+//        carbonTabSwipeNavigation.currentTabIndex = UInt(selectedIndex)
+//    }
+    
     func carbonTabSwipeNavigation(_ carbonTabSwipeNavigation: CarbonTabSwipeNavigation, viewControllerAt index: UInt) -> UIViewController {
         
         switch index {

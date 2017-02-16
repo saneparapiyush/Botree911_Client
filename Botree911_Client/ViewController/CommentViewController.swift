@@ -23,7 +23,8 @@ class CommentViewController: AbstractViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    
+        
     }// End viewDidLoad()
 
     override func viewWillAppear(_ animated: Bool) {
@@ -134,6 +135,7 @@ class CommentViewController: AbstractViewController {
             let commentDetail = Comment(json: jsonValue)
             commentListSource.append(commentDetail)
         }
+        
         tblCommentList.reloadData()
         completionHandler()
     }// End processGetResponceCommentList
@@ -151,18 +153,24 @@ extension CommentViewController: UITableViewDataSource,UITableViewDelegate {
         cell.comment = commentListSource[indexPath.row]
         
         cell.setCellView()
-        cell.configHeightForCell()
         cell.setProjectListData()
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == commentListSource.count - 1 {
-            return 82.0
-        }
-        return 74.0
+        return UITableViewAutomaticDimension
     }
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 40
+    }
+    
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        if indexPath.row == commentListSource.count - 1 {
+//            return 100.0
+//        }
+//        return 68.0 + CommentListCell().configHeightForCell
+//    }
 }
 
 class CommentListCell: UITableViewCell {
@@ -189,11 +197,6 @@ class CommentListCell: UITableViewCell {
             constraintTrail.constant = 8
         }
     }
-    
-    func configHeightForCell() {
-        print(comment?.comment?.heightWithConstrainedWidth(width: UIScreen.main.bounds.width - 124 , font: UIFont.systemFont(ofSize: 12.0)))
-    }
-    
 }
 
 extension CommentViewController {
@@ -214,14 +217,14 @@ extension CommentViewController {
                     [
                         "id": 2,
                         "user_name": "Client",
-                        "comment": "helloooo",
+                        "comment": "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                         "date_time": "Jan 5, 2016"
                     ],
                     [
                         "id": 3,
                         "user_name": "Client",
                         "comment": "d",
-                        "date_time": "Jan , 2016"
+                        "date_time": "Jan 21, 2016"
                     ]
                 ]
             ]

@@ -45,6 +45,7 @@ class LoginViewController: AbstractViewController {
         
         title = "SIGN IN"
         //hideNavigationBar()
+        self.navigationItem.setHidesBackButton(true, animated: true)
         configValidation()
         configPasswordHideShow()
         textFeildReturnUIConfig()

@@ -47,7 +47,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="rfR-d7-PJu"/>
                                 </constraints>
-                                <state key="normal" title="LOGIN"/>
+                                <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="btnLoginOnclick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wq6-Vs-hcG"/>
                                 </connections>
@@ -861,20 +861,13 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xo1-H8-PyQ">
                                                     <rect key="frame" x="8" y="8" width="304" height="65"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kag-t5-WAZ">
-                                                            <rect key="frame" x="175" y="8" width="60" height="21"/>
-                                                            <color key="backgroundColor" red="0.74901960779999999" green="0.98431372549999996" blue="0.74901960779999999" alpha="0.29784855769230767" colorSpace="calibratedRGB"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYY-eZ-QJD">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYY-eZ-QJD" customClass="ThemeLabelTitle" customModule="BoTree911" customModuleProvider="target">
                                                             <rect key="frame" x="8" y="36" width="145" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nxx-KC-f0J">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nxx-KC-f0J" customClass="ThemeLabelDetail" customModule="BoTree911" customModuleProvider="target">
                                                             <rect key="frame" x="161" y="36" width="135" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="4Rh-he-HXw"/>
@@ -884,19 +877,9 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="→" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9e4-Gs-DQl">
-                                                            <rect key="frame" x="137" y="8" width="30" height="21"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="30" id="phu-F7-wKH"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5nm-7u-Bxs">
-                                                            <rect key="frame" x="96" y="8" width="33" height="21"/>
-                                                            <color key="backgroundColor" red="1" green="0.91764705882352937" blue="0.66666666666666663" alpha="0.29673076923076924" colorSpace="calibratedRGB"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Jq-I4-3os" customClass="ThemeLabelTitleNormal" customModule="BoTree911" customModuleProvider="target">
+                                                            <rect key="frame" x="8" y="8" width="288" height="21"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -906,16 +889,13 @@
                                                         <constraint firstItem="oYY-eZ-QJD" firstAttribute="leading" secondItem="Xo1-H8-PyQ" secondAttribute="leading" constant="8" id="0MP-NG-rC3"/>
                                                         <constraint firstItem="nxx-KC-f0J" firstAttribute="height" secondItem="oYY-eZ-QJD" secondAttribute="height" id="2Ef-CE-roG"/>
                                                         <constraint firstItem="nxx-KC-f0J" firstAttribute="leading" secondItem="oYY-eZ-QJD" secondAttribute="trailing" constant="8" id="848-tg-R4t"/>
-                                                        <constraint firstItem="9e4-Gs-DQl" firstAttribute="centerY" secondItem="5nm-7u-Bxs" secondAttribute="centerY" id="E1p-Od-iBF"/>
-                                                        <constraint firstItem="Kag-t5-WAZ" firstAttribute="leading" secondItem="9e4-Gs-DQl" secondAttribute="trailing" constant="8" id="Nd0-Pw-mvY"/>
-                                                        <constraint firstItem="Kag-t5-WAZ" firstAttribute="leading" secondItem="9e4-Gs-DQl" secondAttribute="trailing" constant="8" id="bPk-Sx-Hys"/>
+                                                        <constraint firstItem="oYY-eZ-QJD" firstAttribute="top" secondItem="4Jq-I4-3os" secondAttribute="bottom" constant="7" id="A5Z-12-Ijk"/>
                                                         <constraint firstAttribute="bottom" secondItem="nxx-KC-f0J" secondAttribute="bottom" constant="8" id="bim-B9-Usb"/>
-                                                        <constraint firstItem="9e4-Gs-DQl" firstAttribute="leading" secondItem="5nm-7u-Bxs" secondAttribute="trailing" constant="8" id="cfs-jb-CQA"/>
-                                                        <constraint firstItem="5nm-7u-Bxs" firstAttribute="top" secondItem="Xo1-H8-PyQ" secondAttribute="top" constant="8" id="hbx-ii-Pgt"/>
                                                         <constraint firstAttribute="trailing" secondItem="nxx-KC-f0J" secondAttribute="trailing" constant="8" id="p90-Ap-Mxm"/>
-                                                        <constraint firstItem="9e4-Gs-DQl" firstAttribute="centerX" secondItem="Xo1-H8-PyQ" secondAttribute="centerX" id="s9j-5a-nSs"/>
+                                                        <constraint firstItem="4Jq-I4-3os" firstAttribute="top" secondItem="Xo1-H8-PyQ" secondAttribute="top" constant="8" id="tNa-pq-gVj"/>
+                                                        <constraint firstItem="4Jq-I4-3os" firstAttribute="leading" secondItem="Xo1-H8-PyQ" secondAttribute="leading" constant="8" id="tqn-0D-Bf6"/>
                                                         <constraint firstAttribute="bottom" secondItem="oYY-eZ-QJD" secondAttribute="bottom" constant="8" id="w3t-Lc-pQA"/>
-                                                        <constraint firstItem="Kag-t5-WAZ" firstAttribute="centerY" secondItem="5nm-7u-Bxs" secondAttribute="centerY" id="z4j-02-R2D"/>
+                                                        <constraint firstAttribute="trailing" secondItem="4Jq-I4-3os" secondAttribute="trailing" constant="8" id="zel-uW-hDY"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -933,9 +913,8 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
-                                            <outlet property="lblCurrentStatus" destination="Kag-t5-WAZ" id="ISU-kp-rX7"/>
                                             <outlet property="lblHistoryDateTime" destination="nxx-KC-f0J" id="2MA-QK-jL1"/>
-                                            <outlet property="lblLastStatus" destination="5nm-7u-Bxs" id="Y69-jc-bHJ"/>
+                                            <outlet property="lblLastStatus" destination="4Jq-I4-3os" id="ztC-Zl-NnK"/>
                                             <outlet property="lblUserName" destination="oYY-eZ-QJD" id="3aB-Ee-qXA"/>
                                         </connections>
                                     </tableViewCell>
@@ -963,7 +942,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="esQ-0S-mbJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4870" y="33"/>
+            <point key="canvasLocation" x="4869.375" y="32.74647887323944"/>
         </scene>
         <!--DETAIL-->
         <scene sceneID="oOF-I2-JnE">
@@ -1164,15 +1143,15 @@
                                 <rect key="frame" x="0.0" y="20" width="320" height="484"/>
                                 <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CommentListCell" rowHeight="74" id="uJs-dn-Iek" customClass="CommentListCell" customModule="BoTree911" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="74"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CommentListCell" rowHeight="68" id="uJs-dn-Iek" customClass="CommentListCell" customModule="BoTree911" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="68"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uJs-dn-Iek" id="8dT-Bv-gMN">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="74"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="68"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7F0-ya-gIt">
-                                                    <rect key="frame" x="8" y="8" width="212" height="66"/>
+                                                    <rect key="frame" x="8" y="8" width="212" height="60"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Commenter Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="lWN-zn-BeU" customClass="ThemeLabelTitle" customModule="BoTree911" customModuleProvider="target">
                                                             <rect key="frame" x="8" y="8" width="53" height="21"/>
@@ -1193,12 +1172,9 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XJR-y7-Zfm" customClass="ThemeLabelDetail" customModule="BoTree911" customModuleProvider="target">
-                                                            <rect key="frame" x="8" y="37" width="196" height="21"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="21" id="m98-nv-qQj"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XJR-y7-Zfm" customClass="ThemeLabelTitleNormal" customModule="BoTree911" customModuleProvider="target">
+                                                            <rect key="frame" x="8" y="37" width="196" height="14.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -1210,6 +1186,7 @@
                                                         <constraint firstItem="lWN-zn-BeU" firstAttribute="leading" secondItem="XJR-y7-Zfm" secondAttribute="leading" id="SlP-5S-IJh"/>
                                                         <constraint firstItem="qHA-cS-9fS" firstAttribute="top" secondItem="lWN-zn-BeU" secondAttribute="top" id="YPf-Ze-P00"/>
                                                         <constraint firstItem="XJR-y7-Zfm" firstAttribute="top" secondItem="lWN-zn-BeU" secondAttribute="bottom" constant="8" id="ZyE-uV-1Sp"/>
+                                                        <constraint firstAttribute="bottom" secondItem="XJR-y7-Zfm" secondAttribute="bottom" constant="8.5" id="df8-46-Ir8"/>
                                                         <constraint firstItem="lWN-zn-BeU" firstAttribute="top" secondItem="7F0-ya-gIt" secondAttribute="top" constant="8" id="gXw-cu-Xby"/>
                                                         <constraint firstItem="qHA-cS-9fS" firstAttribute="trailing" secondItem="XJR-y7-Zfm" secondAttribute="trailing" id="wzH-R9-fMQ"/>
                                                         <constraint firstItem="XJR-y7-Zfm" firstAttribute="leading" secondItem="7F0-ya-gIt" secondAttribute="leading" constant="8" id="zDC-0a-Nd9"/>
@@ -1244,7 +1221,7 @@
                                 </connections>
                             </tableView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add Comment" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i5R-bB-muv" customClass="ThemeTextField" customModule="BoTree911" customModuleProvider="target">
-                                <rect key="frame" x="12" y="516" width="212" height="40"/>
+                                <rect key="frame" x="12" y="516" width="240" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="xdt-2v-2Py"/>
                                 </constraints>
@@ -1252,13 +1229,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zAl-pL-GsW" customClass="ThemeButton" customModule="BoTree911" customModuleProvider="target">
-                                <rect key="frame" x="228" y="516" width="80" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zAl-pL-GsW">
+                                <rect key="frame" x="256" y="516" width="60" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="KaG-Wp-wj2"/>
+                                    <constraint firstAttribute="width" constant="60" id="KaG-Wp-wj2"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="Add"/>
+                                <state key="normal" image="send"/>
                                 <connections>
                                     <action selector="btnAddCommentOnClick:" destination="0du-kP-Hra" eventType="touchUpInside" id="Yck-Da-Wbt"/>
                                 </connections>
@@ -1267,7 +1243,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="zAl-pL-GsW" firstAttribute="leading" secondItem="i5R-bB-muv" secondAttribute="trailing" constant="4" id="6vH-dT-i2R"/>
-                            <constraint firstAttribute="trailing" secondItem="zAl-pL-GsW" secondAttribute="trailing" constant="12" id="AdX-sl-Vm3"/>
+                            <constraint firstAttribute="trailing" secondItem="zAl-pL-GsW" secondAttribute="trailing" constant="4" id="AdX-sl-Vm3"/>
                             <constraint firstItem="i5R-bB-muv" firstAttribute="leading" secondItem="7yu-2B-TmU" secondAttribute="leading" constant="12" id="EQT-ba-djt"/>
                             <constraint firstItem="EAS-q1-A7n" firstAttribute="top" secondItem="I6Y-pf-zBf" secondAttribute="bottom" id="IPI-6U-rch"/>
                             <constraint firstItem="JfS-LJ-ycM" firstAttribute="top" secondItem="i5R-bB-muv" secondAttribute="bottom" constant="12" id="XFZ-1f-9mO"/>
@@ -1319,6 +1295,7 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pjY-Kd-zZH">
                                                     <rect key="frame" x="10" y="6" width="40" height="40"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="GLr-WG-ye8"/>
                                                         <constraint firstAttribute="width" constant="40" id="R8T-PL-NVI"/>
@@ -1439,6 +1416,7 @@
         <image name="clock" width="20" height="20"/>
         <image name="comment" width="20" height="20"/>
         <image name="profile" width="50" height="50"/>
+        <image name="send" width="35" height="35"/>
         <image name="splash_image" width="300" height="77"/>
     </resources>
     <inferredMetricsTieBreakers>

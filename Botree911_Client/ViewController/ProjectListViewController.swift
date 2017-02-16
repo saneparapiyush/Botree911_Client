@@ -232,17 +232,6 @@ class ProjectListCell: UITableViewCell {
     }
 }
 
-extension ProjectListViewController: SlideNavigationControllerDelegate {
-    func slideNavigationControllerShouldDisplayLeftMenu() -> Bool
-    {
-        return true
-    }
-    func slideNavigationControllerShouldDisplayRightMenu() -> Bool
-    {
-        return false
-    }
-}
-
 extension ProjectListViewController {
     func setOflineDataSource() {
         

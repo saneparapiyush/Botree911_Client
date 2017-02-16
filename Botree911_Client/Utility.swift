@@ -45,3 +45,26 @@ extension String {
         return boundingBox.height
     }
 }
+
+
+// MARK: SlideMenu Delegate
+extension FragmentViewController: SlideNavigationControllerDelegate {
+    func slideNavigationControllerShouldDisplayLeftMenu() -> Bool
+    {
+        return true
+    }
+}
+
+extension AddTicketViewController {
+    func slideNavigationControllerShouldDisplayLeftMenu() -> Bool
+    {
+        return true
+    }
+}
+
+extension ProjectListViewController: SlideNavigationControllerDelegate {
+    func slideNavigationControllerShouldDisplayLeftMenu() -> Bool
+    {
+        return true
+    }
+}
