@@ -16,7 +16,7 @@ class ProjectDetailViewController: AbstractViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("Project id : \(project?.id)")
+        print("Project id : \(project?.project_id)")
         title = getLocalizedString("title_project_info")
         
         self.view.addSubview(scrlView)

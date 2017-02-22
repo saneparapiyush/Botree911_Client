@@ -40,15 +40,15 @@ class AppRouter: NSObject, Controller {
     
     // MARK: - Screen Navigation Methods -
     
-    func showProjectScreen() {
-        let projectListVC = getViewController("ProjectListViewController") as? ProjectListViewController
+    func showAddTicketScreen() {
+        let addTicketVC = getViewController("AddTicketViewController") as? AddTicketViewController
         
-        projectListVC!.controller = self
-        projectListVC!.screenType = .PROJECT_LIST_SCREEN_TYPE
-        view = projectListVC
+        addTicketVC!.controller = self
+        addTicketVC!.screenType = .TICKET_LIST_SCREEN_TYPE
+        view = addTicketVC
         
         let navigationController: UINavigationController = getNavigationController()
-        navigationController.viewControllers = [projectListVC!]
+        navigationController.viewControllers = [addTicketVC!]
         container = navigationController
         
         let appDelegate: AppDelegate = (UIApplication.shared.delegate as? AppDelegate)!

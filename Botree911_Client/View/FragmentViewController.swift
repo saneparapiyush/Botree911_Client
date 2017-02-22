@@ -7,48 +7,83 @@
 //
 
 import UIKit
+import FTProgressIndicator
+import Alamofire
+import SwiftyJSON
 
 class FragmentViewController: AbstractViewController,CarbonTabSwipeNavigationDelegate {
 
-    var items = NSArray()
+    var items = [String]()
     var carbonTabSwipeNavigation: CarbonTabSwipeNavigation = CarbonTabSwipeNavigation()
     var selectedIndex = Int()
+    
+    var allTickets: JSON! = nil
+    var ticketListSource = [Ticket]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        items = ["Pending (2)", "InProgress (1)","Resolved (5)","Closed (3)","Unassigned (2)"]
-        
-        carbonTabSwipeNavigation = CarbonTabSwipeNavigation(items: items as [AnyObject], delegate: self)
-        carbonTabSwipeNavigation.currentTabIndex = UInt(selectedIndex)
-        carbonTabSwipeNavigation.insert(intoRootViewController: self)
-        
-        style()
-        
-//        carbonTabSwipeNavigation.carbonSegmentedControl?.selectedSegmentIndex = 3
         
         title = getLocalizedString("title_ticket_list")
         
         //For Add navigation bar button
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(btnAddOnClick))
-    
-//        NotificationCenter.default.addObserver(self, selector: #selector(FragmentViewController.switchTabs), name: NSNotification.Name(rawValue: "switchTabsNotification"), object: nil)
-        
     }
-//    func switchTabs() {
-//        carbonTabSwipeNavigation.currentTabIndex = UInt(selectedIndex)
-//    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        getTicketList()
+    }
     
     func carbonTabSwipeNavigation(_ carbonTabSwipeNavigation: CarbonTabSwipeNavigation, viewControllerAt index: UInt) -> UIViewController {
         
+        let vc = AppRouter.sharedRouter().getViewController("TicketListViewController") as! TicketListViewController
+        
+        ticketListSource = [Ticket]()
+        
+        var statusKey = ""
+        
         switch index {
         case 0:
-            return AppRouter.sharedRouter().getViewController("TicketListViewController") as! TicketListViewController
+            
+            statusKey = "to_do"
+            
+            break
         case 1:
-            return AppRouter.sharedRouter().getViewController("TicketListViewController") as! TicketListViewController
+            
+            statusKey = "in_progress"
+            
+            break
+        
+        case 2:
+            
+            statusKey = "resolved"
+            
+            break
+        
+        case 3:
+            
+            statusKey = "close"
+            
+            break
+            
+        case 4:
+            
+            statusKey = "unassigned"
+            
+            break
+            
         default:
-            return AppRouter.sharedRouter().getViewController("TicketListViewController") as! TicketListViewController
+            break
         }
+        
+        for i in 0 ..< allTickets[statusKey].count {
+            let jsonValue = allTickets[statusKey].arrayValue[i]
+            let ticketDetail = Ticket(json: jsonValue)
+            ticketListSource.append(ticketDetail)
+        }
+        
+        vc.ticketListSource = ticketListSource
+        
+        return vc
     }
     
     func carbonTabSwipeNavigation(_ carbonTabSwipeNavigation: CarbonTabSwipeNavigation, didMoveAt index: UInt)
@@ -77,25 +112,23 @@ class FragmentViewController: AbstractViewController,CarbonTabSwipeNavigationDel
         }*/
     }
     
+    func setUpFragmentMenu() {
+        carbonTabSwipeNavigation = CarbonTabSwipeNavigation(items: items as [AnyObject], delegate: self)
+        carbonTabSwipeNavigation.currentTabIndex = UInt(selectedIndex)
+        carbonTabSwipeNavigation.insert(intoRootViewController: self)
+        
+        for (index, _) in items.enumerated() {
+            carbonTabSwipeNavigation.carbonSegmentedControl!.setWidth(self.view.frame.width / 3, forSegmentAt: index)
+        }
+    }
+    
     func style()
     {
-        //        self.navigationController!.navigationBar.translucent = false
-        //        self.navigationController!.navigationBar.tintColor = UIColor.whiteColor()
-        //        self.navigationController!.navigationBar.barTintColor = color
-        //        self.navigationController!.navigationBar.barStyle = .BlackTranslucent
         carbonTabSwipeNavigation.toolbar.isTranslucent = false
         carbonTabSwipeNavigation.setIndicatorColor(themeColor)
         carbonTabSwipeNavigation.setSelectedColor(themeColor, font: UIFont.boldSystemFont(ofSize: 14))
-        //        carbonTabSwipeNavigation.toolbar.barTintColor = UIColor.yellowColor()
         
         carbonTabSwipeNavigation.setTabExtraWidth(30)
-        
-        carbonTabSwipeNavigation.carbonSegmentedControl!.setWidth(self.view.frame.width / 3.5, forSegmentAt: 0)
-        carbonTabSwipeNavigation.carbonSegmentedControl!.setWidth(self.view.frame.width / 3.5, forSegmentAt: 1)
-        carbonTabSwipeNavigation.carbonSegmentedControl!.setWidth(self.view.frame.width / 3.5, forSegmentAt: 2)
-        carbonTabSwipeNavigation.carbonSegmentedControl!.setWidth(self.view.frame.width / 3.5, forSegmentAt: 3)
-        carbonTabSwipeNavigation.carbonSegmentedControl!.setWidth(self.view.frame.width / 3.5, forSegmentAt: 4)
-        
         
         carbonTabSwipeNavigation.setNormalColor(UIColor.black.withAlphaComponent(0.6))
     }
@@ -105,4 +138,70 @@ class FragmentViewController: AbstractViewController,CarbonTabSwipeNavigationDel
 //        selectedTicket = nil
         self.performSegue(withIdentifier: "showAddTicket", sender: self)
     }// end btnAddOnClick()
+    
+    //    MARK:- Helper Method
+    
+    func getTicketList() {
+        
+        FTProgressIndicator.showProgressWithmessage(getLocalizedString("ticket_list_indicator"), userInteractionEnable: false)
+        do {
+            try Alamofire.request(ComunicateService.Router.TicketList().asURLRequest()).debugLog().responseJSON(options: [JSONSerialization.ReadingOptions.allowFragments, JSONSerialization.ReadingOptions.mutableContainers])
+            {
+                (response) -> Void in
+                
+                switch response.result
+                {
+                case .success:
+                    if let value = response.result.value
+                    {
+                        let json = JSON(value)
+                        print("Ticket List Response: \(json)")
+                        self.dismissIndicator()
+                        
+                        if (json.dictionaryObject!["status"] as? Bool)! && json["data"]["tickets"].count > 0 {
+                            self.processGetResponceTicketList(json: json["data"])
+                        } else {
+                            //                            print((json.dictionaryObject!["message"])!)
+                            self.view.makeToast("\((json.dictionaryObject!["message"])!)")
+                        }
+                    }
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    self.dismissIndicator()
+                    self.view.makeToast(error.localizedDescription)
+                }
+            }
+        } catch let error{
+            print(error)
+            self.dismissIndicator()
+            self.view.makeToast(error.localizedDescription)
+        }
+    } // End getTicketList()
+    
+    func processGetResponceTicketList(json: JSON) {
+        
+        allTickets = json["tickets"]
+        items.removeAll()
+//        items = ["To do","In Progress","Resolved","Close","Unassigned"]
+        
+        items.append("To do (\(allTickets["to_do"].count))")
+        items.append("Resolved (\(allTickets["resolved"].count))")
+        items.append("In Progress (\(allTickets["in_progress"].count))")
+        items.append("Close (\(allTickets["close"].count))")
+        items.append("Unassigned (\(allTickets["unassigned"].count))")
+        
+//        for (key, value) in allTickets {
+//            items.append(key + " (\(value.count))")
+//        }
+        
+        setUpFragmentMenu()
+        style()
+        
+      /*  for i in 0 ..< projects.count {
+            let jsonValue = projects.arrayValue[i]
+            let ticketDetail = Ticket(json: jsonValue)
+            ticketListSource.append(ticketDetail)
+        }*/
+//        tblTicketList.reloadData()
+    }// End procssGetResponceProjectList
 }

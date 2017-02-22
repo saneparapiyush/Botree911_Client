@@ -13,7 +13,6 @@ func getLocalizedString(_ localizedKey: String) -> String {
     return NSLocalizedString(localizedKey, comment: "")
 }
 
-
 extension UITextField {
     func addRightSubView() {
         let view = UIView(frame: CGRect(x: self.frame.origin.x - 40, y: 0, width: 30, height: 30))
@@ -44,8 +43,34 @@ extension String {
         
         return boundingBox.height
     }
+    
+    func dateFormatting() -> String {// For Converting date to our own format
+        
+        let formatterDate = DateFormatter()
+        formatterDate.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        let dateFormat = formatterDate.date(from: self)
+        
+        let formatterString = DateFormatter()
+        formatterString.dateFormat = "MM-dd-yyyy"
+        return formatterString.string(from: dateFormat!)
+    }
 }
 
+//  MARK: UIButton Enable Disale Configution
+extension UIButton {
+    func isEnableConfig() {
+        self.alpha = 1.0
+        self.isEnabled = true
+    }
+    func isDisableConfig() {
+        self.alpha = 0.5
+        self.isEnabled = false
+    }
+}
+
+func getUserName(fName: String, lName: String) -> String{
+    return fName + " " + lName
+}
 
 // MARK: SlideMenu Delegate
 extension FragmentViewController: SlideNavigationControllerDelegate {

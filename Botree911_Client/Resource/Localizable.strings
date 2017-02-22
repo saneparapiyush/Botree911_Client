@@ -14,6 +14,8 @@
 "title_ticket_list" = "Tickets";
 "title_add_ticket" = "Add Ticket";
 "title_edit_ticket" = "Ticket Info";
+"title_notification" = "Notifications";
+
 
 
 // Progress Indicator
@@ -26,3 +28,4 @@
 "add_comment_indicator" = "Please wait...";
 "comment_list_indicator" = "Please wait...";
 "history_list_indicator" = "Please wait...";
+"notification_list_indicator" = "Please wait...";

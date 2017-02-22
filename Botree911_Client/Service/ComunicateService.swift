@@ -15,18 +15,19 @@ struct ComunicateService {
 //    static let KeyName2 = "KeyName2"
     
     enum Router: URLRequestConvertible {
-        static let baseURLString = "http://192.168.0.134:3000/"
+        static let baseURLString = "http://192.168.0.86:3000/"
         static var OAuthToken: String?
         
         case SignIn(Parameters)
         case ProjectList()
         case StatusList()
-        case TicketList(Parameters)
+        case TicketList()
         case CreateTicket(Parameters)
         case EditTicket(Parameters,Int)
         case AddComment(Parameters,Int)
         case CommentList(Int)
         case HistoryList(Int)
+        case NotificationList()
         
         var method: Alamofire.HTTPMethod {
             switch self {
@@ -36,7 +37,7 @@ struct ComunicateService {
                     return .get
                 case .StatusList():
                     return .get
-                case .TicketList(_):
+                case .TicketList():
                     return .get
                 case .CreateTicket(_):
                     return .post
@@ -47,6 +48,8 @@ struct ComunicateService {
                 case .CommentList(_):
                     return .get
                 case .HistoryList(_):
+                    return .get
+                case .NotificationList():
                     return .get
             }
         }
@@ -59,7 +62,7 @@ struct ComunicateService {
                     return "projects/list"
                 case .StatusList( _):
                     return "tickets/status_list"
-                case .TicketList(_):
+                case .TicketList():
                     return "tickets/list"
                 case .CreateTicket(_):
                     return "tickets"
@@ -71,6 +74,8 @@ struct ComunicateService {
                     return "tickets/\(ticketID)/ticket_comments"
                 case .HistoryList(let ticketID):
                     return "tickets/\(ticketID)/ticket_status_history"
+                case .NotificationList():
+                    return "users/notification"
             }
         }
 
@@ -102,8 +107,8 @@ struct ComunicateService {
             case .StatusList():
                 return try Alamofire.URLEncoding.default.encode(urlRequest, with: nil)
                 
-            case .TicketList(let param):
-                return try Alamofire.URLEncoding.default.encode(urlRequest, with: param)
+            case .TicketList():
+                return try Alamofire.URLEncoding.default.encode(urlRequest, with: nil)
                 
             case .CreateTicket(let params):
                 return try Alamofire.JSONEncoding.default.encode(urlRequest, with: params)
@@ -118,6 +123,9 @@ struct ComunicateService {
                 return try Alamofire.URLEncoding.default.encode(urlRequest, with: nil)
             
             case .HistoryList(_):
+                return try Alamofire.URLEncoding.default.encode(urlRequest, with: nil)
+            
+            case .NotificationList():
                 return try Alamofire.URLEncoding.default.encode(urlRequest, with: nil)
                 
             default:

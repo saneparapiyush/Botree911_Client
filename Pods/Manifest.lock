@@ -1,12 +1,26 @@
 PODS:
   - Alamofire (4.3.0)
+  - Firebase/Core (3.13.0):
+    - FirebaseAnalytics (= 3.7.0)
+    - FirebaseCore (= 3.5.0)
+  - FirebaseAnalytics (3.7.0):
+    - FirebaseCore (~> 3.5)
+    - FirebaseInstanceID (~> 1.0)
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseCore (3.5.0):
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseInstanceID (1.0.9)
   - FTProgressIndicator (1.1.7)
+  - GoogleToolboxForMac/Defines (2.1.1)
+  - GoogleToolboxForMac/NSData+zlib (2.1.1):
+    - GoogleToolboxForMac/Defines (= 2.1.1)
   - IQKeyboardManagerSwift (4.0.8)
   - SwiftyJSON (3.0.0)
   - Toast (3.1.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.3)
+  - Firebase/Core
   - FTProgressIndicator (~> 1.1)
   - IQKeyboardManagerSwift
   - SwiftyJSON (= 3.0.0)
@@ -14,11 +28,16 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
+  Firebase: 5bc34d7b5ff5792e3386c8b28dc6265deeab0da4
+  FirebaseAnalytics: 0d1b7d81d5021155be37702a94ba1ec16d45365d
+  FirebaseCore: 1c0a13bf59bb95cdd19577252499f0ec6a03e999
+  FirebaseInstanceID: 2d0518b1378fe9d685ef40cbdd63d2fdc1125339
   FTProgressIndicator: 70c3dc159202a76f6b88b12e39868a23bda480b6
+  GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   IQKeyboardManagerSwift: c04bc9f68473823f825eb44d958fce98d921bead
   SwiftyJSON: f57b2b44bc166617372d1c70773591fe9f0f5fd4
   Toast: 14a93686d6c8bfe2727afd342414e35660a8a1f3
 
-PODFILE CHECKSUM: 9c59a27b5df62891ed8d660041ef88d3e426302b
+PODFILE CHECKSUM: bf3ab012b36baf6c5cff4efc26ef6c1bc4ef83aa
 
 COCOAPODS: 1.2.0.rc.1

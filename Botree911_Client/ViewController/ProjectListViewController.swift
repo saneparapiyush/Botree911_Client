@@ -199,7 +199,7 @@ class ProjectListCell: UITableViewCell {
     func setProjectListData() {
 //        btnProjectInfo.imageView?.contentMode = .center
         lblProjectTitle.text = project?.name
-        lblSPOCPerson.text = project?.spoc_person
+//        lblSPOCPerson.text = project?.spoc_person
         
         
         

@@ -10,7 +10,6 @@ import UIKit
 import FTProgressIndicator
 import SwiftyJSON
 import Alamofire
-import Toast
 
 class AddTicketViewController: AbstractViewController {
     
@@ -20,7 +19,7 @@ class AddTicketViewController: AbstractViewController {
     @IBOutlet var txtSelectProject: UITextField!
     
     @IBOutlet var lblIssueType: ThemeLabelDetail!
-    @IBOutlet var lblSummery: ThemeLabelDetail!
+    @IBOutlet var lblSummary: ThemeLabelDetail!
     @IBOutlet var lblDescription: ThemeLabelDetail!
     @IBOutlet var txtSelectStatus: UITextField!
     @IBOutlet var btnCreateTicket: ThemeButton!
@@ -49,6 +48,8 @@ class AddTicketViewController: AbstractViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Skip", style: .plain, target: self, action: #selector(btnSkipOnClick))
         
         
+        
+        
         // Do any additional setup after loading the view.
         self.navigationItem.setHidesBackButton(true, animated: true)
         if (ticket != nil) {
@@ -68,8 +69,8 @@ class AddTicketViewController: AbstractViewController {
         configUI()
         
         //            MARK: OFLINE
-        //        getDropDownData()
-            setOflineDataSource()
+                getDropDownData()
+//            setOflineDataSource()
             picker.dataSource = self
             picker.delegate = self
         //            MARK: END OFLINE
@@ -77,11 +78,11 @@ class AddTicketViewController: AbstractViewController {
     }// End viewDidLoad()
     
     func getDropDownData() {
-        FTProgressIndicator.showProgressWithmessage(getLocalizedString("status_list_indicator"), userInteractionEnable: false)
+//        FTProgressIndicator.showProgressWithmessage(getLocalizedString("status_list_indicator"), userInteractionEnable: false)
 
         getStatusList()
         getProjectList()
-        self.dismissIndicator()
+//        self.dismissIndicator()
         picker.dataSource = self
         picker.delegate = self
     }
@@ -145,7 +146,8 @@ class AddTicketViewController: AbstractViewController {
             txtSelectStatus.isEnabled = true
         }
         
-        txtSelectStatus.text = (isEdit)! ? (ticket?.status) : ticketStatus[0].ticket_status_name
+        selectedStatus = ticketStatus[0]
+        txtSelectStatus.text = ticketStatus[0].ticket_status_name
     } // End procssGetResponceProjectList
 
 //    func processGetResponceTicketList(json: JSON) {
@@ -171,6 +173,8 @@ class AddTicketViewController: AbstractViewController {
                 if self.projectListSource.count > 1 {
                     self.txtSelectProject.isEnabled = true
                 }
+                self.project = self.projectListSource[0]
+                self.txtSelectProject.text = self.projectListSource[0].name
             } else {
                 print(error!)
                 self.configToast(message: error!)
@@ -179,14 +183,15 @@ class AddTicketViewController: AbstractViewController {
     } // End getProjectList()
     
     
-    func createTicket() {
+    func createTicket(completionHandler: @escaping (Bool) -> Void) {
 
         let parameters = [
             "ticket": [
-            "project_id": project!.id!,
+            "project_id": project!.project_id!,
             "name": "\(txtTitleName.text!)",
             "status": selectedStatus!.status_value!,
-            "description": "\(txtViewDescription.text!)"
+            "description": "\(txtViewDescription.text!)",
+            "holder_type":"client"
             ]
         ]
         
@@ -212,7 +217,10 @@ class AddTicketViewController: AbstractViewController {
 //                        } else {
 //                            print((json.dictionaryObject!["message"])!)
 //                        }
+                        
                         self.configToast(message: "\((json.dictionaryObject!["message"])!)")
+                        self.dismissIndicator()
+                        completionHandler(true)
                     }
                     
                     self.dismissIndicator()
@@ -220,12 +228,14 @@ class AddTicketViewController: AbstractViewController {
                     print(error.localizedDescription)
                     self.dismissIndicator()
                     self.configToast(message: error.localizedDescription)
+                    completionHandler(false)
                 }
             }
         } catch let error{
             print(error.localizedDescription)
             self.dismissIndicator()
             self.configToast(message: error.localizedDescription)
+            completionHandler(false)
         }
     }//End CreateTicket()
     
@@ -233,7 +243,7 @@ class AddTicketViewController: AbstractViewController {
         
         let parameters = [
             "ticket": [
-                "project_id": project!.id!,
+                "project_id": project!.project_id!,
                 "name": "\(txtTitleName.text!)",
                 "status": selectedStatus!.status_value!,
                 "description": "\(txtViewDescription.text!)"
@@ -281,7 +291,7 @@ class AddTicketViewController: AbstractViewController {
     func configUI() {
         
         txtViewDescription.textContainerInset = UIEdgeInsetsMake(10, 10, 10, 10)
-        lblSummery.colorChangeForLastCharacter()
+        lblSummary.colorChangeForLastCharacter()
         lblDescription.colorChangeForLastCharacter()
         
         picker = UIPickerView(frame: CGRect(x: 0.0, y: 0.0, width: UIScreen.main.bounds.size.width, height: 216.0))
@@ -300,11 +310,6 @@ class AddTicketViewController: AbstractViewController {
             btnCreateTicket.setTitle("Edit", for: .normal)
         }
     }// End configUI()
-    
-    func configToast(message: String) {
-        self.isEdit! ? self.tabBarController?.view.makeToast(message) : self.view.makeToast(message)
-    }//End configToast()
-
 
     //MARK:- Actions
     
@@ -314,16 +319,21 @@ class AddTicketViewController: AbstractViewController {
             if (ticket != nil) {
                 editTicket()
             } else {
-                createTicket()
+                createTicket(completionHandler: { (success) in
+                    if success {
+                        self.performSegue(withIdentifier: "showTicketScreenFromAddScreen", sender: self)
+                    }
+                })
             }
-            performSegue(withIdentifier: "showTicketScreenFromAddScreen", sender: self)
         } else {
-            if !txtViewDescription.hasText {
-                print("Enter Description")
+            if !txtTitleName.hasText {
+                configToast(message: "Please enter title")
+            } else if !txtViewDescription.hasText {
+                configToast(message: "Please enter description")
             } else if !txtSelectProject.hasText {
-                print("Select Project")
+                configToast(message: "Please select project")
             } else if !txtSelectStatus.hasText {
-                print("Select Status")
+                configToast(message: "Please select status")
             } // Write toast related message
         }
     }// End btnCreateProjectOnClick()

@@ -8,6 +8,7 @@
 
 import UIKit
 import IQKeyboardManagerSwift
+import Firebase
 
 let keychain = KeychainSwift()
 
@@ -20,12 +21,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         UIApplication.shared.statusBarStyle = .lightContent
+        FIRApp.configure()
+        
         
         let appRouter: AppRouter = AppRouter.sharedRouter()
         appRouter.appWindow = window
         
         if UserDefaults.standard.value(forKey: "isLogin") != nil {
-            appRouter.showProjectScreen()
+            appRouter.showAddTicketScreen()
         }
         
 //        if keychain.get("password") != nil {

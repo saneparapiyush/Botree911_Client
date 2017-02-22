@@ -16,29 +16,36 @@ class CommentViewController: AbstractViewController {
 
     @IBOutlet var tblCommentList: UITableView!
     @IBOutlet var txtAddComment: UITextField!
+    @IBOutlet var btnAddComment: UIButton!
     
     var ticket: Ticket?
     var commentListSource = [Comment]()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-    
         
+        btnAddComment.isDisableConfig()
+        NotificationCenter.default.addObserver(self, selector: #selector(textChanged(sender:)), name: NSNotification.Name.UITextFieldTextDidChange, object: nil)
     }// End viewDidLoad()
 
     override func viewWillAppear(_ animated: Bool) {
         
         //            MARK: OFLINE
-        //        getCommentList()
-        setOflineDataSource()
+                getCommentList()
+//        setOflineDataSource()
         //            MARK: END OFLINE
         
     }//End viewWillAppear()
     
 //    MARK: - Action
     @IBAction func btnAddCommentOnClick(_ sender: Any) {
-        addComment()
+        
+        if txtAddComment.hasText {
+            addComment()
+            txtAddComment.text = nil
+        } else {
+            configToast(message: "Please add Comment")
+        }
     }// End btnAddCommentOnClick()
     
 //    MARK:- Helper Method
@@ -50,7 +57,7 @@ class CommentViewController: AbstractViewController {
             ]
         ]
 
-        FTProgressIndicator.showProgressWithmessage(getLocalizedString("add_comment_indicator"), userInteractionEnable: false)
+//        FTProgressIndicator.showProgressWithmessage(getLocalizedString("add_comment_indicator"), userInteractionEnable: false)
         
         do {
             try Alamofire.request(ComunicateService.Router.AddComment(parameters, (ticket!.id)!).asURLRequest()).debugLog().responseJSON(options: [JSONSerialization.ReadingOptions.allowFragments, JSONSerialization.ReadingOptions.mutableContainers])
@@ -69,17 +76,17 @@ class CommentViewController: AbstractViewController {
                             self.getCommentList()
                         }
                     }
-                    self.dismissIndicator()
+//                    self.dismissIndicator()
                     
                 case .failure(let error):
                     print(error.localizedDescription)
-                    self.dismissIndicator()
+//                    self.dismissIndicator()
                     self.view.makeToast(error.localizedDescription)
                 }
             }
         } catch let error{
             print(error.localizedDescription)
-            self.dismissIndicator()
+//            self.dismissIndicator()
             self.view.makeToast(error.localizedDescription)
         }
     }//End addComment()
@@ -139,6 +146,17 @@ class CommentViewController: AbstractViewController {
         tblCommentList.reloadData()
         completionHandler()
     }// End processGetResponceCommentList
+    
+    
+    //    MARK: add Comment Button Enable
+    func textChanged(sender: NSNotification) {
+        if txtAddComment.hasText {
+            btnAddComment.isEnableConfig()
+        }
+        else {
+            btnAddComment.isDisableConfig()
+        }
+    }
 }
 
 extension CommentViewController: UITableViewDataSource,UITableViewDelegate {
@@ -188,11 +206,14 @@ class CommentListCell: UITableViewCell {
         
         lblCommenterName.text = comment?.user_name
         lblComment.text = comment?.comment
-        lblCommentDateTime.text = comment?.date_time
+        lblCommentDateTime.text = comment?.date_time?.dateFormatting()
     }
     
     func setCellView() {
-        if comment!.user_name! == "piyush" { // change condition based on user detail
+        
+        print((UserDefaults.standard.value(forKey: "user")! as AnyObject)["user_id"] as! Int)
+        
+        if comment!.user_id! == (UserDefaults.standard.value(forKey: "user")! as AnyObject)["user_id"] as! Int { // change condition based on user detail
             constraintLead.constant = 100
             constraintTrail.constant = 8
         }

@@ -128,7 +128,7 @@ extension LoginViewController:AuthorizedProtocol {
                 "password": "\(txtPassword.text!)",
                 "device_type":DEVICE_TOKEN
             ],
-            "fcm_token": "dsd"//uuid for iPhone
+            "device_token": UUID().uuidString//uuid for iPhone
         ]
         
         FTProgressIndicator.showProgressWithmessage(getLocalizedString("login_indicator"), userInteractionEnable: false)
@@ -153,13 +153,15 @@ extension LoginViewController:AuthorizedProtocol {
                         if (json.dictionaryObject!["status"] as? Bool)! {
 
                             if self.storeLoginData(json: json["data"]) {
-                                 self.performSegue(withIdentifier: "showProjectList", sender: self)
+                                self.dismissIndicator()
+                                 self.performSegue(withIdentifier: "showCreateTicket", sender: self)
                             }
                             
                             //                            UserDefaults.standard.set((json.dictionaryObject!["data"] as! [String: Any])["user"]!, forKey: "user")
                             
                         } else {
 //                            print((json.dictionaryObject!["message"])!)
+                            self.dismissIndicator()
                             self.view.makeToast("\((json.dictionaryObject!["message"])!)")
                         }
                     }
@@ -197,6 +199,7 @@ extension LoginViewController:AuthorizedProtocol {
         
         let dic = NSMutableDictionary()
         dic.setValue(data["first_name"].rawString()!, forKey: "first_name")
+        dic.setValue(data["user_id"].rawValue, forKey: "user_id")
         dic.setValue(data["last_name"].rawString()!, forKey: "last_name")
         dic.setValue(data["email"].rawString()!, forKey: "email")
         dic.setValue(data["access_token"].rawString()!, forKey: "access_token")
@@ -221,8 +224,8 @@ extension LoginViewController:AuthorizedProtocol {
 //        if txtPassword.validate() && txtUserEmail.validate() {
         
 //            MARK: OFLINE
-//            login()
-            self.performSegue(withIdentifier: "showCreateTicket", sender: self)
+            login()
+//            self.performSegue(withIdentifier: "showCreateTicket", sender: self)
 //            MARK: END OFLINE
             
 //            if login() {

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		199D800EB24B88D34BC5E7C6 /* Pods_Botree911_ClientUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E8786D2AB963BC827A793A2 /* Pods_Botree911_ClientUITests.framework */; };
+		4A195E621E5ACDDF009F443E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A195E611E5ACDDF009F443E /* GoogleService-Info.plist */; };
+		4A3226071E5D730C008671F3 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3226061E5D730C008671F3 /* NotificationViewController.swift */; };
+		4A3226091E5D7622008671F3 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3226081E5D7622008671F3 /* Notification.swift */; };
 		4A344C481E42F59E00FFA1FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A344C471E42F59E00FFA1FC /* AppDelegate.swift */; };
 		4A344C4D1E42F59F00FFA1FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A344C4B1E42F59F00FFA1FC /* Main.storyboard */; };
 		4A344C4F1E42F59F00FFA1FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A344C4E1E42F59F00FFA1FC /* Assets.xcassets */; };
@@ -76,6 +79,9 @@
 /* Begin PBXFileReference section */
 		2ABA408CAAC92694FF2367AB /* Pods-Botree911_Client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Botree911_Client.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Botree911_Client/Pods-Botree911_Client.debug.xcconfig"; sourceTree = "<group>"; };
 		2E8786D2AB963BC827A793A2 /* Pods_Botree911_ClientUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Botree911_ClientUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A195E611E5ACDDF009F443E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4A3226061E5D730C008671F3 /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		4A3226081E5D7622008671F3 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		4A344C441E42F59E00FFA1FC /* BoTree911.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoTree911.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A344C471E42F59E00FFA1FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A344C4C1E42F59F00FFA1FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -218,6 +224,7 @@
 				4A344C4E1E42F59F00FFA1FC /* Assets.xcassets */,
 				4A344C501E42F59F00FFA1FC /* LaunchScreen.storyboard */,
 				4A344C531E42F59F00FFA1FC /* Info.plist */,
+				4A195E611E5ACDDF009F443E /* GoogleService-Info.plist */,
 				4ABDEEC31E42FD640041AEBA /* Botree911_Client-Bridging-Header.h */,
 			);
 			path = Botree911_Client;
@@ -260,6 +267,7 @@
 				4AC9D6701E44952A0025E23E /* Ticket.swift */,
 				4AF87F7B1E4B2EBA00534F6D /* Comment.swift */,
 				4AF87F7F1E4B453600534F6D /* History.swift */,
+				4A3226081E5D7622008671F3 /* Notification.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -312,6 +320,7 @@
 				4A9DF97C1E48485D00FC654C /* AddTicketViewController.swift */,
 				4AF87F791E4B097D00534F6D /* CommentViewController.swift */,
 				4AF87F7D1E4B3EC500534F6D /* HistoryViewController.swift */,
+				4A3226061E5D730C008671F3 /* NotificationViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -501,6 +510,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A344C521E42F59F00FFA1FC /* LaunchScreen.storyboard in Resources */,
+				4A195E621E5ACDDF009F443E /* GoogleService-Info.plist in Resources */,
 				4ABDEEBD1E42FBE50041AEBA /* Localizable.strings in Resources */,
 				4A344C4F1E42F59F00FFA1FC /* Assets.xcassets in Resources */,
 				4A344C4D1E42F59F00FFA1FC /* Main.storyboard in Resources */,
@@ -701,6 +711,8 @@
 				4ACB7BF11E4D7EFC00FA27A3 /* SlideNavigationContorllerAnimatorScale.m in Sources */,
 				4A344C481E42F59E00FFA1FC /* AppDelegate.swift in Sources */,
 				4AE763091E4C95BC006F33F1 /* CarbonTabSwipeScrollView.m in Sources */,
+				4A3226071E5D730C008671F3 /* NotificationViewController.swift in Sources */,
+				4A3226091E5D7622008671F3 /* Notification.swift in Sources */,
 				4AC9D66F1E44808B0025E23E /* Project.swift in Sources */,
 				4A9DF97F1E4870CC00FC654C /* ServiceManager.swift in Sources */,
 				4ACB7BF61E4D7EFC00FA27A3 /* SlideNavigationController.m in Sources */,

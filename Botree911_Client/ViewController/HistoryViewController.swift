@@ -27,8 +27,8 @@ class HistoryViewController: AbstractViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         //            MARK: OFLINE
-        //        getHistoryList()
-        setOflineDataSource()
+        getHistoryList()
+//        setOflineDataSource()
         //            MARK: END OFLINE
 
     }//End viewWillAppear()
@@ -51,14 +51,18 @@ class HistoryViewController: AbstractViewController {
                         let json = JSON(value)
                         print("History List Response: \(json)")
                         
-                        if (json.dictionaryObject!["status"] as? Bool)! && json["data"]["history"].count > 0 {
-                            self.processGetResponceHistoryList(json: json["data"])
+                        if (json.dictionaryObject!["status"] as? Bool)! && json["data"]["ticket_history"].count > 0 {
+                            self.processGetResponceHistoryList(json: json["data"], completionHandler: {
+                                self.dismissIndicator()
+                            })
                         } else {
                             self.view.makeToast("\((json.dictionaryObject!["message"])!)")
                         }
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                            self.dismissIndicator()
-                        }
+                        
+                        self.dismissIndicator()
+//                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+//                            
+//                        }
                     }
                 case .failure(let error):
                     print(error.localizedDescription)
@@ -73,16 +77,24 @@ class HistoryViewController: AbstractViewController {
         }
     } // End getCommentList()
     
-    func processGetResponceHistoryList(json: JSON) {
+    func processGetResponceHistoryList(json: JSON, completionHandler: () -> Void) {
         historyListSource = [History]()
-        let history = json["history"]
+        let history = json["ticket_history"]
         
         for i in 0 ..< history.count {
             let jsonValue = history.arrayValue[i]
-            let historyDetail = History(json: jsonValue)
-            historyListSource.append(historyDetail)
+            
+            for j in 0 ..< jsonValue["change_history"].count {
+                
+                let jsonSubValue = jsonValue["change_history"].arrayValue[j]["body"]
+                
+                let historyDetail = History(json: jsonValue,bodyData:"\(jsonSubValue)")
+                historyListSource.append(historyDetail)
+            }
         }
         tblHistoryList.reloadData()
+        
+        completionHandler()
     }// End processGetResponceCommentList
 }
 
@@ -119,15 +131,13 @@ class HistoryListCell: UITableViewCell {
     
     @IBOutlet var lblUserName: UILabel!
     @IBOutlet var lblLastStatus: UILabel!
-//    @IBOutlet var lblCurrentStatus: UILabel!
     @IBOutlet var lblHistoryDateTime: UILabel!
     
     func setHistoryListData() {
         
         lblUserName.text = history?.user_name
-        lblLastStatus.text = history?.last_status
-//        lblCurrentStatus.text = history?.current_status
-        lblHistoryDateTime.text = history?.date_time
+        lblLastStatus.text = history?.body
+        lblHistoryDateTime.text = history?.date_time?.dateFormatting()
     }
 }
 
@@ -166,6 +176,8 @@ extension HistoryViewController {
             ] as Any
         
         let json = JSON(params)
-        self.processGetResponceHistoryList(json: json["data"])
+        self.processGetResponceHistoryList(json: json["data"], completionHandler: {
+          
+        })
     }
 }

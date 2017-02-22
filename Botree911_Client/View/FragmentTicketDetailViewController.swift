@@ -12,6 +12,8 @@ class FragmentTicketDetailViewController: AbstractViewController,CarbonTabSwipeN
     
     var items = NSArray()
     var carbonTabSwipeNavigation: CarbonTabSwipeNavigation = CarbonTabSwipeNavigation()
+    var selectedIndex = Int()
+    
     var project: Project?
     var ticket: Ticket?
     
@@ -21,6 +23,7 @@ class FragmentTicketDetailViewController: AbstractViewController,CarbonTabSwipeN
         items = ["Details", "History","Comment"]
         
         carbonTabSwipeNavigation = CarbonTabSwipeNavigation(items: items as [AnyObject], delegate: self)
+        carbonTabSwipeNavigation.currentTabIndex = UInt(selectedIndex)
         carbonTabSwipeNavigation.insert(intoRootViewController: self)
         
         style()

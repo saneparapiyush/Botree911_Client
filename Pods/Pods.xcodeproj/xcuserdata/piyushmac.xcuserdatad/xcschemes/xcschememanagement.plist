@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>GoogleToolboxForMac.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>IQKeyboardManagerSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,6 +52,21 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>00103D6C821BE85971C563025527BA5D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2787F4EA4E1BA76C7BC9E3D22DEECFF2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>43544DABEE82539D6DBEAD0763AF76E6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>4DC059E04CBA98AEDDB5C34E02D551E9</key>
 		<dict>
 			<key>primary</key>
@@ -72,17 +92,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E50E52E0488901FF07DC80B44B9E0A7B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EC9A0EA0AE788A6B9AB49BCCB3F1DBA7</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FCADC2E5D5F26541A7B07A8881B9670A</key>
+		<key>EF75650604F98E887691545FC101DDE5</key>
 		<dict>
 			<key>primary</key>
 			<true/>

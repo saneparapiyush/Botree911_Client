@@ -21,6 +21,9 @@ target 'Botree911_Client' do
 	# A UIView category that adds Android-style toast notifications to iOS.
 	pod 'Toast', '~> 3.0'
 
+	#For FCMNotification
+	pod 'Firebase/Core'
+
 
   target 'Botree911_ClientTests' do
     inherit! :search_paths

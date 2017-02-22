@@ -30,72 +30,27 @@ class TicketListViewController: AbstractViewController {
     override func viewDidAppear(_ animated: Bool) {
 
         //            MARK: OFLINE
-        //        getTicketList()
-        setOflineDataSource()
+//                getTicketList()
+//        setOflineDataSource()
         //            MARK: END OFLINE
         
     }// End viewDidAppear()
-
-//    MARK:- Helper Method
-
-    func getTicketList() {
-        
-        let params: Parameters = [
-            "project_id": project!.id!
-        ]
-        
-        FTProgressIndicator.showProgressWithmessage(getLocalizedString("ticket_list_indicator"), userInteractionEnable: false)
-        do {
-            try Alamofire.request(ComunicateService.Router.TicketList(params).asURLRequest()).debugLog().responseJSON(options: [JSONSerialization.ReadingOptions.allowFragments, JSONSerialization.ReadingOptions.mutableContainers])
-            {
-                (response) -> Void in
-                
-                switch response.result
-                {
-                case .success:
-                    if let value = response.result.value
-                    {
-                        let json = JSON(value)
-                        print("Ticket List Response: \(json)")
-                        
-                        if (json.dictionaryObject!["status"] as? Bool)! && json["data"]["ticket"].count > 0 {
-                            self.processGetResponceTicketList(json: json["data"])
-                        } else {
-//                            print((json.dictionaryObject!["message"])!)
-                            self.view.makeToast("\((json.dictionaryObject!["message"])!)")
-                        }
-                        self.dismissIndicator()
-                    }
-                case .failure(let error):
-                    print(error.localizedDescription)
-                    self.dismissIndicator()
-                    self.view.makeToast(error.localizedDescription)
-                }
-            }
-        } catch let error{
-            print(error)
-            self.dismissIndicator()
-            self.view.makeToast(error.localizedDescription)
-        }
-    } // End getTicketList()
-    
-    func processGetResponceTicketList(json: JSON) {
-        ticketListSource = [Ticket]()
-        let projects = json["ticket"]
-        
-        for i in 0 ..< projects.count {
-            let jsonValue = projects.arrayValue[i]
-            let ticketDetail = Ticket(json: jsonValue)
-            ticketListSource.append(ticketDetail)
-        }
-        tblTicketList.reloadData()
-    }// End procssGetResponceProjectList
     
 //    MARK:- Actions
-//    func btnAddOnClick() {
-//        selectedTicket = nil
-//        self.performSegue(withIdentifier: "showAddTicket", sender: self)
-//    }// end btnAddOnClick()
+    var selectedIndexForHistoryComment = 0
+    func btnHistoryOnClick(sender: UIButton){
+        //        let buttonTag = sender.tag
+        selectedTicket = ticketListSource[sender.tag]
+        selectedIndexForHistoryComment = 1
+        self.performSegue(withIdentifier: "showTicketInfo", sender: self)
+    } //End btnHistoryOnClick()
+    func btnCommentOnClick(sender: UIButton){
+        //        let buttonTag = sender.tag
+        
+        selectedTicket = ticketListSource[sender.tag]
+        selectedIndexForHistoryComment = 2
+        self.performSegue(withIdentifier: "showTicketInfo", sender: self)
+    } //End btnCommentOnClick()
     
     //    MARK: Prepare for segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -104,6 +59,7 @@ class TicketListViewController: AbstractViewController {
             fragmentControll.title = getLocalizedString("title_edit_ticket")
             fragmentControll.project = project
             fragmentControll.ticket = selectedTicket
+            fragmentControll.selectedIndex = selectedIndexForHistoryComment
             
             /*let destinationVC = tabCtrl.viewControllers![0] as! AddTicketViewController
             destinationVC.project = project
@@ -115,12 +71,12 @@ class TicketListViewController: AbstractViewController {
             let commentVC = tabCtrl.viewControllers![2] as! CommentViewController
             commentVC.ticket = selectedTicket*/
             
-        } else if segue.identifier == "showAddTicket" {
+        } /*else if segue.identifier == "showAddTicket" {
             let addTicketVC = segue.destination as! AddTicketViewController
             addTicketVC.project = project!
             addTicketVC.ticket = selectedTicket
 //          addTicketVC.title = getLocalizedString("title_add_ticket")
-        }
+        }*/
         
     }
 }
@@ -133,6 +89,12 @@ extension TicketListViewController: UITableViewDataSource,UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tblTicketList.dequeueReusableCell(withIdentifier: "TicketListCell") as! TicketListCell
+        
+        cell.btnHistory.tag = indexPath.row
+        cell.btnHistory.addTarget(self, action: #selector(btnHistoryOnClick), for: .touchUpInside)
+        
+        cell.btnComment.tag = indexPath.row
+        cell.btnComment.addTarget(self, action: #selector(btnCommentOnClick), for: .touchUpInside)
         
         cell.ticket = ticketListSource[indexPath.row]
         
@@ -169,24 +131,32 @@ class TicketListCell: UITableViewCell {
     
     @IBOutlet var lblAssingee: UILabel!
     
-    
+    @IBOutlet var btnComment: UIButton!
+    @IBOutlet var btnHistory: UIButton!
 
     
     func setTicketListData() {
         lblTicketTitle.text = ticket?.name
         lblTicketDescription.text = ticket?.description
-        lblDate.text = ticket?.updated_at
+        
+        lblDate.text = ticket?.created_at?.dateFormatting()
+        
         lblAssingee.text = ticket?.assingee
+        btnComment.setTitle("\(ticket!.comment_count!)", for: .normal)
+        btnHistory.setTitle("\(ticket!.history_count!)", for: .normal)
     }
     
     func configView() {
         viewMain.layer.cornerRadius = 5.0
         viewMain.layer.borderWidth = 1.0
         viewMain.layer.borderColor = themeTextBorderColor.cgColor
+        
+        btnComment.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
+        btnHistory.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
     }
 }
 
-
+/*
 extension TicketListViewController {
     
     func setOflineDataSource() {
@@ -224,3 +194,4 @@ extension TicketListViewController {
         self.processGetResponceTicketList(json: json["data"])
     }
 }
+*/

@@ -8,7 +8,7 @@
 
 import UIKit
 import FTProgressIndicator
-
+import Toast
 
 protocol Controller {
     var view: View? { get set }
@@ -33,6 +33,11 @@ class AbstractViewController: UIViewController, View  {
             FTProgressIndicator.dismiss()
         }
     }
+    
+    func configToast(message: String) {
+        //        self.isEdit! ? self.tabBarController?.view.makeToast(message) : self.view.makeToast(message)
+        self.navigationController?.view.makeToast(message)
+    }//End configToast()
     
     func hideNavigationBar() {
         if let navController = self.navigationController {
