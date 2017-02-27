@@ -37,6 +37,7 @@ class TicketListViewController: AbstractViewController {
     }// End viewDidAppear()
     
 //    MARK:- Actions
+    
     var selectedIndexForHistoryComment = 0
     func btnHistoryOnClick(sender: UIButton){
         //        let buttonTag = sender.tag
@@ -106,9 +107,7 @@ extension TicketListViewController: UITableViewDataSource,UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedTicket = ticketListSource[indexPath.row]
-        
-        let VC = AppRouter.sharedRouter().getViewController("FragmentViewController") as! FragmentViewController
-        
+        selectedIndexForHistoryComment = 0
         self.performSegue(withIdentifier: "showTicketInfo", sender: self)
     }
     
@@ -138,7 +137,6 @@ class TicketListCell: UITableViewCell {
     func setTicketListData() {
         lblTicketTitle.text = ticket?.name
         lblTicketDescription.text = ticket?.description
-        
         lblDate.text = ticket?.created_at?.dateFormatting()
         
         lblAssingee.text = ticket?.assingee
@@ -151,8 +149,8 @@ class TicketListCell: UITableViewCell {
         viewMain.layer.borderWidth = 1.0
         viewMain.layer.borderColor = themeTextBorderColor.cgColor
         
-        btnComment.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
-        btnHistory.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
+        btnComment.titleEdgeInsets = UIEdgeInsetsMake(0, 2, 0, 0);
+        btnHistory.titleEdgeInsets = UIEdgeInsetsMake(0, 2, 0, 0);
     }
 }
 

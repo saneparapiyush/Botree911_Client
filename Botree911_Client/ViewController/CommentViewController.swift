@@ -43,6 +43,8 @@ class CommentViewController: AbstractViewController {
         if txtAddComment.hasText {
             addComment()
             txtAddComment.text = nil
+            txtAddComment.resignFirstResponder()
+            btnAddComment.isDisableConfig()
         } else {
             configToast(message: "Please add Comment")
         }
@@ -142,11 +144,16 @@ class CommentViewController: AbstractViewController {
             let commentDetail = Comment(json: jsonValue)
             commentListSource.append(commentDetail)
         }
-        
+
+        commentListSource.reverse()
         tblCommentList.reloadData()
+        
+        let oldLastCellIndexPath = IndexPath(row: commentListSource.count - 1, section: 0)
+        
+        self.tblCommentList.scrollToRow(at: oldLastCellIndexPath, at: .bottom, animated: false)
+        
         completionHandler()
     }// End processGetResponceCommentList
-    
     
     //    MARK: add Comment Button Enable
     func textChanged(sender: NSNotification) {
@@ -170,13 +177,15 @@ extension CommentViewController: UITableViewDataSource,UITableViewDelegate {
         
         cell.comment = commentListSource[indexPath.row]
         
-        cell.setCellView()
         cell.setProjectListData()
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        if indexPath.row == commentListSource.count - 1 {
+//            return UITableViewAutomaticDimension + 8
+//        }
         return UITableViewAutomaticDimension
     }
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -207,6 +216,8 @@ class CommentListCell: UITableViewCell {
         lblCommenterName.text = comment?.user_name
         lblComment.text = comment?.comment
         lblCommentDateTime.text = comment?.date_time?.dateFormatting()
+        
+        setCellView()
     }
     
     func setCellView() {
@@ -214,8 +225,11 @@ class CommentListCell: UITableViewCell {
         print((UserDefaults.standard.value(forKey: "user")! as AnyObject)["user_id"] as! Int)
         
         if comment!.user_id! == (UserDefaults.standard.value(forKey: "user")! as AnyObject)["user_id"] as! Int { // change condition based on user detail
-            constraintLead.constant = 100
+            constraintLead.constant = 60
             constraintTrail.constant = 8
+        } else {
+            constraintLead.constant = 8
+            constraintTrail.constant = 60
         }
     }
 }

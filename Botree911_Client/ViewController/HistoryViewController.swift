@@ -58,11 +58,7 @@ class HistoryViewController: AbstractViewController {
                         } else {
                             self.view.makeToast("\((json.dictionaryObject!["message"])!)")
                         }
-                        
                         self.dismissIndicator()
-//                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-//                            
-//                        }
                     }
                 case .failure(let error):
                     print(error.localizedDescription)
@@ -75,7 +71,7 @@ class HistoryViewController: AbstractViewController {
             self.dismissIndicator()
             self.view.makeToast(error.localizedDescription)
         }
-    } // End getCommentList()
+    } // End getHistoryList()
     
     func processGetResponceHistoryList(json: JSON, completionHandler: () -> Void) {
         historyListSource = [History]()
@@ -92,6 +88,8 @@ class HistoryViewController: AbstractViewController {
                 historyListSource.append(historyDetail)
             }
         }
+        
+        historyListSource.reverse()
         tblHistoryList.reloadData()
         
         completionHandler()
@@ -112,6 +110,9 @@ extension HistoryViewController: UITableViewDataSource,UITableViewDelegate {
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        if indexPath.row == historyListSource.count - 1 {
+//            return UITableViewAutomaticDimension + 8
+//        }
         return UITableViewAutomaticDimension
     }
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -130,13 +131,13 @@ class HistoryListCell: UITableViewCell {
     var history: History?
     
     @IBOutlet var lblUserName: UILabel!
-    @IBOutlet var lblLastStatus: UILabel!
+    @IBOutlet var lblBody: UILabel!
     @IBOutlet var lblHistoryDateTime: UILabel!
     
     func setHistoryListData() {
         
         lblUserName.text = history?.user_name
-        lblLastStatus.text = history?.body
+        lblBody.text = history?.body
         lblHistoryDateTime.text = history?.date_time?.dateFormatting()
     }
 }

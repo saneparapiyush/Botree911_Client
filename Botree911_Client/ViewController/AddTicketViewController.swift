@@ -47,9 +47,6 @@ class AddTicketViewController: AbstractViewController {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Skip", style: .plain, target: self, action: #selector(btnSkipOnClick))
         
-        
-        
-        
         // Do any additional setup after loading the view.
         self.navigationItem.setHidesBackButton(true, animated: true)
         if (ticket != nil) {
@@ -85,7 +82,7 @@ class AddTicketViewController: AbstractViewController {
 //        self.dismissIndicator()
         picker.dataSource = self
         picker.delegate = self
-    }
+    } //End getDropDownData
     
 //    MARK:- Helper Method
     func getStatusList() {
@@ -246,7 +243,8 @@ class AddTicketViewController: AbstractViewController {
                 "project_id": project!.project_id!,
                 "name": "\(txtTitleName.text!)",
                 "status": selectedStatus!.status_value!,
-                "description": "\(txtViewDescription.text!)"
+                "description": "\(txtViewDescription.text!)",
+                "holder_type":"client"
             ]
         ]
         

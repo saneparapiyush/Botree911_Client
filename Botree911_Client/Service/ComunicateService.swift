@@ -28,6 +28,7 @@ struct ComunicateService {
         case CommentList(Int)
         case HistoryList(Int)
         case NotificationList()
+        case ForgotPassword(Parameters)
         
         var method: Alamofire.HTTPMethod {
             switch self {
@@ -51,6 +52,8 @@ struct ComunicateService {
                     return .get
                 case .NotificationList():
                     return .get
+                case .ForgotPassword(_):
+                    return .post
             }
         }
         
@@ -76,6 +79,8 @@ struct ComunicateService {
                     return "tickets/\(ticketID)/ticket_status_history"
                 case .NotificationList():
                     return "users/notification"
+                case .ForgotPassword(_):
+                    return "users/reset_password"
             }
         }
 
@@ -127,6 +132,9 @@ struct ComunicateService {
             
             case .NotificationList():
                 return try Alamofire.URLEncoding.default.encode(urlRequest, with: nil)
+            
+            case .ForgotPassword(let params):
+                return try Alamofire.JSONEncoding.default.encode(urlRequest, with: params)
                 
             default:
                 return urlRequest

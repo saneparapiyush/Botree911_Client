@@ -14,19 +14,6 @@ import Toast
 
 class LoginViewController: AbstractViewController {
     
-    let testResponse = [
-        "first_name": "as",
-        "last_name": 1,
-        "data": [
-            "user": [
-                "first_name": "",
-                "last_name": "",
-                "email": "sp@gmail.com",
-                "access_token": "f4cb2196eab3fcae80dc"
-            ]
-        ]
-    ] as [String: Any]
-    
     @IBOutlet var txtUserEmail: ThemeTextField!
     @IBOutlet var txtPassword: ThemeTextField!
     @IBOutlet var btnLogin: UIButton!
@@ -59,9 +46,68 @@ class LoginViewController: AbstractViewController {
         userAuthorized()
     }// End btnLoginOnclick()
     @IBAction func btnForgotPasswordOnClick(_ sender: Any) {
-        self.view.makeToast("New Password sent to Registered Email")
+        let alert = UIAlertController(title: "Forgot Password", message: nil, preferredStyle: .alert)
+        
+        alert.addTextField { textField in
+            textField.delegate = self
+            textField.text = ""
+            textField.placeholder = "Please enter user email"
+            textField.keyboardType = .numbersAndPunctuation
+        }
+        
+        alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: { [weak alert] (_) in
+            let textField = alert?.textFields![0] // Force unwrapping because we know it exists.
+            print("Text field: \(textField?.text)")
+            
+            self.forgotPassword(for: (textField?.text)!)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
     }// End btnForgotPasswordOnClick()
     
+//    MARK: - Helper Method
+    
+    func forgotPassword(for email : String) {
+        
+        let parameters = [
+            "email": email,
+            "device_token": UUID().uuidString
+        ]
+        
+        FTProgressIndicator.showProgressWithmessage(getLocalizedString("forgot_password_indicator"), userInteractionEnable: false)
+        
+        do {
+            try Alamofire.request(ComunicateService.Router.ForgotPassword(parameters).asURLRequest()).debugLog().responseJSON(options: [JSONSerialization.ReadingOptions.allowFragments, JSONSerialization.ReadingOptions.mutableContainers])
+            {
+                (response) -> Void in
+                
+                switch response.result
+                {
+                case .success:
+                    if let value = response.result.value
+                    {
+                        let json = JSON(value)
+                        print("Forgot Password Response: \(json)")
+                        
+                        self.configToast(message: "\((json.dictionaryObject!["message"])!)")
+                        self.dismissIndicator()
+                    }
+                    
+                    self.dismissIndicator()
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    self.dismissIndicator()
+                    self.configToast(message: error.localizedDescription)
+                }
+            }
+        } catch let error{
+            print(error.localizedDescription)
+            self.dismissIndicator()
+            self.configToast(message: error.localizedDescription)
+        }
+    } //End forgotPassword()
     
     //    MARK: Email Validation
     
@@ -181,7 +227,7 @@ extension LoginViewController:AuthorizedProtocol {
 //       return isLoginAuthorized
     }// End login()
     
-    func loginDataSource(json: JSON) {
+    func loginDataSource(json: JSON) {//unused
         
             let data = json["user"]
       
@@ -228,16 +274,6 @@ extension LoginViewController:AuthorizedProtocol {
 //            self.performSegue(withIdentifier: "showCreateTicket", sender: self)
 //            MARK: END OFLINE
             
-//            if login() {
-//                print("Move Forword")
-//                
-//                if keychain.set(txtPassword.text!, forKey: "password") {
-//                    performSegue(withIdentifier: "showProjectList", sender: self)
-//                }
-//            } else {
-//                print("Something went wrong in login")
-//            }
-//        }
     } //End userAuthorized()
 }
 
