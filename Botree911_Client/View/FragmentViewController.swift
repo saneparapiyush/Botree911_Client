@@ -29,7 +29,8 @@ class FragmentViewController: AbstractViewController,CarbonTabSwipeNavigationDel
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(btnAddOnClick))
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
+        carbonTabSwipeNavigation.removeFromParentViewController()
         getTicketList()
     }
     
@@ -117,9 +118,9 @@ class FragmentViewController: AbstractViewController,CarbonTabSwipeNavigationDel
         carbonTabSwipeNavigation.currentTabIndex = UInt(selectedIndex)
         carbonTabSwipeNavigation.insert(intoRootViewController: self)
         
-        for (index, _) in items.enumerated() {
-            carbonTabSwipeNavigation.carbonSegmentedControl!.setWidth(self.view.frame.width / 3, forSegmentAt: index)
-        }
+//        for (index, _) in items.enumerated() {
+//            carbonTabSwipeNavigation.carbonSegmentedControl!.setWidth(self.view.frame.width / 2.5, forSegmentAt: index)
+//        }
     }
     
     func style()
