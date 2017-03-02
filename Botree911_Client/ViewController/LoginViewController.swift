@@ -200,7 +200,7 @@ extension LoginViewController:AuthorizedProtocol {
 
                             if self.storeLoginData(json: json["data"]) {
                                 self.dismissIndicator()
-                                 self.performSegue(withIdentifier: "showCreateTicket", sender: self)
+                                 self.performSegue(withIdentifier: "showTicketList", sender: self)
                             }
                             
                             //                            UserDefaults.standard.set((json.dictionaryObject!["data"] as! [String: Any])["user"]!, forKey: "user")
@@ -271,7 +271,7 @@ extension LoginViewController:AuthorizedProtocol {
         
 //            MARK: OFLINE
             login()
-//            self.performSegue(withIdentifier: "showCreateTicket", sender: self)
+//            self.performSegue(withIdentifier: "showTicketList", sender: self)
 //            MARK: END OFLINE
             
     } //End userAuthorized()

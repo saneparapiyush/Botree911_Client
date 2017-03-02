@@ -44,7 +44,7 @@ class AppRouter: NSObject, Controller {
         let addTicketVC = getViewController("AddTicketViewController") as? AddTicketViewController
         
         addTicketVC!.controller = self
-        addTicketVC!.screenType = .TICKET_LIST_SCREEN_TYPE
+        addTicketVC!.screenType = .ADD_TICKET_SCREEN_TYPE
         view = addTicketVC
         
         let navigationController: UINavigationController = getNavigationController()
@@ -54,5 +54,19 @@ class AppRouter: NSObject, Controller {
         let appDelegate: AppDelegate = (UIApplication.shared.delegate as? AppDelegate)!
         appDelegate.window?.rootViewController = navigationController
     }
+    
+    func showTicketListScreen() {
+        let ticketListVC = getViewController("FragmentViewController") as? FragmentViewController
+        
+        ticketListVC!.controller = self
+        ticketListVC!.screenType = .TICKET_LIST_SCREEN_TYPE
+        view = ticketListVC
+        
+        let navigationController: UINavigationController = getNavigationController()
+        navigationController.viewControllers = [ticketListVC!]
+        container = navigationController
+        
+        let appDelegate: AppDelegate = (UIApplication.shared.delegate as? AppDelegate)!
+        appDelegate.window?.rootViewController = navigationController
+    }
 }
-

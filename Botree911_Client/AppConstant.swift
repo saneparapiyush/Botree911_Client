@@ -20,4 +20,5 @@ let DEVICE_TOKEN = 1
 enum AppScreenType: Int {
     case PROJECT_LIST_SCREEN_TYPE
     case TICKET_LIST_SCREEN_TYPE
+    case ADD_TICKET_SCREEN_TYPE
 }

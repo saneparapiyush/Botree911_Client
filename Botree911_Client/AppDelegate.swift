@@ -28,12 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         appRouter.appWindow = window
         
         if UserDefaults.standard.value(forKey: "isLogin") != nil {
-            appRouter.showAddTicketScreen()
+            appRouter.showTicketListScreen()
         }
-        
-//        if keychain.get("password") != nil {
-//            print("Get password")
-//        }
         
         IQKeyboardManager.sharedManager().enable = true
         
