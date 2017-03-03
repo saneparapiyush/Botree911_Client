@@ -402,12 +402,13 @@ extension AddTicketViewController: UIPickerViewDelegate, UIPickerViewDataSource,
     
     func textFieldDidBeginEditing(_ textField: UITextField)
     {
-        picker.selectRow(0, inComponent: 0, animated: true)
         
         switch textField {
         case txtSelectProject:
-            if projectListSource.count > 0 {
+            if projectListSource.count > 1 {
                 pickerTag = 101
+                
+                picker.selectRow(0, inComponent: 0, animated: true)
                 
                 //     titlePicker.title = " Select XXXX "
             }
