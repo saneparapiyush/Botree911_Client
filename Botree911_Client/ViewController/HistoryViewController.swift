@@ -25,13 +25,20 @@ class HistoryViewController: AbstractViewController {
         
     } // End viewDidLoad()
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         //            MARK: OFLINE
         getHistoryList()
-//        setOflineDataSource()
+        //        setOflineDataSource()
         //            MARK: END OFLINE
-
-    }//End viewWillAppear()
+    } // End viewDidAppear()
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        //            MARK: OFLINE
+//        getHistoryList()
+////        setOflineDataSource()
+//        //            MARK: END OFLINE
+//
+//    }//End viewWillAppear()
     
     
 //    MARK:- Helper Method
@@ -56,20 +63,21 @@ class HistoryViewController: AbstractViewController {
                                 self.dismissIndicator()
                             })
                         } else {
-                            self.view.makeToast("\((json.dictionaryObject!["message"])!)")
+//                            self.view.makeToast("\((json.dictionaryObject!["message"])!)")
+//                            self.configToast(message: "\((json.dictionaryObject!["message"])!)")
                         }
                         self.dismissIndicator()
                     }
                 case .failure(let error):
                     print(error.localizedDescription)
                     self.dismissIndicator()
-                    self.view.makeToast(error.localizedDescription)
+                    self.configToast(message: error.localizedDescription)
                 }
             }
         } catch let error{
             print(error)
             self.dismissIndicator()
-            self.view.makeToast(error.localizedDescription)
+            self.configToast(message: error.localizedDescription)
         }
     } // End getHistoryList()
     

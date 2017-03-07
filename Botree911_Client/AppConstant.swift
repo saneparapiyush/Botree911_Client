@@ -14,7 +14,8 @@ let themeTextfieldColor = UIColor(red: 221.0/255.0, green: 227.0/255.0, blue: 23
 
 let themeTextColor = UIColor.darkGray
 
-let REGEX_EMAIL = "[A-Z0-9a-z._%+-]{3,}+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
+let REGEX_EMAIL = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+
 let DEVICE_TOKEN = 1
 
 enum AppScreenType: Int {
@@ -22,3 +23,8 @@ enum AppScreenType: Int {
     case TICKET_LIST_SCREEN_TYPE
     case ADD_TICKET_SCREEN_TYPE
 }
+
+let UNASSIGNEE_ID = UInt(4)
+let UNRESOLVED_ID = UInt(1)
+let MISSED_ID = UInt(2)
+let OLD_ID = UInt(3)

@@ -35,16 +35,18 @@ class AbstractViewController: UIViewController, View  {
     }
     
     func configToast(message: String) {
-        //        self.isEdit! ? self.tabBarController?.view.makeToast(message) : self.view.makeToast(message)
+        
         self.navigationController?.view.makeToast(message)
+        
     }//End configToast()
     
     func hideNavigationBar() {
-        if let navController = self.navigationController {
-            navController.setNavigationBarHidden(true, animated: true)
-        }
+        
+        self.navigationItem.setHidesBackButton(true, animated: true)
+        
     }
     func showNavigationBar() {
+        
         if let navController = self.navigationController {
             navController.setNavigationBarHidden(false, animated: true)
         }

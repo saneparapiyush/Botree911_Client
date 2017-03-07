@@ -1,19 +1,28 @@
 //
-//  Botree911_ClientTests.swift
-//  Botree911_ClientTests
+//  BoTree911Tests.swift
+//  BoTree911Tests
 //
-//  Created by piyushMac on 02/02/17.
+//  Created by piyushMac on 03/03/17.
 //  Copyright © 2017 piyushMac. All rights reserved.
 //
 
 import XCTest
-@testable import Botree911_Client
 
-class Botree911_ClientTests: XCTestCase {
+@testable import BoTree911
+
+class BoTree911Tests: XCTestCase {
+    
+    var vc: LoginViewController!
     
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        vc = storyboard.instantiateInitialViewController() as! LoginViewController
+    }
+    
+    func testEmailValidation() {
+        XCTAssert(false)
     }
     
     override func tearDown() {

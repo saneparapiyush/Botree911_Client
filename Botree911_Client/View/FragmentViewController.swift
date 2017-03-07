@@ -163,19 +163,20 @@ class FragmentViewController: AbstractViewController,CarbonTabSwipeNavigationDel
                             self.processGetResponceTicketList(json: json["data"])
                         } else {
                             //                            print((json.dictionaryObject!["message"])!)
-                            self.view.makeToast("\((json.dictionaryObject!["message"])!)")
+//                            self.view.makeToast("\((json.dictionaryObject!["message"])!)")
+                            self.configToast(message: "\((json.dictionaryObject!["message"])!)")
                         }
                     }
                 case .failure(let error):
                     print(error.localizedDescription)
                     self.dismissIndicator()
-                    self.view.makeToast(error.localizedDescription)
+                    self.configToast(message: error.localizedDescription)
                 }
             }
         } catch let error{
             print(error)
             self.dismissIndicator()
-            self.view.makeToast(error.localizedDescription)
+            self.configToast(message: error.localizedDescription)
         }
     } // End getTicketList()
     

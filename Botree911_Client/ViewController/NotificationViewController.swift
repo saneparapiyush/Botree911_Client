@@ -27,8 +27,8 @@ class NotificationViewController: AbstractViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         //            MARK: OFLINE
-//        getNotificationList()
-                setOflineDataSource()
+        getNotificationList()
+//                setOflineDataSource()
         //            MARK: END OFLINE
         
     }//End viewWillAppear()
@@ -56,20 +56,21 @@ class NotificationViewController: AbstractViewController {
                                 self.dismissIndicator()
                             })
                         } else {
-                            self.view.makeToast("\((json.dictionaryObject!["message"])!)")
+//                            self.view.makeToast("\((json.dictionaryObject!["message"])!)")
+                            self.configToast(message: "\((json.dictionaryObject!["message"])!)")
                         }
                         self.dismissIndicator()
                     }
                 case .failure(let error):
                     print(error.localizedDescription)
                     self.dismissIndicator()
-                    self.view.makeToast(error.localizedDescription)
+                    self.configToast(message: error.localizedDescription)
                 }
             }
         } catch let error{
             print(error)
             self.dismissIndicator()
-            self.view.makeToast(error.localizedDescription)
+            self.configToast(message: error.localizedDescription)
         }
     } // End getNotificationList()
     

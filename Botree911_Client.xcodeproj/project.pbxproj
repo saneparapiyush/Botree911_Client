@@ -15,8 +15,7 @@
 		4A344C4D1E42F59F00FFA1FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A344C4B1E42F59F00FFA1FC /* Main.storyboard */; };
 		4A344C4F1E42F59F00FFA1FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A344C4E1E42F59F00FFA1FC /* Assets.xcassets */; };
 		4A344C521E42F59F00FFA1FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A344C501E42F59F00FFA1FC /* LaunchScreen.storyboard */; };
-		4A344C5D1E42F59F00FFA1FC /* Botree911_ClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A344C5C1E42F59F00FFA1FC /* Botree911_ClientTests.swift */; };
-		4A344C681E42F59F00FFA1FC /* Botree911_ClientUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A344C671E42F59F00FFA1FC /* Botree911_ClientUITests.swift */; };
+		4A6C83831E699BC600736C23 /* BoTree911Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6C83821E699BC600736C23 /* BoTree911Tests.swift */; };
 		4A82A7AA1E43402300D8A92E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A82A7A91E43402300D8A92E /* User.swift */; };
 		4A82A7AC1E434BC400D8A92E /* ProjectListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A82A7AB1E434BC400D8A92E /* ProjectListViewController.swift */; };
 		4A82A7AE1E435BDF00D8A92E /* UserDefaultStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A82A7AD1E435BDF00D8A92E /* UserDefaultStorage.swift */; };
@@ -55,19 +54,19 @@
 		4AF87F7C1E4B2EBA00534F6D /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF87F7B1E4B2EBA00534F6D /* Comment.swift */; };
 		4AF87F7E1E4B3EC500534F6D /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF87F7D1E4B3EC500534F6D /* HistoryViewController.swift */; };
 		4AF87F801E4B453600534F6D /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF87F7F1E4B453600534F6D /* History.swift */; };
+		6294FFDF4345A7C10208A1E3 /* Pods_BoTree911Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC49040317AD7AAE64ACA06 /* Pods_BoTree911Tests.framework */; };
 		685BEDD41434036C3445605E /* Pods_Botree911_Client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53334EBDBA680E4A12570B6F /* Pods_Botree911_Client.framework */; };
-		F8CF331BA31A41C5D99BC6C8 /* Pods_Botree911_ClientTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D877638D2447A6893A5FF0B5 /* Pods_Botree911_ClientTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		4A344C591E42F59F00FFA1FC /* PBXContainerItemProxy */ = {
+		4A344C641E42F59F00FFA1FC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4A344C3C1E42F59E00FFA1FC /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 4A344C431E42F59E00FFA1FC;
 			remoteInfo = Botree911_Client;
 		};
-		4A344C641E42F59F00FFA1FC /* PBXContainerItemProxy */ = {
+		4A6C83851E699BC600736C23 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4A344C3C1E42F59E00FFA1FC /* Project object */;
 			proxyType = 1;
@@ -88,12 +87,10 @@
 		4A344C4E1E42F59F00FFA1FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A344C511E42F59F00FFA1FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A344C531E42F59F00FFA1FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4A344C581E42F59F00FFA1FC /* Botree911_ClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Botree911_ClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4A344C5C1E42F59F00FFA1FC /* Botree911_ClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Botree911_ClientTests.swift; sourceTree = "<group>"; };
-		4A344C5E1E42F59F00FFA1FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A344C631E42F59F00FFA1FC /* Botree911_ClientUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Botree911_ClientUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4A344C671E42F59F00FFA1FC /* Botree911_ClientUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Botree911_ClientUITests.swift; sourceTree = "<group>"; };
-		4A344C691E42F59F00FFA1FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A6C83801E699BC600736C23 /* BoTree911Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoTree911Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A6C83821E699BC600736C23 /* BoTree911Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoTree911Tests.swift; sourceTree = "<group>"; };
+		4A6C83841E699BC600736C23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A82A7A91E43402300D8A92E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4A82A7AB1E434BC400D8A92E /* ProjectListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectListViewController.swift; sourceTree = "<group>"; };
 		4A82A7AD1E435BDF00D8A92E /* UserDefaultStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultStorage.swift; sourceTree = "<group>"; };
@@ -147,10 +144,13 @@
 		4AF87F7D1E4B3EC500534F6D /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		4AF87F7F1E4B453600534F6D /* History.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		53334EBDBA680E4A12570B6F /* Pods_Botree911_Client.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Botree911_Client.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EAAB5BBDC13094C79E3158F /* Pods-BoTree911Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoTree911Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BoTree911Tests/Pods-BoTree911Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		B37E09C4BFF3F1CC0BFA938F /* Pods-Botree911_ClientUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Botree911_ClientUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Botree911_ClientUITests/Pods-Botree911_ClientUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C835EE597D0FCE7C79EF3887 /* Pods-Botree911_ClientUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Botree911_ClientUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Botree911_ClientUITests/Pods-Botree911_ClientUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C938EC4E03A1D29275D2218E /* Pods-BoTree911Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoTree911Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BoTree911Tests/Pods-BoTree911Tests.release.xcconfig"; sourceTree = "<group>"; };
 		D877638D2447A6893A5FF0B5 /* Pods_Botree911_ClientTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Botree911_ClientTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB1361E2440A53236406D04A /* Pods-Botree911_ClientTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Botree911_ClientTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Botree911_ClientTests/Pods-Botree911_ClientTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DDC49040317AD7AAE64ACA06 /* Pods_BoTree911Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BoTree911Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF203374F830A531FA5337BC /* Pods-Botree911_Client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Botree911_Client.release.xcconfig"; path = "Pods/Target Support Files/Pods-Botree911_Client/Pods-Botree911_Client.release.xcconfig"; sourceTree = "<group>"; };
 		F934B8B73564CBC1E84447DD /* Pods-Botree911_ClientTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Botree911_ClientTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Botree911_ClientTests/Pods-Botree911_ClientTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -164,19 +164,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4A344C551E42F59F00FFA1FC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F8CF331BA31A41C5D99BC6C8 /* Pods_Botree911_ClientTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4A344C601E42F59F00FFA1FC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				199D800EB24B88D34BC5E7C6 /* Pods_Botree911_ClientUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A6C837D1E699BC600736C23 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6294FFDF4345A7C10208A1E3 /* Pods_BoTree911Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,8 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				4A344C461E42F59E00FFA1FC /* Botree911_Client */,
-				4A344C5B1E42F59F00FFA1FC /* Botree911_ClientTests */,
-				4A344C661E42F59F00FFA1FC /* Botree911_ClientUITests */,
+				4A6C83811E699BC600736C23 /* BoTree911Tests */,
 				4A344C451E42F59E00FFA1FC /* Products */,
 				72FA8F0385EBC5EFB2B61EEF /* Pods */,
 				CFDBD6C475F7469DF3AED273 /* Frameworks */,
@@ -199,8 +198,8 @@
 			isa = PBXGroup;
 			children = (
 				4A344C441E42F59E00FFA1FC /* BoTree911.app */,
-				4A344C581E42F59F00FFA1FC /* Botree911_ClientTests.xctest */,
 				4A344C631E42F59F00FFA1FC /* Botree911_ClientUITests.xctest */,
+				4A6C83801E699BC600736C23 /* BoTree911Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -230,22 +229,13 @@
 			path = Botree911_Client;
 			sourceTree = "<group>";
 		};
-		4A344C5B1E42F59F00FFA1FC /* Botree911_ClientTests */ = {
+		4A6C83811E699BC600736C23 /* BoTree911Tests */ = {
 			isa = PBXGroup;
 			children = (
-				4A344C5C1E42F59F00FFA1FC /* Botree911_ClientTests.swift */,
-				4A344C5E1E42F59F00FFA1FC /* Info.plist */,
+				4A6C83821E699BC600736C23 /* BoTree911Tests.swift */,
+				4A6C83841E699BC600736C23 /* Info.plist */,
 			);
-			path = Botree911_ClientTests;
-			sourceTree = "<group>";
-		};
-		4A344C661E42F59F00FFA1FC /* Botree911_ClientUITests */ = {
-			isa = PBXGroup;
-			children = (
-				4A344C671E42F59F00FFA1FC /* Botree911_ClientUITests.swift */,
-				4A344C691E42F59F00FFA1FC /* Info.plist */,
-			);
-			path = Botree911_ClientUITests;
+			path = BoTree911Tests;
 			sourceTree = "<group>";
 		};
 		4A82A7A51E432CA400D8A92E /* Third Party */ = {
@@ -379,6 +369,8 @@
 				F934B8B73564CBC1E84447DD /* Pods-Botree911_ClientTests.release.xcconfig */,
 				B37E09C4BFF3F1CC0BFA938F /* Pods-Botree911_ClientUITests.debug.xcconfig */,
 				C835EE597D0FCE7C79EF3887 /* Pods-Botree911_ClientUITests.release.xcconfig */,
+				8EAAB5BBDC13094C79E3158F /* Pods-BoTree911Tests.debug.xcconfig */,
+				C938EC4E03A1D29275D2218E /* Pods-BoTree911Tests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -389,6 +381,7 @@
 				53334EBDBA680E4A12570B6F /* Pods_Botree911_Client.framework */,
 				D877638D2447A6893A5FF0B5 /* Pods_Botree911_ClientTests.framework */,
 				2E8786D2AB963BC827A793A2 /* Pods_Botree911_ClientUITests.framework */,
+				DDC49040317AD7AAE64ACA06 /* Pods_BoTree911Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -416,27 +409,6 @@
 			productReference = 4A344C441E42F59E00FFA1FC /* BoTree911.app */;
 			productType = "com.apple.product-type.application";
 		};
-		4A344C571E42F59F00FFA1FC /* Botree911_ClientTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4A344C6F1E42F59F00FFA1FC /* Build configuration list for PBXNativeTarget "Botree911_ClientTests" */;
-			buildPhases = (
-				EA7D89FE6AB68010305EF0FB /* [CP] Check Pods Manifest.lock */,
-				4A344C541E42F59F00FFA1FC /* Sources */,
-				4A344C551E42F59F00FFA1FC /* Frameworks */,
-				4A344C561E42F59F00FFA1FC /* Resources */,
-				08AA99FCACD73BC54076BE06 /* [CP] Embed Pods Frameworks */,
-				1877DC1CB4C8C1111B004888 /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4A344C5A1E42F59F00FFA1FC /* PBXTargetDependency */,
-			);
-			name = Botree911_ClientTests;
-			productName = Botree911_ClientTests;
-			productReference = 4A344C581E42F59F00FFA1FC /* Botree911_ClientTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		4A344C621E42F59F00FFA1FC /* Botree911_ClientUITests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4A344C721E42F59F00FFA1FC /* Build configuration list for PBXNativeTarget "Botree911_ClientUITests" */;
@@ -458,6 +430,27 @@
 			productReference = 4A344C631E42F59F00FFA1FC /* Botree911_ClientUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		4A6C837F1E699BC600736C23 /* BoTree911Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A6C83871E699BC600736C23 /* Build configuration list for PBXNativeTarget "BoTree911Tests" */;
+			buildPhases = (
+				427E40830866FF40A537B206 /* [CP] Check Pods Manifest.lock */,
+				4A6C837C1E699BC600736C23 /* Sources */,
+				4A6C837D1E699BC600736C23 /* Frameworks */,
+				4A6C837E1E699BC600736C23 /* Resources */,
+				4C32DCD2A88F157B6BBDEC46 /* [CP] Embed Pods Frameworks */,
+				CBC9CFFA3757D9C34E586C58 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4A6C83861E699BC600736C23 /* PBXTargetDependency */,
+			);
+			name = BoTree911Tests;
+			productName = BoTree911Tests;
+			productReference = 4A6C83801E699BC600736C23 /* BoTree911Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -473,12 +466,12 @@
 						DevelopmentTeam = 7C58JYPZ2J;
 						ProvisioningStyle = Automatic;
 					};
-					4A344C571E42F59F00FFA1FC = {
+					4A344C621E42F59F00FFA1FC = {
 						CreatedOnToolsVersion = 8.1;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 4A344C431E42F59E00FFA1FC;
 					};
-					4A344C621E42F59F00FFA1FC = {
+					4A6C837F1E699BC600736C23 = {
 						CreatedOnToolsVersion = 8.1;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 4A344C431E42F59E00FFA1FC;
@@ -499,8 +492,8 @@
 			projectRoot = "";
 			targets = (
 				4A344C431E42F59E00FFA1FC /* Botree911_Client */,
-				4A344C571E42F59F00FFA1FC /* Botree911_ClientTests */,
 				4A344C621E42F59F00FFA1FC /* Botree911_ClientUITests */,
+				4A6C837F1E699BC600736C23 /* BoTree911Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -518,14 +511,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4A344C561E42F59F00FFA1FC /* Resources */ = {
+		4A344C611E42F59F00FFA1FC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4A344C611E42F59F00FFA1FC /* Resources */ = {
+		4A6C837E1E699BC600736C23 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -535,36 +528,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		08AA99FCACD73BC54076BE06 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Botree911_ClientTests/Pods-Botree911_ClientTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		1877DC1CB4C8C1111B004888 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Botree911_ClientTests/Pods-Botree911_ClientTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		30125046BAA0B9223CA58B17 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -593,6 +556,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Botree911_ClientUITests/Pods-Botree911_ClientUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		427E40830866FF40A537B206 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4C32DCD2A88F157B6BBDEC46 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BoTree911Tests/Pods-BoTree911Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5BBD99ACEA34585CCD4FBEF9 /* [CP] Copy Pods Resources */ = {
@@ -625,6 +618,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		CBC9CFFA3757D9C34E586C58 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BoTree911Tests/Pods-BoTree911Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		CC2D4AA5AA2C4EBFDB1B89CB /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -638,21 +646,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Botree911_ClientUITests/Pods-Botree911_ClientUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EA7D89FE6AB68010305EF0FB /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		F7AD03EF599FD60E9015F681 /* [CP] Embed Pods Frameworks */ = {
@@ -720,34 +713,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4A344C541E42F59F00FFA1FC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4A344C5D1E42F59F00FFA1FC /* Botree911_ClientTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4A344C5F1E42F59F00FFA1FC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A344C681E42F59F00FFA1FC /* Botree911_ClientUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A6C837C1E699BC600736C23 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A6C83831E699BC600736C23 /* BoTree911Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		4A344C5A1E42F59F00FFA1FC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4A344C431E42F59E00FFA1FC /* Botree911_Client */;
-			targetProxy = 4A344C591E42F59F00FFA1FC /* PBXContainerItemProxy */;
-		};
 		4A344C651E42F59F00FFA1FC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4A344C431E42F59E00FFA1FC /* Botree911_Client */;
 			targetProxy = 4A344C641E42F59F00FFA1FC /* PBXContainerItemProxy */;
+		};
+		4A6C83861E699BC600736C23 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4A344C431E42F59E00FFA1FC /* Botree911_Client */;
+			targetProxy = 4A6C83851E699BC600736C23 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -873,6 +865,7 @@
 				INFOPLIST_FILE = Botree911_Client/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "botree.Botree911-Client";
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = BoTree911;
 				SWIFT_OBJC_BRIDGING_HEADER = "Botree911_Client/Botree911_Client-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
@@ -888,39 +881,10 @@
 				INFOPLIST_FILE = Botree911_Client/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "botree.Botree911-Client";
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = BoTree911;
 				SWIFT_OBJC_BRIDGING_HEADER = "Botree911_Client/Botree911_Client-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
-			};
-			name = Release;
-		};
-		4A344C701E42F59F00FFA1FC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DB1361E2440A53236406D04A /* Pods-Botree911_ClientTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = Botree911_ClientTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "botree.Botree911-ClientTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Botree911_Client.app/Botree911_Client";
-			};
-			name = Debug;
-		};
-		4A344C711E42F59F00FFA1FC /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F934B8B73564CBC1E84447DD /* Pods-Botree911_ClientTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = Botree911_ClientTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "botree.Botree911-ClientTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Botree911_Client.app/Botree911_Client";
 			};
 			name = Release;
 		};
@@ -952,6 +916,34 @@
 			};
 			name = Release;
 		};
+		4A6C83881E699BC600736C23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8EAAB5BBDC13094C79E3158F /* Pods-BoTree911Tests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = BoTree911Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = botree.BoTree911Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BoTree911.app/BoTree911";
+			};
+			name = Debug;
+		};
+		4A6C83891E699BC600736C23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C938EC4E03A1D29275D2218E /* Pods-BoTree911Tests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = BoTree911Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = botree.BoTree911Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BoTree911.app/BoTree911";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -973,15 +965,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4A344C6F1E42F59F00FFA1FC /* Build configuration list for PBXNativeTarget "Botree911_ClientTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4A344C701E42F59F00FFA1FC /* Debug */,
-				4A344C711E42F59F00FFA1FC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		4A344C721E42F59F00FFA1FC /* Build configuration list for PBXNativeTarget "Botree911_ClientUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -990,6 +973,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		4A6C83871E699BC600736C23 /* Build configuration list for PBXNativeTarget "BoTree911Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A6C83881E699BC600736C23 /* Debug */,
+				4A6C83891E699BC600736C23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

@@ -40,7 +40,7 @@ class ProjectListViewController: AbstractViewController {
 //        let backButton = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
 //        navigationItem.leftBarButtonItem = backButton
         
-        self.navigationItem.setHidesBackButton(true, animated: true)
+        hideNavigationBar()
     }//End configNavigationBar()
 
 //    MARK:- Helper Method
@@ -56,7 +56,8 @@ class ProjectListViewController: AbstractViewController {
                 self.tblProjectList.reloadData()
             } else {
                 print(error!)
-                self.view.makeToast(error!)
+//                self.view.makeToast(error!)
+                self.configToast(message: error!)
             }
             self.dismissIndicator()
         }

@@ -24,12 +24,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-Botree911_Client.xcscheme</key>
+		<key>Pods-BoTree911Tests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-Botree911_ClientTests.xcscheme</key>
+		<key>Pods-Botree911_Client.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -72,11 +72,6 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>590800E6D932A50FD2872271DAB877BA</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>7C97C62A4B0AC4A3869E8FC0F234023F</key>
 		<dict>
 			<key>primary</key>
@@ -88,6 +83,11 @@
 			<true/>
 		</dict>
 		<key>96639DBF4922DDE4B4C1DD099A41136C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B542BC3D1ECB1D1F6442567C6B29D004</key>
 		<dict>
 			<key>primary</key>
 			<true/>

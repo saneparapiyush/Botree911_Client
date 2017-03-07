@@ -27,15 +27,23 @@ class CommentViewController: AbstractViewController {
         btnAddComment.isDisableConfig()
         NotificationCenter.default.addObserver(self, selector: #selector(textChanged(sender:)), name: NSNotification.Name.UITextFieldTextDidChange, object: nil)
     }// End viewDidLoad()
-
-    override func viewWillAppear(_ animated: Bool) {
-        
+    
+    override func viewDidAppear(_ animated: Bool) {
         //            MARK: OFLINE
-                getCommentList()
-//        setOflineDataSource()
+        getCommentList()
+        //        setOflineDataSource()
         //            MARK: END OFLINE
         
-    }//End viewWillAppear()
+    } // End viewDidAppear()
+
+//    override func viewWillAppear(_ animated: Bool) {
+//        
+//        //            MARK: OFLINE
+//                getCommentList()
+////        setOflineDataSource()
+//        //            MARK: END OFLINE
+//        
+//    }//End viewWillAppear()
     
 //    MARK: - Action
     @IBAction func btnAddCommentOnClick(_ sender: Any) {
@@ -83,13 +91,13 @@ class CommentViewController: AbstractViewController {
                 case .failure(let error):
                     print(error.localizedDescription)
 //                    self.dismissIndicator()
-                    self.view.makeToast(error.localizedDescription)
+                    self.configToast(message: error.localizedDescription)
                 }
             }
         } catch let error{
             print(error.localizedDescription)
 //            self.dismissIndicator()
-            self.view.makeToast(error.localizedDescription)
+            self.configToast(message: error.localizedDescription)
         }
     }//End addComment()
     
@@ -115,7 +123,8 @@ class CommentViewController: AbstractViewController {
                                 self.dismissIndicator()
                             })
                         } else {
-                            self.view.makeToast("\((json.dictionaryObject!["message"])!)")
+//                            self.view.makeToast("\((json.dictionaryObject!["message"])!)")
+                            self.configToast(message: "\((json.dictionaryObject!["message"])!)")
                         }
 //                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
 //                            self.dismissIndicator()
@@ -125,13 +134,13 @@ class CommentViewController: AbstractViewController {
                 case .failure(let error):
                     print(error.localizedDescription)
                     self.dismissIndicator()
-                    self.view.makeToast(error.localizedDescription)
+                    self.configToast(message: error.localizedDescription)
                 }
             }
         } catch let error{
             print(error)
             self.dismissIndicator()
-            self.view.makeToast(error.localizedDescription)
+            self.configToast(message: error.localizedDescription)
         }
     } // End getCommentList()
     

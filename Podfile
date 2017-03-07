@@ -25,7 +25,7 @@ target 'Botree911_Client' do
 	pod 'Firebase/Core'
 
 
-  target 'Botree911_ClientTests' do
+  target 'BoTree911Tests' do
     inherit! :search_paths
     # Pods for testing
   end
